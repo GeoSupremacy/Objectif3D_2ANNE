@@ -1,0 +1,8 @@
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\McDonald\bin\Debug\McDonald.exe.config
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\McDonald\bin\Debug\McDonald.exe
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\McDonald\bin\Debug\McDonald.pdb
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\McDonald\obj\Debug\McDonald.csproj.AssemblyReference.cache
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\McDonald\obj\Debug\McDonald.csproj.SuggestedBindingRedirects.cache
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\McDonald\obj\Debug\McDonald.csproj.CoreCompileInputs.cache
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\McDonald\obj\Debug\McDonald.exe
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\McDonald\obj\Debug\McDonald.pdb
