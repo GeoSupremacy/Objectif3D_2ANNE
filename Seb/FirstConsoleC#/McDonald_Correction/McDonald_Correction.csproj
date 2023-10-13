@@ -44,12 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cuisine\Ingredient.cs" />
+    <Compile Include="Cuisine\Stock.cs" />
     <Compile Include="PropertiesLesson.cs" />
-    <Compile Include="McdoData.cs" />
-    <Compile Include="McdoMenu.cs" />
+    <Compile Include="Data\Mcdo\McdoData.cs" />
+    <Compile Include="Menu\Mcdo\McdoMenu.cs" />
     <Compile Include="McDonald.cs" />
-    <Compile Include="Menu.cs" />
-    <Compile Include="MenuData.cs" />
+    <Compile Include="Menu\Menu.cs" />
+    <Compile Include="Data\MenuData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Cuisine\Recette.cs" />
