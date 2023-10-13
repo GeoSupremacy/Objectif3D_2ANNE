@@ -6,6 +6,7 @@ namespace McDonald_Correction
     {
         static void Main(string[] args)
         {
+            while (true)
             new McDonald();
             Console.ReadLine();
         }
