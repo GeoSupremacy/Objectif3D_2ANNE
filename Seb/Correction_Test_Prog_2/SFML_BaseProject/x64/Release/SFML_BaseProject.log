@@ -1,0 +1,8 @@
+﻿  Content.cpp
+C:\Users\GUIC1203\Documents\Seb\Correction_Test_Prog_2\SFML_BaseProject\Content.cpp(7,56): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+  Generating code
+  1 of 125 functions ( 0.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  SFML_BaseProject.vcxproj -> C:\Users\GUIC1203\Documents\Seb\Correction_Test_Prog_2\x64\Release\SFML_BaseProject.exe
