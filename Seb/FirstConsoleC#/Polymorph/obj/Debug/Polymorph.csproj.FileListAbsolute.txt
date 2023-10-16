@@ -1,0 +1,8 @@
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\Polymorph\bin\Debug\Polymorph.exe.config
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\Polymorph\bin\Debug\Polymorph.exe
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\Polymorph\bin\Debug\Polymorph.pdb
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\Polymorph\obj\Debug\Polymorph.csproj.AssemblyReference.cache
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\Polymorph\obj\Debug\Polymorph.csproj.SuggestedBindingRedirects.cache
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\Polymorph\obj\Debug\Polymorph.csproj.CoreCompileInputs.cache
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\Polymorph\obj\Debug\Polymorph.exe
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\Polymorph\obj\Debug\Polymorph.pdb

@@ -24,25 +24,10 @@ namespace McDonald_Correction
         { 
             Console.WriteLine(title);
             for (int i = 0; i < data.Length; i++)  
-            {
-                  for (int j = 0; j < restStock.StockIngredients.Length; j++) //Liste D'ingredient dans  Stock 
-                  {
-                        for (int L = 0; L < recipeList.Length; L++)// Liste de recette
-                            for (int k = 0; k < recipeList[L].ingredients.Length; k++) //QTy pour une recette
-                            {
-                                int _QuantitePourRectte = recipeList[L].ingredients[k].Qty;
-                                int _nombreDingredient = restStock.StockIngredients[j].Qty;
-
-                             if (_nombreDingredient < _QuantitePourRectte) 
-                                Console.WriteLine($" Recipe: {i + 1}--{data[i].Label} Rupture de stock"); 
-                            else
-                                Console.WriteLine($" Recipe: {i + 1}--{data[i].Label}");
-                            
-                        }
-
-                }
-                
-            }
+                if( !restStock.CheckIngredient(recipeList))
+                    Console.WriteLine($" Recipe: {i + 1}--{data[i].Label} Rupture de stock"); 
+                else     
+                    Console.WriteLine($" Recipe: {i + 1}--{data[i].Label}");
             
             OnShowMenu?.Invoke();
         }
@@ -58,5 +43,6 @@ namespace McDonald_Correction
             OnSelection?.Invoke(_index);
         }
         public virtual bool InputCheck(int _select, int _dataSize) => _select>=1 && _select<= _dataSize;
+      
     }
 }

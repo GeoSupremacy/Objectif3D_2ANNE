@@ -43,7 +43,7 @@ namespace McDonald_Correction
         }
         void InitMenu() 
         {
-            McdoData[] _data = new McdoData[recipes.Length];
+            McdoData[] _data = new McdoData[recipes.Length/*+2*/];
             for (int i = 0; i < recipes.Length; i++)
             { 
                 Recette _r = recipes[i];
@@ -51,8 +51,8 @@ namespace McDonald_Correction
                 //On associ un Label et bind une action
                 _data[_index] = new McdoData(_r?.Name, () => MakeRecipe(_index), _r); 
             }
-                
-
+           // _data[recipes.Length] = new McdoData("Show Stock", () => { stock.ShowStock; menu.ShowMenu(); });
+           // _data[recipes.Length +1] = new McdoData("Refill Stock", () => { stock.RefillStock(); menu.ShowMenu(); });
             menu = new McdoMenu("McDonald", _data, stock, recipes);
             menu.ShowMenu();
         }
@@ -89,7 +89,7 @@ namespace McDonald_Correction
             timerKitchen = new TimeSpan();
             timer.Start();
             currentRecipe = recipes[_index];
-            recipes[_index].Prepare();
+            recipes[_index].Prepare(stock);
         }
         Stock GetStock () { return stock; }
     }

@@ -19,31 +19,39 @@ namespace McDonald_Correction
             MinuteTimer = TimeSpan.FromSeconds(_timer);
 
         }
-        public void Prepare()
+        public void Prepare(Stock _Stock)
         {
-            // if (!CheckIngredient())
-            //    Console.WriteLine($"Rupture de stock {Name}...");
+           
             Console.Clear();
-            Console.WriteLine($"Préparation de {Name}...");
             for (int i = 0; i < ingredients.Length; i++)
             {
-                Console.WriteLine($"Utilisation de: {ingredients[i].Name}- x{ingredients[i].Qty}\n");
-
+                if (_Stock.CanUsSotck(ingredients[i]))
+                {
+                    Console.WriteLine($"Préparation de {Name}...");
+                    for (int j = 0; j < ingredients.Length; j++)
+                    {
+                        Console.WriteLine(ingredients[i].FullName);
+                        _Stock.ReduceStock(ingredients[j]);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"We can't prepare...");
+                    return;
+                }
+                
             }
 
         }
-        public bool CheckIngredient(int _rest)
+       /* public bool CheckIngredient(int _rest)
         {
             for (int i = 0; i < ingredients.Length;)
                 if (_rest < ingredients[i].Qty)
                     return false;
 
             return true;
-        }
+        }*/
 
 
     }
-
-
-
  }

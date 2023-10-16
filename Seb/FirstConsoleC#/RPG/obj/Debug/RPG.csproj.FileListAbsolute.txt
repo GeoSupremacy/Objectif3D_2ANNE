@@ -1,0 +1,8 @@
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\RPG\bin\Debug\RPG.exe.config
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\RPG\bin\Debug\RPG.exe
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\RPG\bin\Debug\RPG.pdb
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\RPG\obj\Debug\RPG.csproj.AssemblyReference.cache
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\RPG\obj\Debug\RPG.csproj.SuggestedBindingRedirects.cache
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\RPG\obj\Debug\RPG.csproj.CoreCompileInputs.cache
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\RPG\obj\Debug\RPG.exe
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\RPG\obj\Debug\RPG.pdb
