@@ -12,10 +12,11 @@ namespace RPG
             player = new Player();
 
             player.SetPosition(currentMap);
-
+          
             while (true)
             {
                 currentMap.AddGrid();
+                Console.WriteLine($"Height: {currentMap.Height} - Width{currentMap.Width}");
                 player.Movement();
                 currentMap.SetPlayer(player);
                // Console.Read();

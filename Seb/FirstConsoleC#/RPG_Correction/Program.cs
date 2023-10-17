@@ -1,14 +1,14 @@
 ﻿using System;
-//System.Randoms
-namespace RPG
+
+namespace RPG_Correction
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            new GameRPG();
            
-           new ViewPort();
-           
+            Console.Read();
         }
     }
 }

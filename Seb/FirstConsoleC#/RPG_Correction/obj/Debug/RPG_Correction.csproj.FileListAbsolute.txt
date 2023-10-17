@@ -1,0 +1,8 @@
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\RPG_Correction\bin\Debug\RPG_Correction.exe.config
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\RPG_Correction\bin\Debug\RPG_Correction.exe
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\RPG_Correction\bin\Debug\RPG_Correction.pdb
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\RPG_Correction\obj\Debug\RPG_Correction.csproj.AssemblyReference.cache
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\RPG_Correction\obj\Debug\RPG_Correction.csproj.SuggestedBindingRedirects.cache
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\RPG_Correction\obj\Debug\RPG_Correction.csproj.CoreCompileInputs.cache
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\RPG_Correction\obj\Debug\RPG_Correction.exe
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\RPG_Correction\obj\Debug\RPG_Correction.pdb

@@ -1,0 +1,8 @@
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\ArrayPointer\bin\Debug\ArrayPointer.exe.config
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\ArrayPointer\bin\Debug\ArrayPointer.exe
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\ArrayPointer\bin\Debug\ArrayPointer.pdb
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\ArrayPointer\obj\Debug\ArrayPointer.csproj.AssemblyReference.cache
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\ArrayPointer\obj\Debug\ArrayPointer.csproj.SuggestedBindingRedirects.cache
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\ArrayPointer\obj\Debug\ArrayPointer.csproj.CoreCompileInputs.cache
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\ArrayPointer\obj\Debug\ArrayPointer.exe
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\FirstConsoleC#\ArrayPointer\obj\Debug\ArrayPointer.pdb

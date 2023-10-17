@@ -39,7 +39,7 @@ namespace RPG
                 {
                     if ("PL" == _currentMap.Case[i, j])
                     {
-                        X = i;
+                        X = j;
                         Y = j;
                     }
                 }
