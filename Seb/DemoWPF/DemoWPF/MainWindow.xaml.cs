@@ -51,42 +51,47 @@ namespace DemoWPF
             if (!_isValid) return;
             Process.Start(URLBdd.URL[_key]);
         }
-       /* private void UnrealAPI_Click(object sender, RoutedEventArgs e)
+
+        private void apIUnreal_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start(linkUnreal);
+
         }
-        private void Git_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start(linkGit);
-        }
-        private void Mixamo_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start(linkMixamo); 
-        }
-        private void VisualStudio_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start(linkVisualStudio);
-        }
-        private void MayaApli_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start(linkApliMaya);
-        }
-        private void VisualInstaller_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start(linkVisualInstaller);
-        }
-        private void GitUpDestock_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start(linkGitUpDestock);
-        }
-        private void EpicGamesLauncher_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start(linkEpicGamesLauncher);
-        }
-        private void UnrealEngine_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Not found");
-        }*/
+        /* private void UnrealAPI_Click(object sender, RoutedEventArgs e)
+{
+    Process.Start(linkUnreal);
+}
+private void Git_Click(object sender, RoutedEventArgs e)
+{
+    Process.Start(linkGit);
+}
+private void Mixamo_Click(object sender, RoutedEventArgs e)
+{
+    Process.Start(linkMixamo); 
+}
+private void VisualStudio_Click(object sender, RoutedEventArgs e)
+{
+    Process.Start(linkVisualStudio);
+}
+private void MayaApli_Click(object sender, RoutedEventArgs e)
+{
+    Process.Start(linkApliMaya);
+}
+private void VisualInstaller_Click(object sender, RoutedEventArgs e)
+{
+    Process.Start(linkVisualInstaller);
+}
+private void GitUpDestock_Click(object sender, RoutedEventArgs e)
+{
+    Process.Start(linkGitUpDestock);
+}
+private void EpicGamesLauncher_Click(object sender, RoutedEventArgs e)
+{
+    Process.Start(linkEpicGamesLauncher);
+}
+private void UnrealEngine_Click(object sender, RoutedEventArgs e)
+{
+    MessageBox.Show("Not found");
+}*/
         //private void P4V_Click(object sender, RoutedEventArgs e)
         //{
         //Process.Start(linkVisualInstaller);

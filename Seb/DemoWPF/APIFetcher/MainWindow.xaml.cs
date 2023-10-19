@@ -27,7 +27,10 @@ namespace APIFetcher
             InitializeComponent();
             NetworkAPI.GetRandomQuote();
 
-
+            NetworkAPI.OnRandomQuote += (q) =>
+            {
+               // q.Character.House;
+            };
             refrechButton.Click += (o, e) =>
             {
                
@@ -35,8 +38,6 @@ namespace APIFetcher
 
         }
 
-
-
-
+        
     }//
 }

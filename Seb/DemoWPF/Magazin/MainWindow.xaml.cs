@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,27 @@ namespace Magazin
         public MainWindow()
         {
             InitializeComponent();
+            
+            NetworkAPI.GetGame();
+           
+              refrechButton.Click += (o, e) =>
+            {
+
+                
+
+                dataGrid.ItemsSource = NetworkAPI.listGame;
+
+            };
+            rightButton.Click += (o, e) =>
+            {
+
+            };
+            leftButton.Click += (o, e) =>
+            {
+
+            };
         }
+
+        
     }
 }

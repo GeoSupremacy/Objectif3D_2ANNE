@@ -19,7 +19,7 @@ namespace Magazin
         public static string GetListOfGamesSteam(string _title, int _limit = 60) 
         {
             _limit= _limit <= 60 ? _limit = _limit : _limit = 60;
-            return $"{BASE_URL_API}games?title={_title}/{_limit}"; 
+            return $"{BASE_URL_API}games?title={_title}"; 
         }
         //Des infos spécifiques du jeu sur Steam
         public static string GetGameLookupSteam(uint _gameID) => $"{BASE_URL_API}games?id={_gameID}";
