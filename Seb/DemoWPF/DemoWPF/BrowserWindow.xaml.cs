@@ -55,6 +55,11 @@ namespace DemoWPF
             openButton.IsEnabled = _data != null;
             currentSelection = _data;
         }
+
+        private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
         //C:\Users\GUIC1203\Documents
     }
 }

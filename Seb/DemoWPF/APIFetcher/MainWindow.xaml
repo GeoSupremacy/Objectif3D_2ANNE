@@ -6,8 +6,17 @@
         xmlns:local="clr-namespace:APIFetcher"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    
     <Grid>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="DataGrid_SelectionChanged">
 
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name " Binding ="{Binding Name}"/>
+                <DataGridTextColumn Header="House" Binding ="{Binding House}"/>
+                <DataGridTextColumn Header="Quotes" Binding ="{Binding Quote}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="refrechButton" Content="Refrech" HorizontalAlignment="Left" Margin="173,217,0,0" VerticalAlignment="Top" Click="Button_Click" Width="72"/>
     </Grid>
+    
 </Window>
