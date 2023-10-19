@@ -15,6 +15,7 @@ namespace Magazin
 
         #region Game
         //Dans un jeu steam par nom avec le prix le plus bas
+        //Retourn un max de jeu
         public static string GetListOfGamesSteam(string _title, int _limit = 60) 
         {
             _limit= _limit <= 60 ? _limit = _limit : _limit = 60;
@@ -47,7 +48,7 @@ namespace Magazin
         //l'heure de la dernière mise à jour ou modification pour ce magasin
         public static string GETLastChange() => $"{BASE_URL_API}stores?lastChange=";
         #endregion Store
-        public static string GETPath() => $"{BASE_URL}";
-
+        public static string GetPath() => $"{BASE_URL}";
+        public static string GetPathAPI() => $"{BASE_URL_API}";
     }
 }

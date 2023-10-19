@@ -9,8 +9,15 @@ namespace Magazin
 {
     public class Deal
     {
-        public Store Store { get; set; } = null;
+        public uint DealdID{get ;set ;}
+        public Store[] StoreList { get; set; }
+        public Game[] GameList { get; set; }
+        public bool isOnSale { get; set; }
         public int PageNumber { get; set; }
+        public int MetacriticScore { get; set; }
+        public int SteamRatingText { get; set; }
+        public int SteamRatingCount { get; set; }
+        public double DealRating { get; set; }
         public  int PageSize 
         { 
             get=> PageSize; 
@@ -18,7 +25,7 @@ namespace Magazin
         }
         public Deal() 
         {
-            Store = new Store();
+            
             PageSize = 60;
             PageNumber = 0;
         }
