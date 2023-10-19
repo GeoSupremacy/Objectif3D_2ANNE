@@ -1,0 +1,48 @@
+﻿<Window x:Class="DemoWPF.BrowserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoWPF"
+        mc:Ignorable="d"
+        Title="BrowserWindow" Height="507" Width="800">
+    <Grid Margin="10,10,10,-16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="421*"/>
+            <RowDefinition Height="19*"/>
+        </Grid.RowDefinitions>
+        <ListBox x:Name ="filesList" Margin="101,68,101,205" d:ItemsSource="{d:SampleData ItemCount=5}" FontFamily="Behaviour">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="5,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="Name" Foreground="Red"></Label>
+                        <Label Grid.Column="1" Content="{Binding Name}" HorizontalAlignment="Center"></Label>
+                        <Label Grid.Column="2" Content="FilePath" Foreground="Red"></Label>
+                        <Label Grid.Column="3" Content="{Binding FilePath}" HorizontalAlignment="Center"></Label>
+                        <Label Grid.Column="4" Content="Extension" Foreground="Red"></Label>
+                        <Label Grid.Column="5" Content="{Binding Extension}" HorizontalAlignment="Center"></Label>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBox x:Name= "rootBox" HorizontalAlignment="Left" Margin="101,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="C:\" Width="100"/>
+        <Button x:Name= "refreshButton" Content ="Refresh" HorizontalAlignment="Left" Margin="235,35,0,0" VerticalAlignment="Top" Width="104"/>
+        <TextBox x:Name= "writingBox" HorizontalAlignment="Left" Margin="464,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="nothing" Width="100"/>
+        <Button IsEnabled ="false" x:Name= "openButton" Content ="Open File" HorizontalAlignment="Left" Margin="344,35,0,0" VerticalAlignment="Top" Width="104"/>
+        <DataGrid x:Name= "dataGrid" IsReadOnly="True" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="25,285,-25,-264" AutoGenerateColumns="false" Grid.RowSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name " Binding ="{Binding Name}"/>
+                <DataGridTextColumn Header="FilePath" Binding ="{Binding FilePath}"/>
+                <DataGridTextColumn Header="Extension" Binding ="{Binding Extension}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

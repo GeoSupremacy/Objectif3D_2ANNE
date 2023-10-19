@@ -1,0 +1,22 @@
+﻿<Window x:Class="DemoWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="apIUnreal" Content="API Unreal 5.1" HorizontalAlignment="Left" Margin="211,150,0,0" VerticalAlignment="Top" Width="162" Height="50" />
+        <Button x:Name="gitUp" Content="Git Up" HorizontalAlignment="Left" Margin="409,150,0,0" VerticalAlignment="Top" Width="162" Height="50"/>
+        <Button x:Name="mixamo" Content="Mixamo" HorizontalAlignment="Left" Margin="211,232,0,0" VerticalAlignment="Top" Width="162" Height="50" />
+        <Button x:Name="maya" Content="Apli Maya" HorizontalAlignment="Left" Margin="409,232,0,0" VerticalAlignment="Top" Width="162" Height="50"  RenderTransformOrigin="1.611,2.141"/>
+        <Button x:Name="visualInstaller" Content="VisualInstaller" HorizontalAlignment="Left" Margin="598,150,0,0" VerticalAlignment="Top" Width="162" Height="50" />
+        <Button x:Name="visualStudio" Content="VisualStudio" HorizontalAlignment="Left" Margin="598,232,0,0" VerticalAlignment="Top" Width="162" Height="50" />
+        <Button x:Name="gitUpDestock" Content="GitUpDestock" HorizontalAlignment="Left" Margin="409,305,0,0" VerticalAlignment="Top" Width="162" Height="50" />
+        <Button x:Name="epicGamesLauncher" Content="EpicGamesLauncher" HorizontalAlignment="Left" Margin="211,305,0,0" VerticalAlignment="Top" Width="162" Height="50" />
+        <Button x:Name="unrealEngine" Content="UnrealEngine" HorizontalAlignment="Left" Margin="598,305,0,0" VerticalAlignment="Top" Width="162" Height="50"  RenderTransformOrigin="1.685,0.641"/>
+        <Button x:Name="window" Content="Window" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="162" Height="50"  RenderTransformOrigin="1.685,0.641"/>
+
+    </Grid>
+</Window>
