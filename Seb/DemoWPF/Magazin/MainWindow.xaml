@@ -10,11 +10,10 @@
         <DataGrid x:Name ="dataGrid" IsReadOnly="True" d:ItemsSource="{d:SampleData ItemCount=7}" Margin="210,10,-210,-11" AutoGenerateColumns="false" Grid.RowSpan="5">
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="External " Binding ="{Binding External}"/>
-                <DataGridTextColumn Header="SteamAppID" Binding ="{Binding SteamAppID}"/>
-                <DataGridTextColumn Header="InternalName" Binding ="{Binding InternalName}"/>
-                <DataGridTextColumn Header="CheapestDealID" Binding ="{Binding CheapestDealID}"/> 
-                <!--<DataGridTextColumn Header="Savings" Binding ="{Binding Game}"/> -->
+                <DataGridTextColumn Header="Title" Binding ="{Binding Title}"/>
+                <DataGridTextColumn Header="Price" Binding ="{Binding SalePrice}"/>
+                <DataGridTextColumn Header="Normal Price" Binding ="{Binding NormalPrice}"/>
+                <DataGridTextColumn Header="Savings" Binding ="{Binding Savings}"/> 
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="rightButton" Content="Right" HorizontalAlignment="Left" Margin="133,83,0,0" VerticalAlignment="Top" Width="72" Height="26"/>

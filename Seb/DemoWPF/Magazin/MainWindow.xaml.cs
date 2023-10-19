@@ -32,7 +32,7 @@ namespace Magazin
 
                 
 
-                dataGrid.ItemsSource = NetworkAPI.listGame;
+                dataGrid.ItemsSource = NetworkAPI.listDeal;
 
             };
             rightButton.Click += (o, e) =>

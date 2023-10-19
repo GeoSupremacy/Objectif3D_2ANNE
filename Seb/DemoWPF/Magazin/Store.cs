@@ -8,7 +8,7 @@ namespace Magazin
 {
     public class Store
     {
-        public List<Game> ListGames { get; set; }
+        
         public uint StoreID { get; set; }
         public string StoreName { get; set; }
         public bool isActive { get; set; }
