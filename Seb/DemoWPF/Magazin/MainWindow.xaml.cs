@@ -21,30 +21,38 @@ namespace Magazin
     /// </summary>
     public partial class MainWindow : Window
     {
+        int i = 2;
+        bool notIndex = false;
         public MainWindow()
         {
             InitializeComponent();
-            
-            NetworkAPI.GetGame();
+            NetworkAPI.SetStore();
            
               refrechButton.Click += (o, e) =>
             {
+                i = 2;
 
-                
-
-                dataGrid.ItemsSource = NetworkAPI.listDeal;
+              Data();
 
             };
             rightButton.Click += (o, e) =>
             {
-
+                i++;
+                Data();
             };
             leftButton.Click += (o, e) =>
             {
-
+                //MessageBox.Show($"Left");
+                i = i-- <= 2 ? 2 : i--;
+                Data();
             };
         }
 
-        
+        void Data() 
+        {
+            //MessageBox.Show($"Index: {i}");
+            NetworkAPI.SetGame(i);
+            dataGrid.ItemsSource = NetworkAPI.listDeal;
+        }
     }
 }

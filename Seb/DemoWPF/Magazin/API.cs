@@ -28,9 +28,10 @@ namespace Magazin
         #endregion Game
         #region Deal
         //_storeID sert à filtrer les magasins qui a le jeu si non définit affiche tous les magasins
-        //upperPrice n'affiche que les prix en dessous ou égale au montant désigner (50 équivaut à aucune limite)
+        //upperPrice n'affiche que les prix en dessous ou égale au montant désigner (50 équivaut à aucune limite)&upperPrice=15
         //D'autre paramètre qui sont optionnel
-        public static string GetListOfDeals(uint _storeID = 1, int _upperPrice=15) => $"{BASE_URL_API}deals?storeID={_storeID}&upperPrice={_upperPrice}";
+        public static string GetListOfDeals(int _storeID = 1, int _upperPrice = 15, int _pageNumber=0) => $"{BASE_URL_API}deals?storeID={_storeID}&upperPrice={_upperPrice}&pageNumber={_pageNumber}\"";
+       // public static string GetListOfDeals(int _storeID = 1, int _upperPrice=15) => $"{BASE_URL_API}deals?storeID={_storeID}&upperPrice={_upperPrice}";
         //page de redirection CheapShark pour relier les utilisateurs à une offre spécifique,
         //conçu uniquement pour relier et envoyer vers des offres, n'est pas un point de terminaison de l'API et bloquera l'accès automatisé.
         //Ne peut être automatiser

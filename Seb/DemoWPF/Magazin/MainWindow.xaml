@@ -10,6 +10,7 @@
         <DataGrid x:Name ="dataGrid" IsReadOnly="True" d:ItemsSource="{d:SampleData ItemCount=7}" Margin="210,10,-210,-11" AutoGenerateColumns="false" Grid.RowSpan="5">
 
             <DataGrid.Columns>
+                <DataGridTextColumn Header="Image" Binding="{Binding Store.Icon}"/>
                 <DataGridTextColumn Header="Title" Binding ="{Binding Title}"/>
                 <DataGridTextColumn Header="Price" Binding ="{Binding SalePrice}"/>
                 <DataGridTextColumn Header="Normal Price" Binding ="{Binding NormalPrice}"/>
