@@ -25,14 +25,19 @@ namespace Magasin_Correction
         {
             InitializeComponent();
             InitUi();
+
         }
         void InitUi()
         {
             NetworkFetcher.OnBeginDownload += () => OnLoaddingEvent(true);
             NetworkFetcher.OnEndDownload += () => OnLoaddingEvent(false);
             NetworkFetcher.OnFailDownload += () => OnLoaddingEvent(false);
+
             NetworkFetcher.OnDealIsDowLoad += ReadDatas;
-            prevButton.IsEnabled = currentPage > 0;
+            NetworkFetcher.OnStoreIsDowLoad += ReadStore;
+            NetworkFetcher.GetAllStores();
+
+            //prevButton.IsEnabled = currentPage > 0;
             prevButton.Click += (o, e) =>
             {
                 SetPreviousPage();
@@ -58,16 +63,31 @@ namespace Magasin_Correction
             fetchButton.Content = _isLoading ? "Loading datas...": "Fetch Deal!";
             fetchButton.IsEnabled = !_isLoading;
         }
-        void ReadDatas(Deal[] _data)
+        void ReadDatas(Deal[] _datas)
         {
+            for (int i = 0; i < _datas.Length; i++) 
+                _datas[i].GetImage();
 
+            dealList.ItemsSource = _datas;
+            dealsDatabaseText.Content = ($"All store loaded: {_datas.Length}");
+            dealsDatabaseText.Foreground = _datas.Length > 0 ? new SolidColorBrush(Color.FromRgb(0, 255, 0)) : new SolidColorBrush(Color.FromRgb(255, 0, 0));
+        }
+        void ReadStore(Store[] _stores)
+        {
+            for (int i = 0; i < _stores.Length; i++)
+            { 
+                _stores[i].Images.GetLogo();
+                DataBase.AddStore(_stores[i]);
+            }
+           storeDatabaseText.Content =($"All store loaded: {_stores.Length}");
+           storeDatabaseText.Foreground = _stores.Length > 0 ? new SolidColorBrush(Color.FromRgb(0, 255, 0) ): new SolidColorBrush(Color.FromRgb(255, 0, 0));
         }
         void NextPreviousPage() => currentPage++;
         void SetPreviousPage() 
         { 
             currentPage--;
             currentPage = currentPage < 0 ? 0 : currentPage;
-            prevButton.IsEnabled = currentPage > 0;
+           
         }
     }//
 }//

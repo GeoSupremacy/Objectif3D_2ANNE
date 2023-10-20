@@ -7,7 +7,7 @@ using System.Windows.Media.Imaging;
 
 namespace Magasin_Correction
 {
-    public class Deal
+    internal class Deal
     {
         public string Title { get; set; }
         public float SalePrice { get; set; }

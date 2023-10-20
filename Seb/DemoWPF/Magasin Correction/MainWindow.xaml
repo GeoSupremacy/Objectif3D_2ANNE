@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Magasin_Correction"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="GameDeals" Height="450" Width="800">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5, 1" StartPoint="0.5, 0">
@@ -24,7 +24,7 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Title" Binding="{Binding Title}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Best Sale" Binding="{Binding SalePriceFormat}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Normal Price" Binding="{Binding NormalPriceFormat}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Normal Price" Binding="{Binding SaleNormalPrice}"></DataGridTextColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -37,7 +37,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name ="fetchButton" Content="Refrech" HorizontalAlignment="Left" Margin="35,217,0,0" VerticalAlignment="Top"/>
+        <Button x:Name ="fetchButton" Content = "Fetch deals" HorizontalAlignment="Left" Margin="35,217,0,0" VerticalAlignment="Top"/>
         <Button x:Name ="prevButton" Content="Prev" HorizontalAlignment="Left" Margin="88,257,0,0" VerticalAlignment="Top"/>
         <Button x:Name ="nextButton" Content="Next" HorizontalAlignment="Left" Margin="35,257,0,0" VerticalAlignment="Top"/>
     </Grid>
