@@ -15,13 +15,14 @@ namespace Magazin
     {
 
         public static List<Deal> listDeal = new List<Deal>();
-        public static List<Store> listStore = new List<Store>();
+        public static List<Info> Info = new List<Info>();
+        public static int index = 0;
         public static async void GetGame()
         {
             HttpClient _request = new HttpClient();
 
 
-            HttpResponseMessage _msg = await _request.GetAsync(API.GetListOfDeals(0, 15, 0));
+            HttpResponseMessage _msg = await _request.GetAsync(API.GetListOfDeals());
 
             string _result = await _msg.Content.ReadAsStringAsync();
 
@@ -45,13 +46,16 @@ namespace Magazin
         public static async void SetStore()
         {
             HttpClient _request = new HttpClient();
-
-
-            HttpResponseMessage _msg = await _request.GetAsync(API.GETStoresInfo());
+            string[] _tab = new string[] { "128", "129", "130"};
+            HttpResponseMessage _msg = await _request.GetAsync(API.GetMultipleGameLookupSteam(_tab));
 
             string _result = await _msg.Content.ReadAsStringAsync();
 
-            listStore = JsonConvert.DeserializeObject<List<Store>>(_result);
+            Info = JsonConvert.DeserializeObject<List<Info>> (_result); //On deserialise le json obtenu par notre class crée avec les mêmes valeurs
+
+            
+            //for(int i =0; i< listDeal.Count; i++)
+            //  deal = MainWindow.listdeal[index];
         }
     }//
 }

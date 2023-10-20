@@ -38,6 +38,7 @@ namespace DemoWPF
             gitUpDestock.Click += (e, o) => Open("gitUpDestock");
             epicGamesLauncher.Click += (e, o) => Open("epicGamesLauncher");
             unrealEngine.Click += (e, o) => Open("unrealEngine");
+
             window.Click += (e, o) => 
             { 
                 BrowserWindow _brw = new BrowserWindow();

@@ -22,13 +22,13 @@ namespace Magazin
     public partial class MainWindow : Window
     {
         int i = 2;
-        bool notIndex = false;
+        public static List<Deal> listdeal;
         public MainWindow()
         {
             InitializeComponent();
-            NetworkAPI.SetStore();
-           
-              refrechButton.Click += (o, e) =>
+            NetworkAPI.GetGame();
+            listdeal = NetworkAPI.listDeal;
+            refrechButton.Click += (o, e) =>
             {
                 i = 2;
 
@@ -42,15 +42,24 @@ namespace Magazin
             };
             leftButton.Click += (o, e) =>
             {
-                //MessageBox.Show($"Left");
+                
                 i = i-- <= 2 ? 2 : i--;
                 Data();
             };
-        }
+            
+            dataGrid.MouseDoubleClick += (o, e) =>
+            {
+               // NetworkAPI.index = dataGrid.TabIndex;
+                WindowDetail _wd = new WindowDetail();
+                _wd.Show();
+            };
+
+           
+        }//
 
         void Data() 
         {
-            //MessageBox.Show($"Index: {i}");
+            
             NetworkAPI.SetGame(i);
             dataGrid.ItemsSource = NetworkAPI.listDeal;
         }

@@ -20,3 +20,5 @@ C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magazin\obj\Debu
 C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magazin\obj\Debug\Magazin.csproj.CopyComplete
 C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magazin\obj\Debug\Magazin.exe
 C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magazin\obj\Debug\Magazin.pdb
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magazin\obj\Debug\WindowDetail.g.cs
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magazin\obj\Debug\WindowDetail.baml

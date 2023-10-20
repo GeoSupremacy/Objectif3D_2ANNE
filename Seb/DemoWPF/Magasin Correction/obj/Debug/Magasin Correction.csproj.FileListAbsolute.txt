@@ -1,0 +1,22 @@
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\obj\Debug\Magasin Correction.csproj.AssemblyReference.cache
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\obj\Debug\Magasin Correction.csproj.SuggestedBindingRedirects.cache
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\obj\Debug\MainWindow.g.cs
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\obj\Debug\App.g.cs
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\obj\Debug\Magasin Correction_MarkupCompile.cache
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\obj\Debug\Magasin Correction_MarkupCompile.lref
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\bin\Debug\Magasin Correction.exe.config
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\bin\Debug\Magasin Correction.exe
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\bin\Debug\Magasin Correction.pdb
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\bin\Debug\Newtonsoft.Json.Bson.dll
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\bin\Debug\Newtonsoft.Json.dll
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\bin\Debug\Newtonsoft.Json.xml
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\bin\Debug\Newtonsoft.Json.Bson.pdb
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\bin\Debug\Newtonsoft.Json.Bson.xml
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\obj\Debug\MainWindow.baml
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\obj\Debug\Magasin Correction.g.resources
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\obj\Debug\Magasin_Correction.Properties.Resources.resources
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\obj\Debug\Magasin Correction.csproj.GenerateResource.cache
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\obj\Debug\Magasin Correction.csproj.CoreCompileInputs.cache
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\obj\Debug\Magasin Correction.csproj.CopyComplete
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\obj\Debug\Magasin Correction.exe
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\obj\Debug\Magasin Correction.pdb
