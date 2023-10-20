@@ -20,3 +20,5 @@ C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correcti
 C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\obj\Debug\Magasin Correction.csproj.CopyComplete
 C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\obj\Debug\Magasin Correction.exe
 C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\obj\Debug\Magasin Correction.pdb
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\obj\Debug\DetailWindow.g.cs
+C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\DemoWPF\Magasin Correction\obj\Debug\DetailWindow.baml

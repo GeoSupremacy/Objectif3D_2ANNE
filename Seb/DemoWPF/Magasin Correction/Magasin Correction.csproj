@@ -62,6 +62,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Data\DataBase.cs" />
+    <Compile Include="Data\GameInfo.cs" />
     <Compile Include="Data\Store.cs" />
     <Compile Include="DetailWindow.xaml.cs">
       <DependentUpon>DetailWindow.xaml</DependentUpon>

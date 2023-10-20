@@ -12,12 +12,11 @@ namespace Magasin_Correction
 
         public static void AddStore(Store _store)
         {
-            if (AllStoresDB.ContainsKey(_store.StoreID) )
-            {
+            
                 if (AllStoresDB.ContainsKey(_store.StoreID))
                     return; 
-                AllStoresDB[_store.StoreID] = _store;
-            }
+               AllStoresDB.Add(_store.StoreID, _store);
+            
         }
     }
 }

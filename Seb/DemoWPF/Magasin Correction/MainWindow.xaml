@@ -13,14 +13,21 @@
                 <GradientStop Color="#FF587d89" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <DataGrid x:Name ="dealList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="134,0,-134,0">
+        <DataGrid x:Name ="dealList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="29,132,-29,-132" RenderTransformOrigin="0.5,0.5">
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
             <DataGrid.Columns>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Image Width= "60"  Source= "{Binding Image}"> </Image>
+                            <Image Width= "60"  Source= "{Binding Image}"></Image>
                         </DataTemplate>
-                 </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Title" Binding="{Binding Title}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Best Sale" Binding="{Binding SalePriceFormat}"></DataGridTextColumn>
@@ -37,8 +44,10 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name ="fetchButton" Content = "Fetch deals" HorizontalAlignment="Left" Margin="35,217,0,0" VerticalAlignment="Top"/>
-        <Button x:Name ="prevButton" Content="Prev" HorizontalAlignment="Left" Margin="88,257,0,0" VerticalAlignment="Top"/>
-        <Button x:Name ="nextButton" Content="Next" HorizontalAlignment="Left" Margin="35,257,0,0" VerticalAlignment="Top"/>
+        <Button x:Name ="fetchButton" Content = "Fetch deals" HorizontalAlignment="Left" Margin="41,49,0,0" VerticalAlignment="Top"/>
+        <Button x:Name ="prevButton" Content="Prev" HorizontalAlignment="Left" Margin="30,94,0,0" VerticalAlignment="Top"/>
+        <Button x:Name ="nextButton" Content="Next" HorizontalAlignment="Left" Margin="90,94,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.337,0.494"/>
+        <Label x:Name ="dealsDatabaseText" Content="Deal" HorizontalAlignment="Left" Margin="243,33,0,0" VerticalAlignment="Top" Width="176" Foreground="#FFBD4747"/>
+        <Label x:Name ="storeDatabaseText" Content="Store" HorizontalAlignment="Left" Margin="243,64,0,0" VerticalAlignment="Top" Width="176" Foreground="#FFBD4747"/>
     </Grid>
 </Window>

@@ -7,6 +7,30 @@
         mc:Ignorable="d"
         Title="DetailWindow" Height="450" Width="800">
     <Grid>
-        
+        <DataGrid x:Name ="detailsGrid" d:ItemsSource="{d:SampleData ItemCount=5}" AutoGenerateColumns="False" Margin="10,147,-10,-147">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Width= "60"  Source= "{Binding Store.Images.FilaLogo}"></Image>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <ProgressBar Width="100" Minimum="0" Maximum="100" Value="{Binding Savings}"/>
+                            <TextBlock Text="{Binding SavingFormat}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Grid>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTextColumn Header="Store Name" Binding="{Binding SalePriceFormat}"></DataGridTextColumn>
+            <DataGridTextColumn Header="Best deal price" Binding="{Binding PriceFormat}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Image x:Name ="gamePicture" Source="{Binding Image}" HorizontalAlignment="Left" Height="100" Margin="82,23,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name ="gameTitle" Content="Label" HorizontalAlignment="Left" Margin="356,59,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="52" Width="234"></Label>
     </Grid>
 </Window>

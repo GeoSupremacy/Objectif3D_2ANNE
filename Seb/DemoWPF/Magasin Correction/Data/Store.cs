@@ -26,7 +26,7 @@ namespace Magasin_Correction
     {
         public int StoreID { get; set; }
         public string StoreName { get; set; } 
-         public Image Images { get; set; }
+        public Image Images { get; set; }
        
     }
 }

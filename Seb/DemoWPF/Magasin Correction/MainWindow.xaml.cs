@@ -32,12 +32,14 @@ namespace Magasin_Correction
             NetworkFetcher.OnBeginDownload += () => OnLoaddingEvent(true);
             NetworkFetcher.OnEndDownload += () => OnLoaddingEvent(false);
             NetworkFetcher.OnFailDownload += () => OnLoaddingEvent(false);
+         
 
             NetworkFetcher.OnDealIsDowLoad += ReadDatas;
             NetworkFetcher.OnStoreIsDowLoad += ReadStore;
+
             NetworkFetcher.GetAllStores();
 
-            //prevButton.IsEnabled = currentPage > 0;
+            prevButton.IsEnabled = currentPage > 0;
             prevButton.Click += (o, e) =>
             {
                 SetPreviousPage();
@@ -46,16 +48,18 @@ namespace Magasin_Correction
             };
             nextButton.Click += (o, e) =>
             {
+                prevButton.IsEnabled = currentPage > 0;
                 NextPreviousPage();
                 NetworkFetcher.GetAllDeals(currentPage);
-            };
-            NetworkFetcher.OnDealIsDowLoad += (d) =>
-            {
-                dealList.ItemsSource = d;
             };
             fetchButton.Click += (o, e) =>
             {
                 NetworkFetcher.GetAllDeals();
+            };
+            dealList.SelectedCellsChanged += (o, e) =>
+            {
+               Deal _deal =(Deal)dealList.SelectedItems;
+                OpenDetails(_deal);
             };
         }
         void OnLoaddingEvent(bool _isLoading)
@@ -69,7 +73,7 @@ namespace Magasin_Correction
                 _datas[i].GetImage();
 
             dealList.ItemsSource = _datas;
-            dealsDatabaseText.Content = ($"All store loaded: {_datas.Length}");
+            dealsDatabaseText.Content = ($"All store loaded: {_datas.Length} - page {currentPage}");
             dealsDatabaseText.Foreground = _datas.Length > 0 ? new SolidColorBrush(Color.FromRgb(0, 255, 0)) : new SolidColorBrush(Color.FromRgb(255, 0, 0));
         }
         void ReadStore(Store[] _stores)
@@ -82,12 +86,27 @@ namespace Magasin_Correction
            storeDatabaseText.Content =($"All store loaded: {_stores.Length}");
            storeDatabaseText.Foreground = _stores.Length > 0 ? new SolidColorBrush(Color.FromRgb(0, 255, 0) ): new SolidColorBrush(Color.FromRgb(255, 0, 0));
         }
-        void NextPreviousPage() => currentPage++;
+        void NextPreviousPage() 
+        {
+           // prevButton.IsEnabled = currentPage > 0;
+            currentPage++; 
+        }
         void SetPreviousPage() 
-        { 
+        {
+
             currentPage--;
             currentPage = currentPage < 0 ? 0 : currentPage;
            
         }
+        void OpenDetails(Deal _deal)
+        {
+            if(_deal != null) 
+                return;
+            
+
+            DetailWindow _d = new DetailWindow(_deal);
+            _d.Show();
+        }
+      
     }//
 }//
