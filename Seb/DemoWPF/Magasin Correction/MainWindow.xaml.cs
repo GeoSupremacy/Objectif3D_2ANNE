@@ -20,6 +20,7 @@ namespace Magasin_Correction
     /// </summary>
     public partial class MainWindow : Window
     {
+        int currentPage = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -27,16 +28,46 @@ namespace Magasin_Correction
         }
         void InitUi()
         {
+            NetworkFetcher.OnBeginDownload += () => OnLoaddingEvent(true);
+            NetworkFetcher.OnEndDownload += () => OnLoaddingEvent(false);
+            NetworkFetcher.OnFailDownload += () => OnLoaddingEvent(false);
+            NetworkFetcher.OnDealIsDowLoad += ReadDatas;
+            prevButton.IsEnabled = currentPage > 0;
+            prevButton.Click += (o, e) =>
+            {
+                SetPreviousPage();
+                NetworkFetcher.GetAllDeals(currentPage);
+                
+            };
+            nextButton.Click += (o, e) =>
+            {
+                NextPreviousPage();
+                NetworkFetcher.GetAllDeals(currentPage);
+            };
             NetworkFetcher.OnDealIsDowLoad += (d) =>
-            { 
-
+            {
+                dealList.ItemsSource = d;
             };
             fetchButton.Click += (o, e) =>
             {
                 NetworkFetcher.GetAllDeals();
             };
         }
+        void OnLoaddingEvent(bool _isLoading)
+        {
+            fetchButton.Content = _isLoading ? "Loading datas...": "Fetch Deal!";
+            fetchButton.IsEnabled = !_isLoading;
+        }
+        void ReadDatas(Deal[] _data)
+        {
 
-       
+        }
+        void NextPreviousPage() => currentPage++;
+        void SetPreviousPage() 
+        { 
+            currentPage--;
+            currentPage = currentPage < 0 ? 0 : currentPage;
+            prevButton.IsEnabled = currentPage > 0;
+        }
     }//
 }//

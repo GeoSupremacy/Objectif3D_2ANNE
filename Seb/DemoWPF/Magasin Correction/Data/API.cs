@@ -9,6 +9,6 @@ namespace Magasin_Correction
     internal class API
     {
         public const string DOMAIN = "https://www.cheapshark.com/api/1.0/";
-        public static string Deals(int _page = 0) => Path.Combine(DOMAIN, "deals?storesID=1&upperPrice=15&pageNumber", _page.ToString());   
+        public static string Deals(int _page = 1) => Path.Combine(DOMAIN, $"deals?storesID=1&pageNumber={_page}");   
     }
 }

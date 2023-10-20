@@ -7,7 +7,38 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name ="fetchButton" Content="Button" HorizontalAlignment="Left" Margin="293,184,0,0" VerticalAlignment="Top"/>
-
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5, 1" StartPoint="0.5, 0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF587d89" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <DataGrid x:Name ="dealList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="134,0,-134,0">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Width= "60"  Source= "{Binding Image}"> </Image>
+                        </DataTemplate>
+                 </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Title" Binding="{Binding Title}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Best Sale" Binding="{Binding SalePriceFormat}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Normal Price" Binding="{Binding NormalPriceFormat}"></DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <ProgressBar Width="100" Minimum="0" Maximum="100" Value="{Binding Savings}"/>
+                                <TextBlock Text="{Binding SavingFormat}" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name ="fetchButton" Content="Refrech" HorizontalAlignment="Left" Margin="35,217,0,0" VerticalAlignment="Top"/>
+        <Button x:Name ="prevButton" Content="Prev" HorizontalAlignment="Left" Margin="88,257,0,0" VerticalAlignment="Top"/>
+        <Button x:Name ="nextButton" Content="Next" HorizontalAlignment="Left" Margin="35,257,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
