@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Scriptes : MonoBehaviour
 {
-    [SerializeField] float value = 2, other =74, brek=60;
+   // [SerializeField] float value = 2, other =74, brek=60;
 
-    public float Value => value;
+   // public float Value => value;
     void Awake()
     {
       //  Debug.Log("Awake");

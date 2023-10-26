@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SecondScripte : MonoBehaviour
 {
-    [SerializeField]
-    Scriptes scriptes = null;
+   // [SerializeField]
+    //Scriptes scriptes = null;
     [SerializeField]
     GameObject myObject = null;
     void Start() => Init();
@@ -13,7 +13,7 @@ public class SecondScripte : MonoBehaviour
     {
        
         myObject.AddComponent<Scriptes>();
-        Debug.Log($" FROM {name} TO {scriptes?.name} COUCOU => {scriptes?.Value}");
+      //  Debug.Log($" FROM {name} TO {scriptes?.name} COUCOU => {scriptes?.Value}");
         myObject = new GameObject();
     }
 }//
