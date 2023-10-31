@@ -37,16 +37,18 @@ public class inventoryManager : MonoBehaviour
 
 
         closeInventoryButton?.gameObject.SetActive(false);
-        openInventoryButton?.gameObject.SetActive(false);
-        inventoryUI?.gameObject.SetActive(true);
+        openInventoryButton?.gameObject.SetActive(true);
+        inventoryUI?.gameObject.SetActive(false);
     }
     // Start is called before the first frame update
     private void OpenInventory()
     {
         openInventoryButton?.gameObject.SetActive(false);
+        mainGamePage?.gameObject.SetActive(false);
 
         closeInventoryButton?.gameObject.SetActive(true);
         inventoryUI?.gameObject.SetActive(true);
+       
         //Inventory.Instance.ListItems();
     }
     private void CloseInventory()
@@ -54,8 +56,9 @@ public class inventoryManager : MonoBehaviour
         openInventoryButton?.gameObject.SetActive(true);
 
         closeInventoryButton?.gameObject.SetActive(false);
-        inventoryUI?.gameObject.SetActive(false);
         mainGamePage?.gameObject.SetActive(true);
+        inventoryUI?.gameObject.SetActive(false);
+        
     }
 
     private void OnDestroy()

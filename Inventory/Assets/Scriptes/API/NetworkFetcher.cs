@@ -12,11 +12,12 @@ public class NetworkFetcher : MonoBehaviour
     //public static NetworkFetcher Instance;
 
     public static event Action<Deals[]> Ondeals = null;
-   
+    //[Serializable] public int index = 5;
    public IEnumerator Start()
     {
-      
-         yield return StartCoroutine(GetDeals());
+        Debug.LogError("StartCoroutine!");
+        yield return StartCoroutine( GetDeals());
+        //StopCoroutine( GetDeals());
     }
 
         
@@ -30,13 +31,14 @@ public class NetworkFetcher : MonoBehaviour
             Debug.LogError("DOWNLOAD FAIL!");
         else
         {
-            Debug.LogError("DeserializeObject");
+            //Debug.LogError("DeserializeObject");
             Deals[] _deals = JsonConvert.DeserializeObject<Deals[]>(_request.downloadHandler.text);
             Ondeals.Invoke(_deals);
         }
     }
     IEnumerator DownloadImage()
     {
+        Debug.LogError("DownloadImage!");
         UnityWebRequest _request = UnityWebRequestTexture.GetTexture(API.Deals);
 
         yield return _request.SendWebRequest();
