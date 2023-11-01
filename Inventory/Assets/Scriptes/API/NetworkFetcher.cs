@@ -9,37 +9,39 @@ using System.ComponentModel.Design;
 
 public class NetworkFetcher : MonoBehaviour
 {
-    //public static NetworkFetcher Instance;
+    
 
-    public static event Action<Deals[]> Ondeals = null;
-    //[Serializable] public int index = 5;
-   public IEnumerator Start()
+    public static event Action<ListBook> OnListBook = null;
+    
+
+   
+    public IEnumerator Start()
     {
         Debug.LogError("StartCoroutine!");
-        yield return StartCoroutine( GetDeals());
-        //StopCoroutine( GetDeals());
+        yield return StartCoroutine(GetVolume());
+        
     }
 
         
 
-    IEnumerator GetDeals()
+    IEnumerator GetVolume()
     {
 
-        UnityWebRequest _request = UnityWebRequest.Get(API.Deals);
+        UnityWebRequest _request = UnityWebRequest.Get(API.Volume);
         yield return _request.SendWebRequest();
         if (_request.result != UnityWebRequest.Result.Success)
             Debug.LogError("DOWNLOAD FAIL!");
         else
         {
             //Debug.LogError("DeserializeObject");
-            Deals[] _deals = JsonConvert.DeserializeObject<Deals[]>(_request.downloadHandler.text);
-            Ondeals.Invoke(_deals);
+            ListBook _deals = JsonConvert.DeserializeObject<ListBook>(_request.downloadHandler.text);
+            OnListBook.Invoke(_deals);
         }
     }
     IEnumerator DownloadImage()
     {
         Debug.LogError("DownloadImage!");
-        UnityWebRequest _request = UnityWebRequestTexture.GetTexture(API.Deals);
+        UnityWebRequest _request = UnityWebRequestTexture.GetTexture(API.Volume);
 
         yield return _request.SendWebRequest();
         Texture2D _t = DownloadHandlerTexture.GetContent(_request); //N'est pas une texture

@@ -58,13 +58,11 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scriptes\inventoryManager.cs" />
     <Compile Include="Assets\Scriptes\GUI\InventoryButton.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\Scriptes\Inventory.cs" />
-    <Compile Include="Assets\Scriptes\Item.cs" />
+    <Compile Include="Assets\Scriptes\GUI\inventoryManager.cs" />
     <Compile Include="Assets\Scriptes\API\API.cs" />
-    <Compile Include="Assets\Scriptes\API\Data\Deals.cs" />
+    <Compile Include="Assets\Scriptes\API\Data\ListBook.cs" />
     <Compile Include="Assets\Scriptes\GUI\InventoryUI.cs" />
     <Compile Include="Assets\Scriptes\API\NetworkFetcher.cs" />
   </ItemGroup>
