@@ -4,25 +4,26 @@ using System.Collections.Generic;
 using UnityEditor.Searcher;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Windows;
 
 public class InventoryUI : MonoBehaviour
 {
+    public static event Action OnBook;
     private ListBook currentBook = null;
 
+
+    
     [SerializeField] InventoryButton inventoryItem = null;
     [SerializeField] Transform inventoryContent = null;
     [SerializeField] Button refreshButton = null;
-    [SerializeField] TextAreaAttribute researchField = null;
-
     public bool IsValid => inventoryItem && inventoryContent && refreshButton;
 
-    private void Awake()
+
+    private void Start()
     {
-        NetworkFetcher.OnListBook += GeneratedInventory;
-        refreshButton.onClick?.AddListener(() => GeneratedInventory(currentBook));
+        refreshButton.onClick?.AddListener(() => OnBook?.Invoke());
        
     }
-   
     void ClearTransform(Transform _tr)
     {
        
@@ -30,17 +31,19 @@ public class InventoryUI : MonoBehaviour
             Destroy(_tr.GetChild(i).gameObject);
        
     }
-    void GeneratedInventory(ListBook _deals)
+    void GeneratedInventory()
     {
-        currentBook = _deals;
 
-        API.Search = researchField.ToString();
-        if (!IsValid)
+        currentBook = NetworkFetcher.ListBook;
+
+
+        if (!IsValid || currentBook == null)
             return;
+        
         ClearTransform(inventoryContent);
         Debug.Log($"Search: {API.Search.ToString()}");
-        Debug.Log($"GeneratedInventory {_deals.Items.Count}");
-        foreach (Book _deal in _deals.Items)
+        Debug.Log($"GeneratedInventory {currentBook.Items.Count}");
+        foreach (Book _deal in currentBook.Items)
         {
             
             InventoryButton _button = Instantiate(inventoryItem, inventoryContent);
@@ -50,5 +53,12 @@ public class InventoryUI : MonoBehaviour
 
 
     }
+    public void ReadStringInput(string _stringInput)
+    {
+        API.Search = _stringInput;
 
-}
+        Debug.Log($"Search: {API.Search}");
+    }
+    private void LateUpdate() => GeneratedInventory();
+   
+}//

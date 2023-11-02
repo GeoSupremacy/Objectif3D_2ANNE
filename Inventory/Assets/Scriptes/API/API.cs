@@ -1,24 +1,17 @@
 
 using System.Collections.Generic;
+using System.Diagnostics;
 
 public class API
 {
 
-   
-    static Dictionary<string, string> Term = new Dictionary<string, string>()
-    {
-        { "intitle" , "intitle" },
-        { "inauthor" , "inauthor" },
-        { "inpublisher" , "inpublisher" },
-        { "subject" , "subject" },
-        { "isbn" , "isbn" },
-        { "lccn" , "lccn" },
-        { "oclc" , "oclc" },
-    };
+    public static string chooseTerm = "intitle";
     public const string API_KEY = "AIzaSyAhfryd2Nq8X4VxtN8zZkSKSqVOKGH9LVo";
     public const string DOMAIN = "https://www.googleapis.com/books/v1/";
-    public static string Volume => $"{DOMAIN}volumes?q={Search}+{Term.ContainsKey("intitle")}";
-    public static string Search = "flowers";
+    public static string Volume => $"{DOMAIN}volumes?q={Search}+{chooseTerm}";
+    public static string Search { get; set; } = "flowers";
+
+   
 }
 
 

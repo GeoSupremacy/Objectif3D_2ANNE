@@ -11,19 +11,17 @@ public class NetworkFetcher : MonoBehaviour
 {
     
 
-    public static event Action<ListBook> OnListBook = null;
-    
+    public static ListBook ListBook;
 
-   
-    public IEnumerator Start()
+
+    private void Awake() =>InventoryUI.OnBook += ActionDeserialize;
+
+    public void ActionDeserialize()
     {
         Debug.LogError("StartCoroutine!");
-        yield return StartCoroutine(GetVolume());
+       StartCoroutine(GetVolume());
         
     }
-
-        
-
     IEnumerator GetVolume()
     {
 
@@ -34,8 +32,8 @@ public class NetworkFetcher : MonoBehaviour
         else
         {
             //Debug.LogError("DeserializeObject");
-            ListBook _deals = JsonConvert.DeserializeObject<ListBook>(_request.downloadHandler.text);
-            OnListBook.Invoke(_deals);
+            ListBook = JsonConvert.DeserializeObject<ListBook>(_request.downloadHandler.text);
+           
         }
     }
     IEnumerator DownloadImage()
