@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,7 +7,7 @@ using UnityEngine.UI;
 
 public class DropdownHandler : MonoBehaviour
 {
-
+   
      Dictionary<string, string> Term = new Dictionary<string, string>()
     {
         { "Titre" , "intitle" },
@@ -17,17 +18,20 @@ public class DropdownHandler : MonoBehaviour
       //  { "lccn" , "lccn" },
       //  { "oclc" , "oclc" },
     };
+ 
+    
     void Start() => TermInventory();
 
     public void TermInventory()
     {
+        API.chooseTerm = "intitle";
         TMP_Dropdown _dropdown = transform.GetComponent<TMP_Dropdown>();
-        _dropdown.options.Clear();
+        //_dropdown.options.Clear();
 
         foreach (var _option in Term)
             _dropdown.options.Add(new TMP_Dropdown.OptionData() { text = _option.Key });
 
-        SetTerm(_dropdown);
+       // SetTerm(_dropdown);
          _dropdown.onValueChanged.AddListener(delegate { SetTerm(_dropdown); });
     }
 
@@ -36,9 +40,8 @@ public class DropdownHandler : MonoBehaviour
         int index = dropdown.value;
 
         API.chooseTerm = Term[dropdown.options[index].text];
-        Debug.Log($"chooseTerm: {API.chooseTerm}");
+       
         
     }
-    //(dropdown.options[index].text).ToString()
-    //  Term.ContainsKey("intitle")
+    
 }//

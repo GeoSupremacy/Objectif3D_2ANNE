@@ -22,7 +22,7 @@ public class VolumeInfo
     public string PublishedDate;
   
     public List<string> Categories;
-    //TODO ImageLink
+    public string ImageLink;
     public string Language;
 
     

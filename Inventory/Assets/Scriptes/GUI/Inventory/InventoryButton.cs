@@ -18,6 +18,13 @@ public class InventoryButton : MonoBehaviour
         inventoryText.text = _label;
         inventoryButton.onClick.AddListener(() => _toDo?.Invoke());
     }
+    public void Init(string _label)
+    {
+        if (!IsValid)
+            return;
+
+        inventoryText.text = _label;
+    }
 }
 
 #region r

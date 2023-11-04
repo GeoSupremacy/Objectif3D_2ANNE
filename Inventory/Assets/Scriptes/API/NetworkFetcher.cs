@@ -9,19 +9,15 @@ using System.ComponentModel.Design;
 
 public class NetworkFetcher : MonoBehaviour
 {
-    
 
+    public static event Action OnEndCoroutine;
     public static ListBook ListBook;
-
+    public static Texture2D Texture;
 
     private void Awake() =>InventoryUI.OnBook += ActionDeserialize;
 
-    public void ActionDeserialize()
-    {
-        Debug.LogError("StartCoroutine!");
-       StartCoroutine(GetVolume());
-        
-    }
+    public void ActionDeserialize()=> StartCoroutine(GetVolume());
+
     IEnumerator GetVolume()
     {
 
@@ -30,18 +26,23 @@ public class NetworkFetcher : MonoBehaviour
         if (_request.result != UnityWebRequest.Result.Success)
             Debug.LogError("DOWNLOAD FAIL!");
         else
-        {
-            //Debug.LogError("DeserializeObject");
             ListBook = JsonConvert.DeserializeObject<ListBook>(_request.downloadHandler.text);
-           
-        }
+        OnEndCoroutine?.Invoke();
     }
-    IEnumerator DownloadImage()
+  IEnumerator LoadImage(string ImageUrl)
+   {
+        UnityWebRequest _request = UnityWebRequestTexture.GetTexture(ImageUrl);
+        yield return _request.SendWebRequest();
+        Texture = DownloadHandlerTexture.GetContent(_request);  
+   }
+ }//
+
+
+/* IEnumerator DownloadImage()
     {
         Debug.LogError("DownloadImage!");
         UnityWebRequest _request = UnityWebRequestTexture.GetTexture(API.Volume);
 
         yield return _request.SendWebRequest();
         Texture2D _t = DownloadHandlerTexture.GetContent(_request); //N'est pas une texture
-    }
-}//
+    }*/

@@ -55,7 +55,7 @@ public class inventoryManager : MonoBehaviour
         closeInventoryButton?.gameObject.SetActive(true);
         inventoryUI?.gameObject.SetActive(true);
        
-        //Inventory.Instance.ListItems();
+       
     }
     private void CloseInventory()
     {
