@@ -11,13 +11,14 @@ public class NetworkFetcher : MonoBehaviour
 {
 
     public static event Action OnEndCoroutine;
+    public static event Action<Texture2D> OnImage;
     public static ListBook ListBook;
     public static Texture2D Texture;
 
     private void Awake() =>InventoryUI.OnBook += ActionDeserialize;
 
     public void ActionDeserialize()=> StartCoroutine(GetVolume());
-
+    
     IEnumerator GetVolume()
     {
 
@@ -29,11 +30,17 @@ public class NetworkFetcher : MonoBehaviour
             ListBook = JsonConvert.DeserializeObject<ListBook>(_request.downloadHandler.text);
         OnEndCoroutine?.Invoke();
     }
-  IEnumerator LoadImage(string ImageUrl)
+  public static IEnumerator LoadImage(string ImageUrl)
    {
+       
         UnityWebRequest _request = UnityWebRequestTexture.GetTexture(ImageUrl);
         yield return _request.SendWebRequest();
-        Texture = DownloadHandlerTexture.GetContent(_request);  
+
+        if (_request.result != UnityWebRequest.Result.Success)
+            Debug.LogError("DOWNLOAD Image FAIL!");
+        else
+            Texture = DownloadHandlerTexture.GetContent(_request);
+        OnImage?.Invoke(DownloadHandlerTexture.GetContent(_request));
    }
  }//
 

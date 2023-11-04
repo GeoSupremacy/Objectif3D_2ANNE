@@ -22,7 +22,7 @@ public class VolumeInfo
     public string PublishedDate;
   
     public List<string> Categories;
-    public string ImageLink;
+    public ImageLinks ImageLinks;
     public string Language;
 
     
@@ -45,7 +45,6 @@ public class SaleInfo
 public class ListPrice
 {
     public float Amount;
-    public bool IsEbook;
     public string CurrencyCode;
 
 }
@@ -66,7 +65,11 @@ public class AccessInfo
     public string AccessViewStatus;
     public bool QuoteSharingAllowed;
 }
-
+public class ImageLinks
+{
+    public string SmallThumbnail;
+    public string thumbnail;
+}
 public class Epub
 {
    public bool IsAvailable;

@@ -40,7 +40,7 @@ public class inventoryManager : MonoBehaviour
         openInventoryButton.onClick.AddListener(() => OnOpenInventory?.Invoke());
         closeInventoryButton.onClick?.AddListener(() => OnCloseInventory?.Invoke());
         quitMenuButton.onClick?.AddListener(() => OnQuit?.Invoke());
-
+  
         closeInventoryButton?.gameObject.SetActive(false);
         openInventoryButton?.gameObject.SetActive(true);
         inventoryUI?.gameObject.SetActive(false);
