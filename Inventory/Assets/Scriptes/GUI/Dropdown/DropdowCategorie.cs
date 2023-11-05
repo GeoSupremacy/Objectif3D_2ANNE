@@ -10,7 +10,9 @@ public class DropdowCategorie : MonoBehaviour
 
     void Display(Book _currentBook)
     {
-       
+        if (_currentBook.VolumeInfo.Categories == null)
+            return;
+
         TMP_Dropdown _dropdown = transform.GetComponent<TMP_Dropdown>();
 
         _dropdown.ClearOptions();

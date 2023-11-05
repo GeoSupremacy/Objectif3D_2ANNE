@@ -20,7 +20,7 @@ public class VolumeInfo
     public string Title;
     public string Publisher;
     public string PublishedDate;
-  
+    public string Description;
     public List<string> Categories;
     public ImageLinks ImageLinks;
     public string Language;

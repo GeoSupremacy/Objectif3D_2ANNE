@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
-using UnityEditor.Searcher;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Windows;
@@ -55,7 +54,7 @@ public class InventoryUI : MonoBehaviour
            
             InventoryButton _button = Instantiate(inventoryItem, inventoryContent);
             _button.Init(_book.VolumeInfo.Title, () => OnBookUI?.Invoke(_book));
-                // Instantiate(inventoryItem, inventoryContent);
+                
         }
         
        

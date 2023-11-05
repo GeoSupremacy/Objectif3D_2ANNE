@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class InventoryButton : MonoBehaviour
 {
+    
     [SerializeField] Button inventoryButton = null;
     [SerializeField] TMP_Text inventoryText = null;
 
@@ -14,8 +15,9 @@ public class InventoryButton : MonoBehaviour
     {
         if (!IsValid)
             return;
-
-        inventoryText.text = _label;
+       
+        inventoryText.text = _label.Length >40? _label.Remove(40) : _label;
+        
         inventoryButton.onClick.AddListener(() => _toDo?.Invoke());
     }
     public void Init(string _label)

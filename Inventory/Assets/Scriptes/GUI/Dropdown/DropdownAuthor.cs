@@ -10,6 +10,8 @@ public class DropdownAuthor : MonoBehaviour
   
     void Display(Book _currentBook)
     {
+        if (_currentBook.VolumeInfo.Authors == null)
+            return;
         TMP_Dropdown _dropdown = transform.GetComponent<TMP_Dropdown>();
         _dropdown.ClearOptions();
         _dropdown.options.Clear();

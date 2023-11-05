@@ -26,7 +26,7 @@ public class DropdownHandler : MonoBehaviour
     {
         API.chooseTerm = "intitle";
         TMP_Dropdown _dropdown = transform.GetComponent<TMP_Dropdown>();
-        //_dropdown.options.Clear();
+        _dropdown.options.Clear();
 
         foreach (var _option in Term)
             _dropdown.options.Add(new TMP_Dropdown.OptionData() { text = _option.Key });
