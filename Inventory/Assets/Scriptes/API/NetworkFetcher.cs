@@ -40,7 +40,7 @@ public class NetworkFetcher : MonoBehaviour
             Debug.LogError("DOWNLOAD Image FAIL!");
         else
             Texture = DownloadHandlerTexture.GetContent(_request);
-        OnImage?.Invoke(DownloadHandlerTexture.GetContent(_request));
+        OnImage?.Invoke(Texture);
    }
  }//
 

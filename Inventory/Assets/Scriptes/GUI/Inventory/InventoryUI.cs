@@ -9,7 +9,7 @@ using UnityEngine.Windows;
 public class InventoryUI : MonoBehaviour
 {
     public static event Action OnBook;
-    public static event Action<Book> OnBookUI;
+    public static event Action<Book> OnBookUI; //for book UI
     private ListBook currentBook = null;
 
    

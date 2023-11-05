@@ -10,7 +10,7 @@ public class BookUi : MonoBehaviour
 {
     #region Action
     public static event Action OnQuit = null;
-    public static event Action<Book> OnDisplay = null;
+    public static event Action<Book> OnDisplay = null;//for Dropdown
     #endregion
     #region GameObject
     [SerializeField] GameObject inventoryUI;
@@ -119,10 +119,10 @@ public class BookUi : MonoBehaviour
         //ReviewStringWithOneMessage(CurrencyCodeText.text, _currentBook.SaleInfo.ListPrice, _currentBook.SaleInfo.ListPrice.CurrencyCode, "Currency code: ");
         //ReviewStringWithOneMessage(RetailAmountText.text, _currentBook.SaleInfo.ListPrice, string.Format("{0:N3}", _currentBook.SaleInfo.RetailPrice.Amount), "Amount: " );
         //ReviewStringWithOneMessage(RetailCurrencyCodeText.text, _currentBook.SaleInfo.ListPrice,_currentBook.SaleInfo.RetailPrice.CurrencyCode, "Currency code: ");
-        SaleabilityText.text = _currentBook.SaleInfo.Saleability;
+        SaleabilityText.text = _currentBook.SaleInfo.Saleability != null ? _currentBook.SaleInfo.Saleability : "";
 
 
-         ListPriceText.text = _currentBook.SaleInfo.ListPrice != null ? "List Price: " : "";
+        ListPriceText.text = _currentBook.SaleInfo.ListPrice != null ? "List Price: " : "";
         RetailPriceText.text = _currentBook.SaleInfo.RetailPrice != null ? "Retail Price: " : "";
 
          AmountText.text =  _currentBook.SaleInfo.ListPrice != null? "Amount: " + _currentBook.SaleInfo.ListPrice.Amount : "";
@@ -139,11 +139,12 @@ public class BookUi : MonoBehaviour
         AccessViewStatusText.text = _currentBook.AccessInfo.AccessViewStatus != null  ? "Access View Status: " + _currentBook.AccessInfo.AccessViewStatus : "";
 
 
-        ReviewLink(_currentBook.AccessInfo.Pdf.DownloadLink, pDFButton, _currentBook.AccessInfo.Pdf.IsAvailable);
-        ReviewLink(_currentBook.AccessInfo.Epub.DownloadLink, EpubLinkButton, _currentBook.AccessInfo.Epub.IsAvailable);
+        ReviewLink(_currentBook.AccessInfo.Pdf?.DownloadLink, pDFButton, _currentBook.AccessInfo.Pdf.IsAvailable);
+        ReviewLink(_currentBook.AccessInfo.Epub?.DownloadLink, EpubLinkButton, _currentBook.AccessInfo.Epub.IsAvailable);
        
 
         ReviewLink(_currentBook.SaleInfo.BuyLink, BuyLinkButton);
+       
 
         ReviewLink(_currentBook.VolumeInfo.PreviewLink, ebookReviewButton);
         ReviewLink(_currentBook.VolumeInfo.InfoLink,InfoGoogleLinkButton);
@@ -176,11 +177,13 @@ public class BookUi : MonoBehaviour
 
     private void ReviewLink(string _link, Button _button)
     {
-        if (_link == null || _link == string.Empty)
-        
+        if (_link == null)
             _button.gameObject.SetActive(false);
-            else
+        else
+        {
+            
             _button.onClick.AddListener(() => Application.OpenURL(_link));
+        }
         
     }
     private void ReviewLink(string _link, Button _button, bool _available)
