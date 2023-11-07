@@ -69,8 +69,14 @@
     <Compile Include="Assets\Scriptes\UI\UI Item\ActionItem.cs" />
     <Compile Include="Assets\Scriptes\Item.cs" />
     <Compile Include="Assets\Scriptes\Scriptes.cs" />
+    <Compile Include="Assets\Scriptes\3C\TweenerLibraryCorrection.cs" />
+    <Compile Include="Assets\Scriptes\3C\CameraMovement.cs" />
     <Compile Include="Assets\Scriptes\Spawner.cs" />
     <Compile Include="Assets\Scriptes\UI\MainUI.cs" />
+    <Compile Include="Assets\Scriptes\3C\Tweener.cs" />
+    <Compile Include="Assets\Scriptes\3C\Extension\TweenExtension.cs" />
+    <Compile Include="Assets\Scriptes\3C\TweenerLibrary.cs" />
+    <Compile Include="Assets\Scriptes\3C\Test.cs" />
     <Compile Include="Assets\Scriptes\ItemController.cs" />
     <Compile Include="Assets\Scriptes\SetInventory.cs" />
     <Compile Include="Assets\Scriptes\UI\InventoryUI.cs" />

@@ -10,7 +10,7 @@ public class InventoryUI : MonoBehaviour
 
     //  [SerializeField] InventoryUI inventoryItem = null;
     // [SerializeField] RectTransform inventoryContent = null;
-      private GameObject inventory = null;
+     // private GameObject inventory = null;
       [SerializeField] GameObject inventoryItem = null;
       [SerializeField] Transform inventoryContent = null;
 
