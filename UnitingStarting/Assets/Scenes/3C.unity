@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 69440256}
   - component: {fileID: 69440255}
   m_Layer: 0
-  m_Name: Target
+  m_Name: TargetObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -358,6 +358,7 @@ GameObject:
   - component: {fileID: 961739752}
   - component: {fileID: 961739751}
   - component: {fileID: 961739750}
+  - component: {fileID: 961739754}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -477,12 +478,61 @@ Transform:
   m_GameObject: {fileID: 961739749}
   serializedVersion: 2
   m_LocalRotation: {x: 0.22929388, y: -0.04459111, z: 0.0018675945, w: 0.9723335}
-  m_LocalPosition: {x: 0, y: 2, z: -5.115}
+  m_LocalPosition: {x: 1, y: 2, z: -6.763}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 26.492, y: -5.505, z: -1.077}
+--- !u!114 &961739754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961739749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a15653546f992d4da91a0575b015b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraSettingsData: {fileID: 0}
+  cameraSettings:
+    movementType: 0
+    offsetType: 0
+    offsetX: 0
+    offsetY: 0
+    offsetZ: 0
+    speed: 2
+  target: {fileID: 69440258}
+  useDebug: 1
+  validDebugColor: {r: 0, g: 1, b: 0, a: 1}
+  novalidDebugColor: {r: 1, g: 0, b: 0, a: 1}
+  radius: 4.77
+  expression:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 1
+    m_RotationOrder: 4
 --- !u!1 &1160234425
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,13 +575,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1160234425}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.014158207, w: 0.9998998}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.622}
 --- !u!1 &1981469498
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,7 +594,6 @@ GameObject:
   - component: {fileID: 1981469501}
   - component: {fileID: 1981469500}
   - component: {fileID: 1981469499}
-  - component: {fileID: 1981469503}
   m_Layer: 0
   m_Name: Tweener
   m_TagString: Untagged
@@ -632,24 +681,12 @@ Transform:
   m_GameObject: {fileID: 1981469498}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.35, y: -1.31, z: 13.425415}
+  m_LocalPosition: {x: 0, y: -1.31, z: 13.425415}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1981469503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1981469498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fd8b06a7420e3248842fbcafb3bfc55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2120073261
 GameObject:
   m_ObjectHideFlags: 0

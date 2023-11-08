@@ -58,8 +58,11 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scriptes\3C\Camera\Correction\OrbitCameraCorection.cs" />
+    <Compile Include="Assets\Scriptes\3C\Correction\TweenerLibraryCorrection.cs" />
     <Compile Include="Assets\Scriptes\Network\Data\Deal.cs" />
     <Compile Include="Assets\Scriptes\InventorySystem.cs" />
+    <Compile Include="Assets\Scriptes\3C\ScriptablObjects\CameraSettingsData.cs" />
     <Compile Include="Assets\Scriptes\UI\MainActionUi.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scriptes\Network\NetworkFetcher.cs" />
@@ -67,13 +70,14 @@
     <Compile Include="Assets\Scriptes\UI\UI Item\InventoryButton.cs" />
     <Compile Include="Assets\Scriptes\Network\API.cs" />
     <Compile Include="Assets\Scriptes\UI\UI Item\ActionItem.cs" />
+    <Compile Include="Assets\Scriptes\3C\Camera\Turn_Around_Camera.cs" />
     <Compile Include="Assets\Scriptes\Item.cs" />
+    <Compile Include="Assets\Scriptes\3C\Correction\Tweener.cs" />
     <Compile Include="Assets\Scriptes\Scriptes.cs" />
-    <Compile Include="Assets\Scriptes\3C\TweenerLibraryCorrection.cs" />
-    <Compile Include="Assets\Scriptes\3C\CameraMovement.cs" />
+    <Compile Include="Assets\Scriptes\3C\Camera\CameraMovement.cs" />
     <Compile Include="Assets\Scriptes\Spawner.cs" />
     <Compile Include="Assets\Scriptes\UI\MainUI.cs" />
-    <Compile Include="Assets\Scriptes\3C\Tweener.cs" />
+    <Compile Include="Assets\Scriptes\3C\Camera\CameraFollow.cs" />
     <Compile Include="Assets\Scriptes\3C\Extension\TweenExtension.cs" />
     <Compile Include="Assets\Scriptes\3C\TweenerLibrary.cs" />
     <Compile Include="Assets\Scriptes\3C\Test.cs" />

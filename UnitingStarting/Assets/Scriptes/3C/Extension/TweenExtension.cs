@@ -27,4 +27,7 @@ public static class TweenExtension // no new != abstact ne vit que par héritage
     {
         return int.Parse( _string );
     }
+    public static void SetPosition(this Transform _transform, Vector3 _position)
+    { _transform.position = _position; }
+
 }
