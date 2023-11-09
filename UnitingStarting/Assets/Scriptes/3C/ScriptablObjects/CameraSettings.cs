@@ -1,8 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-
-[CreateAssetMenu(fileName ="CameraSettings")]
-public class CameraSettingsData : ScriptableObject
+[CreateAssetMenu(fileName = "CameraSettings ")]
+public abstract class CameraSettings : MonoBehaviour
 {
     #region settings
 
@@ -20,6 +21,7 @@ public class CameraSettingsData : ScriptableObject
 
     [SerializeField, Header("Camera settings"), Range(-20, 20)]
     float offsetX, offsetY, offsetZ;
+
     [SerializeField]
     MovementType movementType;
     [SerializeField]
@@ -34,9 +36,9 @@ public class CameraSettingsData : ScriptableObject
     public float OffsetY => offsetY;
     public float OffsetZ => offsetZ;
 
-    public OffsetType FOffsetType => offsetType;
-    public MovementType FMovementType => movementType;
-   
+    public virtual OffsetType FOffsetType => offsetType;
+    public virtual MovementType FMovementType => movementType;
+
 
     #endregion settings
 }

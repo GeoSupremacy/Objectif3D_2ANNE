@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [Serializable]
-public struct CameraSettings
+public struct Settings
 {
     #region settings
     
@@ -40,7 +40,7 @@ public struct CameraSettings
 
     public OffsetType FOffsetType => offsetType;
     public MovementType FMovementType => movementType;
-    public CameraSettings(float _speed)
+    public Settings(float _speed)
     {
         movementType = MovementType.Lerp;
         offsetType = OffsetType.World;
@@ -66,12 +66,15 @@ public abstract class CameraMovement : MonoBehaviour
 {
 
     #region settings
-     [SerializeField] 
-    protected CameraSettingsData cameraSettingsData = null;
     [SerializeField]
-    protected CameraSettings cameraSettings = new CameraSettings(2);
+    protected Transform target = null;
+
     [SerializeField]
-    public Transform target = null;
+    protected CameraSettings CameraSettings = null;
+    [SerializeField]
+    protected Settings Settings = new Settings(2);
+
+   
     #endregion settings
 
     #region Debug
@@ -95,23 +98,14 @@ public abstract class CameraMovement : MonoBehaviour
 
     }
     public virtual Vector3 FinaltPosition => TargetPosition + Offset;
+
+    public virtual Vector3 Offset =>  Vector3.zero;
   
-    public Vector3 Offset 
-    {
-        get 
-        {
-            if (cameraSettings.FOffsetType == CameraSettings.OffsetType.Local)
-            return GetLocalOffset(cameraSettings.OffsetX, cameraSettings.OffsetY,cameraSettings.OffsetZ);
-            
-            else
-              return new Vector3(cameraSettings.OffsetX, cameraSettings.OffsetY, cameraSettings.OffsetZ);
-        }
-        
-}
+  
     #endregion Properties
 
     #region Method
-   // private void Start()=> target.SetPosition(Offset);
+  
     
     private void LateUpdate() => UpdateCameraPosition();
     /// <summary>
@@ -144,8 +138,11 @@ public abstract class CameraMovement : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawLine(TargetPosition, TargetPosition + target.forward * 2);
     }
-    #endregion
+    protected T CastSettings<T>(CameraSettings _settings) where T : CameraSettings => (T)_settings;
     
+
+    #endregion
+
     #region Distance
     /*
      * 

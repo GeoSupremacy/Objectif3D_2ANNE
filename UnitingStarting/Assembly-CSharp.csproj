@@ -61,8 +61,8 @@
     <Compile Include="Assets\Scriptes\3C\Camera\Correction\OrbitCameraCorection.cs" />
     <Compile Include="Assets\Scriptes\3C\Correction\TweenerLibraryCorrection.cs" />
     <Compile Include="Assets\Scriptes\Network\Data\Deal.cs" />
+    <Compile Include="Assets\Scriptes\3C\ScriptablObjects\CameraSettings.cs" />
     <Compile Include="Assets\Scriptes\InventorySystem.cs" />
-    <Compile Include="Assets\Scriptes\3C\ScriptablObjects\CameraSettingsData.cs" />
     <Compile Include="Assets\Scriptes\UI\MainActionUi.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scriptes\Network\NetworkFetcher.cs" />
@@ -72,9 +72,11 @@
     <Compile Include="Assets\Scriptes\UI\UI Item\ActionItem.cs" />
     <Compile Include="Assets\Scriptes\3C\Camera\Turn_Around_Camera.cs" />
     <Compile Include="Assets\Scriptes\Item.cs" />
+    <Compile Include="Assets\Scriptes\3C\ScriptablObjects\CameraOrbitSettings.cs" />
     <Compile Include="Assets\Scriptes\3C\Correction\Tweener.cs" />
     <Compile Include="Assets\Scriptes\Scriptes.cs" />
     <Compile Include="Assets\Scriptes\3C\Camera\CameraMovement.cs" />
+    <Compile Include="Assets\Scriptes\3C\ScriptablObjects\CameraSettingsFollow.cs" />
     <Compile Include="Assets\Scriptes\Spawner.cs" />
     <Compile Include="Assets\Scriptes\UI\MainUI.cs" />
     <Compile Include="Assets\Scriptes\3C\Camera\CameraFollow.cs" />

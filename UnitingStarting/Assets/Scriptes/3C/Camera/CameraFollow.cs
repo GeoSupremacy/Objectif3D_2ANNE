@@ -5,14 +5,30 @@ using static UnityEditor.SceneView;
 
 public class CameraFollow : CameraMovement
 {
+   // public override Vector3 Offset => new Vector3(OffsetX, OffsetY, _set.OffsetZ);
+    //{
+       /* get
+        {
+            CameraSettingsFollow _set = CastSettings<CameraSettingsFollow>(CameraSettings);
 
+           
+            if (_set.FOffsetType == FOffsetType.)
+                return GetLocalOffset(_set.OffsetX, _set.OffsetY, _set.OffsetZ);
+            else
+                return new Vector3(_set.OffsetX, _set.OffsetY, _set.OffsetZ);
+            
+        }
+       */
+   // }
     protected override void UpdateCameraPosition()
     {
-        if (cameraSettings.FMovementType == CameraSettings.MovementType.Lerp)
+        /*
+        if (CastSettings<CameraSettingsFollow>(CameraSettings).FMovementType == Settings.MovementType.Lerp)
             transform.position = Vector3.Lerp(CurrentPosition, FinaltPosition, cameraSettings.Speed * Time.deltaTime);  //Time.time;
         else
             Vector3.MoveTowards(CurrentPosition, FinaltPosition, cameraSettings.Speed * Time.deltaTime);
-    }
+    */
+        }
     protected override void DrawDebugMovement()
     {
         base.DrawDebugMovement();
