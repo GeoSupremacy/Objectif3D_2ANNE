@@ -1,0 +1,20 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/GUIC1203/Documents/Unreal Projects/CameraFollow/Content/Level/CameraFollow.umap",
+				"C:/Users/GUIC1203/Documents/Unreal Projects/CameraFollow/Content/Asset/NewDataAsset_CameraSettings.uasset",
+				"C:/Users/GUIC1203/Documents/Unreal Projects/CameraFollow/Content/BluePrint/BP_CameraFollowActor.uasset",
+				"C:/Users/GUIC1203/Documents/Unreal Projects/CameraFollow/Content/Asset/NewDataAssetCameraSettingFollow.uasset",
+				"C:/Users/GUIC1203/Documents/Unreal Projects/CameraFollow/Content/BluePrint/BP_CameraOrbit.uasset",
+				"C:/Users/GUIC1203/Documents/Unreal Projects/CameraFollow/Content/Asset/CameraOrbitDattaAsset.uasset",
+				"C:/Users/GUIC1203/Documents/Unreal Projects/CameraFollow/Content/BluePrint/Correction/BP.uasset",
+				"C:/Users/GUIC1203/Documents/Unreal Projects/CameraFollow/Content/BluePrint/Correction/Bp_Correction.uasset",
+				"C:/Users/GUIC1203/Documents/Unreal Projects/CameraFollow/Content/BluePrint/BP_CameraMovement.uasset"
+			]
+		}
+	]
+}
