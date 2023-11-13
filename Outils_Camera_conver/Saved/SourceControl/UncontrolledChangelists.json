@@ -1,0 +1,15 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"D:/Unity/Objectif3D_2ANNE/Outils_Camera_conver/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset",
+				"D:/Unity/Objectif3D_2ANNE/Outils_Camera_conver/Content/Scene/Level1.umap",
+				"D:/Unity/Objectif3D_2ANNE/Outils_Camera_conver/Content/Level/Level1.umap",
+				"D:/Unity/Objectif3D_2ANNE/Outils_Camera_conver/Content/BluePrint/BP_PNG.uasset"
+			]
+		}
+	]
+}
