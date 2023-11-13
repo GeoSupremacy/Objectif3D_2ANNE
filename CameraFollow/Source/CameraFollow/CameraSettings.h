@@ -44,7 +44,7 @@ private:
     UPROPERTY(EditAnywhere)
         TEnumAsByte <OffsetType> offsetType;
 
-    UPROPERTY(EditAnyWhere, meta = (UIMin = 0, ClampMin = 10))// [SerializeField, Range(0, 10)]
+    UPROPERTY(EditAnyWhere, meta = (UIMin = 0, ClampMin = 10))
     float speed;
 public:
     FORCEINLINE float GetSpeed()const { return speed; }

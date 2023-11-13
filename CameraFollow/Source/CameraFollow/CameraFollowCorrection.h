@@ -1,6 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
+#include "CameraSettingsFollowCorrection.h"
+
 
 #include "CoreMinimal.h"
 #include "CameraMovementCorrection.h"
@@ -16,7 +18,14 @@ class CAMERAFOLLOW_API ACameraFollowCorrection : public ACameraMovementCorrectio
 public:
 	FORCEINLINE virtual FVector Offset()const override
 	{
-		return GetLocalOffset(0, 0, 0);
+		UCameraSettingsFollowCorrection* _set = Cast<UCameraSettingsFollowCorrection>(cameraSettings);
+		if (!_set)
+			return FVector(0, 0, 0);
+
+		if(_set->MovementType() == EMovementType::LErp)
+			return GetLocalOffset(_set->OffsetX(), _set->OffsetY(), _set->OffsetZ());
+		else
+			return FVector(_set->OffsetX(), _set->OffsetY(), _set->OffsetZ());
 	}
 protected:
 	virtual void UpdateCameraPosition() override;

@@ -6,8 +6,14 @@
 void ACameraFollowCorrection::UpdateCameraPosition()
 {
 	FVector _location = FVector(0);
-
-	_location = FMath::VInterpConstantTo(CurrentPosition(), FinalPosition(), GetWorld()->DeltaTimeSeconds, 200);
+	UCameraSettingsFollowCorrection* _set = Cast<UCameraSettingsFollowCorrection>(cameraSettings);
+	if (!_set)
+		return;
+	if(_set->MovementType() == EMovementType::LErp)
+		_location = FMath::Lerp(CurrentPosition(), FinalPosition(), GetWorld()->DeltaTimeSeconds*200);
+	else if (_set->MovementType() == EMovementType::ConstantLerp)
+		_location = FMath::VInterpConstantTo(CurrentPosition(), FinalPosition(), GetWorld()->DeltaTimeSeconds, 200);
+	
 	SetActorLocation(_location);
 }
 

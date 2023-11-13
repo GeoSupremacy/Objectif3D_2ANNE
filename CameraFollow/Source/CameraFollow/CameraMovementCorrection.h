@@ -1,6 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
+#include "CameraSettingsCorrection.h"
+
 
 #include "CoreMinimal.h"
 #include "Camera/CameraActor.h"
@@ -24,10 +26,27 @@ protected:
 		FColor validDebugColor = FColor::Green;
 	UPROPERTY(Editanywhere, Category = "Debug")
 		FColor novalidDebugColor = FColor::Red;
+	FORCEINLINE virtual FVector FinalPosition() { return FVector(0); }
 #pragma endregion Debug
-
+protected:
+	UPROPERTY(Editanywhere, Category = "Scriptable asset _settingd datas")
+		TObjectPtr< UCameraSettingsCorrection> cameraSettings = nullptr;
 #pragma region Propertie
-public:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	ACameraMovementCorrection();
 	FORCEINLINE bool IsValid() const {
 		return (target != nullptr);
