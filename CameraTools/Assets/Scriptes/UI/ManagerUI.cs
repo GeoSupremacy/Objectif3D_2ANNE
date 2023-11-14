@@ -26,9 +26,9 @@ public class ManagerUI : MonoBehaviour
     [SerializeField]
     private Button dialogButton = null;
     [SerializeField]
-    private GameObject Canvas = null;
+    private Button nextButton = null;
 
-    public bool IsValid => quitButton && returnButton && dialogButton && dialogue && Canvas;
+    public bool IsValid => quitButton && returnButton && dialogButton && dialogue && nextButton;
 
     private void Awake()
     {
@@ -47,9 +47,11 @@ public class ManagerUI : MonoBehaviour
         quitButton.onClick.AddListener(() => OnQUitButton?.Invoke());
         returnButton.onClick.AddListener( () => OnReturntButton?.Invoke());
         dialogButton.onClick.AddListener(() => OnDialogueButton?.Invoke());
+        nextButton.onClick.AddListener(() => OnLookPlayer?.Invoke());
 
         dialogue.gameObject.SetActive(false);
         returnButton.gameObject.SetActive(false);
+        nextButton.gameObject.SetActive(false);
     }
 
    
@@ -66,6 +68,8 @@ public class ManagerUI : MonoBehaviour
     {
         quitButton.gameObject.SetActive(true);
         dialogButton.gameObject.SetActive(true);
+
+        nextButton.gameObject.SetActive(false);
         returnButton.gameObject.SetActive(false);
         dialogue.gameObject.SetActive(false);
         OnLookPlayer?.Invoke();
@@ -74,7 +78,10 @@ public class ManagerUI : MonoBehaviour
     {
         quitButton.gameObject.SetActive(false);
         dialogButton.gameObject.SetActive(false);
+
+
         returnButton.gameObject.SetActive(true);
+        nextButton.gameObject.SetActive(true);
         dialogue.gameObject.SetActive(true);
    
         //TODO event camera
