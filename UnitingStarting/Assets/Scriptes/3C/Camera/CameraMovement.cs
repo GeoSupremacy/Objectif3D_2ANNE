@@ -1,5 +1,4 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -114,7 +113,13 @@ public abstract class CameraMovement : MonoBehaviour
     /// <exception cref="CameraTargetNullReferenceException"></exception>
     protected virtual void UpdateCameraPosition()
     {
-     }
+        Vector3 _fwd = (TargetPosition - transform.position).normalized;
+        Vector3 _right = Vector3.Cross(Vector3.up, _fwd).normalized;
+        Vector3 _up = Vector3.Cross(_fwd, _right);
+        Matrix4x4 _matrix = new Matrix4x4(_right, _up, _fwd, new Vector4(0,0, 0, 1));
+        transform.rotation = _matrix.rotation;
+       // transform.rotation = Quaternion.Lerp(_matrix.rotation, transform.rotation, Time.deltaTime); ;
+    }
     private void OnDrawGizmos()
     {
         DrawDebugMovement();
@@ -139,10 +144,34 @@ public abstract class CameraMovement : MonoBehaviour
         Gizmos.DrawLine(TargetPosition, TargetPosition + target.forward * 2);
     }
     protected T CastSettings<T>(CameraSettings _settings) where T : CameraSettings => (T)_settings;
-    
+
 
     #endregion
-
+    /*
+     * MPDDialogCameraSystem
+     * if(!camerActive)
+     *      return;
+     *      
+     *   
+     *      
+     * UpdateCameraLocation
+     * cameraActive.SetDestination(FinalCameraLocation);
+     * cameraActive.SetLookAt(TargetPivot);
+     * 
+     * 
+     * Update
+     *  
+     *  Quaternion _fwd = Quaternion.LookRotation(TargetPivot - transform.position);
+     *  transform.rotation = Quaternion.Lerp(transform?rotation, _fwd, Time.deltatime);
+     *  
+     *  
+     *  transform.rotation = Quaternion.Euler
+     *      Eler to quaternion
+     * 
+     * 
+     * 
+     * 
+     */
     #region Distance
     /*
      * 
