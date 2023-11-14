@@ -1,0 +1,20 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"D:/UE_PROJECTS/CCC_2023/Content/Levels/Cameras.umap",
+				"D:/UE_PROJECTS/CCC_2023/Content/Blueprints/BP_CameraActor.uasset",
+				"D:/UE_PROJECTS/CCC_2023/Content/DataAssets/CameraFollow/CameraFollowBasic.uasset",
+				"D:/UE_PROJECTS/CCC_2023/Content/DataAssets/CameraFollow/CameraFollowQuick.uasset",
+				"D:/UE_PROJECTS/CCC_2023/Content/Expressions/RotationExpression.uasset",
+				"D:/UE_PROJECTS/CCC_2023/Content/DataAssets/OrbitCam/CameraOrbitBasic.uasset",
+				"D:/UE_PROJECTS/CCC_2023/Content/Levels/Dialog.umap",
+				"D:/UE_PROJECTS/CCC_2023/Content/DataAssets/PNJCamera.uasset",
+				"D:/UE_PROJECTS/CCC_2023/Content/Blueprints/BP_PNJCamera.uasset"
+			]
+		}
+	]
+}
