@@ -1,0 +1,17 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"D:/Unity/Objectif3D_2ANNE/ManagerArchi_Unreal/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset",
+				"D:/Unity/Objectif3D_2ANNE/ManagerArchi_Unreal/Content/Archi.umap",
+				"D:/Unity/Objectif3D_2ANNE/ManagerArchi_Unreal/Content/Level/Archi.umap",
+				"D:/Unity/Objectif3D_2ANNE/ManagerArchi_Unreal/Content/BluePrint/GameMode/BP_CustomGameMode.uasset",
+				"D:/Unity/Objectif3D_2ANNE/ManagerArchi_Unreal/Content/BluePrint/BP_Tester.uasset",
+				"D:/Unity/Objectif3D_2ANNE/ManagerArchi_Unreal/Content/BluePrint/BP_CameraManager.uasset"
+			]
+		}
+	]
+}
