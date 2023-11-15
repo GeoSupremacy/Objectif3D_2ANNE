@@ -60,15 +60,22 @@
   <ItemGroup>
     <Compile Include="Assets\Scriptes\PNJCameraSettingsBasic.cs" />
     <Compile Include="Assets\Scriptes\GizmoUtils.cs" />
+    <Compile Include="Assets\Scriptes\Manager\CameraTester.cs" />
     <Compile Include="Assets\Scriptes\PNJCameraFollow.cs" />
     <Compile Include="Assets\Scriptes\PNJDialogCameraSystem.cs" />
     <Compile Include="Assets\Scriptes\Camera\CameraFollow.cs" />
+    <Compile Include="Assets\Scriptes\Manager\Singleton\Test.cs" />
     <Compile Include="Assets\Scriptes\UI\ManagerUI.cs" />
     <Compile Include="Assets\Scriptes\PNJ.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scriptes\Camera\CameraMovements.cs" />
     <Compile Include="Assets\Scriptes\PNJCameraSettings.cs" />
+    <Compile Include="Assets\Scriptes\Manager\Singleton\Singleton.cs" />
+    <Compile Include="Assets\Scriptes\Manager\Singleton\SingletonExample.cs" />
     <Compile Include="Assets\Scriptes\DialogSystem\DialogueSystem_Data.cs" />
+    <Compile Include="Assets\Scriptes\Manager\CameraManaged.cs" />
+    <Compile Include="Assets\Scriptes\Manager\KeyDataBase.cs" />
+    <Compile Include="Assets\Scriptes\Manager\CameraManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

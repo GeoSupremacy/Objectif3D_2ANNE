@@ -59,8 +59,8 @@ public class PNJDialogCameraSystem : MonoBehaviour
     private void Awake()
     {
 
-        ManagerUI.OnLookPNJ += SetLookPNG;
-        ManagerUI.OnLookPlayer += SetLookPlayer;
+       // ManagerUI.OnLookPNJ += SetLookPNG;
+       // ManagerUI.OnLookPlayer += SetLookPlayer;
     }
     void SetLookAt(bool _iPNG) => LookAt = _iPNG ? CurrentPNJLocation : CurrentTargetPosition;//Corection
   
@@ -104,7 +104,7 @@ public class PNJDialogCameraSystem : MonoBehaviour
 
 
     #region Me
-
+    /*
     #region fp
     bool isPNg = false;
     bool isPlayer = false;
@@ -122,5 +122,6 @@ public class PNJDialogCameraSystem : MonoBehaviour
 
     public Vector3 TargetPNG => Vector3.Lerp(CurrentPNJLocation, transform.position, CastSettings<PNJCameraSettingsBasic>(settings).TargetPivotLocation);
     public Vector3 TargetPlayer => Vector3.Lerp(CurrentPNJLocation, target.transform.position, CastSettings<PNJCameraSettingsBasic>(settings).TargetPivotLocation);
+    */
 #endregion
 }//

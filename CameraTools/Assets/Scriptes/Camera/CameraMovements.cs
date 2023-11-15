@@ -14,6 +14,7 @@ public enum OffsetType
     Local
 }
 
+[RequireComponent(typeof(CameraManaged))]
 public abstract class CameraMovements : MonoBehaviour
 {
 
@@ -69,7 +70,7 @@ public abstract class CameraMovements : MonoBehaviour
         UpdateCameraPosition();
         UpdateLookAtCamera();
     }
-
+    public void SetTarget(Transform _target) => target = _target;
 
     protected virtual void UpdateCameraPosition() { }
 

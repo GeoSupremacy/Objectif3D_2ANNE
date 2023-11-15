@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class CameraFollow : CameraMovements
 {
-    
+   [SerializeField] PNJCameraSettings settings;
 }
