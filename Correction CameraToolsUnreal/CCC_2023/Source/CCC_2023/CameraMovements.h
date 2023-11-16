@@ -15,8 +15,10 @@ class CCC_2023_API ACameraMovements : public ACameraActor
 {
 	GENERATED_BODY()
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, Category = "Target")
          TObjectPtr<AActor> target = nullptr;
+    UPROPERTY(EditAnywhere, Category = "Target")
+        class UCameraManagedComponent* managerLink = nullptr;
 #pragma region Debug
     UPROPERTY(EditAnywhere, Category ="Debug")
         bool useDebug = true;
@@ -41,6 +43,7 @@ public :
     }
     FORCEINLINE virtual FVector FinalPosition() { return TargetPosition() + Offset(); }
     FORCEINLINE virtual FVector Offset() const { return FVector(0); }
+    FORCEINLINE void SetTarget(TObjectPtr<AActor> _target) { target = _target; }
 protected:
     virtual void BeginPlay() override; 
     virtual void Tick(float DeltaSeconds) override; 

@@ -19,7 +19,7 @@ void UPNJDialogCameraSystem::InitCameraDialog()
 	if (!settings || !settings->CameraPnj())
 		return;
 	activeCamera = GetWorld()->SpawnActor<ACameraPNJ>(settings->CameraPnj(), FinalCameraLocation(), FRotator::ZeroRotator);
-	GetWorld()->GetFirstPlayerController()->SetViewTarget(activeCamera);
+	
 }
 
 void UPNJDialogCameraSystem::UpdateCameraLocation()

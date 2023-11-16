@@ -1,6 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
+#include "Camera/CameraComponent.h"
+
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
@@ -17,8 +19,11 @@ class MANAGERARCHI_UNREAL_API ACustomGameMode : public AGameModeBase
 private:
 	UPROPERTY(EditAnywhere, Category = "Manager")
 		TSubclassOf<UCameraManager> cameraManagerToCreate = nullptr;
-	UPROPERTY(VisibleAnywhere, meta = (EditInLine))
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite,Category = "Manager", meta = (EditInLine, AllowPrivateAccess))
 		TObjectPtr<UCameraManager> currentCameraManagerInstance = nullptr;
+	
+
 public:
 	FORCEINLINE TObjectPtr<UCameraManager> GetCameraManager() const { return currentCameraManagerInstance; }
 private:

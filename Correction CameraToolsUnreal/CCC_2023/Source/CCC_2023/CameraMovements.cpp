@@ -2,6 +2,7 @@
 
 
 #include "CameraMovements.h"
+#include "CameraManagedComponent.h"
 #include "Kismet/KismetMathLibrary.h"
 
 ACameraMovements::ACameraMovements()
@@ -10,10 +11,12 @@ ACameraMovements::ACameraMovements()
 	#if WITH_EDITOR
 		PrimaryActorTick.bStartWithTickEnabled = true;
 	#endif
+		managerLink = CreateDefaultSubobject<UCameraManagedComponent> ("CameraManagedComponent");
 }
 void ACameraMovements::BeginPlay()
 {
 	Super::BeginPlay();
+	GetWorld()->GetFirstPlayerController()->SetViewTarget(this);
 }
 void ACameraMovements::Tick(float DeltaSeconds)
 {
