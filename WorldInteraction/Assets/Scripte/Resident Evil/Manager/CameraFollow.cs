@@ -10,7 +10,12 @@ public class CameraFollow : MonoBehaviour
 {
     [SerializeField, Category("Camera")]
     private Camera cameraView = null;
+    [SerializeField, Category("Camera")]
+    bool isFixe = false;
+    [SerializeField, Category("Camera")]
+    bool isEnable = false;
     bool isTargetModeDefine = true;
+    [SerializeField, Category("Camera")]
     private Transform target;
 
     public Vector3  TargetPivot 
@@ -23,17 +28,13 @@ public class CameraFollow : MonoBehaviour
        // private set;// { target.transform.position = value; }
     }
     public Vector3 Position { get;  set; }
-    void Start() => Init();
 
-    public void Enabled() => cameraView.enabled = true;
-    public void Disabled()=> cameraView.enabled = false;
-    private void LateUpdate()=> UpdateCameraView(isTargetModeDefine);
-    
-    public void Target(Transform _target)=>  target = _target;
-    
+
+    public void Target(Transform _target) => target = _target;
+
     public void SetModeTarget(TargetMode _targetMode)
     {
-        switch (_targetMode) 
+        switch (_targetMode)
         {
             case TargetMode.Target:
                 {
@@ -52,6 +53,17 @@ public class CameraFollow : MonoBehaviour
         }
     }
 
+    public void Enabled() => cameraView.enabled = true;
+    public void Disabled()=> cameraView.enabled = false;
+   private void Start() => Init();
+
+    private void LateUpdate()
+    {
+        UpdateCameraView(isTargetModeDefine);
+        UpdateCameraPosition();
+    }
+    
+
     private void UpdateCameraView(bool _isMode)
     {
       
@@ -62,16 +74,19 @@ public class CameraFollow : MonoBehaviour
         }
         
     }
-
+    private void UpdateCameraPosition() { if (isFixe) cameraView.transform.position = transform.position; }
+    
     private void Init()
     {
 
         cameraView= Instantiate(cameraView, transform.position, transform.rotation) ;
         if (!cameraView)
             throw new System.NullReferenceException("CameraFollow => Mising camera");
-
-        cameraView.enabled = true;
+       
+        cameraView.enabled = isEnable? true : false;
 
      
     }
+    private void OnDestroy() =>Destroy(cameraView);
+    
 }
