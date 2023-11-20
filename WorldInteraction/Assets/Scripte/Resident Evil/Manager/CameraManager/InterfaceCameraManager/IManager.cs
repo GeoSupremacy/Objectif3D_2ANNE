@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IManager<Tkey, TItem> where TItem : MonoBehaviour
+public interface IManagerT<Tkey, TItem> where TItem : MonoBehaviour
 {
     Dictionary<Tkey, TItem> itemsManaged { get; }
     void Add(TItem _item);
