@@ -1,20 +1,43 @@
-// Design_Patterns.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+int findOdd(int arr[], int n)
+{
+    int res = 0, i;
+    for (i = 0; i < n; i++)
+        res ^= arr[i];
+    return res;
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int arr[] = { 12, 12, 14, 90, 14, 14, 14 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+    printf("The odd occurring element is %d ",
+        findOdd(arr, n));
+   
+    return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+void Operator()
+{
+    unsigned char a = 5, b = 9;
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+    // The result is 00000001
+    printf("a = %d, b = %d\n", a, b);
+    printf("a&b = %d\n", a & b);
+
+    // The result is 00001101
+    printf("a|b = %d\n", a | b);
+
+    // The result is 00001100
+    printf("a^b = %d\n", a ^ b);
+
+    // The result is 11111010
+    printf("~a = %d\n", a = ~a);
+
+    // The result is 00010010
+    printf("b<<1 = %d\n", b << 1);
+
+    // The result is 00000100
+    printf("b>>1 = %d\n", b >> 1);
+
+}
