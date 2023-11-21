@@ -66,7 +66,8 @@
     <Compile Include="Assets\Scripte\Resident Evil\Manager\CameraManager\InterfaceCameraManager\IManager.cs" />
     <Compile Include="Assets\Scripte\Resident Evil\Manager\CameraManager\CameraManager.cs" />
     <Compile Include="Assets\Scripte\Resident Evil\Manager\CameraManager\InterfaceCameraManager\IManagedItem.cs" />
-    <Compile Include="Assets\Scripte\TriggerEvent.cs" />
+    <Compile Include="Assets\Scripte\Rebond\Zoya.cs" />
+    <Compile Include="Assets\Scripte\Triiger\TriggerEvent.cs" />
     <Compile Include="Assets\Scripte\Raycast\SpringarmCorrection.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripte\Raycast\Raycaster.cs" />
