@@ -1,3 +1,2 @@
 ﻿  Builder_Pattern.cpp
-C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\Design_Patterns\Builder_Pattern\Builder_Pattern.cpp(69,13): error C2561: 'Director::BuildMoto': function must return a value
-C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\Design_Patterns\Builder_Pattern\Builder_Pattern.cpp(66,9): message : see declaration of 'Director::BuildMoto'
+  Builder_Pattern.vcxproj -> C:\Users\GUIC1203\Documents\GitHub\Objectif3D_2ANNE\Seb\Design_Patterns\x64\Debug\Builder_Pattern.exe
