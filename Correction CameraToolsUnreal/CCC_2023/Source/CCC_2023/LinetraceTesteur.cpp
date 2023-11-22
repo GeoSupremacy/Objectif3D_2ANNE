@@ -3,15 +3,8 @@
 
 #include "LinetraceTesteur.h"
 #include "Kismet/KismetSystemLibrary.h"
+#include "DebugUtils.h"
 
-
-#define LINETRACE(from, to, result) UKismetSystemLibrary::LineTraceSingleForObjects(GetWorld(), from, to, objectLayer, true, TArray<AActor*>(), EDrawDebugTrace::ForOneFrame, _result, false, FLinearColor::Red, FLinearColor::Green, 5);
-#define LINETRACE_BACK_COLOR(from, to, result, color) UKismetSystemLibrary::LineTraceSingleForObjects(GetWorld(), from, to, objectLayer, true, TArray<AActor*>(), EDrawDebugTrace::ForOneFrame, _result, false, FLinearColor::color, FLinearColor::Green, 5);
-
-#define LENGTH(Vector) FMath::Square(Vector.X*Vector.X + Vector.Y*Vector.Y +Vector.Z*Vector.Z)
-#define NORMALIZED(Vector, length) Vector/length;
-#define DRAW_SPHERE(center) DrawDebugSphere(GetWorld(), center, 50, 32, FColor::Red);
-#define LOG_WARNING(text,...) UE_LOG(LogTemp, Warning, TEXT(text),__VA_ARGS__);
 
 #pragma region UE_METHOD
 ALinetraceTesteur::ALinetraceTesteur()
@@ -84,7 +77,7 @@ void ALinetraceTesteur::NewLine(FHitResult _result)
 {
 	FHitResult _newResult;
 	currentShot++;
-	DRAW_SPHERE(_result.ImpactPoint)
+	DRAW_SPHERE(_result.ImpactPoint, 50, Red, 32)
 	const bool _isHit = LINETRACE(_result.ImpactPoint, Reflect(_result.ImpactPoint, _result.Normal), _newResult);
 	if(_isHit)
 		NewLine(_newResult);
