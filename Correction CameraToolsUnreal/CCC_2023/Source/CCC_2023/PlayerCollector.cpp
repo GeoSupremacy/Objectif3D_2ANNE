@@ -39,7 +39,8 @@ void APlayerCollector::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 		SCREEN_DEBUG_MESSAGE_ERROR(1, 10, "Missing input or input Mapping")
 		return;
 	}
-	_input->BindAction(movementForawardInput, ETriggerEvent::Triggered, this, &APlayerCollector::MoveForward);
+	_input->BindAction(movementForwardInput, ETriggerEvent::Triggered, this, &APlayerCollector::MoveForward);
+	_input->BindAction(stopMovementForwardInput, ETriggerEvent::Triggered, this, &APlayerCollector::MoveForward);
 	_input->BindAction(movementRightInput, ETriggerEvent::Triggered, this, &APlayerCollector::MoveRight);
 	_input->BindAction(movementYawInput, ETriggerEvent::Triggered, this, &APlayerCollector::RotateCameraYaw);
 	_input->BindAction(movementPitchInput, ETriggerEvent::Triggered, this, &APlayerCollector::RotateCameraPitch);
@@ -84,6 +85,7 @@ void APlayerCollector::RotateCameraYaw(const FInputActionValue& _value)
 }
 void APlayerCollector::RotateCameraPitch(const FInputActionValue& _value)
 {
+	
 	const float _axis = _value.Get<float>();
 	AddControllerPitchInput(_axis);
 }

@@ -4,6 +4,7 @@
 
 
 #include "CharacterAnimation.h"
+#include "DebugUtils.h"
 
 #pragma region UE_UNREAL
 void UCharacterAnimation::NativeBeginPlay()
@@ -12,7 +13,7 @@ void UCharacterAnimation::NativeBeginPlay()
 	character = Cast<APlayerCollector>(TryGetPawnOwner());
 	if (!character)
 		return;
-	character->OnMoveForward().AddDynamic(this, &UCharacterAnimation::SetSpeed);
+	character->OnMoveForward().AddDynamic(this, &UCharacterAnimation::SetSpeedForward);
 	character->OnMoveRight().AddDynamic(this, &UCharacterAnimation::SetSpeedRight);
 	character->OnJump().AddDynamic(this, &UCharacterAnimation::StartJump);
 }
@@ -48,12 +49,16 @@ bool UCharacterAnimation::GetInteract()
 	return character->GetInteract();
 }
 
-void UCharacterAnimation::SetSpeed(const float _speed)
+void UCharacterAnimation::SetSpeedForward(const float _speed)
 {
+	if (rightSpeed)
+		return;
 	forwardSpeed = _speed;
 }
 void UCharacterAnimation::SetSpeedRight(const float _speed)
 {
+	if (forwardSpeed)
+		return;
 	rightSpeed = _speed;
 }
 void UCharacterAnimation::StartJump()

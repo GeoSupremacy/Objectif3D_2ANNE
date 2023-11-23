@@ -1,4 +1,7 @@
 #pragma once
+#include "Kismet/KismetSystemLibrary.h"
+
+
 #define WORLD GetWorld()
 #define USE_DEBUG 1
 
@@ -54,9 +57,12 @@
 #define FORWARD_VECTOR GetActorForwardVector()
 #define RIGHT_VECTOR GetActorRightVector()
 
-
+#define LOCAl_PLAYER Cast<APlayerController>(GetController())->GetLocalPlayer()
 #define LINETRACE(from, to, result) UKismetSystemLibrary::LineTraceSingleForObjects(GetWorld(), from, to, objectLayer, true, TArray<AActor*>(), EDrawDebugTrace::ForOneFrame, _result, false, FLinearColor::Red, FLinearColor::Green, 5);
 #define LINETRACE_BACK_COLOR(from, to, result, color) UKismetSystemLibrary::LineTraceSingleForObjects(GetWorld(), from, to, objectLayer, true, TArray<AActor*>(), EDrawDebugTrace::ForOneFrame, _result, false, FLinearColor::color, FLinearColor::Green, 5);
 
 #define LENGTH(Vector) FMath::Square(Vector.X*Vector.X + Vector.Y*Vector.Y +Vector.Z*Vector.Z)
 #define NORMALIZED(Vector, length) Vector/length;
+
+
+#define PRINT_STRING(text) UKismetSystemLibrary::PrintString(this, text);

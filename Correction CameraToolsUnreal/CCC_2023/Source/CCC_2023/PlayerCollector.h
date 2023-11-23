@@ -1,11 +1,15 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
+
+
+
+#include "CoreMinimal.h"
+
 #include "InputMappingContext.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 
-#include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "PlayerCollector.generated.h"
 
@@ -43,7 +47,9 @@ class CCC_2023_API APlayerCollector : public ACharacter
 	UPROPERTY(EditAnywhere, Category = "Character Input")
 		TSoftObjectPtr<UInputMappingContext> inputContext = nullptr;
 	UPROPERTY(EditAnywhere, Category = "Character Input")
-		TObjectPtr<UInputAction> movementForawardInput = nullptr;
+		TObjectPtr<UInputAction> movementForwardInput = nullptr;
+	UPROPERTY(EditAnywhere, Category = "Character Input")
+		TObjectPtr<UInputAction> stopMovementForwardInput = nullptr;
 	UPROPERTY(EditAnywhere, Category = "Character Input")
 		TObjectPtr<UInputAction> movementRightInput = nullptr;
 	UPROPERTY(EditAnywhere, Category = "Character Input")
@@ -80,7 +86,7 @@ private:
 	void RotateCameraPitch(const FInputActionValue& _value);
 	void Ground();
 	void Interact();
-	FORCEINLINE	bool IsValid() { return movementForawardInput && movementRightInput && movementPitchInput && movementYawInput && jumpInput && interactionInput; }
+	FORCEINLINE	bool IsValid() { return movementForwardInput&& stopMovementForwardInput && movementRightInput && movementPitchInput && movementYawInput && jumpInput && interactionInput; }
 
 #pragma region Broadcast
 public:

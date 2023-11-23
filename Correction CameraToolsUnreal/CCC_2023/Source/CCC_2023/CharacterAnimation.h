@@ -46,7 +46,7 @@ private:
 	bool GetJump();
 	bool GetFall();
 	bool GetInteract();
-	UFUNCTION() void SetSpeed(const float _speed);
+	UFUNCTION() void SetSpeedForward(const float _speed);
 	UFUNCTION() void SetSpeedRight(const float _speed);
 #pragma endregion Acesseur
 
