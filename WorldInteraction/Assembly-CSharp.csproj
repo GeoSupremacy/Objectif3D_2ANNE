@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripte\Resident Evil Correction\CameraZone\CamZoneCamera.cs" />
     <Compile Include="Assets\Scripte\Resident Evil Correction\CameraZone\CameZonePlayer.cs" />
+    <Compile Include="Assets\Scripte\Character\InteractItem.cs" />
     <Compile Include="Assets\Scripte\Resident Evil\Manager\CameraManager\ItemManaged.cs" />
     <Compile Include="Assets\Scripte\Resident Evil Correction\CameraZone\CamZoneTrigger.cs" />
     <Compile Include="Assets\Scripte\Resident Evil\Singleton\SingletonPattern.cs" />
@@ -71,7 +72,9 @@
     <Compile Include="Assets\Scripte\Raycast\SpringarmCorrection.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripte\Raycast\Raycaster.cs" />
+    <Compile Include="Assets\Scripte\Character\ItemInteracted.cs" />
     <Compile Include="Assets\Scripte\Resident Evil Correction\Manager\Interface\IManagedItem.cs" />
+    <Compile Include="Assets\Scripte\Character\CharacterAnimation.cs" />
     <Compile Include="Assets\Scripte\Resident Evil Correction\Manager\Interface\IManager.cs" />
     <Compile Include="Assets\Scripte\Resident Evil\Trigger Box Camera.cs" />
     <Compile Include="Assets\Scripte\Resident Evil\Manager\CameraFollow.cs" />
