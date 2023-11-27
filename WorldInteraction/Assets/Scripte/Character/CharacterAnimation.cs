@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -20,6 +21,7 @@ public class AnimatorParams
 
 public class CharacterAnimation : MonoBehaviour
 {
+    [SerializeField] InteractItem interactItem = null;
     [SerializeField] Animator animator = null;
     [SerializeField] AnimationCurve curveSpeed = null;
     [SerializeField] CharacterController controller = null;
@@ -27,10 +29,10 @@ public class CharacterAnimation : MonoBehaviour
 
      Action<float> OnMoveForward = null;
     Action<float> OnMoveRight = null;
-
+    Action OnGrab = null;
     private void Awake()
     {
-       
+        OnGrab += interactItem.GrabObject;
         OnMoveForward += MoveForward;
         OnMoveRight += MoveRight;
     }
@@ -58,7 +60,12 @@ public class CharacterAnimation : MonoBehaviour
     {
         OnMoveForward?.Invoke(Input.GetAxis("Vertical"));
         OnMoveRight?.Invoke(Input.GetAxis("Horizontal"));
-
+        if (Input.GetKeyDown("a"))
+        {
+            interactItem.DropObject();
+            interactItem.GrabObject();
+            
+        }
 
         // animator.SetFloat("Speed", Mathf.PingPong(Time.time,1), 2 , Time.deltaTime);
         // animator.SetFloat(AnimatorParams.SPEED_PARAM, curveSpeed.Evaluate(Time.time));

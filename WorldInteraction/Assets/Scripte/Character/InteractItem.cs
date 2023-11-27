@@ -4,10 +4,22 @@ using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
 
-
+public static class Extension
+{
+    public static GameObject GameObject(this RaycastHit _ray)
+    {
+        return _ray.transform.gameObject;
+    }
+   /* public static MonoBehaviour GetComponentA<T>(this RaycastHit _ray)
+    {
+        return _ray.GameObject().GetComponent<T>();
+    }
+    */
+}
 
 public class InteractItem : MonoBehaviour
 {
+    #region Settings
     [SerializeField, Category("Interact Layer")]// MonoBehaviour[] interactLayer;
     private LayerMask hitLayer;
     [SerializeField, Category("Interact Layer"), Range(0, 100)] float range = 3;
@@ -15,9 +27,13 @@ public class InteractItem : MonoBehaviour
     [SerializeField, Category("Interact Layer"), Range(0, 100)] float fall = 2;
     [SerializeField, Category("Interact Layer")] ItemInteracted currentItem = null;
     [SerializeField, Category("Interact Layer")] ItemInteracted detectedItem = null;
-    bool canGrabItem = false;
+    
+    bool canGrabItem = false, isHit =false, hasGrabObject =false, hasDrop =false;
+   
     RaycastHit result;
-    bool isHit;
+   
+  
+    #endregion
     private void Update() => DetectedObject();
     void DetectedObject()
     {
@@ -25,54 +41,58 @@ public class InteractItem : MonoBehaviour
         _to = transform.forward - new Vector3(0, fall, 0);
 
         isHit = Physics.Raycast(new(_start, _to), out  result, range, hitLayer);
-
-        canGrabItem = isHit && result.distance < 1;
-       // DetectedObjectFeedback(result.Type());
-    }
-    void DetectedObjectFeedback(ItemInteracted _item)
-    {
-       
-        if (canGrabItem)
-        {
-
-            if (detectedItem)
-                detectedItem.ResetDefaultColor();
-            detectedItem = _item.gameObject;
-            detectedItem.ApplyInteractColor();
-        }
-        else
-        {
-            detectedItem.ResetDefaultColor();
-        }
         
+        canGrabItem = isHit && result.distance < 1.6f;
+       DetectedObjectFeedback(result.GameObject());
+    }
+    void DetectedObjectFeedback(GameObject _item)
+    {
+
+        if (canGrabItem)
+            detectedItem = _item.GameObject().GetComponent<ItemInteracted>();
+        else
+            detectedItem = null;
+       // else
+       // {
+       //     detectedItem.ResetDefaultColor();
+       // }
+
     }
     public void GrabObject()
     {
-        /*
+        
         if (currentItem)
             return;
         if (canGrabItem)
         {
-            PRINT_STRING("GRAB");
-            currentItem = Cast<AInteractItem>(result.GetActor());
-            currentItem->ApplyInteractColor();
-            currentItem->SetActorEnableCollision(false);
-            currentItem->AttachToActor(GetOwner(), FAttachmentTransformRules::KeepWorldTransform);
-            detectedItem = Cast<AInteractItem>(result.GetActor());
-            detectedItem->ApplyInteractColor();
+            if (hasDrop)
+            {
+                hasDrop = false;
+                return;
+            }
+            Debug.Log("GRAB");
+            currentItem = result.GameObject().GetComponent<ItemInteracted>();
+          
+            currentItem.ApplyInteractColor();
+            //currentItem.SetActorEnableCollision(false);
+            // currentItem.AttachToActor(GetOwner(), FAttachmentTransformRules::KeepWorldTransform);
+            currentItem.transform.SetParent(transform, true);
+            // detectedItem = result.GameObject().GetComponent<ItemInteracted>(); ;
+            currentItem.ApplyInteractColor();
+            hasGrabObject = true;
         }
-        */
+
     }
     public void DropObject()
     {
-        /*
-        if (currentItem)
-            return;
-        currentItem->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
-        currentItem->SetActorEnableCollision(true);
-        currentItem->ResetDefaultColor();
-        currentItem = nullptr;
-        */
+        if(!hasGrabObject || !currentItem) return;
+       
+        currentItem.transform.SetParent(null);
+        //currentItem->SetActorEnableCollision(true);
+        currentItem.ResetDefaultColor();
+        currentItem = null;
+        hasGrabObject=false;
+        hasDrop = true;
     }
 
     private void OnDrawGizmos() => DrawDebug();

@@ -150,11 +150,11 @@ InputManager:
     axis: 2
     joyNum: 0
   - serializedVersion: 3
-    m_Name: ok
+    m_Name: Crab
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: s
-    positiveButton: z
+    negativeButton: 
+    positiveButton: a
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
