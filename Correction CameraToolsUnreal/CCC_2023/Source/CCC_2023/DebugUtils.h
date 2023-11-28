@@ -17,19 +17,19 @@
 
 #define DRAW_SPHERE_DEF( from, radius,def , color, size)\
 	if (USE_DEBUG)\
-		DrawDebugSphere(WORLD, from, radius, def, color, false, -1,0 , size);
+		DrawDebugSphere(WORLD, from, radius, def, FColor::color, false, -1,0 , size);
 
 #define DRAW_BOX( from, extents, color, size) \
 	if (USE_DEBUG)\
-		DrawDebugBox(WORLD, from, extents, color, false, -1,0 , size);
+		DrawDebugBox(WORLD, from, extents, FColor::color, false, -1,0 , size);
 
 #define DRAW_LINE( from, to, color, size) \
 	if (USE_DEBUG)\
-	 	DrawDebugLine(WORLD, from, to, color, false, -1,0 , size);
+	 	DrawDebugLine(WORLD, from, to, FColor::color, false, -1,0 , size);
 
 #define DRAW_TEXT( from, text, color, size) \
 	if (USE_DEBUG)\
-		 DrawDebugString(WORLD, from, text, nullptr, color,DELTATIME , false, size);
+		 DrawDebugString(WORLD, from, text, nullptr, FColor::color,DELTATIME , false, size);
 
 #define LERP_COLOR(from, to, t) UKismetMathLibrary::LinearColorLerp(from.ReinterpretAsLinear(), to.ReinterpretAsLinear(), t).ToFColor(true);
 #define LERP(from,to,by) FMath::Lerp(from, to, by)
@@ -43,7 +43,7 @@
 
 
 #define FIRST_PLAYER_CONTROLLER GetWorld()->GetFirstPlayerController()->GetPawn()
-
+#define PLAYER_CONTROLLER GetWorld()->GetFirstPlayerController()
 #define DELTATIME GetWorld()->DeltaTimeSeconds
 
 #define ACTOR GetOwner()
@@ -66,3 +66,12 @@
 
 
 #define PRINT_STRING(text) UKismetSystemLibrary::PrintString(this, text);
+
+
+/*+
+* ViewPort
+* 
+*/
+#define DEPROJECT_SCREEN_POSITION_TO_WORLD(ScreenX,ScreenY,WorldLocation, worldDirection) PLAYER_CONTROLLER->DeprojectScreenPositionToWorld(ScreenX,ScreenY,WorldLocation, worldDirection);
+#define DEPROJECT_MOUSE_POSITION_TO_WORLD(WorldLocation,worldDirection) PLAYER_CONTROLLER->DeprojectMousePositionToWorld(WorldLocation, worldDirection);
+#define VIEWPORT_SIZE(SizeX,SizeY) PLAYER_CONTROLLER->GetViewportSize(SizeX,SizeY);

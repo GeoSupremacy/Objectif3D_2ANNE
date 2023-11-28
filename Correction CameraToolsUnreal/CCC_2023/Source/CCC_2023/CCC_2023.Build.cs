@@ -17,13 +17,17 @@ public class CCC_2023 : ModuleRules
 		{
             "CorrectionCharacterInteract",
             "CorrectionCharacterInteract/Interact",
-            "Source/CCC_2023"
+            "Source/CCC_2023",
+            "ViewPort",
+            "Diablo",
         });
         PublicIncludePaths.AddRange(new string[]
         {
             "CorrectionCharacterInteract",
              "CorrectionCharacterInteract/Interact",
-             "Source/CCC_2023"
+             "Source/CCC_2023",
+             "ViewPort",
+             "Diablo",
         });
         // Uncomment if you are using Slate UI
         // PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
