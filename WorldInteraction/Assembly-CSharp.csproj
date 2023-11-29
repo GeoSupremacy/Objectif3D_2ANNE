@@ -86,6 +86,7 @@
     <Compile Include="Assets\Scripte\Resident Evil Correction\Manager\Interface\IManager.cs" />
     <Compile Include="Assets\Scripte\Resident Evil\Trigger Box Camera.cs" />
     <Compile Include="Assets\Scripte\ColorBallCorrection\PlayerShooter_CCR.cs" />
+    <Compile Include="Assets\Scripte\Diablo\DiabloCharacter.cs" />
     <Compile Include="Assets\Scripte\Resident Evil\Manager\CameraFollow.cs" />
     <Compile Include="Assets\Scripte\Resident Evil Correction\Manager\CamZoneManager.cs" />
     <Compile Include="Assets\Scripte\Raycast\SpringArm.cs" />
