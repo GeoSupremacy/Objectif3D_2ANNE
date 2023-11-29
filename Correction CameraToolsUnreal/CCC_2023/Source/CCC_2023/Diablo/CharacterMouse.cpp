@@ -24,7 +24,7 @@ ACharacterMouse::ACharacterMouse()
 
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationRoll = false;
-	//bUseControllerRotationYaw = false;
+	bUseControllerRotationYaw = false;
 
 }
 #pragma endregion Constructeur
@@ -74,7 +74,7 @@ void ACharacterMouse::MoveForward(const FInputActionValue& _value)
 	hasTarget = true;
 	distance = FVector::Dist(location, GetActorLocation());
 	
-	RotateCameraYaw();
+	
 }
 void ACharacterMouse::MoveToTarget()
 {
@@ -111,7 +111,10 @@ void ACharacterMouse::Target()
 	FHitResult _result;
 	bool _isHit = UKismetSystemLibrary::LineTraceSingleForObjects(GetWorld(), location, location + direction * 2000, objectLayer, true, TArray<AActor*>(), EDrawDebugTrace::ForOneFrame, _result, false);
 	if (_isHit)
+	{
 		positionTarget = FVector(_result.ImpactPoint.X, _result.ImpactPoint.Y, _result.ImpactPoint.Z + 0.5);
+		RotateCameraYaw();
+	}
 	DRAW_SPHERE(positionTarget, 50, Red, 2)
 }
 #pragma endregion Movement

@@ -22,6 +22,9 @@
 #define DRAW_BOX( from, extents, color, size) \
 	if (USE_DEBUG)\
 		DrawDebugBox(WORLD, from, extents, FColor::color, false, -1,0 , size);
+#define DRAW_CIRCLE( from, radius, segment, color) \
+	if (USE_DEBUG)\
+		DrawDebugSphere(GetWorld(), from, radius, segment, FColor::color, false, -1, 0, 5);
 
 #define DRAW_LINE( from, to, color, size) \
 	if (USE_DEBUG)\
