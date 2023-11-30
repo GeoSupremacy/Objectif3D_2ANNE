@@ -584,7 +584,7 @@ PrefabInstance:
     - target: {fileID: 910178168999150915, guid: 2274ef3d48a40064cbf32671d0d2b29a,
         type: 3}
       propertyPath: pointRange
-      value: 18
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 910178168999150915, guid: 2274ef3d48a40064cbf32671d0d2b29a,
         type: 3}

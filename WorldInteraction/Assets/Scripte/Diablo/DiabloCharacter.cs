@@ -41,16 +41,20 @@ public class DiabloCharacter : MonoBehaviour
     }
     void DrawDebug()
     {
-        Vector3 _input = new Vector3(Input.mousePosition.x, Input.mousePosition.x, 5);
-        Vector3 _position = camera.ScreenToWorldPoint(_input);
-        if(isHit)
+        Vector3 _input = new Vector3(Input.mousePosition.x, Input.mousePosition.x,depth);
+        //Vector3 _position = camera.Scr(_input);
+       // Ray _ray = camera.ViewportPointToRay(_position);
+
+        if (isHit)
         Gizmos.color = Color.green;
         else
             Gizmos.color = Color.red;
-        Ray _r = new Ray(CameraPosition, -_position);
-        Gizmos.DrawRay(_r.origin, _r.direction * pointRange);
+
+
+        Ray _ray = camera.ScreenPointToRay(_input);
+        Gizmos.DrawRay(_ray.origin, _ray.direction * pointRange);
         Gizmos.color = Color.magenta;
-        Gizmos.DrawSphere(_position, .25f);
+        //Gizmos.DrawSphere(_position, .25f);
     }
 
     #region Move
@@ -58,11 +62,11 @@ public class DiabloCharacter : MonoBehaviour
     void MousePosition()
     {
         
-        Vector3 _input = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
-        Vector3 _position = camera.ScreenToWorldPoint(_input);
-
-       
-        isHit = Physics.Raycast(new Ray(CameraPosition, -_position), out RaycastHit _result, pointRange, hitLayer);
+        Vector3 _input = new Vector3(Input.mousePosition.x, Input.mousePosition.y, depth);
+        //Vector3 _position = camera.ScreenToWorldPoint(_input);
+        // Ray _ray = camera.ViewportPointToRay(_input);
+        Ray _ray = camera.ScreenPointToRay(_input);
+        isHit = Physics.Raycast(_ray.origin, _ray.direction *2000, out RaycastHit _result, pointRange, hitLayer);
         // ~Destructor of layer == !layer
         // no layermask on collider
 

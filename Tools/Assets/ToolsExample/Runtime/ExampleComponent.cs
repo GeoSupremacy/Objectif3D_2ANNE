@@ -1,19 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ExampleComponent : MonoBehaviour
 {
-    [SerializeField] int numberCubes = 2;
+    [SerializeField] private int numberCubes = 2; 
+    
     [SerializeField] int gap = 2;
+   
     [SerializeField] PrimitiveType type;
-    List<GameObject> spawmItems = new();
-    
-    //void Start() =>SpawnCubes();
+    [SerializeField, HideInInspector] List<GameObject> spawmItems = new();
+    [SerializeField] Data info = new();
 
 
-    
-   public void SpawnCubes()
+    public bool ISValid() => numberCubes > 0;
+
+    public void SpawnCubes()
     {
         for (int i = 0; i < numberCubes * gap; i += gap)
         {
@@ -30,5 +33,12 @@ public class ExampleComponent : MonoBehaviour
         {
             DestroyImmediate(spawmItems[i]);
         }
+        spawmItems.Clear();
     }
-}
+    
+    public class Data
+    {
+        int value = 200;
+    }
+}//
+
