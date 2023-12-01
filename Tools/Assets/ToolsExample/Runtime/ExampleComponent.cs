@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+        
 public class ExampleComponent : MonoBehaviour
 {
     [SerializeField] private int numberCubes = 2; 
@@ -35,7 +37,8 @@ public class ExampleComponent : MonoBehaviour
         }
         spawmItems.Clear();
     }
-    
+
+    [Serializable]
     public class Data
     {
         int value = 200;
