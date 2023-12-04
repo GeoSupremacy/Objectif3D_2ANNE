@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEditor;
 using EditorUtils.Style;
-
+using Hdl = UnityEditor.Handles;
 
 namespace EditorUtils.Button
 {
@@ -30,6 +30,7 @@ namespace EditorUtils.Button
                 _callback?.Invoke();
                 return true;
             }
+           
             return false; 
         }
         public static bool MakeButton(string _label, Action _callback, int _padding)
@@ -56,6 +57,7 @@ namespace EditorUtils.Button
         {
             if (GUILayout.Button(_label, _style))
             {
+                Hdl.color = Color.white;
                 _callback?.Invoke();
                 return true;
             }
@@ -63,11 +65,26 @@ namespace EditorUtils.Button
         }
         public static bool MakeButton(string _label, Action _callback, Color _color)
         {
+           
             if (GUILayout.Button(_label, GUIStyleUtils.GetButtonStyle(_color, FontStyle.Bold, 15)))
             {
                 _callback?.Invoke();
+                
                 return true;
             }
+            
+            return false;
+        }
+        public static bool MakeButton(string _label, Action<bool> _callback, Color _color,bool _actif =false)
+        {
+
+            if (GUILayout.Button(_label, GUIStyleUtils.GetButtonStyle(_color, FontStyle.Bold, 15)))
+            {
+                _callback?.Invoke(_actif);
+
+                return true;
+            }
+
             return false;
         }
         public static bool MakeButton(string _label, Action _callback, GUIStyle _style, int _padding)
@@ -95,7 +112,19 @@ namespace EditorUtils.Button
             GUILayout.Space(_padding);  
             if (GUILayout.Button(_label, GUIStyleUtils.GetButtonStyle(_color, FontStyle.Bold, 15)))
             {
+                
                 _callback?.Invoke();
+                return true;
+            }
+            return false;
+        }
+        public static bool MakeButton(string _label, Action<bool> _callback, Color _color, int _padding = 5, bool _active = false)
+        {
+            GUILayout.Space(_padding);
+            if (GUILayout.Button(_label, GUIStyleUtils.GetButtonStyle(_color, FontStyle.Bold, 15)))
+            {
+
+                _callback?.Invoke(_active);
                 return true;
             }
             return false;
@@ -104,6 +133,7 @@ namespace EditorUtils.Button
         {
             if (GUILayout.Button(_label, GUIStyleUtils.GetButtonStyle(_color,  _fontStyle,  _fontSize)))
             {
+
                 _callback?.Invoke();
                 return true;
             }
@@ -119,6 +149,16 @@ namespace EditorUtils.Button
             }
             return false;
         }
+        public static bool MakeButton(string _label, Action<bool> _callback, Color _color, Padding2D _padding, bool _active = false)
+        {
+            GUILayout.Space(_padding.Top);
+            if (GUILayout.Button(_label, GUIStyleUtils.GetButtonStyle(_color, FontStyle.Bold, 15)))
+            {
+                _callback?.Invoke(_active);
+                return true;
+            }
+            return false;
+        }
         public static bool MakeInteractButton(bool _isValid, string _label, Action _callback, Color _color, int _padding = 5)
         {
             if (_isValid)
@@ -130,6 +170,18 @@ namespace EditorUtils.Button
                 return false;
             }
       
+        }
+        public static bool MakeInteractButton(bool _isValid, string _label, Action<bool> _callback, Color _color, int _padding = 5, bool _active =false)
+        {
+            if (_isValid)
+                return MakeButton(_label, _callback, _color, _padding);
+            else
+            {
+                EditorGUILayout.HelpBox("Problem Cube", MessageType.Warning);
+                GUILayout.Box(_label);
+                return false;
+            }
+
         }
         public static bool MakeInteractButton(bool _isValid, string _label, Action _callback, Color _color, int _padding = 5, string _message = "Problem", MessageType _messageType = MessageType.Warning)
         {
@@ -155,6 +207,43 @@ namespace EditorUtils.Button
             }
 
         }
+        public static bool MakeInteractButton(bool _isValid, string _label, Action<bool> _callback, Color _color, int _padding = 5, string _message = "Problem", MessageType _messageType = MessageType.Warning)
+        {
+            if (_isValid)
+                return MakeButton(_label, _callback, _color, _padding);
+            else
+            {
+                EditorGUILayout.HelpBox(_message, _messageType);
+                GUILayout.Box(_label);
+                return false;
+            }
+
+        }
+        public static bool MakeInteractButton(bool _isValid, string _label, Action<bool> _callback, Color _color, Padding2D _padding, string _message = "Problem", MessageType _messageType = MessageType.Warning)
+        {
+            if (_isValid)
+                return MakeButton(_label, _callback, _color, _padding);
+            else
+            {
+                EditorGUILayout.HelpBox(_message, _messageType);
+                GUILayout.Box(_label);
+                return false;
+            }
+
+        }
+        public static bool MakeInteractButton(bool _isValid, string _label, Action<bool> _callback, Color _color, Padding2D _padding, bool _active = false, string _message = "Problem", MessageType _messageType = MessageType.Warning)
+        {
+            if (_isValid)
+                return MakeButton(_label, _callback, _color, _padding, _active);
+            else
+            {
+                EditorGUILayout.HelpBox(_message, _messageType);
+                GUILayout.Box(_label);
+                return false;
+            }
+
+        }
+
         public static bool MakeInteractButtonWithPoppup(bool _isValid, string _label, Action _callback, Color _color, int _padding =5, string _message = "Problem", MessageType _messageType = MessageType.Warning, string _popup ="Popup", string _messagePopup = "Message", string _messageYes = "Yes", string _messageNo = "No")
         {
             if (_isValid)
@@ -177,6 +266,8 @@ namespace EditorUtils.Button
             }
 
         }
+       
+        
         public static bool MakeInteractButtonWithPoppup(bool _isValid, string _label, Action _callback, Color _color, AlertBox _alertBox, int _padding =5, string _message = "Problem",
             MessageType _messageType = MessageType.Warning)
         {

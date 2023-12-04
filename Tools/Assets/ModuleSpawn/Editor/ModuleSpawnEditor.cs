@@ -1,28 +1,29 @@
 using EditorUtils.Button;
 using EditorUtils.Handles;
-using log4net.Util;
+using NUnit.Framework;
+using System;
+using System.Collections.Generic;
 using UnityEditor;
-using UnityEditor.PackageManager.UI;
 using UnityEngine;
-using UnityEngine.UIElements;
-
+using UnityEngine.Rendering;
 
 [CustomEditor(typeof(SpawnObject))]
 public class ModuleSpawnEditor : Editor
 {
     #region Property
     SpawnObject spawnObject = null;
-    SerializedProperty prefabObjet, choice;
+    SerializedProperty prefabObjet, choice, list;
     EChoiceSpawn EChoice;
+    int sizeList;
+    bool asButton =false, dispersion, snap;
     #endregion
-
     #region UNITY_METHOD
     private void OnEnable() => Init();
     public override void OnInspectorGUI()
     {
         //  base.OnInspectorGUI();
         serializedObject.ApplyModifiedProperties();
-        EditSpawnerUI();
+        EditUI();
         DrawSpawnButtonGUI();
        
        
@@ -43,35 +44,106 @@ public class ModuleSpawnEditor : Editor
         spawnObject = (SpawnObject)target;
         prefabObjet =serializedObject.FindProperty("spawnObject");
         choice = serializedObject.FindProperty("choice");
+        list = serializedObject.FindProperty("listGameObject");
+        sizeList = list.arraySize;
     }
 
     #region Method_Inspector
     void DrawSpawnButtonGUI()
     {
         int _numberGameObject = spawnObject.Column * spawnObject.Line;
-        ButtonUtils.MakeInteractButton(spawnObject.ISValid(), $"Spawn objects x{_numberGameObject}", spawnObject.Spawn, Color.green, new Padding2D(10, 10), "The _numberGameObject is equal or low by 0");
+        ButtonUtils.MakeInteractButton(spawnObject.ISValid(), $"Spawn objects x{_numberGameObject}", spawnObject.Spawn, Color.green, new Padding2D(10, 10),dispersion ,"The _numberGameObject is equal or low by 0");
         ButtonUtils.MakeInteractButtonWithPoppup(spawnObject.ISValid(), $"Delete {spawnObject.DeleteList.Count}", spawnObject.Delete, Color.red, new AlertBox($"Delete  x{spawnObject.DeleteList.Count}", "Delete all gameObject in actually scene, are you sure?", "Yes", "No"));
 
 
 
     }
-    void EditSpawnerUI()
+    void EditUI()
     {
+       
         serializedObject.ApplyModifiedProperties();
-        if (spawnObject.EChoice == EChoiceSpawn.PrefabChoice)
+        if (EChoice == EChoiceSpawn.PrefabChoice)
             EditorGUILayout.ObjectField(prefabObjet);
+        else
+            DisplayListObject();
+        EditUISettings();
+     
 
+
+    }
+    void EditUISettings()
+    {
+        dispersion = EditorGUILayout.Toggle("Dispersion",dispersion);
+        snap = EditorGUILayout.Toggle("Snap", snap);
+        spawnObject.CurrentPrefab = prefabObjet.objectReferenceValue as GameObject;
         spawnObject.Column = EditorGUILayout.IntField("Column ", spawnObject.Column);
         spawnObject.Line = EditorGUILayout.IntField("Line ", spawnObject.Line);
         spawnObject.SpaceColumn = EditorGUILayout.FloatField("SpaceColumn ", spawnObject.SpaceColumn);
         spawnObject.SpaceLine = EditorGUILayout.FloatField("SpaceLine ", spawnObject.SpaceLine);
-        EditorGUILayout.EnumPopup("Echoice ", EChoice);
+        EChoice = (EChoiceSpawn)EditorGUILayout.EnumPopup(spawnObject.EChoice);
         spawnObject.EChoice = EChoice;
-        //listGameObject. = EditorGUILayout.LabelField($"ListGameObject {listGameObject}");
-
-
     }
+   
+    void DisplayListObject()
+    {
+        
+        CheckListSize();
+        DisplayList();
+    }
+    void DisplayList()
+    {
+        for (int i = 0; i < sizeList; i++)
+        {
 
+            var _gameObject = list.GetArrayElementAtIndex(i);
+            EditorGUILayout.ObjectField(_gameObject);
+            spawnObject.ListGameObject[i] = _gameObject.objectReferenceValue as GameObject;
+        }
+        ButtonUtils.MakeButton("Add", AddNewObject, Color.green,5,dispersion);
+        if (spawnObject.ListGameObject.Count > 0)
+            ButtonUtils.MakeButton("Remove", RemoveObject, Color.red, 5, dispersion);
+        else
+            ButtonUtils.MakeButton("Remove", () => { }, Color.gray);
+
+        GUI.backgroundColor = Color.white;
+    }
+    private void AddNewObject(bool _mode)
+    {
+        if(!_mode)
+            sizeList++;
+        asButton = true;
+        var _gameObject = new GameObject();
+        if (spawnObject.ListGameObject == null)
+            spawnObject.ListGameObject = new List<GameObject>();
+       
+
+        spawnObject.ListGameObject.Add(_gameObject);
+        DestroyImmediate(_gameObject);
+        
+    }
+    private void RemoveObject(bool _mode)
+    {
+        if (!_mode)
+            sizeList--;
+        var gameObject = spawnObject.ListGameObject[spawnObject.ListGameObject.Count - 1];
+        spawnObject.ListGameObject.Remove(gameObject);
+    }
+    private void CheckListSize()
+    {
+        sizeList = EditorGUILayout.IntField("Size: ", sizeList);
+        if (asButton)
+        {
+            asButton = false;
+            return;
+        }
+        if (spawnObject.ListGameObject.Count> sizeList)
+            for (int i = spawnObject.ListGameObject.Count; i > sizeList; i--)
+                RemoveObject(true);
+        
+        else  if (spawnObject.ListGameObject.Count < sizeList)
+            for (int i = spawnObject.ListGameObject.Count; i < sizeList; i++)
+                AddNewObject(true);
+    }
     #endregion
 
     #region Method_Scene

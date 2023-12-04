@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
 
 
@@ -19,6 +18,7 @@ public class SpawnObject : MonoBehaviour
     [SerializeField] int line;
     [SerializeField] float spaceColumn;
     [SerializeField] float spaceLine;
+    [SerializeField] int scale;
     [SerializeField] EChoiceSpawn choice;
     [SerializeField] GameObject spawnObject;
     [SerializeField] List<GameObject> listGameObject;
@@ -38,9 +38,9 @@ public class SpawnObject : MonoBehaviour
     public List<GameObject> DeleteList { get => deleteList; }
     #endregion
 
-
+    
     #region Method
-    public void Spawn()
+    public void Spawn(bool _dispersion)
     {
       
        
@@ -50,14 +50,14 @@ public class SpawnObject : MonoBehaviour
             case EChoiceSpawn.PrefabChoice:
                 {
                     
-                    SpawnPrefab( column,  line,  spaceColumn,  spaceLine);
+                    SpawnPrefab( column,  line,  spaceColumn,  spaceLine, _dispersion);
                     break;
                 }
                
             case EChoiceSpawn.ListChoice:
                 {
                     
-                    SpawnByList(column, line, spaceColumn, spaceLine);
+                    SpawnByList(column, line, spaceColumn, spaceLine, _dispersion);
                     break;
                 }
                 
@@ -69,7 +69,7 @@ public class SpawnObject : MonoBehaviour
       
 
     }
-   public void Delete()
+    public void Delete()
     {
        
 
@@ -81,29 +81,42 @@ public class SpawnObject : MonoBehaviour
 
     }
 
-    private void SpawnPrefab(int _column, int _line, float _spaceColumn, float _spaceLine)
+    private void SpawnPrefab(int _column, int _line, float _spaceColumn, float _spaceLine, bool _dispersion)
     {
+        int _random;
         if (!spawnObject)
             throw new System.NullReferenceException("SpawnObject => not prefab");
         for (int i = 0; i < line; i++)
             for (int j = 0; j < column; j++)
             {
-
+                _random = Random.Range(0, 10);
                 spawnObject = Instantiate(spawnObject);
+                if(_dispersion)
+                {
+
+                    _random = Random.Range(0, scale);
+                    spawnObject.transform.localScale = new Vector3(_random, _random, _random);
+                }
                 spawnObject.transform.position = new Vector3(transform.position.x + j * spaceColumn, transform.position.y, transform.position.z + i * spaceLine);
                 deleteList.Add(spawnObject);
             }
         
     }
-    private void SpawnByList(int _column, int _line, float _spaceColumn, float _spaceLine)
+    private void SpawnByList(int _column, int _line, float _spaceColumn, float _spaceLine, bool _dispersion)
     {
-        int _random;
+        int _random, _oky;
         for (int i = 0; i < line; i++)
             for (int j = 0; j < column; j++)
             {
                 _random = Random.Range(0, listGameObject.Count);
+                if (!listGameObject[_random])
+                    throw new System.NullReferenceException("SpawnObject => one element is null");
                 spawnObject = Instantiate(listGameObject[_random]);
-              
+                if (_dispersion)
+                {
+                    _oky = Random.Range(0, 100);
+                    spawnObject.transform.localScale = new Vector3(_oky, _oky, _oky);
+                }
                 spawnObject.transform.position = new Vector3(transform.position.x + j * spaceColumn, transform.position.y, transform.position.z + i * spaceLine);
                 deleteList.Add(spawnObject);
             }
