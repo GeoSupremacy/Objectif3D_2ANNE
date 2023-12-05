@@ -12,11 +12,12 @@ public class ModuleSpawnEditor : Editor
 {
     #region Property
     SpawnObject spawnObject = null;
-    SerializedProperty prefabObjet, choice, list;
+    SerializedProperty prefabObjet, choice, list, snapSpawObject;
     EChoiceSpawn EChoice;
     int sizeList;
     bool asButton =false, dispersion, snap;
     #endregion
+
     #region UNITY_METHOD
     private void OnEnable() => Init();
     public override void OnInspectorGUI()
@@ -46,6 +47,7 @@ public class ModuleSpawnEditor : Editor
         choice = serializedObject.FindProperty("choice");
         list = serializedObject.FindProperty("listGameObject");
         sizeList = list.arraySize;
+        snapSpawObject = serializedObject.FindProperty("snap");
     }
 
     #region Method_Inspector
@@ -74,7 +76,7 @@ public class ModuleSpawnEditor : Editor
     void EditUISettings()
     {
         dispersion = EditorGUILayout.Toggle("Dispersion",dispersion);
-        snap = EditorGUILayout.Toggle("Snap", snap);
+       // spawnObject.Snap = EditorGUILayout.Toggle("Snap", snapSpawObject.boolValue);
         spawnObject.CurrentPrefab = prefabObjet.objectReferenceValue as GameObject;
         spawnObject.Column = EditorGUILayout.IntField("Column ", spawnObject.Column);
         spawnObject.Line = EditorGUILayout.IntField("Line ", spawnObject.Line);
@@ -109,6 +111,9 @@ public class ModuleSpawnEditor : Editor
     }
     private void AddNewObject(bool _mode)
     {
+        if (sizeList <=0)
+            return;
+
         if(!_mode)
             sizeList++;
         asButton = true;
@@ -131,6 +136,7 @@ public class ModuleSpawnEditor : Editor
     private void CheckListSize()
     {
         sizeList = EditorGUILayout.IntField("Size: ", sizeList);
+        sizeList = sizeList<0? 0 : sizeList;
         if (asButton)
         {
             asButton = false;

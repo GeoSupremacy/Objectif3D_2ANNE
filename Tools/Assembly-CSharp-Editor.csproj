@@ -59,11 +59,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\EditorUtils\Editor\GUIStyleUtils.cs" />
+    <Compile Include="Assets\ModuleSpawn Correction\Editor\SpawnerToolComponentEditor.cs" />
+    <Compile Include="Assets\ModuleSpawn Correction\Editor\Module\SpawnerCircleModule.cs" />
     <Compile Include="Assets\EditorUtils\Editor\ButtonUtils.cs" />
     <Compile Include="Assets\ToolsExample\Editor\ExampleComponentEditor.cs" />
     <Compile Include="Assets\ModuleSpawn\Editor\ModuleSpawnEditor.cs" />
+    <Compile Include="Assets\ModuleSpawn Correction\Editor\Module\SpawnerGridModule.cs" />
     <Compile Include="Assets\EditorUtils\Editor\Padding2D.cs" />
     <Compile Include="Assets\ToolsExample\Editor\ToolSave.cs" />
+    <Compile Include="Assets\ModuleSpawn Correction\Editor\Module\SpawnerLineModule.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
     <Compile Include="Assets\EditorUtils\Editor\HandlesUtils.cs" />
     <Compile Include="Assets\TextureGenerator\Editor\TextureGeneratorEditor.cs" />

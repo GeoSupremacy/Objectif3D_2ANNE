@@ -23,11 +23,13 @@ public class SpawnObject : MonoBehaviour
     [SerializeField] GameObject spawnObject;
     [SerializeField] List<GameObject> listGameObject;
     [SerializeField, HideInInspector] List<GameObject> deleteList;
+    [SerializeField] bool snap = false;
     #endregion
 
 
     #region Acesseur
     public bool ISValid() => column > 0 && line >0;
+   // public bool Snap() {get; set; }
     public int Column {get => column; set => column =value; }
     public int Line {get => line; set => line=value;}
     public float SpaceColumn { get => spaceColumn; set => spaceColumn=value;}
@@ -37,14 +39,12 @@ public class SpawnObject : MonoBehaviour
     public List<GameObject> ListGameObject { get => listGameObject; set => listGameObject = value; }
     public List<GameObject> DeleteList { get => deleteList; }
     #endregion
+   
 
-    
     #region Method
     public void Spawn(bool _dispersion)
     {
       
-       
-
         switch (choice)
         {
             case EChoiceSpawn.PrefabChoice:

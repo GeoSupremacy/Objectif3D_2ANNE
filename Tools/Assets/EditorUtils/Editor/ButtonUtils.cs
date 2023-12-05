@@ -266,8 +266,29 @@ namespace EditorUtils.Button
             }
 
         }
-       
-        
+
+        public static bool MakeInteractButtonWithPoppup(bool _isValid, string _label, Action _callback, Color _color, Padding2D _padding , string _message = "Problem", MessageType _messageType = MessageType.Warning, string _popup = "Popup", string _messagePopup = "Message", string _messageYes = "Yes", string _messageNo = "No")
+        {
+            if (_isValid)
+            {
+
+                return MakeButton(_label, () =>
+                {
+                    if (Popup(_popup, _messagePopup, _messageYes, _messageNo))
+                        _callback?.Invoke();
+
+
+                }, _color, _padding);
+
+            }
+            else
+            {
+                EditorGUILayout.HelpBox(_message, _messageType);
+                GUILayout.Box(_label);
+                return false;
+            }
+
+        }
         public static bool MakeInteractButtonWithPoppup(bool _isValid, string _label, Action _callback, Color _color, AlertBox _alertBox, int _padding =5, string _message = "Problem",
             MessageType _messageType = MessageType.Warning)
         {
@@ -291,7 +312,29 @@ namespace EditorUtils.Button
             }
 
         }
+        public static bool MakeInteractButtonWithPoppup(bool _isValid, string _label, Action _callback, Color _color, AlertBox _alertBox, Padding2D _padding , string _message = "Problem",
+         MessageType _messageType = MessageType.Warning)
+        {
+            if (_isValid)
+            {
 
+                return MakeButton(_label, () =>
+                {
+                    if (EditorUtility.DisplayDialog(_alertBox.Title, _alertBox.Message, _alertBox.Ok, _alertBox.Cancel))
+                        _callback?.Invoke();
+
+
+                }, _color, _padding);
+
+            }
+            else
+            {
+                EditorGUILayout.HelpBox(_message, _messageType);
+                GUILayout.Box(_label);
+                return false;
+            }
+
+        }
         public static bool Popup(string _popup, string _message,string _messageYes ="Yes", string _messageNo = "No")
         {
             return EditorUtility.DisplayDialog(_popup, _message, _messageYes, _messageNo);
