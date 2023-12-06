@@ -65,11 +65,16 @@
     <Compile Include="Assets\ToolsExample\Runtime\ExampleComponent.cs" />
     <Compile Include="Assets\InputSystem\Input\MyInput.cs" />
     <Compile Include="Assets\ModuleSpawn Correction\SpawnerItemBehaviour.cs" />
+    <Compile Include="Assets\DialogueSystem\RunTime\ScriptableDataDialogue.cs" />
     <Compile Include="Assets\ModuleSpawn Correction\RunTime\SpawnerModule.cs" />
     <Compile Include="Assets\InputSystem\PlayerWithOtherInputs.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\CCR_DialogueSytem\CRR_Dialog.cs" />
     <Compile Include="Assets\ModuleSpawn\RunTime\SpawnObject.cs" />
     <Compile Include="Assets\TextureGenerator\Runtime\TextureGenerator.cs" />
+    <Compile Include="Assets\DialogueSystem\RunTime\DataDialogue.cs" />
+    <Compile Include="Assets\DialogueSystem\RunTime\DialogEditor.cs" />
+    <Compile Include="Assets\DialogueSystem\RunTime\DialogueComponent.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
