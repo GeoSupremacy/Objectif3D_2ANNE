@@ -62,6 +62,7 @@
     <Compile Include="Assets\ModuleSpawn Correction\MySpawnerDictionary.cs" />
     <Compile Include="Assets\InputSystem\PlayerWithBasicInputs.cs" />
     <Compile Include="Assets\ModuleSpawn Correction\RunTime\SpawnerToolComponent.cs" />
+    <Compile Include="Assets\CCR_DialogueSytem\CRR_Answer.cs" />
     <Compile Include="Assets\ToolsExample\Runtime\ExampleComponent.cs" />
     <Compile Include="Assets\InputSystem\Input\MyInput.cs" />
     <Compile Include="Assets\ModuleSpawn Correction\SpawnerItemBehaviour.cs" />

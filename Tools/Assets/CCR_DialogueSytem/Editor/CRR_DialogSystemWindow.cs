@@ -35,7 +35,7 @@ public class CRR_DialogSystemWindow : EditorWindow
         BeginWindows();
         GUILayout.Window(-1, new Rect(0, 0, 200, position.height), MenuWindow, string.Empty);  //-1 pas boucle /:Les button delete/add
         if (showDialogCreation)
-            GUILayout.Window(0, new Rect(200, 10, 300, 100), CreateDialogWindow, string.Empty);  //nouvelle fenêtre window
+            GUILayout.Window(-1000, new Rect(200, 10, 300, 100), CreateDialogWindow, string.Empty);  //nouvelle fenêtre window
         DrawDialogSystemGrid();
         DrawDialogSystemContent(); //chaque dialog draw son contenu
         EndWindows();
@@ -43,7 +43,7 @@ public class CRR_DialogSystemWindow : EditorWindow
     void MenuWindow( int _id)
     {
         ButtonUtils.MakeButton("Create dialog", ShowCreateDialogs, Color.green);
-        ButtonUtils.MakeButton("Delete dialog", DeleteDialog, Color.red);
+        ButtonUtils.MakeInteractButtonWithPoppup(true,"Delete dialog", DeleteAllDialogs, Color.red);
         EditorGUILayout.Space(10);
        
         EditorGUILayout.HelpBox("Dialog List: ", MessageType.None);
@@ -71,7 +71,7 @@ public class CRR_DialogSystemWindow : EditorWindow
     {
         if (!currentDialog)
             return;
-        currentDialog.Draw();
+        currentDialog.Draw(new Rect(200,0 ,position.width, position.height));
     }
     void ShowAllDialogs()
     {
@@ -103,6 +103,14 @@ public class CRR_DialogSystemWindow : EditorWindow
         currentDialogIndex = _index;
     }
     void ShowCreateDialogs() => showDialogCreation = true;
+    void DeleteAllDialogs()
+    {
+        for(int i = 0; i < dialogs.Length; i++)
+        {
+            AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(dialogs[i]));
+        }
+        ReloadDialogs();
+    }
     void DeleteDialog()
     { 
 
