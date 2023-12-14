@@ -63,8 +63,8 @@
     <Compile Include="Assets\Scriptes\Manager\CameraTester.cs" />
     <Compile Include="Assets\Scriptes\PNJCameraFollow.cs" />
     <Compile Include="Assets\Scriptes\PNJDialogCameraSystem.cs" />
-    <Compile Include="Assets\Scriptes\Camera\CameraFollow.cs" />
     <Compile Include="Assets\Scriptes\Manager\Singleton\Test.cs" />
+    <Compile Include="Assets\Scriptes\Camera\CameraFollow.cs" />
     <Compile Include="Assets\Scriptes\UI\ManagerUI.cs" />
     <Compile Include="Assets\Scriptes\PNJ.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />

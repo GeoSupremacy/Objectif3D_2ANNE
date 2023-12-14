@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Inputs\InputComponant.cs" />
+    <Compile Include="Assets\Scripte\CharacterAnimation.cs" />
     <Compile Include="Assets\Scripte\SpringArm.cs" />
     <Compile Include="Assets\Scripte\Player.cs" />
     <Compile Include="Assets\Inputs\ControlPlayer.cs" />

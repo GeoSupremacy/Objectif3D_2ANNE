@@ -11,7 +11,14 @@ public class CameraCustom : MonoBehaviour
     [SerializeField] float speedRotation = 100;
     [SerializeField] protected Transform target;
 
-    public Vector3 TargetPosition => target.position;
+    public Vector3 TargetPosition { get 
+        {
+
+            if (!target)
+                throw new System.NullReferenceException(" CameraCustom Not target");
+            return target.position;
+        } 
+        private set { } }
     private void LateUpdate() =>UpdateRotation();
     
 

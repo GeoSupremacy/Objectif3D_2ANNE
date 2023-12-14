@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class SpringArm : MonoBehaviour
 {
+    [SerializeField]
     Transform cameraTransform = null;
     [SerializeField, Range(0, 100)] float armLenght = 5;
-    Vector3 FinalPoint => transform.position + transform.forward * armLenght;
+    Vector3 FinalPoint => transform.position + transform.forward * -armLenght;
 
 
     private void LateUpdate() => UpdateCameraPosition(GetCameraAlpha());
@@ -39,7 +40,7 @@ public class SpringArm : MonoBehaviour
     private void DrawDebug()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawRay(transform.position, transform.forward * armLenght);
+        Gizmos.DrawRay(transform.position, transform.forward * -armLenght);
     }
 }
 

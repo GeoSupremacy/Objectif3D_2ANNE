@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
@@ -7,8 +8,8 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(InputComponant))]
 public class Player : MonoBehaviour
 {
-
-
+    public static Action<float> onMoveForward;
+    public static Action<float> onStopForward;
     #region Settings
     [SerializeField]
     InputComponant inputPlayer;
@@ -16,7 +17,7 @@ public class Player : MonoBehaviour
         CameraCustom cameraCustom;
     [SerializeField]
         SpringArm arm = null;
-    [SerializeField] Mesh mesh = null;
+   
     [SerializeField, Range(1, 100), Min(0)]
     float speedForward = 5,
           speedRight = 5,
@@ -24,7 +25,7 @@ public class Player : MonoBehaviour
           speedCameraY = 5;
     [SerializeField, Range(1, 1000), Min(0)]
     float ThrustJump =1000;
-    [SerializeField, Range(1, 1000), Min(0)]
+    [SerializeField, Range(0, 1000), Min(0)]
     float touchGround = 1000;
     [SerializeField]
     bool canJump = true;
@@ -53,13 +54,17 @@ public class Player : MonoBehaviour
        
     }
     void MoveForward()
-    { 
+    {
+        
         if(!inputPlayer)
             throw new System.NullReferenceException("Not input Player");
 
         float _axis = inputPlayer.MoveForward.ReadValue<float>();
+       
         float _speed = _axis * (speedForward * Time.deltaTime);
         transform.position += transform.forward* _speed;
+    
+        onMoveForward?.Invoke(_axis);
     }
     void MoveRight()
     {
