@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class SpringArm : MonoBehaviour
 {
-    [SerializeField]
+   
     Transform cameraTransform = null;
+    [SerializeField] LayerMask mask;
     [SerializeField, Range(0, 100)] float armLenght = 5;
     Vector3 FinalPoint => transform.position + transform.forward * -armLenght;
 
@@ -27,8 +28,8 @@ public class SpringArm : MonoBehaviour
     }
 
     float GetCameraAlpha()
-    {
-        bool _result = Physics.Raycast(new Ray(transform.position, transform.forward * armLenght), out RaycastHit _hitInfo, armLenght);
+    { 
+        bool _result = Physics.Raycast(transform.position, transform.forward * -armLenght, out RaycastHit _hitInfo,0, mask);
         return _result ? (_hitInfo.distance / armLenght) : 1;
     }
     void UpdateCameraPosition(float _alpha = 1)

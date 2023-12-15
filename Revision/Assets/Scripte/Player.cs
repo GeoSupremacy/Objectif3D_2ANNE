@@ -6,6 +6,9 @@ using UnityEngine.InputSystem;
 
 
 [RequireComponent(typeof(InputComponant))]
+[RequireComponent(typeof(Rigidbody))]
+
+[RequireComponent(typeof(CapsuleCollider))]
 public class Player : MonoBehaviour
 {
     public static Action<float> onMoveForward;
