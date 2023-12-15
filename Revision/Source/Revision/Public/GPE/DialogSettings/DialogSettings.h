@@ -27,7 +27,7 @@ struct FDialog
 	UPROPERTY(EditAnywhere)
 		TArray<FAnswers> answers;
 
-	void Choice(int _index) { answers[_index]; }
+	FAnswers Choice(int _index) { return answers[_index]; }
 	int Count() const {return answers.Num(); }
 };
 UCLASS()
@@ -37,12 +37,15 @@ class REVISION_API UDialogSettings : public UDataAsset
 private:
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCallback, FDialog, _callback);
 	FOnCallback onCallback;
-
+	
 private:
 	UPROPERTY(EditAnywhere)
 		TArray<FDialog> dialogs;
+	UPROPERTY(EditAnywhere)
+		FString id = "ID";
 	int dialogProgress = 0;
 public:
+	FORCEINLINE FString GetID()  const { return id; }
 	FORCEINLINE int GetDialogProcess()  const{ return dialogProgress; }
 	FORCEINLINE void SetDialogProcess(int _index) { dialogProgress = _index; }
 

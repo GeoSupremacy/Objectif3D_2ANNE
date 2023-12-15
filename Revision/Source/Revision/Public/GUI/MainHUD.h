@@ -30,4 +30,6 @@ public:
 	 void InitUI();
 	UFUNCTION() void NextDialog();
 	UFUNCTION() void ReturnPreviousDialog();
+	UFUNCTION() void Display();
+	UFUNCTION() void Remove();
 };

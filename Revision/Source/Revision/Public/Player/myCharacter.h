@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GPE/PNJ.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "InputMappingContext.h"
@@ -25,8 +26,12 @@ private:
 
 #pragma region Dialog
 private:
-	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnEnterChat);
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnEnterChatUI, APNJ*, png);
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnEnterChat, FString, _string);
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnLeftChat);
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnOpenUI);
+	FOnOpenUI onOpenUI;
+	FOnEnterChatUI onEnterChatUI;
 	FOnEnterChat onEnterChat;
 	FOnLeftChat onLeftChat;
 #pragma endregion
@@ -61,7 +66,9 @@ private:
 public:
 	FORCEINLINE FOnMoveForward& OnMoveForward() { return onMoveForward; }
 	FORCEINLINE FOnEnterChat& OnEnterChat() { return onEnterChat;}
+	FORCEINLINE FOnEnterChatUI& OnEnterChatUI() { return onEnterChatUI; }
 	FORCEINLINE FOnLeftChat& OnLeftChat() { return onLeftChat; }
+	FORCEINLINE FOnOpenUI& OnOpenUI() { return onOpenUI; }
 #pragma endregion 
 
 #pragma region METHOD_UE

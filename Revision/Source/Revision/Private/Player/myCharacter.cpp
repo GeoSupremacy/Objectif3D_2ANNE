@@ -60,8 +60,9 @@ void AmyCharacter::MappingContext()
 		return;
 	}
 	inputConfig->MappingContext(Cast<APlayerController>(GetController())->GetLocalPlayer());
-
-
+	
+	
+	
 }
 void AmyCharacter::BindAction(UInputComponent* PlayerInputComponent)
 {
@@ -117,20 +118,31 @@ void AmyCharacter::Jump()
 	JumpKeyHoldTime = 0.0f;
 }
 #pragma endregion 
-
+#include <string.h>
 #pragma region Action_Input
 void AmyCharacter::Interact()
 {
 	FHitResult _result;
+	FString _id = "";
+	
 	bool _hit =UKismetSystemLibrary::LineTraceSingleForObjects(this, GetActorLocation(), GetActorLocation() + GetActorForwardVector() * 100, objectLayer, true, TArray<AActor*>(), EDrawDebugTrace::None, _result, true);
 	if (_hit && !hasCurrentDialog)
 	{
+		
+		APNJ* _test = nullptr;
+		
+		
+			APNJ* _png = Cast<APNJ>(_result.GetActor());
+			if(_png)
+				_id = _png->DialogSettings()->GetID();
+		
 		hasCurrentDialog = true;
-		GetWorld()->GetTimerManager().SetTimer(quiteDialog, this, &AmyCharacter::QuitDialog, 3, false);
-
-
+		GetWorld()->GetTimerManager().SetTimer(quiteDialog, this, &AmyCharacter::QuitDialog, 1, false);
+		
 		camera->AddLocalOffset(FVector(100));
-		INVOKE(onEnterChat)
+		INVOKE(onEnterChat, _id)
+		INVOKE(onEnterChatUI, _png)
+		INVOKE(onOpenUI)
 	}
 }
 void AmyCharacter::QuitDialog()

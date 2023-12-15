@@ -15,24 +15,40 @@ void AMainHUD::InitUI()
 	dialogUi = CreateWidget<UUI_Dialog>(GetWorld(), dialogUiRef);
 	GetWorld()->GetFirstPlayerController()->SetInputMode(FInputModeGameOnly());
 
-	if (!dialogUi)
+	if (!dialogUi || !player)
 		return;
 
 	dialogUi->AddToViewport();
 
-	dialogUi->SetVisibility(ESlateVisibility::Visible);
+	dialogUi->SetVisibility(ESlateVisibility::Hidden);
 
-	//dialogUi->PlayButton()->OnClicked.AddDynamic(this, &AUI_TitleHUD::OpenPlayUI);
-
+	player->OnOpenUI().AddDynamic(this, &AMainHUD::Display);
+	player->OnLeftChat().AddDynamic(this, &AMainHUD::Remove);
+	//player->OnEnterChat().AddDynamic(UUI_Dialog, &UUI_Dialog::Display);
 	//GetWorld()->GetFirstPlayerController()->SetShowMouseCursor(true);
 }
 
 void AMainHUD::NextDialog()
 {
-	dialogUi->SetVisibility(ESlateVisibility::Visible);
+
 }
 
 void AMainHUD::ReturnPreviousDialog()
 {
 
+}
+
+void AMainHUD::Display()
+{
+	dialogUi->SetVisibility(ESlateVisibility::Visible);
+	
+	GetWorld()->GetFirstPlayerController()->SetShowMouseCursor(true);
+}
+
+void AMainHUD::Remove()
+{
+	
+	dialogUi->SetVisibility(ESlateVisibility::Hidden);
+
+	GetWorld()->GetFirstPlayerController()->SetShowMouseCursor(false);
 }

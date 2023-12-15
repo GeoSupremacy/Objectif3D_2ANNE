@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 #include "Player/myCharacter.h"
-#include "../DebugUtils.h"
+#include "../Utils.h"
 
 #include "GPE/PNJ.h"
 
@@ -23,23 +23,17 @@ void APNJ::Tick(float DeltaTime)
 	
 }
 
-void APNJ::OpenChat()
+void APNJ::OpenChat(FString _id)
 {
 	if (!dialogSettings)
-	{
-		SCREEN_DEBUG_MESSAGE_ERROR(0, 10, TEXT("APNJ No dialog settings "))
-			return;
-	}
-	
-	KEY++;
-	int _key = KEY;
-	DEFINE_KEY_SCREEN(KEY)
-	SCREEN_DEBUG_MESSAGE_ERROR(-1,10, dialogSettings->Dialog(0).quote)
-		for (size_t i = 0; i < dialogSettings->CountAllAnswers(0); i++)
-		{
-			SCREEN_DEBUG_MESSAGE_ERROR(i+1, 10, dialogSettings->AllAnswers(0)[i].answer)
-		}
+		return;
+	if (_id != dialogSettings->GetID())
+		return;
+	thisPNJ = true;
+	INVOKE(onOpenChat, _id)
 
+	
+	SCREEN_DEBUG_MESSAGE_WARNING( 1, "PNJ: " +_id);
 }
 
 void APNJ::LeftChat()
@@ -47,7 +41,7 @@ void APNJ::LeftChat()
 	if (!dialogSettings)
 		return;
 	
-	
+	thisPNJ = false;
 }
 
 void APNJ::Bind()
@@ -57,7 +51,8 @@ void APNJ::Bind()
 		return;
 	if (!dialogSettings)
 	{
-		SCREEN_DEBUG_MESSAGE_ERROR(0, 10, TEXT("APNJ No dialog settings "))
+		
+		SCREEN_DEBUG_MESSAGE_ERROR(10, "APNJ No dialog settings ")
 		return;
 	}
 	_character->OnEnterChat().AddDynamic(this, &APNJ::OpenChat);
