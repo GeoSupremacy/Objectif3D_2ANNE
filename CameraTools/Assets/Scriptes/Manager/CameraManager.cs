@@ -7,7 +7,13 @@ public class CameraManager : Singleton<CameraManager>
 {
     Dictionary<string, CameraManaged> allCameras = new();
     [SerializeField] private CameraFollow cameraFollowType = null;
+    [SerializeField] private List<CameraManaged> cameraFollow = null;
     //[SerializeField] private OrbitCamera cameraOrbitType = null;
+    private void Start()
+    {
+        foreach(var cam in allCameras)
+            cameraFollow.Add( cam.Value);
+    }
     public void AddCamera(CameraManaged _camera)
     {
         string _lowerID = _camera.CameraID.ToLower();
@@ -38,7 +44,8 @@ public class CameraManager : Singleton<CameraManager>
         _instance.SetTarget(_target);
         _instance.GetComponent<CameraManaged>().RegisterCamera(_id);
     }
-    public void CreateCamera<T>(T prefab, string _id, Transform _target) where T :CameraMovements
+    
+   public void CreateCamera<T>(T prefab, string _id, Transform _target) where T :CameraMovements
     {
 
         T _instance = Instantiate(prefab);

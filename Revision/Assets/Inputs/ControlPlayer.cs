@@ -71,6 +71,24 @@ public partial class @ControlPlayer: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interaction"",
+                    ""type"": ""Button"",
+                    ""id"": ""cb8045bc-2a94-40ea-8e71-852b0a33995e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""leftChat"",
+                    ""type"": ""Button"",
+                    ""id"": ""9733aad4-db02-4f70-b8e9-c544f3bdcc93"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -172,6 +190,28 @@ public partial class @ControlPlayer: IInputActionCollection2, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0109f58b-5152-40c9-a8f4-2fd18707804a"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interaction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fac8a513-b64f-4fc6-8ab5-19f049973983"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""leftChat"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -185,6 +225,8 @@ public partial class @ControlPlayer: IInputActionCollection2, IDisposable
         m_Player_RotateYaw = m_Player.FindAction("RotateYaw", throwIfNotFound: true);
         m_Player_RotatePitch = m_Player.FindAction("RotatePitch", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+        m_Player_Interaction = m_Player.FindAction("Interaction", throwIfNotFound: true);
+        m_Player_leftChat = m_Player.FindAction("leftChat", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -251,6 +293,8 @@ public partial class @ControlPlayer: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_RotateYaw;
     private readonly InputAction m_Player_RotatePitch;
     private readonly InputAction m_Player_Jump;
+    private readonly InputAction m_Player_Interaction;
+    private readonly InputAction m_Player_leftChat;
     public struct PlayerActions
     {
         private @ControlPlayer m_Wrapper;
@@ -260,6 +304,8 @@ public partial class @ControlPlayer: IInputActionCollection2, IDisposable
         public InputAction @RotateYaw => m_Wrapper.m_Player_RotateYaw;
         public InputAction @RotatePitch => m_Wrapper.m_Player_RotatePitch;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
+        public InputAction @Interaction => m_Wrapper.m_Player_Interaction;
+        public InputAction @leftChat => m_Wrapper.m_Player_leftChat;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -284,6 +330,12 @@ public partial class @ControlPlayer: IInputActionCollection2, IDisposable
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
+            @Interaction.started += instance.OnInteraction;
+            @Interaction.performed += instance.OnInteraction;
+            @Interaction.canceled += instance.OnInteraction;
+            @leftChat.started += instance.OnLeftChat;
+            @leftChat.performed += instance.OnLeftChat;
+            @leftChat.canceled += instance.OnLeftChat;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -303,6 +355,12 @@ public partial class @ControlPlayer: IInputActionCollection2, IDisposable
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
+            @Interaction.started -= instance.OnInteraction;
+            @Interaction.performed -= instance.OnInteraction;
+            @Interaction.canceled -= instance.OnInteraction;
+            @leftChat.started -= instance.OnLeftChat;
+            @leftChat.performed -= instance.OnLeftChat;
+            @leftChat.canceled -= instance.OnLeftChat;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -327,5 +385,7 @@ public partial class @ControlPlayer: IInputActionCollection2, IDisposable
         void OnRotateYaw(InputAction.CallbackContext context);
         void OnRotatePitch(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnInteraction(InputAction.CallbackContext context);
+        void OnLeftChat(InputAction.CallbackContext context);
     }
 }

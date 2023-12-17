@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Timeline;
 using UnityEngine.UIElements;
 
 
@@ -9,12 +10,16 @@ using UnityEngine.UIElements;
 public class InputComponant : MonoBehaviour
 {
     #region Input
+    [SerializeField,HideInInspector]
     ControlPlayer inputActions;
+    [SerializeField, HideInInspector]
     InputAction moveForward,
                 moveRight,
                 rotateYaw,
                 rotatePitch,
-                jump;
+                jump,
+                interact,
+                leftchat;
     List<InputAction> actions = new();
     #endregion Input
 
@@ -33,6 +38,9 @@ public class InputComponant : MonoBehaviour
     public InputAction RotateYaw => rotateYaw;
     public InputAction RotatePitch => rotatePitch;
     public InputAction Jump => jump;
+    public InputAction Interact => interact;
+
+    public InputAction Leftchat => leftchat;
     #endregion Acesseur
 
     #region MANAGE_INPUT
@@ -44,8 +52,9 @@ public class InputComponant : MonoBehaviour
         rotatePitch = inputActions.Player.RotatePitch;
         rotateYaw = inputActions.Player.RotateYaw;
         jump = inputActions.Player.Jump;
-
-        actions.AddRange(new List<InputAction> { moveForward, moveRight, rotatePitch, rotateYaw, jump,});
+        interact = inputActions.Player.Interaction;
+        leftchat = inputActions.Player.leftChat;
+        actions.AddRange(new List<InputAction> { moveForward, moveRight, rotatePitch, rotateYaw, jump, interact, leftchat ,});
         ManageInputActivate(true);
     }
     void ManageInputActivate(bool _activate)
