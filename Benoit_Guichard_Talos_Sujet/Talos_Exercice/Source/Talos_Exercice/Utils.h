@@ -6,7 +6,7 @@
 
 #define CREATE(component,name) CreateDefaultSubobject<component>(name);
 #define ATTACH_TO(element, to) element->SetupAttachment(to);
-#define FIRST_PLAYER_C GetWorld()->GetFirstPlayerController()
+#define FPC GetWorld()->GetFirstPlayerController()
 #define OWNER GetOwner()
 #define LERP(A, B, T) FMath::Lerp(A, B, T)
 

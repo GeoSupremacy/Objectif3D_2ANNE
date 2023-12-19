@@ -5,12 +5,13 @@
 using namespace std;
 
 static int indexfegersfvetzfsd = -1;
+static int _key;
 static vector<int> currenTab;
 
 #define KEY  indexfegersfvetzfsd
 #define DEFINE_KEY_SCREEN  \
 KEY++;\
-int _key = KEY;\
+ _key = KEY;\
 currenTab.push_back(_key);\
 
 #define KEY_SCREEN currenTab[_key]

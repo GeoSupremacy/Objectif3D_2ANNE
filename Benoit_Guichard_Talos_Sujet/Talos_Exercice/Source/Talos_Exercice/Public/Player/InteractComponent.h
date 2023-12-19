@@ -11,11 +11,15 @@ UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class TALOS_EXERCICE_API UInteractComponent : public UActorComponent
 {
 	GENERATED_BODY()
+#pragma region Event Drop/Grab
 private:
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnGrab);
-	FOnGrab onGrab;
+	 FOnGrab onGrab;
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDrop);
-	FOnDrop onDrop;
+	 FOnDrop onDrop;
+#pragma endregion
+
+#pragma region Settings
 private:
 	UPROPERTY(EditAnywhere, Category = "interact")
 		TArray<TEnumAsByte<EObjectTypeQuery>> interactLayer;
@@ -23,23 +27,40 @@ private:
 		float top;
 	UPROPERTY(EditAnywhere, Category = "interact", meta = (UIMin = 0, ClampMin = 0))
 		float down;
-	UPROPERTY(EditAnywhere, Category = "interact", meta = (UIMin = 0, ClampMin =0 ))
+	UPROPERTY(EditAnywhere, Category = "interact", meta = (UIMin = 0, ClampMin = 0))
 		float range;
-	FHitResult result;
-	bool canGrabItem = false;
 
+	FHitResult result;
+	bool canGrabItem = false,
+		hasObject = false;
+#pragma endregion
+
+#pragma region Constructor
 public:
 	UInteractComponent();
-protected:
+#pragma endregion
+
+#pragma region Broadcast
+public:
+	FORCEINLINE  FOnGrab& OnGrab() { return onGrab; }
+	FORCEINLINE  FOnDrop& OnDrop() { return onDrop; }
+#pragma endregion
+
+#pragma region UE_METHOD
+private:
 	virtual void BeginPlay() override;
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-public:
-	FORCEINLINE FOnGrab& OnGrab()  {return onGrab;}
-	FORCEINLINE FOnDrop& OnDrop()  { return onDrop;}
+#pragma endregion
+
+#pragma region Grab/Drop
 public:
 	void Drop();
 	void Grab();
+#pragma endregion
+
+#pragma region DETECTED
 private:
-	void DetectedObjectFeedback(TObjectPtr<AActor>);
 	void DetectedObject();
+	void DrawDebug(bool _hit, FVector _origin, FVector _end);
+#pragma endregion
 };

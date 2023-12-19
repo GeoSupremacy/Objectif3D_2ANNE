@@ -1,5 +1,5 @@
 #pragma once
-
+#define WORLD GetWorld()
 #define USE_DRAW_DEBUG 1
 #define DRAW_SPHERE( from, radius, color, size) \
 	if (USE_DRAW_DEBUG) DrawDebugSphere(WORLD, from, radius, 20, color, false, -1,0 , size);

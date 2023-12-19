@@ -23,8 +23,16 @@ private:
 
 #pragma region Event Interact
 private:
-	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnInteract);
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnInteract, bool, interact);
 	FOnInteract onInteract;
+#pragma endregion 
+
+#pragma region Event UI
+private:
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnEnable);
+	FOnEnable onEnable;
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDisable);
+	FOnDisable onDisable;
 #pragma endregion 
 
 #pragma region Camera
@@ -47,6 +55,15 @@ private:
 	TObjectPtr<UInteractComponent> interact = nullptr;
 #pragma endregion 
 
+#pragma region Settings
+private:
+	UPROPERTY(EditANywhere, Category = "Runtime editor ")
+		bool shouldTickIfViewportsOnly = false;
+
+	bool canLink =false, hasObject =false;
+#pragma endregion
+
+
 #pragma region Constructor
 public:
 	APlayableCharacter();
@@ -54,18 +71,29 @@ public:
 
 #pragma region Acesseur
 public:
+	FORCEINLINE TObjectPtr<APlayableCharacter> Get() { return  this; }
+	UFUNCTION()  void SetCanLink(bool _canlink) { canLink= _canlink; }
 	//TODO Interact
-	FORCEINLINE bool CanInteract();
+#pragma endregion
+
+#pragma region UI
+public:
+	UFUNCTION() void EnableIcone();
+	UFUNCTION() void DisableIcone();
 #pragma endregion
 
 #pragma region Broadcast
 public:
 	FORCEINLINE FOnMoveForward& OnMoveForward() { return onMoveForward;}
 	FORCEINLINE FOnInteract& OnInteract() { return onInteract; }
+	FORCEINLINE FOnEnable& OnEnable(){ return onEnable; }
+	FORCEINLINE FOnDisable& OnDisable() { return onDisable;}
+
 #pragma endregion
 
 #pragma region UNREAL_METHOD
 private:
+	virtual bool ShouldTickIfViewportsOnly() const override;
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
@@ -80,6 +108,7 @@ private:
 #pragma region INIT
 private:
 	void Init();
+	void Bind();
 #pragma endregion 
 
 #pragma region MOVEMENT
@@ -91,4 +120,10 @@ private:
 	void Link(const FInputActionValue& _value);
 	void ResetAllLink(const FInputActionValue& _value);
 #pragma endregion
+
+#pragma region DrawDebug
+	void FlagInteract();
+#pragma endregion
+
+
 };

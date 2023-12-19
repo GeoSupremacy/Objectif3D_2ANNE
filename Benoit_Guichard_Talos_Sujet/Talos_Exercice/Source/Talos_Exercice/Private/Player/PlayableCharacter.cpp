@@ -1,10 +1,10 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-
+#include "GPE/Reflector.h"
 #include "../DebugUtils.h"
 #include "../Utils.h"
-
+#include "../DrawDebugUtils.h"
 #include "Player/PlayableCharacter.h"
 
 
@@ -12,20 +12,28 @@
 APlayableCharacter::APlayableCharacter()
 {
 	PrimaryActorTick.bCanEverTick = true;
+#if WITH_EDITOR 
+	PrimaryActorTick.bStartWithTickEnabled = true;
+#endif
 	Init();
 }
 #pragma endregion
 
 #pragma region UNREAL_METHOD
+bool APlayableCharacter::ShouldTickIfViewportsOnly() const
+{
+	return shouldTickIfViewportsOnly;
+}
 void APlayableCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 	MappingContect();
+	Bind();
 }
 void APlayableCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	FlagInteract();
 }
 void APlayableCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -51,7 +59,11 @@ void APlayableCharacter::BindInput(UInputComponent* PlayerInputComponent)
 
 	if (!inputConfig)
 		return;
-
+	if (!interact)
+	{
+		SCREEN_DEBUG_MESSAGE_ERROR(5, "APlayableCharacter not interactComponent")
+			return;
+	}
 	inputConfig->InitArray();
 
 	if (!inputConfig->InputIsValid() || !inputConfig->HasInputContext())
@@ -71,10 +83,20 @@ void APlayableCharacter::BindInput(UInputComponent* PlayerInputComponent)
 	_input->BIND_ACTION(inputConfig->InputDrop(), interact.Get(), &UInteractComponent::Drop)
 
 }
-bool APlayableCharacter::CanInteract()
+#pragma endregion
+
+#pragma region UI
+void APlayableCharacter::EnableIcone()
 {
-	return false;
+	INVOKE(onEnable);
+	hasObject = true;
 }
+void APlayableCharacter::DisableIcone()
+{
+	INVOKE(onDisable);
+	canLink =hasObject = false;
+}
+
 #pragma endregion
 
 #pragma region INIT
@@ -92,6 +114,14 @@ void APlayableCharacter::Init()
 	//Désactive le controle du personnage
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationRoll = false;
+}
+void APlayableCharacter::Bind()
+{
+	if (!interact)
+		return;
+
+		interact->OnGrab().AddDynamic(this, &APlayableCharacter::EnableIcone);
+	    interact->OnDrop().AddDynamic(this, &APlayableCharacter::DisableIcone);
 }
 #pragma endregion
 
@@ -120,10 +150,26 @@ void APlayableCharacter::MouseRotateYaw(const FInputActionValue& _value)
 }
 void APlayableCharacter::Link(const FInputActionValue& _value)
 {
-	//TODO LINK REFLECTOR with other or one source
+	if (!canLink)
+		return;
+
+	SCREEN_DEBUG_MESSAGE_WARNING(5,"Link")
+	
+		
+	INVOKE(onInteract,true);
 }
 void APlayableCharacter::ResetAllLink(const FInputActionValue& _value)
 {
 	//TODO REST REFLECTOR
+}
+#pragma endregion
+
+#pragma region DrawDebug
+void APlayableCharacter::FlagInteract()
+{
+	if (!canLink)
+		return;
+
+	DRAW_SPHERE(GetActorLocation() + GetActorUpVector() * 200,25,FColor::Green,2);
 }
 #pragma endregion
