@@ -5,7 +5,7 @@
 #include"../DrawDebugUtils.h"
 #include"../DebugUtils.h"
 #include "Kismet/KismetSystemLibrary.h"
-
+#include "GPE/Source.h"
 #include "GPE/Reflector.h"
 
 
@@ -32,6 +32,7 @@ void AReflector::Tick(float DeltaTime)
 	Target();
 	AllReflect();
 	DrawDebug();
+	actor = result.GetActor();
 }
 bool AReflector::ShouldTickIfViewportsOnly() const
 {
@@ -40,74 +41,99 @@ bool AReflector::ShouldTickIfViewportsOnly() const
 #pragma endregion
 
 #pragma region METHOD
-void AReflector::DetectedSource(bool _interact)
+void AReflector::LinkSource()
 {
-	if (!interact || !isDetected)
+	if (!isDetected)
 		return;
-	SCREEN_DEBUG_MESSAGE_WARNING(2, "DetectedSource")
+	ASource* _source = Cast<ASource>(result.GetActor());
 
-		//if(CheckAll())
-			//if(result.GetActor()==Cast<AReflector>(this))
-					//allLink.Add(FinalPosition);
-	isDetected =interact = false;
+	if (!_source)
+		return;
+
+
+
+	INVOKE(onLinkSource, this)
+}
+void AReflector::LinkReflector()
+{
+	if (!isDetected || !GetContact())
+		return;
+	AReflector* _reflector = Cast<AReflector>(result.GetActor());
+
+	if (!_reflector)
+		return;
+	allLinkReflector.Add(_reflector);
+
+
+}
+bool AReflector::CheckReflector(AReflector* _reflector)
+{
+	for (auto link : allLinkReflector)
+		if (_reflector->GetActorLocation() == link->GetActorLocation())
+			return true;
+	return false;
 }
 void AReflector::Target()
 {
-	if (!takeIt)
+
+	if (!takeIt|| !character)
 		return;
-	if (!isAttach)
-		return;
-	
-	const FVector _end =character->GetActorLocation() + character->GetActorForwardVector()* 1000;
-	bool _hisHit = UKismetSystemLibrary::LineTraceSingleForObjects(WORLD, FinalPosition(), _end, raySourceLayer, true, TArray<AActor*>(), EDrawDebugTrace::ForOneFrame, result, true);
+	TArray<AActor*> _this = { this };
+	const FVector _end =FinalPosition()+ character->GetActorForwardVector()* 1000;
+	bool _hisHit = UKismetSystemLibrary::LineTraceSingleForObjects(WORLD, FinalPosition(), _end, raySourceLayer, false, _this, EDrawDebugTrace::ForOneFrame, result, true);
 	
 	if (_hisHit)
 	{
+		DRAW_SPHERE(result.GetActor()->GetActorLocation() + result.GetActor()->GetActorUpVector() * 200, 25, FColor::Yellow, 2);
 		isDetected = true;
-		targetPosition = _end;
-		INVOKE(onCanInteract, true)
+		character->SetCanLink(true);
 		return;
 	}
 	
-	INVOKE(onCanInteract, false)
-}
-void AReflector::Reflect(AReflector _other)
-{
-}
-void AReflector::Transmit(AReflector _other)
-{
-}
-void AReflector::DrawDebug()
-{
-	DRAW_SPHERE(FinalPosition(), 25, FColor::Red, 1);
+	character->SetCanLink(false);
 }
 void AReflector::AllReflect()
 {
-	
-	for (auto link : allLink)
-	
-		UKismetSystemLibrary::LineTraceSingleForObjects(WORLD, FinalPosition(), link->GetActorLocation(), raySourceLayer, false, TArray<AActor*>(), EDrawDebugTrace::ForOneFrame, result, true);
+	if (!GetContact())
+		return;
 
-	
+	bool _hit;
+	for (auto link : allLinkReflector)
+	{
+		DRAW_SPHERE(link->GetActorLocation() + link->GetActorUpVector() * 200, 25, FColor::Yellow, 2);
+		DRAW_LINE(GetActorLocation(), link->GetActorLocation(), FColor::Yellow, 2)
+			_hit = UKismetSystemLibrary::LineTraceSingleForObjects(WORLD, FinalPosition(), link->FinalPosition(), raySourceLayer, true, TArray<AActor*>(), EDrawDebugTrace::ForOneFrame, result, true);
+		if (_hit)
+		{
+			if (result.GetActor() == Cast<APlayableCharacter>(result.GetActor()))
+			{
+				SCREEN_DEBUG_MESSAGE_WARNING(2, "Found player by reflector ")
+					link->SetContact(false);
+
+			}
+
+		}
+	}
 }
-bool AReflector::CheckAll()
+#pragma endregion
+
+#pragma region DRAW
+
+void AReflector::DrawDebug()
 {
-	
-	for (auto link : allLink)
-		if (link->GetActorLocation() == result.GetActor()->GetActorLocation())
-			return false;
-	return true;
+	DRAW_SPHERE(FinalPosition(), 25, FColor::Red, 1);
 }
 #pragma endregion
 
 #pragma region INIT
 void AReflector::Bind()
 {
+	
 	character = Cast<APlayableCharacter>(FPC->GetPawn());
 	if (!character)
 		return;
-	BIND(OnCanInteract(), character->Get(), &APlayableCharacter::SetCanLink);
-	character->BIND(OnInteract(), this, &AReflector::InteractTaken);
-	character->BIND(OnInteract(), this, &AReflector::DetectedSource);
+	BIND(OnLinkSource(), character->Get(), &APlayableCharacter::Dispersion);
+	character->BIND(OnInteract(), this, &AReflector::LinkReflector);
+	character->BIND(OnInteract(), this, &AReflector::LinkSource);
 }
 #pragma endregion

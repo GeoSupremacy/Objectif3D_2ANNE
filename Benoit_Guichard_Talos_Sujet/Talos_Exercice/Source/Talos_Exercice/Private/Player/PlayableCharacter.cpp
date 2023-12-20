@@ -56,21 +56,7 @@ void APlayableCharacter::MappingContect()
 void APlayableCharacter::BindInput(UInputComponent* PlayerInputComponent)
 {
 	UEnhancedInputComponent* _input = Cast<UEnhancedInputComponent>(PlayerInputComponent);
-
-	if (!inputConfig)
-		return;
-	if (!interact)
-	{
-		SCREEN_DEBUG_MESSAGE_ERROR(5, "APlayableCharacter not interactComponent")
-			return;
-	}
-	inputConfig->InitArray();
-
-	if (!inputConfig->InputIsValid() || !inputConfig->HasInputContext())
-	{
-		SCREEN_DEBUG_MESSAGE_ERROR(10, "APlayableCharacter not input action or context");
-		return;
-	}
+	CheckInput();
 	
 	_input->BIND_ACTION(inputConfig->InputMoveForward(), this, &APlayableCharacter::MoveForward)
 	_input->BIND_ACTION(inputConfig->InputStopMoveForward(), this, &APlayableCharacter::MoveForward)
@@ -83,20 +69,47 @@ void APlayableCharacter::BindInput(UInputComponent* PlayerInputComponent)
 	_input->BIND_ACTION(inputConfig->InputDrop(), interact.Get(), &UInteractComponent::Drop)
 
 }
+void APlayableCharacter::CheckInput()
+{
+	if (inputConfig)
+		inputConfig->InitArray();
+
+	if (!inputConfig->InputIsValid() || !inputConfig->HasInputContext() || !inputConfig)
+	{
+		SCREEN_DEBUG_MESSAGE_ERROR(10, "APlayableCharacter not input action or context");
+		if (!interact)
+		{
+			SCREEN_DEBUG_MESSAGE_ERROR(5, "APlayableCharacter not interactComponent")
+				return;
+		}
+	}
+
+	if (!interact)
+	{
+		SCREEN_DEBUG_MESSAGE_ERROR(5, "APlayableCharacter not interactComponent")
+			return;
+	}
+}
 #pragma endregion
 
 #pragma region UI
+void APlayableCharacter::Dispersion(AReflector* _reflector)
+{
+	
+	INVOKE(onLinkSource,_reflector)
+}
 void APlayableCharacter::EnableIcone()
 {
+	//Quand je joueur prend
 	INVOKE(onEnable);
 	hasObject = true;
 }
 void APlayableCharacter::DisableIcone()
 {
+	//Quand le joueur lache
 	INVOKE(onDisable);
 	canLink =hasObject = false;
 }
-
 #pragma endregion
 
 #pragma region INIT
@@ -152,15 +165,20 @@ void APlayableCharacter::Link(const FInputActionValue& _value)
 {
 	if (!canLink)
 		return;
-
-	SCREEN_DEBUG_MESSAGE_WARNING(5,"Link")
+	if (!hadReflector)
+		return;
+	SCREEN_DEBUG_MESSAGE_WARNING(1, "Link")
 	
 		
-	INVOKE(onInteract,true);
+	INVOKE(onInteract);
 }
 void APlayableCharacter::ResetAllLink(const FInputActionValue& _value)
 {
-	//TODO REST REFLECTOR
+
+	if (!hadReflector)
+		return;
+	SCREEN_DEBUG_MESSAGE_WARNING(1, "ResetAllLink")
+	INVOKE(onDisableAllLink, hadReflector)
 }
 #pragma endregion
 

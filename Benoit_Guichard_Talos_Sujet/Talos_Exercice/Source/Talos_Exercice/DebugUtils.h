@@ -24,5 +24,5 @@ currenTab.push_back(_key);\
 #define SCREEN_DEBUG_MESSAGE_WARNING( timeDisplay, message) DEFINE_KEY_SCREEN if(USE_DEBUG) GEngine->AddOnScreenDebugMessage(KEY_SCREEN, timeDisplay, FColor::Yellow, message);
 
 
-#define LOG_WARNING(message, ...) if(USE_DEBUG) UE_LOG(LogTemp, Error, TEXT(message),__VA_ARGS__);
-#define LOG_ERROR( message, ...) if(USE_DEBUG) UE_LOG(LogTemp, Error, TEXT(message), __VA_ARGS__);
+#define LOG_WARNING(message, ...)  UE_LOG(LogTemp, Warning, TEXT(message), __VA_ARGS__);
+#define LOG_ERROR( message, ...) if(USE_DEBUG)  UE_LOG(LogTemp, Error, TEXT(message), __VA_ARGS__);

@@ -14,6 +14,7 @@
 UCLASS()
 class TALOS_EXERCICE_API APlayableCharacter : public ACharacter
 {
+	
 	GENERATED_BODY()
 #pragma region Event Animation
 private:
@@ -23,8 +24,12 @@ private:
 
 #pragma region Event Interact
 private:
-	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnInteract, bool, interact);
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnInteract);
 	FOnInteract onInteract;
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLinkSource, AReflector *, _this);
+	FOnLinkSource onLinkSource;
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDisableAllLink, AReflector*, _this);
+	FOnDisableAllLink onDisableAllLink;
 #pragma endregion 
 
 #pragma region Event UI
@@ -60,9 +65,13 @@ private:
 	UPROPERTY(EditANywhere, Category = "Runtime editor ")
 		bool shouldTickIfViewportsOnly = false;
 
-	bool canLink =false, hasObject =false;
+	
 #pragma endregion
 
+private:
+	bool canLink = false, 
+		hasObject = false;
+	TObjectPtr<AReflector> hadReflector = nullptr;
 
 #pragma region Constructor
 public:
@@ -72,8 +81,9 @@ public:
 #pragma region Acesseur
 public:
 	FORCEINLINE TObjectPtr<APlayableCharacter> Get() { return  this; }
-	UFUNCTION()  void SetCanLink(bool _canlink) { canLink= _canlink; }
-	//TODO Interact
+	FORCEINLINE void SetCurentReflector(AReflector* _reflector) { hadReflector  = _reflector; }
+	FORCEINLINE void SetCanLink(bool _canlink) { canLink= _canlink; } 
+	UFUNCTION() void Dispersion(class AReflector* _reflector);
 #pragma endregion
 
 #pragma region UI
@@ -88,7 +98,8 @@ public:
 	FORCEINLINE FOnInteract& OnInteract() { return onInteract; }
 	FORCEINLINE FOnEnable& OnEnable(){ return onEnable; }
 	FORCEINLINE FOnDisable& OnDisable() { return onDisable;}
-
+	FORCEINLINE FOnLinkSource& OnLinkSource() { return onLinkSource; }
+	FORCEINLINE FOnDisableAllLink& OnDisableAllLink() { return onDisableAllLink; }
 #pragma endregion
 
 #pragma region UNREAL_METHOD
@@ -103,6 +114,7 @@ private:
 private:
 	void MappingContect();
 	void BindInput(class UInputComponent* PlayerInputComponent);
+	void CheckInput();
 #pragma endregion
 
 #pragma region INIT
@@ -122,6 +134,7 @@ private:
 #pragma endregion
 
 #pragma region DrawDebug
+	private:
 	void FlagInteract();
 #pragma endregion
 

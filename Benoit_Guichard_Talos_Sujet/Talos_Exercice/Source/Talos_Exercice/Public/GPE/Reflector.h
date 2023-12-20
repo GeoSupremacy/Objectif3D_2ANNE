@@ -16,8 +16,12 @@ class TALOS_EXERCICE_API AReflector : public AActor
 
 #pragma region Event
 private:
-	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCanInteract, bool , _link);
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnCanInteract);
 	FOnCanInteract onCanInteract;
+
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLinkSource, AReflector*, _this);
+	FOnLinkSource onLinkSource;
+
 #pragma endregion
 
 #pragma region Settings
@@ -27,16 +31,23 @@ private:
 
 	UPROPERTY(EditANywhere, Category = "Runtime editor ")
 		bool shouldTickIfViewportsOnly = false;
-	FVector  targetPosition, direction;
-	bool interact = false,
-		  isAttach =false,
-		  isDetected =false,
-		takeIt =false;
+
+	bool 
+		 isAttach =false,
+		 isDetected =false,
+		 takeIt =false,
+		 asContact =false;
 	UPROPERTY(EditAnywhere, Category = "interact")
 		TArray<TEnumAsByte<EObjectTypeQuery>> raySourceLayer;
+	UPROPERTY(EditAnywhere, Category = "interact")
+		TObjectPtr<AActor>actor = nullptr;
 	FHitResult result;
 	TObjectPtr<APlayableCharacter> character = nullptr;
-	TArray<AActor*> allLink;
+
+	UPROPERTY(EditAnywhere, Category = "interact")
+	TArray<TObjectPtr<AReflector>> allLinkReflector;
+
+	 
 #pragma endregion
 
 #pragma region Constructor
@@ -46,14 +57,19 @@ public:
 
 #pragma region Broadcast
 public:
-	FOnCanInteract& OnCanInteract() { return onCanInteract; }
+	FORCEINLINE FOnCanInteract& OnCanInteract() { return onCanInteract; }
+	FORCEINLINE FOnLinkSource& OnLinkSource() { return onLinkSource; }
 #pragma endregion
 
-
+#pragma region Acesseur
 public:
 	FORCEINLINE void SetTake(bool _takeIt) { takeIt = _takeIt; }
 	FORCEINLINE FVector FinalPosition() { return GetActorLocation() + reflectPosition; }
 	FORCEINLINE void SetIsAttach(bool _isAttach) { isAttach = _isAttach; }
+	FORCEINLINE void SetContact(bool _asContact) { asContact = _asContact; }
+	FORCEINLINE bool GetContact() const{ return  asContact; }
+#pragma endregion
+
 #pragma region UE_METHOD
 private:
 	virtual void BeginPlay() override;
@@ -63,14 +79,18 @@ private:
 
 #pragma region METHOD
 public:
-	UFUNCTION() void DetectedSource(bool _interact =false);
-	 void Target();
-	 UFUNCTION() void InteractTaken(bool _take) { interact = _take; }
-	void Reflect(AReflector _other);
-	void Transmit(AReflector _other);
-	void DrawDebug();
+	FORCEINLINE void RemoveLink() { allLinkReflector.Empty(); }
+	UFUNCTION() void LinkSource();
+	UFUNCTION() void LinkReflector();
+private:
+	bool CheckReflector(AReflector* _reflector);
+	void Target();
 	void AllReflect();
-	bool CheckAll();
+#pragma endregion
+
+#pragma region DRAW
+private:
+	void DrawDebug();
 #pragma endregion
 
 #pragma region INIT

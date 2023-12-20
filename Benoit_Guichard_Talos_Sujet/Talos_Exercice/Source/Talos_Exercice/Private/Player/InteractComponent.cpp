@@ -39,11 +39,13 @@ void UInteractComponent::Drop()
 	if (!hasObject)
 		return;
 	hasObject = false;
-
+	APlayableCharacter* _character = Cast<APlayableCharacter>(OWNER);
 	AReflector* _reflector = Cast<AReflector>(result.GetActor());
-	if (!_reflector)
+	if (!_reflector|| !_character)
 		return;
+	
 
+	_character ->SetCurentReflector(nullptr);
 	_reflector->SetTake(false);
 	_reflector->SetIsAttach(false);
 	_reflector->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
@@ -54,16 +56,15 @@ void UInteractComponent::Grab()
 	if (!canGrabItem)
 		return;
 	hasObject = true;
-
+	APlayableCharacter* _character = Cast<APlayableCharacter>(OWNER);
 	AReflector* _reflector = Cast<AReflector>(result.GetActor());
 
-	if (!_reflector)
+	if (!_reflector || !_character)
 		return;
-
+	_character->SetCurentReflector(_reflector);
 	_reflector->AttachToActor(OWNER, FAttachmentTransformRules::KeepWorldTransform);
 	_reflector->SetTake(true);
 	_reflector->SetIsAttach(true);
-
 	INVOKE(onGrab)
 }
 #pragma endregion
@@ -77,19 +78,19 @@ void UInteractComponent::DetectedObject()
 	bool _hisHit = UKismetSystemLibrary::LineTraceSingleForObjects(WORLD, _Vorigin, _VEnd, interactLayer, false, TArray<AActor*>(), EDrawDebugTrace::ForOneFrame, result, true);
 
 	if (_hisHit)
+	{
+		DrawDebug();
 		canGrabItem = true;
+	}
 	else
 		canGrabItem = false;
 
-	DrawDebug(_hisHit, _Vorigin, _VEnd);
+
 }
-void UInteractComponent::DrawDebug(bool _hit, FVector _origin, FVector _end)
+void UInteractComponent::DrawDebug()
 {
-	FColor _color;
-	if (_hit)
-		_color = FColor::Blue;
-	else
-		_color = FColor::Red;
-	DRAW_LINE(_origin, _end, _color, 5)
+	
+	DRAW_SPHERE(OWNER->GetActorLocation()+ OWNER->GetActorUpVector()*100 + OWNER->GetActorRightVector()*100, 25, FColor::Blue,2)
+	
 }
 #pragma endregion

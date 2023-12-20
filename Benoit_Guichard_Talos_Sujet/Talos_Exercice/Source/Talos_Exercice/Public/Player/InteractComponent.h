@@ -61,6 +61,6 @@ public:
 #pragma region DETECTED
 private:
 	void DetectedObject();
-	void DrawDebug(bool _hit, FVector _origin, FVector _end);
+	void DrawDebug();
 #pragma endregion
 };
