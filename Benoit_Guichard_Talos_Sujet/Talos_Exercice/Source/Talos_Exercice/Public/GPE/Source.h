@@ -13,9 +13,9 @@ UCLASS()
 class TALOS_EXERCICE_API ASource : public AActor
 {
 	GENERATED_BODY()
-	
+
 #pragma region Event
-public:
+private:
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnReflector);
 	FOnReflector onReflector;
 #pragma endregion 
@@ -36,11 +36,15 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Layer")
 		TArray<TEnumAsByte<EObjectTypeQuery>> interactLayer;
 #pragma endregion 
+
 private:
 	UPROPERTY(EditAnywhere, Category = "Source")
-	TArray<TObjectPtr<AReflector>> allReflectionLink = TArray<TObjectPtr<AReflector>>();
-public:	
+		TArray<TObjectPtr<AReflector>> allReflectionLink = TArray<TObjectPtr<AReflector>>();
+public:
 	ASource();
+public:
+	//Couleur de la source
+	FColor GetColor() { return color; }
 private:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;

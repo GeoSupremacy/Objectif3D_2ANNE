@@ -28,6 +28,8 @@ private:
 	FOnInteract onInteract;
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLinkSource, AReflector *, _this);
 	FOnLinkSource onLinkSource;
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLinkLocker, AReflector*, _this);
+	FOnLinkLocker onLinkLocker;
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDisableAllLink, AReflector*, _this);
 	FOnDisableAllLink onDisableAllLink;
 #pragma endregion 
@@ -46,7 +48,7 @@ private:
 		TObjectPtr<UCameraComponent> camera = nullptr;
 	UPROPERTY(EditAnywhere, Category = "Camera Component")
 		TObjectPtr<USpringArmComponent> springArm = nullptr;
-#pragma endregion Camera
+#pragma endregion
 
 #pragma region Input
 private:
@@ -58,6 +60,9 @@ private:
 private:
 	UPROPERTY(EditAnywhere, Category ="Interact")
 	TObjectPtr<UInteractComponent> interact = nullptr;
+	bool canLink = false,
+		hasObject = false;
+	TObjectPtr<AReflector> hadReflector = nullptr;
 #pragma endregion 
 
 #pragma region Settings
@@ -67,11 +72,6 @@ private:
 
 	
 #pragma endregion
-
-private:
-	bool canLink = false, 
-		hasObject = false;
-	TObjectPtr<AReflector> hadReflector = nullptr;
 
 #pragma region Constructor
 public:
@@ -83,7 +83,13 @@ public:
 	FORCEINLINE TObjectPtr<APlayableCharacter> Get() { return  this; }
 	FORCEINLINE void SetCurentReflector(AReflector* _reflector) { hadReflector  = _reflector; }
 	FORCEINLINE void SetCanLink(bool _canlink) { canLink= _canlink; } 
+	FORCEINLINE TObjectPtr<UInteractComponent> GetInteract() { return  interact; }
+#pragma endregion
+
+#pragma region METHOD
+public:
 	UFUNCTION() void Dispersion(class AReflector* _reflector);
+	UFUNCTION() void OpenLock(class AReflector* _reflector);
 #pragma endregion
 
 #pragma region UI
@@ -99,6 +105,7 @@ public:
 	FORCEINLINE FOnEnable& OnEnable(){ return onEnable; }
 	FORCEINLINE FOnDisable& OnDisable() { return onDisable;}
 	FORCEINLINE FOnLinkSource& OnLinkSource() { return onLinkSource; }
+	FORCEINLINE FOnLinkLocker& OnLinkLocker() { return onLinkLocker; }
 	FORCEINLINE FOnDisableAllLink& OnDisableAllLink() { return onDisableAllLink; }
 #pragma endregion
 
@@ -132,11 +139,5 @@ private:
 	void Link(const FInputActionValue& _value);
 	void ResetAllLink(const FInputActionValue& _value);
 #pragma endregion
-
-#pragma region DrawDebug
-	private:
-	void FlagInteract();
-#pragma endregion
-
 
 };

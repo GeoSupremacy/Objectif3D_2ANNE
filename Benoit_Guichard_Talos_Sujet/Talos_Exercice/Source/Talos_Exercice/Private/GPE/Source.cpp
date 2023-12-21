@@ -2,6 +2,7 @@
 
 #include "../Utils.h"
 #include "../DebugUtils.h"
+#include "../DrawDebugUtils.h"
 #include "Kismet/KismetSystemLibrary.h"
 #include "Player/PlayableCharacter.h"
 #include "GPE/Source.h"
@@ -39,10 +40,14 @@ void ASource::Reflection()
 		if (_hit)
 		{
 			
-			if (Cast<APlayableCharacter>(_result.GetActor()))
+			if (Cast<APlayableCharacter>(_result.GetActor())||!Cast<AReflector>(_result.GetActor()))
+				
 				_reflection->SetContact(false);
 			else
+			{
+				DRAW_SPHERE(_reflection->GetActorLocation() + _reflection->GetActorUpVector() * 400, 25, FColor::Blue, 2)
 				_reflection->SetContact(true);
+			}
 		}
 	}
 }

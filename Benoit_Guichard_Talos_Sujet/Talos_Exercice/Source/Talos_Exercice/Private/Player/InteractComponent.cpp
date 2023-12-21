@@ -38,16 +38,16 @@ void UInteractComponent::Drop()
 {
 	if (!hasObject)
 		return;
+	canGrabItem = false;
 	hasObject = false;
 	APlayableCharacter* _character = Cast<APlayableCharacter>(OWNER);
 	AReflector* _reflector = Cast<AReflector>(result.GetActor());
-	if (!_reflector|| !_character)
+	if (!_reflector && !_character)
 		return;
 	
 
 	_character ->SetCurentReflector(nullptr);
 	_reflector->SetTake(false);
-	_reflector->SetIsAttach(false);
 	_reflector->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
 	INVOKE(onDrop)
 }
@@ -55,16 +55,17 @@ void UInteractComponent::Grab()
 {
 	if (!canGrabItem)
 		return;
+	
 	hasObject = true;
 	APlayableCharacter* _character = Cast<APlayableCharacter>(OWNER);
 	AReflector* _reflector = Cast<AReflector>(result.GetActor());
 
-	if (!_reflector || !_character)
+	if (!_reflector && !_character)
 		return;
+	
 	_character->SetCurentReflector(_reflector);
 	_reflector->AttachToActor(OWNER, FAttachmentTransformRules::KeepWorldTransform);
 	_reflector->SetTake(true);
-	_reflector->SetIsAttach(true);
 	INVOKE(onGrab)
 }
 #pragma endregion
@@ -72,25 +73,27 @@ void UInteractComponent::Grab()
 #pragma region DETECTED
 void UInteractComponent::DetectedObject()
 {
-	const FVector _Vorigin = OWNER->GetActorLocation() + OWNER->GetActorUpVector() * top,
-		_VEnd = OWNER->GetActorLocation() + OWNER->GetActorUpVector() * -down + OWNER->GetActorForwardVector() * range;
+	const FVector _Vorigin = OWNER->GetActorLocation(),
+		_VEnd = OWNER->GetActorLocation()+ OWNER->GetActorForwardVector() * range;
 
 	bool _hisHit = UKismetSystemLibrary::LineTraceSingleForObjects(WORLD, _Vorigin, _VEnd, interactLayer, false, TArray<AActor*>(), EDrawDebugTrace::ForOneFrame, result, true);
 
 	if (_hisHit)
 	{
-		DrawDebug();
+		FlagInteract(true);
 		canGrabItem = true;
 	}
 	else
+	{
+		FlagInteract(false);
 		canGrabItem = false;
-
+	}
 
 }
-void UInteractComponent::DrawDebug()
+void UInteractComponent::FlagInteract(bool _flag)
 {
 	
-	DRAW_SPHERE(OWNER->GetActorLocation()+ OWNER->GetActorUpVector()*100 + OWNER->GetActorRightVector()*100, 25, FColor::Blue,2)
+	INVOKE(onInteracUI, _flag)
 	
 }
 #pragma endregion

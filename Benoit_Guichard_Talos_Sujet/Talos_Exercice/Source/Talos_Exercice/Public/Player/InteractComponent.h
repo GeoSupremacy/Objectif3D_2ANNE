@@ -11,6 +11,13 @@ UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class TALOS_EXERCICE_API UInteractComponent : public UActorComponent
 {
 	GENERATED_BODY()
+
+#pragma region Event UI
+private:
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnInteracUI, bool, canInteract);
+	FOnInteracUI onInteracUI;
+#pragma endregion
+
 #pragma region Event Drop/Grab
 private:
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnGrab);
@@ -44,6 +51,7 @@ public:
 public:
 	FORCEINLINE  FOnGrab& OnGrab() { return onGrab; }
 	FORCEINLINE  FOnDrop& OnDrop() { return onDrop; }
+	FORCEINLINE FOnInteracUI& OnInteracUI() { return onInteracUI; }
 #pragma endregion
 
 #pragma region UE_METHOD
@@ -61,6 +69,6 @@ public:
 #pragma region DETECTED
 private:
 	void DetectedObject();
-	void DrawDebug();
+	void FlagInteract(bool _flag);
 #pragma endregion
 };

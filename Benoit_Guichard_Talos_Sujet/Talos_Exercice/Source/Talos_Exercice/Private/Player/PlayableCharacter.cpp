@@ -33,7 +33,6 @@ void APlayableCharacter::BeginPlay()
 void APlayableCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	FlagInteract();
 }
 void APlayableCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -93,11 +92,7 @@ void APlayableCharacter::CheckInput()
 #pragma endregion
 
 #pragma region UI
-void APlayableCharacter::Dispersion(AReflector* _reflector)
-{
-	
-	INVOKE(onLinkSource,_reflector)
-}
+
 void APlayableCharacter::EnableIcone()
 {
 	//Quand je joueur prend
@@ -110,6 +105,7 @@ void APlayableCharacter::DisableIcone()
 	INVOKE(onDisable);
 	canLink =hasObject = false;
 }
+
 #pragma endregion
 
 #pragma region INIT
@@ -163,13 +159,8 @@ void APlayableCharacter::MouseRotateYaw(const FInputActionValue& _value)
 }
 void APlayableCharacter::Link(const FInputActionValue& _value)
 {
-	if (!canLink)
+	if (!canLink && !hadReflector)
 		return;
-	if (!hadReflector)
-		return;
-	SCREEN_DEBUG_MESSAGE_WARNING(1, "Link")
-	
-		
 	INVOKE(onInteract);
 }
 void APlayableCharacter::ResetAllLink(const FInputActionValue& _value)
@@ -177,17 +168,19 @@ void APlayableCharacter::ResetAllLink(const FInputActionValue& _value)
 
 	if (!hadReflector)
 		return;
-	SCREEN_DEBUG_MESSAGE_WARNING(1, "ResetAllLink")
+	
 	INVOKE(onDisableAllLink, hadReflector)
 }
 #pragma endregion
 
-#pragma region DrawDebug
-void APlayableCharacter::FlagInteract()
+#pragma region METHOD
+void APlayableCharacter::Dispersion(AReflector* _reflector)
 {
-	if (!canLink)
-		return;
 
-	DRAW_SPHERE(GetActorLocation() + GetActorUpVector() * 200,25,FColor::Green,2);
+	INVOKE(onLinkSource, _reflector)
+}
+void APlayableCharacter::OpenLock(AReflector* _reflector)
+{
+	INVOKE(onLinkLocker, _reflector)
 }
 #pragma endregion

@@ -21,29 +21,44 @@ private:
 
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLinkSource, AReflector*, _this);
 	FOnLinkSource onLinkSource;
-
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLinkLocker, AReflector*, _this);
+	FOnLinkLocker onLinkLocker;
 #pragma endregion
+
+
 
 #pragma region Settings
 private:
+	//La position des reflets des réflecteurs
 	UPROPERTY(EditAnywhere, Category = "Position Target")
 		FVector reflectPosition;
 
 	UPROPERTY(EditANywhere, Category = "Runtime editor ")
 		bool shouldTickIfViewportsOnly = false;
 
-	bool 
-		 isAttach =false,
-		 isDetected =false,
+
+		//Si le réflecteur pris par le joueur détecte quelquechose
+	bool isDetected =false,
+		//Si le réflecteur  est pris par le joueur
 		 takeIt =false,
+		//Si le réflecteur  a un contact avec la source ou avec un autre réflecteur lié à la source
 		 asContact =false;
+	
+
+	//Sert pour la détection quand le joueur veut link
 	UPROPERTY(EditAnywhere, Category = "interact")
-		TArray<TEnumAsByte<EObjectTypeQuery>> raySourceLayer;
-	UPROPERTY(EditAnywhere, Category = "interact")
-		TObjectPtr<AActor>actor = nullptr;
-	FHitResult result;
+	TArray<TEnumAsByte<EObjectTypeQuery>> raySourceLayer;
+	
+
+	//Le 1er pour lié les réflecteurs avec d'autre, la source ou le locker
+	// Le 2ème tous les réflecteurs lié à celui-ci
+	FHitResult resultTarget, resultByEachLink;
+
+
+	//On a besoin de où regard le joueur quand il prend un réflecteur
 	TObjectPtr<APlayableCharacter> character = nullptr;
 
+	// Tous les réflecteurs lié à celui-ci
 	UPROPERTY(EditAnywhere, Category = "interact")
 	TArray<TObjectPtr<AReflector>> allLinkReflector;
 
@@ -59,13 +74,13 @@ public:
 public:
 	FORCEINLINE FOnCanInteract& OnCanInteract() { return onCanInteract; }
 	FORCEINLINE FOnLinkSource& OnLinkSource() { return onLinkSource; }
+	FORCEINLINE FOnLinkLocker& OnLinkLocker() { return onLinkLocker; }
 #pragma endregion
 
 #pragma region Acesseur
 public:
 	FORCEINLINE void SetTake(bool _takeIt) { takeIt = _takeIt; }
 	FORCEINLINE FVector FinalPosition() { return GetActorLocation() + reflectPosition; }
-	FORCEINLINE void SetIsAttach(bool _isAttach) { isAttach = _isAttach; }
 	FORCEINLINE void SetContact(bool _asContact) { asContact = _asContact; }
 	FORCEINLINE bool GetContact() const{ return  asContact; }
 #pragma endregion
@@ -82,8 +97,9 @@ public:
 	FORCEINLINE void RemoveLink() { allLinkReflector.Empty(); }
 	UFUNCTION() void LinkSource();
 	UFUNCTION() void LinkReflector();
+	UFUNCTION() void LinkLocker();
 private:
-	bool CheckReflector(AReflector* _reflector);
+
 	void Target();
 	void AllReflect();
 #pragma endregion
