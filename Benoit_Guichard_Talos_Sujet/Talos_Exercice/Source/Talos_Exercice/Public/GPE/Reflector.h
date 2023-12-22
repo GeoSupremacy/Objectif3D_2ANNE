@@ -16,16 +16,20 @@ class TALOS_EXERCICE_API AReflector : public AActor
 
 #pragma region Event
 private:
-	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnCanInteract);
-	FOnCanInteract onCanInteract;
+	//Sert à Créer une icone spécifique au réflecteur
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnRegistre, FString, name, AActor*, position);
+	FOnRegistre onRegistre;
 
+	//Lie la source au réflecteur
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLinkSource, AReflector*, _this);
 	FOnLinkSource onLinkSource;
+	//Lie la source à un locker
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLinkLocker, AReflector*, _this);
 	FOnLinkLocker onLinkLocker;
+	//Envoit une icone d'intéraction quand on peut link
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnCanLinkLocker, bool, canLink, FVector, position);
+	FOnCanLinkLocker onCanLinkLocker;
 #pragma endregion
-
-
 
 #pragma region Settings
 private:
@@ -62,6 +66,9 @@ private:
 	UPROPERTY(EditAnywhere, Category = "interact")
 	TArray<TObjectPtr<AReflector>> allLinkReflector;
 
+	//La couleur du rayon sera influencer par la source
+	UPROPERTY(EditAnywhere, Category = "Source")
+		FColor color = FColor::Red;
 	 
 #pragma endregion
 
@@ -72,13 +79,16 @@ public:
 
 #pragma region Broadcast
 public:
-	FORCEINLINE FOnCanInteract& OnCanInteract() { return onCanInteract; }
 	FORCEINLINE FOnLinkSource& OnLinkSource() { return onLinkSource; }
 	FORCEINLINE FOnLinkLocker& OnLinkLocker() { return onLinkLocker; }
+	FORCEINLINE FOnCanLinkLocker& OnCanLinkLocker() { return onCanLinkLocker; }
+	FORCEINLINE FOnRegistre& OnRegistre() { return onRegistre; }
 #pragma endregion
-
+	
 #pragma region Acesseur
 public:
+	FORCEINLINE FColor GetColor() const { return  color; }
+	FORCEINLINE void SetColor(FColor _color) { color = _color; }
 	FORCEINLINE void SetTake(bool _takeIt) { takeIt = _takeIt; }
 	FORCEINLINE FVector FinalPosition() { return GetActorLocation() + reflectPosition; }
 	FORCEINLINE void SetContact(bool _asContact) { asContact = _asContact; }
@@ -99,7 +109,7 @@ public:
 	UFUNCTION() void LinkReflector();
 	UFUNCTION() void LinkLocker();
 private:
-
+	void Registre();
 	void Target();
 	void AllReflect();
 #pragma endregion

@@ -33,6 +33,7 @@ void APlayableCharacter::BeginPlay()
 void APlayableCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	INVOKE(onEnable, hasObject);
 }
 void APlayableCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -96,14 +97,18 @@ void APlayableCharacter::CheckInput()
 void APlayableCharacter::EnableIcone()
 {
 	//Quand je joueur prend
-	INVOKE(onEnable);
 	hasObject = true;
 }
 void APlayableCharacter::DisableIcone()
 {
 	//Quand le joueur lache
-	INVOKE(onDisable);
+	
 	canLink =hasObject = false;
+}
+
+void APlayableCharacter::ShowLink(bool _canLink, FVector position)
+{
+	INVOKE(onCanLinkLocker, _canLink, position)
 }
 
 #pragma endregion
@@ -131,6 +136,8 @@ void APlayableCharacter::Bind()
 
 		interact->OnGrab().AddDynamic(this, &APlayableCharacter::EnableIcone);
 	    interact->OnDrop().AddDynamic(this, &APlayableCharacter::DisableIcone);
+
+		
 }
 #pragma endregion
 
@@ -157,8 +164,12 @@ void APlayableCharacter::MouseRotateYaw(const FInputActionValue& _value)
 	const float _axis = _value.Get<float>();
 	AddControllerYawInput(_axis);
 }
+#pragma endregion
+
+#pragma region ACTION
 void APlayableCharacter::Link(const FInputActionValue& _value)
 {
+	//Le reflecteur pris par le joeur va dire si oui ou non on peut link 
 	if (!canLink && !hadReflector)
 		return;
 	INVOKE(onInteract);
@@ -168,7 +179,7 @@ void APlayableCharacter::ResetAllLink(const FInputActionValue& _value)
 
 	if (!hadReflector)
 		return;
-	
+
 	INVOKE(onDisableAllLink, hadReflector)
 }
 #pragma endregion
@@ -176,11 +187,12 @@ void APlayableCharacter::ResetAllLink(const FInputActionValue& _value)
 #pragma region METHOD
 void APlayableCharacter::Dispersion(AReflector* _reflector)
 {
-
+	//Sert à link un réflecteur à un autre ou la source
 	INVOKE(onLinkSource, _reflector)
 }
 void APlayableCharacter::OpenLock(AReflector* _reflector)
 {
+	//Sert à link un réflecteur à un locker
 	INVOKE(onLinkLocker, _reflector)
 }
 #pragma endregion

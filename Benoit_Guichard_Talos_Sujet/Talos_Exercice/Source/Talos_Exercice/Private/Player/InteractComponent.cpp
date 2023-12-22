@@ -73,8 +73,8 @@ void UInteractComponent::Grab()
 #pragma region DETECTED
 void UInteractComponent::DetectedObject()
 {
-	const FVector _Vorigin = OWNER->GetActorLocation(),
-		_VEnd = OWNER->GetActorLocation()+ OWNER->GetActorForwardVector() * range;
+	const FVector _Vorigin = OWNER->GetActorLocation() + OWNER->GetActorUpVector()*top,
+		_VEnd = OWNER->GetActorLocation()+OWNER->GetActorUpVector() * down +OWNER->GetActorForwardVector() * range;
 
 	bool _hisHit = UKismetSystemLibrary::LineTraceSingleForObjects(WORLD, _Vorigin, _VEnd, interactLayer, false, TArray<AActor*>(), EDrawDebugTrace::ForOneFrame, result, true);
 
@@ -92,6 +92,12 @@ void UInteractComponent::DetectedObject()
 }
 void UInteractComponent::FlagInteract(bool _flag)
 {
+	//Sert à afficher une icone d'interaction, le joeur le récuppère est l'envoie au UI
+	if (hasObject)
+	{
+		INVOKE(onInteracUI, false)
+		return;
+	}
 	
 	INVOKE(onInteracUI, _flag)
 	

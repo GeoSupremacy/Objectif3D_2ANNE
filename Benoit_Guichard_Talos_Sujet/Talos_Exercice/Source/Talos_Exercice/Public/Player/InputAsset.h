@@ -18,6 +18,7 @@ UCLASS()
 class TALOS_EXERCICE_API UInputAsset : public UDataAsset
 {
 	GENERATED_BODY()
+#pragma region Input
 private:
 	UPROPERTY(EditAnywhere) TSoftObjectPtr<UInputMappingContext> inputContext = nullptr;
 	UPROPERTY(EditAnywhere) TObjectPtr<UInputAction> inputMoveForward = nullptr;
@@ -29,18 +30,21 @@ private:
 	UPROPERTY(EditAnywhere) TObjectPtr<UInputAction> inputDrop = nullptr;
 	UPROPERTY(EditAnywhere) TObjectPtr<UInputAction> inputResetAllLinkReflector = nullptr;
 	TArray< TObjectPtr<UInputAction>> allInput;
-public:
+#pragma endregion 
 
-	FORCEINLINE TObjectPtr<UInputAction> InputMoveForward() const { return inputMoveForward;}
-	FORCEINLINE TObjectPtr<UInputAction> InputStopMoveForward() const { return inputStopMoveForward;}
-	FORCEINLINE TObjectPtr<UInputAction> InputRotateYaw() const { return inputRotateYaw;}
-	FORCEINLINE TObjectPtr<UInputAction> MouseRotateYaw() const { return mouseRotateYaw;}
-	FORCEINLINE TObjectPtr<UInputAction> MouseRotatePitch() const { return mouseRotatePitch;}
-	FORCEINLINE TObjectPtr<UInputAction> InputInteract() const { return inputInteract;}
+#pragma region Acesseur
+public:
+	FORCEINLINE TObjectPtr<UInputAction> InputMoveForward() const { return inputMoveForward; }
+	FORCEINLINE TObjectPtr<UInputAction> InputStopMoveForward() const { return inputStopMoveForward; }
+	FORCEINLINE TObjectPtr<UInputAction> InputRotateYaw() const { return inputRotateYaw; }
+	FORCEINLINE TObjectPtr<UInputAction> MouseRotateYaw() const { return mouseRotateYaw; }
+	FORCEINLINE TObjectPtr<UInputAction> MouseRotatePitch() const { return mouseRotatePitch; }
+	FORCEINLINE TObjectPtr<UInputAction> InputInteract() const { return inputInteract; }
 	FORCEINLINE TObjectPtr<UInputAction> InputDrop() const { return inputDrop; }
-	FORCEINLINE TObjectPtr<UInputAction> InputResetAllLinkReflector() const { return inputResetAllLinkReflector;}
+	FORCEINLINE TObjectPtr<UInputAction> InputResetAllLinkReflector() const { return inputResetAllLinkReflector; }
 	void EnableInputContext(ULocalPlayer* _local);
 	void InitArray();
 	bool InputIsValid();
-	FORCEINLINE bool HasInputContext() { if (inputContext == nullptr) return false; else return true;}
+	FORCEINLINE bool HasInputContext() { if (inputContext == nullptr) return false; else return true; }
+#pragma endregion 
 };

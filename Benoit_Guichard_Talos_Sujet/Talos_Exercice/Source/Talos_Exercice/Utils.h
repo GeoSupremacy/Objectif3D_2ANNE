@@ -15,6 +15,6 @@
 
 #define BIND_ACTION(input,object, funcName) BindAction(input, ETriggerEvent::Triggered, object, funcName);
 
-#define DEPROJECT_SCREEN_POSITION_TO_WORLD(ScreenX,ScreenY,WorldLocation, worldDirection) PLAYER_CONTROLLER->GetPawn()->DeprojectScreenPositionToWorld(ScreenX,ScreenY,WorldLocation, worldDirection);
+#define DEPROJECT_SCREEN_POSITION_TO_WORLD(ScreenX,ScreenY,WorldLocation, worldDirection) PLAYER_CONTROLLER->DeprojectScreenPositionToWorld(ScreenX,ScreenY,WorldLocation, worldDirection);
 #define DEPROJECT_MOUSE_POSITION_TO_WORLD(WorldLocation,worldDirection) PLAYER_CONTROLLER->GetPawn()->DeprojectMousePositionToWorld(WorldLocation, worldDirection);
-#define VIEWPORT_SIZE(SizeX,SizeY) PLAYER_CONTROLLER->GetPawn()->GetViewportSize(SizeX,SizeY);
+#define VIEWPORT_SIZE(SizeX,SizeY) PLAYER_CONTROLLER->GetViewportSize(SizeX,SizeY);

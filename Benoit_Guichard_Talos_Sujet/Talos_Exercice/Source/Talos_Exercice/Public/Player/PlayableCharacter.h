@@ -36,10 +36,10 @@ private:
 
 #pragma region Event UI
 private:
-	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnEnable);
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnEnable, bool, hasGrab);
 	FOnEnable onEnable;
-	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDisable);
-	FOnDisable onDisable;
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnCanLinkLocker, bool, canLink, FVector, position);
+	FOnCanLinkLocker onCanLinkLocker;
 #pragma endregion 
 
 #pragma region Camera
@@ -84,6 +84,7 @@ public:
 	FORCEINLINE void SetCurentReflector(AReflector* _reflector) { hadReflector  = _reflector; }
 	FORCEINLINE void SetCanLink(bool _canlink) { canLink= _canlink; } 
 	FORCEINLINE TObjectPtr<UInteractComponent> GetInteract() { return  interact; }
+	FORCEINLINE TObjectPtr<UCameraComponent> GetCamera() { return  camera; }
 #pragma endregion
 
 #pragma region METHOD
@@ -96,6 +97,7 @@ public:
 public:
 	UFUNCTION() void EnableIcone();
 	UFUNCTION() void DisableIcone();
+	UFUNCTION() void ShowLink(bool _canLink, FVector position);
 #pragma endregion
 
 #pragma region Broadcast
@@ -103,10 +105,10 @@ public:
 	FORCEINLINE FOnMoveForward& OnMoveForward() { return onMoveForward;}
 	FORCEINLINE FOnInteract& OnInteract() { return onInteract; }
 	FORCEINLINE FOnEnable& OnEnable(){ return onEnable; }
-	FORCEINLINE FOnDisable& OnDisable() { return onDisable;}
 	FORCEINLINE FOnLinkSource& OnLinkSource() { return onLinkSource; }
 	FORCEINLINE FOnLinkLocker& OnLinkLocker() { return onLinkLocker; }
 	FORCEINLINE FOnDisableAllLink& OnDisableAllLink() { return onDisableAllLink; }
+	FORCEINLINE FOnCanLinkLocker& OnCanLinkLocker() { return onCanLinkLocker; }
 #pragma endregion
 
 #pragma region UNREAL_METHOD
@@ -136,8 +138,11 @@ private:
 	void InputRotateYaw(const FInputActionValue& _value);
 	void MouseRotatePitch(const FInputActionValue& _value);
 	void MouseRotateYaw(const FInputActionValue& _value);
-	void Link(const FInputActionValue& _value);
-	void ResetAllLink(const FInputActionValue& _value);
 #pragma endregion
 
+#pragma region ACTION
+	private:
+		void Link(const FInputActionValue& _value);
+		void ResetAllLink(const FInputActionValue& _value);
+#pragma endregion
 };

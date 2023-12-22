@@ -30,11 +30,11 @@ private:
 private:
 	UPROPERTY(EditAnywhere, Category = "interact")
 		TArray<TEnumAsByte<EObjectTypeQuery>> interactLayer;
-	UPROPERTY(EditAnywhere, Category = "interact", meta = (UIMin = 0, ClampMin = 0))
+	UPROPERTY(EditAnywhere, Category = "interact")
 		float top;
-	UPROPERTY(EditAnywhere, Category = "interact", meta = (UIMin = 0, ClampMin = 0))
+	UPROPERTY(EditAnywhere, Category = "interact")
 		float down;
-	UPROPERTY(EditAnywhere, Category = "interact", meta = (UIMin = 0, ClampMin = 0))
+	UPROPERTY(EditAnywhere, Category = "interact")
 		float range;
 
 	FHitResult result;

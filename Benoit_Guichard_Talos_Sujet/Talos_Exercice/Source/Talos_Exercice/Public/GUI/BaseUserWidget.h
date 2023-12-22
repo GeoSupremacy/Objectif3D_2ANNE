@@ -3,11 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Components/UniformGridPanel.h"
+#include "Blueprint/WidgetLayoutLibrary.h"
 #include "Blueprint/UserWidget.h"
 #include <Components/TextBlock.h>
 #include "Components/Image.h"
 #include <Components/Button.h>
-#include "Blueprint/UserWidget.h"
 #include "BaseUserWidget.generated.h"
 
 

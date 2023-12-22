@@ -13,11 +13,17 @@ UCLASS()
 class TALOS_EXERCICE_API UCharacterAnimation : public UAnimInstance
 {
 	GENERATED_BODY()
+
+#pragma region f/p
 private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess))
-	float speedForward;
+		float speedForward;
+#pragma endregion 
+
+#pragma region METHOD
 private:
 	virtual void NativeBeginPlay() override;
 	UFUNCTION() void MoveForwardAnimation(const float _axis);
 	void Bind();
+#pragma endregion 
 };
