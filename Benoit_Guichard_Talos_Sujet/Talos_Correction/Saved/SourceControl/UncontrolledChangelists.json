@@ -1,0 +1,23 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"D:/Unreal/Objectif3D_2ANNE/Benoit_Guichard_Talos_Sujet/Talos_Correction/Content/StarterContent/Blueprints/Blueprint_CeilingLight.uasset",
+				"D:/Unreal/Objectif3D_2ANNE/Benoit_Guichard_Talos_Sujet/Talos_Correction/Content/Level/Corr.umap",
+				"D:/Unreal/Objectif3D_2ANNE/Benoit_Guichard_Talos_Sujet/Talos_Correction/Content/BluePrint/BP_Source.uasset",
+				"D:/Unreal/Objectif3D_2ANNE/Benoit_Guichard_Talos_Sujet/Talos_Correction/Content/BluePrint/Source_Red.uasset",
+				"D:/Unreal/Objectif3D_2ANNE/Benoit_Guichard_Talos_Sujet/Talos_Correction/Content/BluePrint/Source_Red_Inst.uasset",
+				"D:/Unreal/Objectif3D_2ANNE/Benoit_Guichard_Talos_Sujet/Talos_Correction/Content/BluePrint/BP_TalosReflector.uasset",
+				"D:/Unreal/Objectif3D_2ANNE/Benoit_Guichard_Talos_Sujet/Talos_Correction/Content/BluePrint/Test.uasset",
+				"D:/Unreal/Objectif3D_2ANNE/Benoit_Guichard_Talos_Sujet/Talos_Correction/Content/BluePrint/BP_TalosLocker.uasset",
+				"D:/Unreal/Objectif3D_2ANNE/Benoit_Guichard_Talos_Sujet/Talos_Correction/Content/BluePrint/BP_TalosDoor.uasset",
+				"D:/Unreal/Objectif3D_2ANNE/Benoit_Guichard_Talos_Sujet/Talos_Correction/Content/BluePrint/NewBlueprint.uasset",
+				"D:/Unreal/Objectif3D_2ANNE/Benoit_Guichard_Talos_Sujet/Talos_Correction/Content/BluePrint/Icon_Widget.uasset",
+				"D:/Unreal/Objectif3D_2ANNE/Benoit_Guichard_Talos_Sujet/Talos_Correction/Content/BluePrint/MyTalosSource.uasset"
+			]
+		}
+	]
+}
