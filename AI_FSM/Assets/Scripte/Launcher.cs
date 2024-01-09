@@ -1,18 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Launcher : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] float lifeSpan = 2;
+    [SerializeField] Rigidbody projectile = null;
+    [SerializeField, Range(-100, 100)]
+    private float xThrust,
+                   yThrust,
+                   zThrust;
+    Vector3 ForceDirection() => new Vector3(xThrust, yThrust, zThrust);
+   public void AddForce()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Destroy(gameObject, lifeSpan);
+        if (projectile != null)
+             projectile.AddForce(ForceDirection(), ForceMode.Impulse);
+       
     }
 }

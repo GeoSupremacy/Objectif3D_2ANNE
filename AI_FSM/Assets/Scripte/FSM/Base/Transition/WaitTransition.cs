@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaitTransition : MonoBehaviour
+public class WaitTransition : Transition
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private float waitTime = 5;
+    bool isDone = false;
+    //FTimerHandle waitTimer;
+    public override void InitTranstition()
     {
-        
+        StartCoroutine(Ti);
     }
-
-    // Update is called once per frame
-    void Update()
+    public override bool IsValidTranstition()
+    { 
+        return isDone; 
+    }
+    IEnumerator Ti()
     {
-        
+        yield return waitTime;
+    }
+private void Wait()
+    {
+        isDone = true;
     }
 }

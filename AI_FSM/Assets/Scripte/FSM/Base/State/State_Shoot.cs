@@ -1,18 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class State_Shoot : MonoBehaviour
+public class State_Shoot : State
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private GameObject projectile = null;
+    [SerializeField]
+    private WaitProjectilKillTransition waitForKill = null;
+    public override void Enter(FSMObject _owner)
     {
-        
+        base.Enter(_owner);
+        if (!projectile)
+            return;
+        gameObject.GetComponent<Launcher>().AddForce();
+        //waitForKill = new WaitProjectilKillTransition();
+        if (waitForKill!= null)
+            waitForKill.SendProjectile(projectile);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+protected override void InitTransitions() 
+  {
+        base.InitTransitions();
+        for (int i = 0; i < transitions.Length; i++)
+        {
+
+            WaitProjectilKillTransition _wait = transitions[i].gameObject.GetComponent<WaitProjectilKillTransition>();
+            if (_wait)
+            {
+                waitForKill = _wait;
+                return;
+            }
+
+        }
     }
 }

@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 
-public class WaitProjectilKillTransition : MonoBehaviour
+public class WaitProjectilKillTransition : Transition
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField, HideInInspector]
+        GameObject currentProjectile = null;
+    public void SendProjectile(GameObject _projectile)
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    }
+    public override bool IsValidTranstition()
+    { 
+        return false; 
     }
 }
