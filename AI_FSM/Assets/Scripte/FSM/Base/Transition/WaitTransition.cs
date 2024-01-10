@@ -10,7 +10,7 @@ public class WaitTransition : Transition
     //FTimerHandle waitTimer;
     public override void InitTranstition()
     {
-        StartCoroutine(Ti);
+        StartCoroutine(Ti());
     }
     public override bool IsValidTranstition()
     { 
@@ -19,6 +19,7 @@ public class WaitTransition : Transition
     IEnumerator Ti()
     {
         yield return waitTime;
+        Wait();
     }
 private void Wait()
     {

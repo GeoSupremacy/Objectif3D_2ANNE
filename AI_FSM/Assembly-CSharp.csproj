@@ -63,12 +63,20 @@
     <Compile Include="Assets\Scripte\FSM\Base\Transition\WaitTransition.cs" />
     <Compile Include="Assets\Scripte\Launcher.cs" />
     <Compile Include="Assets\Scripte\FSM\Base\State\IdleState.cs" />
+    <Compile Include="Assets\Scripte\FSM_Corr\Transition\WaitForProjectilKill_Corr.cs" />
+    <Compile Include="Assets\Scripte\FSM_Corr\State_Corr.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripte\FSM\Base\State\State_Shoot.cs" />
+    <Compile Include="Assets\Scripte\FSM_Corr\Transition\WaitTransistion_Corr.cs" />
     <Compile Include="Assets\Scripte\FSM\State.cs" />
     <Compile Include="Assets\Scripte\FSM\FSMComponent.cs" />
+    <Compile Include="Assets\Scripte\FSM_Corr\State\Shoot_State_Corr.cs" />
     <Compile Include="Assets\Scripte\FSM\FSMObject.cs" />
+    <Compile Include="Assets\Scripte\FSM_Corr\FSM_Corr.cs" />
+    <Compile Include="Assets\Scripte\FSM_Corr\FSMComponent_Corr.cs" />
     <Compile Include="Assets\Scripte\FSM\Base\Transition\WaitProjectilKillTransition.cs" />
+    <Compile Include="Assets\Scripte\FSM_Corr\Transition_Corr.cs" />
+    <Compile Include="Assets\Scripte\FSM_Corr\State\Idle_State_Corr.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

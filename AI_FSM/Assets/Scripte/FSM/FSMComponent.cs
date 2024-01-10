@@ -12,7 +12,7 @@ public class FSMComponent : MonoBehaviour
     #region Method
     void Init()
     {
-        if (!currentFSMType)
+        if (currentFSMType == null)
         {
           
             return;
@@ -21,13 +21,13 @@ public class FSMComponent : MonoBehaviour
     }
     void UpdateFSM()
     {
-        if (!currentFSMType)
+        if (currentFSMType == null)
             return;
         currentFSMType.UpdateFSM();
     }
     void CloseFSM()
     {
-        if (!currentFSMType)
+        if (currentFSMType == null)
             return;
         currentFSMType.StopFSM();
     }
@@ -37,6 +37,5 @@ public class FSMComponent : MonoBehaviour
     void Start()=> Init();
     void Update() =>UpdateFSM();
     private void OnDestroy()=> CloseFSM();
-    
-     #endregion
+    #endregion
 }
