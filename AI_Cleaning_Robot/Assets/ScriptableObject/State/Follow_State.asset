@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitions:
   - {fileID: 11400000, guid: 0f7455bd3c43e3b45bff50de54140311, type: 2}
+  - {fileID: 11400000, guid: 21a612057980445439864fbf62e42b16, type: 2}

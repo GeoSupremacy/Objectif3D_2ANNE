@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class State : ScriptableObject
 {
-   public FSM FSM { get; set; } = null;
+   public FSM FSM { get; private set; } = null;
     [SerializeField]
     private Transition[] transitions = null;
     
@@ -22,7 +22,7 @@ public abstract class State : ScriptableObject
         CheckTransitions();
         
     }
-   public void Exit()
+   public virtual void Exit()
     {
         FSM = null;
         

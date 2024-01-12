@@ -8,6 +8,7 @@ public class DetectedTransition : Transition
 {
     public override bool IsValisTransition()
     {
-        return CurrentFSM.Robot.IsGarbage;
+        return CurrentFSM.Robot.Garbage;
+        
     }
 }

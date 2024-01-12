@@ -1,19 +1,25 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Garbage : MonoBehaviour
 {
-    public static Action<Garbage> onRegister;
-    public static Action<Garbage> onDeath;
+    public static Action<Garbage> onRegister = null;
+    public static Action<Garbage> onDeath = null;
+    public Vector3 Position =>transform.position;
     private void Awake()
     {
         onRegister?.Invoke(this);
     }
     public void Collected()
     {
-        onDeath?.Invoke(this);
+       
         Destroy(this.gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        onDeath?.Invoke(this);
+        onRegister = null;
+        onDeath =null;
     }
 }

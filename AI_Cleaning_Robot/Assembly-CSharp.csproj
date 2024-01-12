@@ -60,18 +60,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripte\Project\Garbage\GarbageManager.cs" />
+    <Compile Include="Assets\Scripte\Project\Animation\DeathStateAnimation.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\Transition\CleanTransition.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\State\MoveToPoint_State.cs" />
+    <Compile Include="Assets\Scripte\Project\Robot\RobotClean.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\State\Idle_State.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\Transition\ReturnTransition.cs" />
-    <Compile Include="Assets\Scripte\Project\Animation\DeathState.cs" />
+    <Compile Include="Assets\Scripte\Project\FSM\State\Dead_State.cs" />
+    <Compile Include="Assets\Scripte\Project\Robot\Animation\RobotAnimator.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\Transition\WaitTransition.cs" />
+    <Compile Include="Assets\Scripte\Project\Animation\StateAnimation.cs" />
     <Compile Include="Assets\Scripte\Project\Garbage\Garbage.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\Transition\DetectedTransition.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\State\Follow_State.cs" />
+    <Compile Include="Assets\Scripte\Project\FSM\Transition\DeathTransition.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\State\Clean_State.cs" />
-    <Compile Include="Assets\Scripte\Project\Robot\RobotAnimator.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\Transition.cs" />
     <Compile Include="Assets\Scripte\Project\Robot\Robot.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\FSM.cs" />
@@ -79,6 +83,7 @@
     <Compile Include="Assets\Scripte\Project\FSM\State.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\FSMComponent.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\Transition\DestinationTransition.cs" />
+    <Compile Include="Assets\Scripte\Project\Robot\Component\SightSensorComponent.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

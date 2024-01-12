@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3836d3eb9f164714685cfa5faa01cbde, type: 3}
-  m_Name: CleanTransition
+  m_Script: {fileID: 11500000, guid: 06dcc27cb68d30e44b4673f726a7f7b9, type: 3}
+  m_Name: DeathTransition
   m_EditorClassIdentifier: 
-  <NextState>k__BackingField: {fileID: 11400000, guid: 93968a7506df16b41bf62695cd8c8920,
+  <NextState>k__BackingField: {fileID: 11400000, guid: fa50c4d66e4e7d94e84a4f02688cae84,
     type: 2}

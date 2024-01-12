@@ -5,20 +5,19 @@ using UnityEngine;
 public class FSMComponent : MonoBehaviour
 {
     [SerializeField] private FSM FSM;
-    [field: SerializeField] public Robot Robot { get; private set; }
+    [field: SerializeField] public RobotClean Owner { get; private set; }
 
     private void Start()
     {
-        Robot=this.GetComponent<Robot>();
+        Owner = this.GetComponent<RobotClean>();
         FSM= Instantiate(FSM);
         FSM?.StartSFM(this);
     }
     private void Update()
     {
-        if (FSM == null)
-        {
-            Debug.Log("FSMComponent: " + name + " as not FSM");
-        }
+       
         FSM?.Update();
     }
+    private void OnDestroy()=> FSM?.StopFSM();
+    
 }
