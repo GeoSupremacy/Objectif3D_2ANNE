@@ -64,9 +64,12 @@
     <Compile Include="Assets\Scripte\Project\FSM\Transition\CleanTransition.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\State\MoveToPoint_State.cs" />
     <Compile Include="Assets\Scripte\Project\Robot\RobotClean.cs" />
+    <Compile Include="Assets\Scripte\Project\Utils.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\State\Idle_State.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\Transition\ReturnTransition.cs" />
+    <Compile Include="Assets\Scripte\Project\Robot\NatigationZone.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\State\Dead_State.cs" />
+    <Compile Include="Assets\Scripte\Project\Robot\Component\RobotSightSensorComponent.cs" />
     <Compile Include="Assets\Scripte\Project\Robot\Animation\RobotAnimator.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\Transition\WaitTransition.cs" />
     <Compile Include="Assets\Scripte\Project\Animation\StateAnimation.cs" />
@@ -79,7 +82,6 @@
     <Compile Include="Assets\Scripte\Project\FSM\Transition.cs" />
     <Compile Include="Assets\Scripte\Project\Robot\Robot.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\FSM.cs" />
-    <Compile Include="Assets\Scripte\Project\Robot\NativZone.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\State.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\FSMComponent.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\Transition\DestinationTransition.cs" />

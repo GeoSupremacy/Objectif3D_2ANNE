@@ -7,14 +7,5 @@ using UnityEngine;
 public class Follow_State : State
 {
    
-    public override void StateUpdate()
-    {
-        base.StateUpdate();
-       // FollowTarget();
-    }
-    void FollowTarget()
-    {
-        if (FSM.Robot.IsGarbage)
-            FSM.Robot.Look();
-    }
+   
 }

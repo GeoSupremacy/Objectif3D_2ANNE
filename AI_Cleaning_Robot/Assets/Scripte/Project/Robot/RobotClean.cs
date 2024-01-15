@@ -2,14 +2,17 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+
 [RequireComponent(typeof(SightSensorComponent))]
 public class RobotClean : Robot
 {
     public Action onDeathAnimation;
     public Action<bool> onColllectAnimation;
+
     #region f/p
     [field: SerializeField] public Garbage Garbage { get; private set; }
-    SightSensorComponent sightSensorComponent;
+    RobotSightSensorComponent sightSensorComponent;
+    [field: SerializeField] public NatigationZone Zone { get; private set; }
     #endregion
     public bool IsDead { get; private set; }
     public bool IsGarbage { get; private set; }
@@ -36,7 +39,7 @@ public class RobotClean : Robot
         if (!Garbage || !Destination())
             return;
 
-        Debug.Log("Collect");
+       
         Move = IsGarbage = false;
         Garbage.Collected();
         Garbage = null;
@@ -60,10 +63,16 @@ public class RobotClean : Robot
 
         }
     }
-    protected override void Init()=> sightSensorComponent = this.GetComponent<SightSensorComponent>();
+    protected override void Init() 
+    {
+        sightSensorComponent = this.GetComponent<RobotSightSensorComponent>(); 
+    }
+
     protected override void DrawDebug()
     {
-      if(IsDead) return;
+      if(IsDead) 
+            return;
+
         Gizmos.color = Color.yellow;
         Gizmos.DrawSphere(NextMove, 0.5f);
         if (IsGarbage)

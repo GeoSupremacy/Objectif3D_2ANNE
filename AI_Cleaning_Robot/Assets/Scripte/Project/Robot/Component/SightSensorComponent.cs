@@ -3,14 +3,17 @@ using UnityEngine;
 
 public class SightSensorComponent : MonoBehaviour
 {
-    [SerializeField, Range(0, 100)] int sightAngle = 90;
-    [SerializeField, Range(0, 100)] int range = 5;
-    [SerializeField, Range(0, 100)] int definition = 5;
+    [SerializeField, Range(0, 100)]protected int sightAngle = 90;
+    [SerializeField, Range(0, 100)]protected int range = 5;
+    [SerializeField, Range(0, 100)] protected int definition = 5;
     [SerializeField, Range(0, 100)] float hightPosition = 0.75f;
-    [field: SerializeField] public GameObject Target { get; private set; }
-    [SerializeField] LayerMask mask;
-    [SerializeField] bool onDrawDebug =false, 
-                          stop = false;
+    [field: SerializeField] public GameObject Target { get;  set; }
+    [SerializeField] protected LayerMask mask;
+    [SerializeField] protected bool onDrawDebug = false;
+    bool stop = false;
+
+   public Vector3 Offset => new(0, hightPosition, 0);
+   public Vector3 PositionOffset => transform.position + Offset;
     public void Desactivate() => stop = true;
     public bool Impact { get; private set; }
     private void Start()=> onDrawDebug = false;
@@ -43,7 +46,7 @@ public class SightSensorComponent : MonoBehaviour
            
         }
     }
-    void DrawDebug()
+    protected virtual void DrawDebug()
     {
         if (!onDrawDebug || stop)
             return;
