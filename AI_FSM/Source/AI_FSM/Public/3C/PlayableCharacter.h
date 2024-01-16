@@ -67,6 +67,7 @@ public:
 protected:
 	virtual void BeginPlay() override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	virtual bool ShouldTickIfViewportsOnly() const override;
 #pragma endregion
 
 #pragma region Init
@@ -81,6 +82,6 @@ private:
 private:
 	void MoveForward(const FInputActionValue& _value);
 	void MoveRight(const FInputActionValue& _value);
-	void RotateCameraYaw(float _axis);
+	void RotateCameraYaw();
 #pragma endregion
 };

@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "FSM/FSMObject.h"
-#include "../../../FSM/FSMComponent.h"
+#include "FSM/FSMComponent.h"
 #include "FSM/BasicTransitions/WaitProjectileKillTransition_Cor.h"
 #include "FSM/BasicState/ThrowProjectileState_Corr.h"
 
@@ -10,7 +10,7 @@ void UThrowProjectileState_Corr::Enter(UFSMObject* _owner)
 	Super::Enter(_owner);
 	if (!projectile)
 		return;
-	AActor* _projectile =GetWorld()->SpawnActor<AActor>(projectile, _owner->GetOwner()->GetOwner()->GetActorLocation(), FRotator(0));
+	AActor* _projectile =GetWorld()->SpawnActor<AActor>(projectile, _owner->GetFSMComponent()->GetOwner()->GetActorLocation(), FRotator(0));
 	_projectile->SetLifeSpan(2);
 	if (waitForKill)
 		waitForKill->SendProjectile(_projectile);

@@ -27,6 +27,8 @@ void UStateObject::Exit()
 
 void UStateObject::InitTransitions()
 {
+	if (!currentFSMObject)
+		return;
 	for (TSubclassOf<UTransition> transition : transitions)
 	{
 		if (!transition)
@@ -34,6 +36,7 @@ void UStateObject::InitTransitions()
 		UTransition* _transition = NewObject <UTransition> (this, transition);
 		//UDumTrans _dm = Cast<uDm>(tr)
 		//if (_dm) = do
+		_transition->SetFSMObject(currentFSMObject);
 		_transition->InitTranstition();//???
 		runningTransitions.Add(_transition);
 	}

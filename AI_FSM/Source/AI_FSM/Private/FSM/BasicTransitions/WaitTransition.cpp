@@ -5,6 +5,7 @@
 
 void UWaitTransition::InitTranstition()
 {
+	waitTime = FMath::FRandRange(minTime, maxTime);
 	GetWorld()->GetTimerManager().SetTimer(waitTimer, this, &UWaitTransition::Wait, waitTime, false);
 }
 

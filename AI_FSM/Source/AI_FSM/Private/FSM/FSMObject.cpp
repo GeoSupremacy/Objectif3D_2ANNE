@@ -1,12 +1,12 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
+#include "FSM/FSMComponent.h"
 #include "FSM/FSMObject.h"
-#include "../../FSM/FSMComponent.h"
+
 
 void UFSMObject::StartFSM(UFSMComponent* _owner)
 {
-	owner = _owner;
+	currentFSMComponent = _owner;
 	SetNextState(startingState);
 }
 

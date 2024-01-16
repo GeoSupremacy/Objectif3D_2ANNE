@@ -14,7 +14,9 @@ class AI_FSM_API UWaitTransition : public UTransition
 {
 	GENERATED_BODY()
 private:
-	UPROPERTY(EditAnywhere, Category="Transition") float waitTime = 5;
+	UPROPERTY(EditAnywhere, Category="Transition") float minTime = 0;
+	UPROPERTY(EditAnywhere, Category = "Transition") float maxTime = 5;
+	float waitTime;
 	bool isDone = false;
 	FTimerHandle waitTimer;
 public:

@@ -3,6 +3,22 @@
 #include "Kismet/KismetSystemLibrary.h"
 #include "Component/SphereSightComponent.h"
 
+USphereSightComponent::USphereSightComponent()
+{
+	PrimaryComponentTick.bCanEverTick = true;
+}
+
+void USphereSightComponent::BeginPlay()
+{
+	Super::BeginPlay();
+}
+
+void USphereSightComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+{
+	Super::TickComponent( DeltaTime,  TickType,  ThisTickFunction);
+	SightBehaviour();
+}
+
 void USphereSightComponent::SightBehaviour()
 {
 	TArray<AActor*> _items = {};

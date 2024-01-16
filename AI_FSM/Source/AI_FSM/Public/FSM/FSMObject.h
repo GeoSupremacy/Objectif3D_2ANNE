@@ -15,9 +15,10 @@ class AI_FSM_API UFSMObject : public UObject
 private:
 	UPROPERTY(EditAnywhere, Category="State Object") TSubclassOf<UStateObject> startingState = nullptr;
 	UPROPERTY(VisibleAnywhere, Category = "State Object", meta = (EditInLine)) TObjectPtr<UStateObject> currentState = nullptr;
-	UPROPERTY() TObjectPtr<class UFSMComponent> owner = nullptr;
+	UPROPERTY() TObjectPtr<class UFSMComponent> currentFSMComponent = nullptr;
 public:
-	FORCEINLINE TObjectPtr<class UFSMComponent> GetOwner() const {return owner;}
+	FORCEINLINE TObjectPtr<class UFSMComponent> GetFSMComponent() const { return currentFSMComponent; }
+public:
 	void StartFSM(class UFSMComponent* _owner);
 	void SetNextState(TSubclassOf<UStateObject> _state);
 	virtual void UpdateFSM();
