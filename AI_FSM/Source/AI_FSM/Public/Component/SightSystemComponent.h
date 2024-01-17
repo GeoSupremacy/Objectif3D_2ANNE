@@ -19,6 +19,8 @@ protected:
 		UPROPERTY(EditAnywhere) TObjectPtr<AActor> Target = nullptr;
 public:
 	FORCEINLINE FVector SightOffstLocation() const {return GetOwner()->GetActorLocation() + FVector(0, 0, heightPosition);}
+	FORCEINLINE TObjectPtr<AActor> GetTarget() const { return Target; }
+	FORCEINLINE void CleanTarget() {  Target = nullptr; }
 public:	
 	USightSystemComponent();
 protected:

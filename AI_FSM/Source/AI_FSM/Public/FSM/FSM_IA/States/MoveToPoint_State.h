@@ -13,7 +13,13 @@ UCLASS()
 class AI_FSM_API UMoveToPoint_State : public UStateObject
 {
 	GENERATED_BODY()
+private:
+	UPROPERTY(EditAnywhere)
+	float timer = 5.f;
+	FTimerHandle waitTransition;
+	TObjectPtr<class AIA_Guard> currentGuard = nullptr;
 protected:
 	virtual void Enter(class UFSMObject* _owner) override;
-	virtual void Update() override;
+private:
+	void WaitReLook();
 };

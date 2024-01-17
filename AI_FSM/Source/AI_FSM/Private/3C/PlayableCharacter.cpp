@@ -46,6 +46,11 @@ void APlayableCharacter::Init()
 }
 void APlayableCharacter::MappingContext()
 {
+	if (desactivateInput)
+	{
+		GEngine->AddOnScreenDebugMessage(0, 10, FColor::Yellow, TEXT("Input Desactivate "));
+		return;
+	}
 	if (!inputConfig)
 	{
 		GEngine->AddOnScreenDebugMessage(0, 10, FColor::Red, TEXT("Not InputConfig "));
@@ -55,6 +60,9 @@ void APlayableCharacter::MappingContext()
 }
 void APlayableCharacter::BindInput(UInputComponent* PlayerInputComponent)
 {
+	if (desactivateInput)
+		return;
+
 	UEnhancedInputComponent* _input = Cast<UEnhancedInputComponent>(PlayerInputComponent);
 	if (!inputConfig)
 		return;

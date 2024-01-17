@@ -38,6 +38,8 @@ private:
 private:
 	UPROPERTY(EditANywhere, Category = "Runtime editor ")
 		bool shouldTickIfViewportsOnly = false;
+	UPROPERTY(EditANywhere, Category = "Input ")
+		bool desactivateInput = false;
 #pragma endregion
 
 private:

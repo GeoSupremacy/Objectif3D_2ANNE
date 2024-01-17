@@ -7,17 +7,19 @@
 void UMoveToPoint_State::Enter(UFSMObject* _owner)
 {
 	Super::Enter(_owner);
-	AIA_Guard* _ia =Cast<AIA_Guard>(_owner->GetFSMComponent()->GetOwner());
-	if (!_ia)
+	currentGuard =Cast<AIA_Guard>(_owner->GetFSMComponent()->GetOwner());
+	if (!currentGuard)
 	{
 		GEngine->AddOnScreenDebugMessage(0, 10, FColor::Red, TEXT("Not AIA_Guard "));
 		return;
 	}
-	_ia->SetMove(true);
-	_ia->SetHasDestination(false);
+	GetWorld()->GetTimerManager().SetTimer(waitTransition, this, &UMoveToPoint_State::WaitReLook, timer, true);
+	currentGuard->SetMove(true);
+	currentGuard->SetHasDestination(false);
 }
 
-void UMoveToPoint_State::Update()
+void UMoveToPoint_State::WaitReLook()
 {
-	Super::Update();
+	currentGuard->Look();
 }
+

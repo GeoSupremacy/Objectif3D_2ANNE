@@ -8,16 +8,6 @@ USphereSightComponent::USphereSightComponent()
 	PrimaryComponentTick.bCanEverTick = true;
 }
 
-void USphereSightComponent::BeginPlay()
-{
-	Super::BeginPlay();
-}
-
-void USphereSightComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
-{
-	Super::TickComponent( DeltaTime,  TickType,  ThisTickFunction);
-	SightBehaviour();
-}
 
 void USphereSightComponent::SightBehaviour()
 {
@@ -40,7 +30,7 @@ void USphereSightComponent::SightBehaviour()
 		}
 		
 	}
-	Target = nullptr;
+	
 }
 
 float USphereSightComponent::GetVectorAngle(const FVector& _u, const FVector& _v) const
