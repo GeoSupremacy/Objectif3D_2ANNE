@@ -11,7 +11,8 @@ UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class AI_FSM_API USphereSightComponent : public USightSystemComponent
 {
 	GENERATED_BODY()
-
+private:
+	UPROPERTY(EditAnywhere) TArray<TEnumAsByte<EObjectTypeQuery>> masklayers = {};
 public:
 	USphereSightComponent();
 protected:

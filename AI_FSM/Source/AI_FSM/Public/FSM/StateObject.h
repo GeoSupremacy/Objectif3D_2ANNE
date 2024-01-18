@@ -17,6 +17,7 @@ protected:
 	UPROPERTY() TObjectPtr<class UFSMObject> currentFSMObject = nullptr;
 	UPROPERTY(EditAnywhere) TArray<TSubclassOf<class UTransition>> transitions ={};
 	UPROPERTY(VisibleAnywhere, meta = (EditInLine)) TArray<TObjectPtr<class UTransition>> runningTransitions = {};
+	UPROPERTY(EditAnywhere) bool desactivateMS = false;
 public:
 	virtual void Enter(class UFSMObject* _owner);
 	virtual void Update();

@@ -20,7 +20,6 @@ void UWait_Follow_Transition::Wait()
 		{
 			return;
 		}
-	if(_currentGuard->GetCanChangePatrol())
-		return;
+	
 	isDone = true;
 }

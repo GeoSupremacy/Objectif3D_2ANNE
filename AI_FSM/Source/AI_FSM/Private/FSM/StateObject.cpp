@@ -8,18 +8,22 @@
 void UStateObject::Enter(UFSMObject* _owner)
 {
 	currentFSMObject = _owner;
+	desactivateMS = _owner->GetDesactivateMS();
 	InitTransitions();
+	if(!desactivateMS)
 	UKismetSystemLibrary::PrintString(this, "Enter->"+ GetName(), true, true, FColor::Green);
 }
 
 void UStateObject::Update()
 {
 	CheckForValidTransition();
+	if (!desactivateMS)
 	UKismetSystemLibrary::PrintString(this, "UpDate" + GetName(), true, true, FColor::Yellow,0);
 }
 
 void UStateObject::Exit()
 {
+	if (!desactivateMS)
 	UKismetSystemLibrary::PrintString(this, "Exit" + GetName(), true, true, FColor::Red);
 	currentFSMObject =nullptr;
 
@@ -48,6 +52,8 @@ void UStateObject::CheckForValidTransition()
 	{
 		if (transition->IsValidTranstition())
 		{
+			if (!desactivateMS)
+				UKismetSystemLibrary::PrintString(this, "Transition: " + GetName() + "to "+ transition->GetNextState()->GetName(), true, true, FColor::Purple);
 			currentFSMObject->SetNextState(transition->GetNextState());
 			Exit();
 			return;

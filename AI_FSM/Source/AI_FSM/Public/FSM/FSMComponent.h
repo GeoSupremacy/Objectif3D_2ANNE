@@ -19,9 +19,11 @@ private:
 	UPROPERTY(EditAnywhere, Category = "State Object") TSubclassOf<UFSMObject> currentFSMType = nullptr;
 	UPROPERTY(VisibleAnywhere, Category = "State Object", meta =(EditInLine)) TObjectPtr<UFSMObject> runningFSM = nullptr;
 	UPROPERTY(EditAnywhere, Category = "State Object", meta = (EditInLine)) TObjectPtr< AActor> owner = nullptr;
+	UPROPERTY(EditAnywhere, Category = "State Object") bool desactivateMS = false;
 public:	
 	UFSMComponent();
 public:
+	FORCEINLINE bool GetDesactivateMS() const { return desactivateMS; }
 	FORCEINLINE TObjectPtr<AActor> GetThisOwner() const { return owner; }
 protected:
 	virtual void BeginPlay() override;

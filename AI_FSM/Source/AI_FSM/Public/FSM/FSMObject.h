@@ -16,7 +16,9 @@ private:
 	UPROPERTY(EditAnywhere, Category="State Object") TSubclassOf<UStateObject> startingState = nullptr;
 	UPROPERTY(VisibleAnywhere, Category = "State Object", meta = (EditInLine)) TObjectPtr<UStateObject> currentState = nullptr;
 	UPROPERTY() TObjectPtr<class UFSMComponent> currentFSMComponent = nullptr;
+	UPROPERTY(EditAnywhere, Category = "State Object") bool desactivateMS = false;
 public:
+	FORCEINLINE bool GetDesactivateMS() const { return desactivateMS; }
 	FORCEINLINE TObjectPtr<class UFSMComponent> GetFSMComponent() const { return currentFSMComponent; }
 public:
 	void StartFSM(class UFSMComponent* _owner);

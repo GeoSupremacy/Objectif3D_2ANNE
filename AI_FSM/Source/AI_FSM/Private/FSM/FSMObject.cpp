@@ -6,7 +6,9 @@
 
 void UFSMObject::StartFSM(UFSMComponent* _owner)
 {
+
 	currentFSMComponent = _owner;
+	desactivateMS = _owner->GetDesactivateMS();
 	SetNextState(startingState);
 }
 

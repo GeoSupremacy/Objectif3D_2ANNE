@@ -163,7 +163,7 @@ void AIA_Guard::Destination()
 
 	if (hasTarget)
 	{
-		if (FVector::Distance(GetActorLocation(), currentTarget->GetActorLocation()) <= 50.f)
+		if (FVector::Distance(GetActorLocation(), currentTarget->GetActorLocation()) >= 500.f)
 			ClearTarget();
 
 		return;
