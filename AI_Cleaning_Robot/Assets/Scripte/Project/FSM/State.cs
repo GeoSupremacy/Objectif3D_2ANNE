@@ -5,16 +5,17 @@ using UnityEngine;
 
 public abstract class State : ScriptableObject
 {
-   public FSM FSM { get; private set; } = null;
-    [SerializeField]
-    private Transition[] transitions = null;
     
-   private List<Transition> runningTransitions = new List<Transition>();
+    [SerializeField]
+    protected Transition[] transitions = null;
+    public FSM FSM { get; set; }
+    protected List<Transition> runningTransitions = new List<Transition>();
    public virtual void StartState(FSM _fms)
     {
-        FSM = _fms;
+
         InitTransitions();
         Debug.Log("Start: " + name);
+        FSM = _fms;
     }
    public virtual void StateUpdate()
     {
@@ -24,11 +25,11 @@ public abstract class State : ScriptableObject
     }
    public virtual void Exit()
     {
+
         FSM = null;
-        
         Debug.Log("Exit: " + name);
     }
-   private void InitTransitions()
+   protected virtual void InitTransitions()
     {
         runningTransitions.Clear();
         foreach (var transition in transitions)
@@ -38,7 +39,7 @@ public abstract class State : ScriptableObject
             runningTransitions.Add(_transition);
         }
     }
-   private void CheckTransitions()
+    protected virtual void CheckTransitions()
     {
         foreach (var transition in runningTransitions)
         {
@@ -46,12 +47,13 @@ public abstract class State : ScriptableObject
                 continue;
             if (transition.IsValisTransition())
             {
-                Debug.Log(transition.name+" " + name+ " to "+ transition.NextState);
-   
+                Debug.Log(transition.name + " " + name + " to " + transition.NextState);
+
                 FSM?.SetNextState(transition?.NextState);
                 Exit();
                 return;
             }
         }
     }
+    
 }

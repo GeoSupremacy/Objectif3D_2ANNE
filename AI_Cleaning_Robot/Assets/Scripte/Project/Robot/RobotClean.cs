@@ -12,9 +12,9 @@ public class RobotClean : Robot
     #region f/p
     [field: SerializeField] public Garbage Garbage { get; private set; }
     RobotSightSensorComponent sightSensorComponent;
-    [field: SerializeField] public NatigationZone Zone { get; private set; }
+   
     #endregion
-    public bool IsDead { get; private set; }
+ 
     public bool IsGarbage { get; private set; }
     private void OnDestroy() => Delete();
     protected override void Update()
@@ -46,7 +46,7 @@ public class RobotClean : Robot
         sightSensorComponent.ClearnSight();
         onColllectAnimation?.Invoke(true);
     }
-   public void EndCollected()=> onColllectAnimation?.Invoke(false);
+   public  void EndCollected()=> onColllectAnimation?.Invoke(false);
     void GarbageDetected()
     {
         if (IsGarbage)

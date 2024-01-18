@@ -4,9 +4,11 @@ using UnityEngine;
 
 public abstract class Transition : ScriptableObject
 {
+    
     [field:SerializeField]
     public State NextState { get; private set; }
     protected  FSM CurrentFSM{ get;  set; }
+  
     public virtual void InitTransition(FSM _fsm)
     {
         if (_fsm == null)
@@ -19,4 +21,5 @@ public abstract class Transition : ScriptableObject
     { 
         return false;
     }
+    
 }

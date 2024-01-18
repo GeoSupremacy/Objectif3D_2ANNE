@@ -2,22 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FSMComponent : MonoBehaviour
+public abstract class FSMComponent : MonoBehaviour
 {
-    [SerializeField] private FSM FSM;
-    [field: SerializeField] public RobotClean Owner { get; private set; }
+   
+     private FSM FSM;
+     public Robot Owner { get;  set; }
 
-    private void Start()
+    private  void Start()
     {
-        Owner = this.GetComponent<RobotClean>();
+        Owner = this.GetComponent<Robot>();
         FSM= Instantiate(FSM);
         FSM?.StartSFM(this);
     }
     private void Update()
     {
-       
         FSM?.Update();
     }
     private void OnDestroy()=> FSM?.StopFSM();
-    
+  
 }

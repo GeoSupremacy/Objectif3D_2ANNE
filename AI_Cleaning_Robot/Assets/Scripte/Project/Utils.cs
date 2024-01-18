@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Utils : MonoBehaviour
+public class Utils 
 {
     public static void DrawCircleAroundY(Vector3 _position, float _radius, Color _color, int _definition = 20)
     {
