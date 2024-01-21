@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-using Unity.VisualScripting;
 
 public class Manager : MonoBehaviour
 {
@@ -15,7 +14,7 @@ public class Manager : MonoBehaviour
     private void Awake()
     { 
         spawnGrid = this.GetComponent<SpawnGrid>();
-       
+      
     }
     
     void Delete(Managed _regist)=> listManaged.Remove(_regist);
@@ -25,17 +24,25 @@ public class Manager : MonoBehaviour
         listManaged.Add(_regist);
         _regist.Name(this);
     }
-    public void SetSister(Managed _regist)
+    public IEnumerator SetSister(Managed _regist)
     {
+        yield return new WaitForSeconds(1);
+     
         foreach (var item in listManaged)
         {
             float _dist = Vector3.Distance(item.transform.position, _regist.transform.position);
             if (item != _regist)
-                if (_dist >= spawnGrid.RangeColumn || _dist >= spawnGrid.RangRown && 
-                    _dist <= spawnGrid.RangeColumn+1 || _dist <= spawnGrid.RangRown+1)
+                if (_dist >= spawnGrid.RangeColumn && _dist <= Hypothenuse(spawnGrid.RangRown, spawnGrid.RangeColumn)
+                                                    ||
+                    _dist >= spawnGrid.RangRown && _dist <= Hypothenuse(spawnGrid.RangRown, spawnGrid.RangeColumn))
                         _regist.AddSister(item);
-            
+                    
+           
         }
     }
-
+    float Hypothenuse(float _a, float _b)
+    {
+       
+        return Mathf.Sqrt((_a * _a) + (_b * _b));
+    }
 }

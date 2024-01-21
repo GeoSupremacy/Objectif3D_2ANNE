@@ -9,6 +9,8 @@ public class SpawnGrid : MonoBehaviour
 
     [SerializeField]
     Managed managed = null;
+    [SerializeField]
+    GameObject position;
     [field: SerializeField, Range(0, 100)]
     public float RangeColumn { get; private set; } = 5;
     [field: SerializeField, Range(0, 100)]
@@ -49,21 +51,27 @@ public class SpawnGrid : MonoBehaviour
     void Define(int i, int j)
     {
        
-        var _mt = Instantiate(managed);
-        _mt.transform.position = new Vector3(i * RangeColumn, 0, j * RangRown) + transform.position;
+        Managed _mt = Instantiate(managed);
+        _mt.transform.position = new Vector3(i * RangeColumn, 0, j * RangRown) + position.transform.position;
         _mt.MyCreator(this.GetComponent<Manager>());
-
+        gameObject.GetComponent<Manager>().StartCoroutine(gameObject.GetComponent<Manager>().SetSister(_mt));
         gameObject.GetComponent<Manager>().Register(_mt);
     }
     void DrawDebug()
     {
+        if (!position)
+            return;
         for (int i = 0; i < Column; i++)
             for (int j = 0; j < Row; j++)
             {
                 Vector3 _transform;
 
-                _transform = new Vector3(i*RangeColumn, 0,j*RangRown) +transform.position;
+                _transform = new Vector3(i*RangeColumn, 0,j*RangRown) + position.transform.position;
                 Gizmos.DrawSphere(_transform, 0.5f);
             }
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(transform.position, position.transform.position);
+        Gizmos.color = Color.white;
     }
 }

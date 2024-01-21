@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 190903941802786608}
   - component: {fileID: 7262296744485709884}
+  - component: {fileID: 5104037096531782358}
   m_Layer: 0
   m_Name: Spawn
   m_TagString: Untagged
@@ -44,5 +45,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60d1917550a9b544838a0f0cab89f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameObject: {fileID: 6359113622939941373, guid: 3fceff7fb390aa344972f07b04083e28,
-    type: 3}
+  managed: {fileID: 0}
+  <RangeColumn>k__BackingField: 5
+  <RangRown>k__BackingField: 5
+  <Column>k__BackingField: 5
+  <Row>k__BackingField: 5
+--- !u!114 &5104037096531782358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385205290537487295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9c68b602efa82b468b229c4b8c16dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listManaged: []
+  spawnGrid: {fileID: 7262296744485709884}
