@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "AI_FSM",
+			"Path": "..\\Source\\AI_FSM.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "AI_FSMEditor",
+			"Path": "..\\Source\\AI_FSMEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
