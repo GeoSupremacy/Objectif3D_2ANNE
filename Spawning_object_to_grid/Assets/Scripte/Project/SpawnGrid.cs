@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class SpawnGrid : MonoBehaviour
 {
-    
+    [SerializeField]
+        static int live = 41;
 
     [SerializeField]
     Managed managed = null;
@@ -19,38 +20,23 @@ public class SpawnGrid : MonoBehaviour
         public int Column { get; private set; } = 5;
     [field: SerializeField]
     public int Row { get; private set; } = 5;
-
-    void Start()
-    {
-        Spawn();
+    [SerializeField]
+    private bool activateDrawdebug = false;
+    void Start() => Spawn();
+    private void OnDrawGizmos()=> DrawDebug();
     
-    }
-    void Update()
-    {
-        
-    }
-    private void OnDrawGizmos()
-    {
-        DrawDebug();
-    }
-
-    private void OnDestroy()
-    {
-       
-    }
 
     void Spawn()
     {
+        activateDrawdebug = false;
+        if (live==0) return;
+        live--;
         for (int i = 0; i < Column; i++)
             for (int j = 0; j < Row; j++)
                 Define(i, j);
-
-
-            
     }
     void Define(int i, int j)
     {
-       
         Managed _mt = Instantiate(managed);
         _mt.transform.position = new Vector3(i * RangeColumn, 0, j * RangRown) + position.transform.position;
         _mt.MyCreator(this.GetComponent<Manager>());
@@ -59,13 +45,12 @@ public class SpawnGrid : MonoBehaviour
     }
     void DrawDebug()
     {
-        if (!position)
+        if (!position|| !activateDrawdebug)
             return;
         for (int i = 0; i < Column; i++)
             for (int j = 0; j < Row; j++)
             {
                 Vector3 _transform;
-
                 _transform = new Vector3(i*RangeColumn, 0,j*RangRown) + position.transform.position;
                 Gizmos.DrawSphere(_transform, 0.5f);
             }

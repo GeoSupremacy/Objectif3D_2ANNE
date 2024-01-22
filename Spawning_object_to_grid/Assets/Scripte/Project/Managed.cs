@@ -4,11 +4,13 @@ using System;
 using UnityEngine;
 using System.ComponentModel;
 
+
+
 public class Managed : MonoBehaviour
 {
     static public Action<Managed> onRegister = null;
     static public Action<Managed> onDelete = null;
-
+   
     [SerializeField]
     Manager creator = null;
     [SerializeField]
@@ -19,11 +21,15 @@ public class Managed : MonoBehaviour
         
       
     }
-    private void Start()
+    private void OnDrawGizmos()
     {
+        if (!creator)
+            return;
         
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(creator.transform.position, transform.position);
     }
-   public void Register(Managed _sis)=>sister.Add(_sis); 
+    public void Register(Managed _sis)=>sister.Add(_sis); 
    private void OnDestroy()=>Destroy();
 
 

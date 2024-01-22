@@ -11,12 +11,7 @@ public class Manager : MonoBehaviour
     public int Count { get; private set; }
     [SerializeField]
     SpawnGrid spawnGrid = null;
-    private void Awake()
-    { 
-        spawnGrid = this.GetComponent<SpawnGrid>();
-      
-    }
-    
+    private void Awake()=>spawnGrid = this.GetComponent<SpawnGrid>();
     void Delete(Managed _regist)=> listManaged.Remove(_regist);
     public void Register(Managed _regist)
     {
