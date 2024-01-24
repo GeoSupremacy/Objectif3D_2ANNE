@@ -9,9 +9,9 @@ public class MoveToPoint_State : State
     
    [SerializeField] 
     private Navigator zone;
-    public override void StartState(FSM _fms)
+    public override void Enter(FSM _fms)
     {
-        base.StartState(_fms);
+        base.Enter(_fms);
         zone = _fms.Robot.Zone;
         ChangeMovement();
     }

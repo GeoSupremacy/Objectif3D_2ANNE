@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a34f1d63e0f6244854afd0c45ae3bf, type: 3}
   m_Name: Dog_Statue_Transition
   m_EditorClassIdentifier: 
-  <NextState>k__BackingField: {fileID: 11400000, guid: ce2d73617d1eb5244a66e8698bcbea2d,
+  <NextState>k__BackingField: {fileID: 11400000, guid: 4cac1fce18370a742a86435100a8b91b,
     type: 2}

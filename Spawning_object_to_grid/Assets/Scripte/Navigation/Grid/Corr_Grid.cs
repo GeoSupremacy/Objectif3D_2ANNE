@@ -3,7 +3,7 @@ using System.Collections.Generic;
 public class Corr_Grid : MonoBehaviour
 {
     [SerializeField, Range(2, 10)] int size = 4;
-    [SerializeField, Range(1, 100)] int gap = 1;
+    [SerializeField, Range(1, 100)] int gap = 100;
     [SerializeField] Color gridNodeColor = Color.green, gridLinesColor = Color.red;
     [field: SerializeField] public GridPointData Data { get; set; }
 
@@ -69,5 +69,10 @@ public class Corr_Grid : MonoBehaviour
         {
             Data.Nodes[i].DrawGizmos(gridNodeColor, gridLinesColor);
         }
+    }
+
+    private void OnDestroy()
+    {
+        Data.ResetCost();
     }
 }

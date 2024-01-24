@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class Robot : MonoBehaviour
 {
-
+    //
 
     #region f/p
     [SerializeField, Range(0, 100)] float speed = 5;
     [field: SerializeField] public Vector3 NextMove { get; set; }
     [field: SerializeField]
     public bool Move { get; set; }
-    public bool IsDead { get;  set; }
+    public bool IsDead { get; set; } = false;
     [field: SerializeField] public Navigator Zone { get;  set; }
     #endregion
 

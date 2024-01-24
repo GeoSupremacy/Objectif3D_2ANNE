@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b491673bfb71e458679f112c38336f, type: 3}
   m_Name: Dog_DestinationTransition
   m_EditorClassIdentifier: 
-  <NextState>k__BackingField: {fileID: 11400000, guid: 2693113752be75743a5669847029dab9,
+  <NextState>k__BackingField: {fileID: 11400000, guid: 51e4c315fc110244bb10837caf639dc5,
     type: 2}

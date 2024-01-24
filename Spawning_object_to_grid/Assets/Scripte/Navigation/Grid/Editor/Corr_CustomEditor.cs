@@ -23,7 +23,6 @@ public class Corr_CustomEditor : Editor
     {
         base.OnInspectorGUI();
         DrawGridUI();
-        //serializedObject.ApplyModifiedProperties();
     }
     private void OnSceneGUI()
     {
@@ -49,6 +48,7 @@ public class Corr_CustomEditor : Editor
         for (int i = 0; i < grid.Data?.Nodes.Count; i++)
         {
             bool _click = Handles.Button(grid.Data.Nodes[i].Position, Quaternion.identity, .2f, .1f, Handles.CubeHandleCap);
+            Handles.Label(grid.Data.Nodes[i].Position, grid.Data.Nodes[i].F.ToString());
             if (_click)
             {
                 grid.Data.Nodes[i].IsSelected = !grid.Data.Nodes[i].IsSelected;

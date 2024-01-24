@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0876fb7af0f3f14b95baa4bd54f3c50, type: 3}
   m_Name: Dog_Statue_State
   m_EditorClassIdentifier: 
-  transitions: []
+  transitions:
+  - {fileID: 11400000, guid: 6dd9c9a55c6dab84286d217ccd72af4e, type: 2}
+  - {fileID: 11400000, guid: b723ae3f7287b2a4fa0ac4a9cff01ab5, type: 2}
+  <FSM>k__BackingField: {fileID: 0}

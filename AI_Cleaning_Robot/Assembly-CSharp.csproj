@@ -77,14 +77,11 @@
     <Compile Include="Assets\Scripte\Project\Navigator\Navigator.cs" />
     <Compile Include="Assets\Scripte\Project\Garbage\Garbage.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\Scripte\Project\FSM\FSMRobotClean\FSMComponent_CleanRobot.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\baseTansition\DestinationTransition.cs" />
-    <Compile Include="Assets\Scripte\Project\FSM\FSMDog\FSMComponent_Dog.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\FSMRobotClean\Transition\DetectedTransition.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\FSMDog\Transition\Action_Transition.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\baseTansition\WaitTransition.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\FSMRobotClean\State_Robot_Clean.cs" />
-    <Compile Include="Assets\Scripte\Project\FSM\FSMRobotClean\FSM_Robot_Clean.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\baseState\Idle_State.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\baseTansition\ReturnTransition.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\Transition.cs" />
@@ -98,7 +95,6 @@
     <Compile Include="Assets\Scripte\Project\Robot\Component\SightSensorComponent.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\FSMDog\Transition\Mood_Transition.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\FSMDog\Transition\Statue_Transition.cs" />
-    <Compile Include="Assets\Scripte\Project\FSM\FSMDog\FSM_Dog.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

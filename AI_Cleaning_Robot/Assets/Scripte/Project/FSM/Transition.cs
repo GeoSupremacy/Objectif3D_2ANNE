@@ -11,10 +11,6 @@ public abstract class Transition : ScriptableObject
   
     public virtual void InitTransition(FSM _fsm)
     {
-        if (_fsm == null)
-        {
-            Debug.Log("Transition: " + name+ " as not FSM");
-        }
         CurrentFSM = _fsm;
     }
     public virtual bool IsValisTransition()

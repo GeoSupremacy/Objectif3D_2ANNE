@@ -14,10 +14,14 @@ public class WaitTransition : Transition
     bool isDone = false;
     public override void InitTransition(FSM _fsm)
     {
-       
-        
+        if (_fsm == null)
+        {
+            Debug.Log("Transition: " + name + " as not FSM");
+        }
+        CurrentFSM = _fsm;
+
         wait = Random.Range(min, max);
-        _fsm.CurrentFSMComponent.StartCoroutine(Wait());
+        CurrentFSM.CurrentFSMComponent.StartCoroutine(Wait());
        
     }
  

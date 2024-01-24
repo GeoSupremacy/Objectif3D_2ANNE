@@ -8,14 +8,15 @@ public abstract class State : ScriptableObject
     
     [SerializeField]
     protected Transition[] transitions = null;
+    [field: SerializeField]
     public FSM FSM { get; set; }
     protected List<Transition> runningTransitions = new List<Transition>();
-   public virtual void StartState(FSM _fms)
+   public virtual void Enter(FSM _fms)
     {
-
-        InitTransitions();
         Debug.Log("Start: " + name);
         FSM = _fms;
+        InitTransitions();
+     
     }
    public virtual void StateUpdate()
     {
@@ -31,7 +32,9 @@ public abstract class State : ScriptableObject
     }
    protected virtual void InitTransitions()
     {
+        
         runningTransitions.Clear();
+      
         foreach (var transition in transitions)
         {
             Transition _transition = Instantiate(transition);
@@ -48,7 +51,7 @@ public abstract class State : ScriptableObject
             if (transition.IsValisTransition())
             {
                 Debug.Log(transition.name + " " + name + " to " + transition.NextState);
-
+              
                 FSM?.SetNextState(transition?.NextState);
                 Exit();
                 return;

@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 1018690153588854486}
   - component: {fileID: 2477665534983032730}
   - component: {fileID: 5961625949956209416}
-  - component: {fileID: 1817311380263105694}
+  - component: {fileID: 7421538999913754857}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -359,7 +359,7 @@ MonoBehaviour:
     m_Bits: 0
   onDrawDebug: 0
   hit: 0
---- !u!114 &1817311380263105694
+--- !u!114 &7421538999913754857
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -368,13 +368,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2126450734588759614}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcc214ad74f826e4abd64fff6d4b072e, type: 3}
+  m_Script: {fileID: 11500000, guid: 73a6a7fb858c4d145b7c652608f9a359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FSM: {fileID: 0}
-  <Owner>k__BackingField: {fileID: 0}
-  FSM: {fileID: 0}
-  <Owner>k__BackingField: {fileID: 0}
+  FSM: {fileID: 11400000, guid: d36b3b4d8ece96b4c9d6425683bc4cba, type: 2}
+  currentFSM: {fileID: 0}
 --- !u!1 &8671397192218063754
 GameObject:
   m_ObjectHideFlags: 0
