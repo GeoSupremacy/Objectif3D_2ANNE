@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GPE/AI/Custom_AIController.h"
+
 
 #include "BehaviorTree/BTTaskNode.h"
 #include "TaskNode.generated.h"
@@ -19,7 +19,7 @@ protected:
 	UPROPERTY()
 		TObjectPtr<UBehaviorTreeComponent> tree = nullptr;
 	UPROPERTY()
-		TObjectPtr<ACustom_AIController> brain = nullptr;
+		TObjectPtr< class ACustom_AIController> brain = nullptr;
 protected:
 	virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerCop, uint8* NodeMemery ) override;
 };

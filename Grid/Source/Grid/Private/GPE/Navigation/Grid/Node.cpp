@@ -1,4 +1,5 @@
 #include "GPE/Navigation/Grid/GridPointData.h"
+#include "\Unreal\Objectif3D_2ANNE\Grid\Source\Grid\Utils.h"
 #include "GPE/Navigation/Grid/Node.h"
 
 
@@ -6,6 +7,8 @@ ANodeGrid::ANodeGrid()
 {
 
 	PrimaryActorTick.bCanEverTick = true;
+	cube = CREATE(UStaticMeshComponent,"Cube")
+	cube->SetStaticMesh(LoadObject<UStaticMesh>(this, TEXT("'/Engine/BasicShapes/Cube.Cube'")));
 
 }
 

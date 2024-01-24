@@ -2,6 +2,7 @@
 
 #include"NavigationSystem.h"
 #include "BehaviorTree/BlackboardComponent.h"
+#include "GPE/AI/Custom_AIController.h"
 #include "GPE/AI/FindRandomPointInAreaTask.h"
 
 EBTNodeResult::Type UFindRandomPointInAreaTask::ExecuteTask(UBehaviorTreeComponent& OwnerCop, uint8* NodeMemery)

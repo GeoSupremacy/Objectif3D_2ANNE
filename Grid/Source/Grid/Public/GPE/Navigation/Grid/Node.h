@@ -14,6 +14,7 @@ class GRID_API ANodeGrid : public AActor
 private:
 	UPROPERTY(EditAnywhere, Category = "Nodes",meta = (EditInLine)) TObjectPtr<class UGridPointData> grid = nullptr;
 	UPROPERTY(EditAnywhere, Category ="Nodes", meta = (EditInLine)) TArray<int> successors = TArray<int>();
+	UPROPERTY(VisibleAnywhere, Category = "Nodes", meta = (EditInLine)) TObjectPtr<UStaticMeshComponent> cube = nullptr;
 	UPROPERTY(EditAnywhere, Category ="Nodes", meta = (EditInLine)) bool isSelected = false;
 public:	
 	ANodeGrid();

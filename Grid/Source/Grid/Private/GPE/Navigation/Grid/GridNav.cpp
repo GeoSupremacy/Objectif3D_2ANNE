@@ -25,10 +25,11 @@ void AGridNav::Tick(float DeltaTime)
 
 void AGridNav::SetSuccessors()
 {
-    for (int i = 0; i < size * size; i++)
+    UE_LOG(LogTemp, Error, TEXT("Count: %d"), data->GetNodes().Num());
+    for (int i = 0; i < data->GetNodes().Num(); i++)
     {
         bool _canRight = i % size != size - 1,
-            _canTop = i >= size,
+            _canTop = i > size,
             _canDown = i < (size * size) - size,
             _canLeft = i % size != 0;
         if (_canRight)
@@ -60,7 +61,7 @@ void AGridNav::DrawDebug()
     {
         for (int y = 0; y < size; y++)
         {
-            DrawDebugBox(GetWorld(),FVector(x * gap, 0, y * gap) + GetActorLocation(), FVector::One() * .2f, FColor::White);
+            DrawDebugBox(GetWorld(),FVector(x * gap, y * gap, 0) + GetActorLocation(), FVector::One() * 100.f, FColor::White);
       
         }
     }
@@ -81,13 +82,16 @@ void AGridNav::Generate()
     {
         for (int y = 0; y < size; y++)
         {
-            FVector _pos = FVector(x * gap, 0, y * gap) + GetActorLocation();
-            ANodeGrid* _node = GetWorld()->SpawnActor<ANodeGrid>();
+            FVector _pos = FVector(x * gap, y * gap, 0) + GetActorLocation();
+            FRotator Rotation(0.0f, 0.0f, 0.0f);
+            FActorSpawnParameters SpawnInfo;
+            currentNode = GetWorld()->SpawnActor<ANodeGrid>(_pos, Rotation, SpawnInfo);
             
-                _node->SetGrid(data),
-                _node->SetActorLocation(_pos);
+            currentNode->SetActorLocation(_pos);
+               //_node->SetGrid(data),
+            data->SetNodes(1);
           
-            data->GetNodes().Add(_node);
+            data->GetNodes().Add(currentNode);
         }
     }
     SetSuccessors();

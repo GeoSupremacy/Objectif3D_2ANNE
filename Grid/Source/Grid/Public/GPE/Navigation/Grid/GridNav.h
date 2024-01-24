@@ -13,11 +13,14 @@ class GRID_API AGridNav : public AActor
 	GENERATED_BODY()
 private:
 	UPROPERTY(EditAnywhere, Category = "Grid Nav")
-		int size = 4, gap = 1;
+		int size = 4;
+	UPROPERTY(EditAnywhere, Category = "Grid Nav")
+		int gap = 100;
 	UPROPERTY(EditAnywhere, Category = "Grid Nav")
 		FColor gridNodeColor = FColor::Green, gridLinesColor = FColor::Red;
-	UPROPERTY(EditAnywhere, Category = "Grid Nav")
+	UPROPERTY(EditAnywhere, Category = "Grid Nav", meta = (EditInLine))
 		TObjectPtr<UGridPointData> data = nullptr;
+	TObjectPtr<ANodeGrid> currentNode = nullptr;
 public:	
 	AGridNav();
 public:

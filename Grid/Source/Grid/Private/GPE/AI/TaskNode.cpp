@@ -1,5 +1,4 @@
-
-
+#include "GPE/AI/Custom_AIController.h"
 #include "GPE/AI/TaskNode.h"
 
 EBTNodeResult::Type UTaskNode::ExecuteTask(UBehaviorTreeComponent& OwnerCop, uint8* NodeMemery)
