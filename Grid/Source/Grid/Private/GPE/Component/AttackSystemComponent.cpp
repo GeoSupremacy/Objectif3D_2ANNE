@@ -29,6 +29,7 @@ void UAttackSystemComponent::TickComponent(float DeltaTime, ELevelTick TickType,
 
 void UAttackSystemComponent::Attack()
 {
+	SCREEN_DEBUG_MESSAGE_WARNING(3, "Try ATTACK")
 	if (!isInRange || !canAttack || !target)
 		return;
 	canAttack = false;
@@ -46,7 +47,7 @@ void UAttackSystemComponent::Attack()
 	AActor* _target = _result.GetActor();
 	if (!_target) return;
 	//TODO dammage
-
+	SCREEN_DEBUG_MESSAGE_ERROR(3,"ATTACK")
 }
 
 float UAttackSystemComponent::UpdateTime( float _current, const float& _max)

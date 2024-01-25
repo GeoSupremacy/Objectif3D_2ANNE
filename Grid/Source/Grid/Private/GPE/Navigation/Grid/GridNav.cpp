@@ -25,34 +25,37 @@ void AGridNav::Tick(float DeltaTime)
 
 void AGridNav::SetSuccessors()
 {
-    UE_LOG(LogTemp, Error, TEXT("Count: %d"), data->GetNodes().Num());
-    for (int i = 0; i < data->GetNodes().Num(); i++)
+    UE_LOG(LogTemp, Error, TEXT("Count: %d"), data->GetFVectorNodes().Num());
+    for (int i = 0; i < data->GetFVectorNodes().Num(); i++)
     {
+        /*
         bool _canRight = i % size != size - 1,
             _canTop = i > size,
             _canDown = i < (size * size) - size,
             _canLeft = i % size != 0;
         if (_canRight)
-            data->GetNodes()[i]->AddSuccessor(i + 1);
+            data->GetFVectorNodes()[i]->AddSuccessor(i + 1);
         if (_canLeft)
-            data->GetNodes()[i]->AddSuccessor(i - 1);
+            data->GetFVectorNodes()[i]->AddSuccessor(i - 1);
         if (_canTop)
         {
-            data->GetNodes()[i]->AddSuccessor(i - size);
+            data->GetFVectorNodes()[i]->AddSuccessor(i - size);
             if (_canRight)
-                data->GetNodes()[i]->AddSuccessor((i + 1 - size));
+                data->GetFVectorNodes()[i]->AddSuccessor((i + 1 - size));
             if (_canLeft)
-                data->GetNodes()[i]->AddSuccessor((i - 1 - size));
+                data->GetFVectorNodes()[i]->AddSuccessor((i - 1 - size));
         }
         if (_canDown)
         {
-            data->GetNodes()[i]->AddSuccessor(i + size);
+            data->GetFVectorNodes()[i]->AddSuccessor(i + size);
             if (_canRight)
-                data->GetNodes()[i]->AddSuccessor((i + 1 + size));
+                data->GetFVectorNodes()[i]->AddSuccessor((i + 1 + size));
             if (_canLeft)
-                data->GetNodes()[i]->AddSuccessor((i - 1 + size));
+                data->GetFVectorNodes()[i]->AddSuccessor((i - 1 + size));
         }
+       */ 
     }
+    
 }
 
 void AGridNav::DrawDebug()
@@ -67,9 +70,9 @@ void AGridNav::DrawDebug()
     }
     if (!data)
         return;
-    for (int i = 0; i < data->GetNodes().Num(); i++)
+    for (int i = 0; i < data->GetFVectorNodes().Num(); i++)
     {
-        data->GetNodes()[i]->DrawGizmos(gridNodeColor, gridLinesColor);
+       // data->GetFVectorNodes()[i]->DrawGizmos(gridNodeColor, gridLinesColor);
     }
 }
 
@@ -77,7 +80,7 @@ void AGridNav::Generate()
 {
     if (!data)
         return;
-    data->GetNodes().Empty();
+    data->GetFVectorNodes().Empty();
     for (int x = 0; x < size; x++)
     {
         for (int y = 0; y < size; y++)
@@ -89,9 +92,9 @@ void AGridNav::Generate()
             
             currentNode->SetActorLocation(_pos);
                //_node->SetGrid(data),
-            data->SetNodes(1);
+            //data->SetNodes(1);
           
-            data->GetNodes().Add(currentNode);
+            data->AddVector(currentNode->GetActorLocation());
         }
     }
     SetSuccessors();

@@ -18,6 +18,7 @@ EBTNodeResult::Type UFindRandomPointInAreaTask::ExecuteTask(UBehaviorTreeCompone
 		return EBTNodeResult::Failed;
 	}
 	randomLocation = _point.Location;
+	
 	brain.Get()->GetBlackboardComponent()->SetValueAsVector(patrolLocationBBKeyName,randomLocation);
 	return EBTNodeResult::Succeeded;
 }

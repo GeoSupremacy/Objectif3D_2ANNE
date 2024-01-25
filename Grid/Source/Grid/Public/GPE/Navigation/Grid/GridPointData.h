@@ -19,9 +19,9 @@ private:
 	UPROPERTY(EditAnywhere, meta = (EditInLine))
 		int count;
 	UPROPERTY(EditAnywhere, meta = (EditInLine))
-	TArray<TObjectPtr<ANodeGrid>> nodes =  TArray<TObjectPtr<ANodeGrid>>();
+	TArray<FVector> FVectorNodes =  TArray<FVector>();
 public:
-	FORCEINLINE void SetNodes(int _nodes) { count += _nodes; }
-	FORCEINLINE TArray<TObjectPtr<ANodeGrid>> GetNodes() const { return nodes; }
-	FORCEINLINE void SetNodes(TArray<TObjectPtr<ANodeGrid>> _nodes)  {  nodes = _nodes; }
+	FORCEINLINE TArray<FVector> GetFVectorNodes()  { return FVectorNodes; }
+	FORCEINLINE void SetFVectorNodes(TArray<FVector> _nodes)  { FVectorNodes = _nodes; }
+	void AddVector(FVector _fv) { FVectorNodes.Add(_fv); }
 };

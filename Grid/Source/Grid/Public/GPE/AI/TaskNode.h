@@ -21,5 +21,6 @@ protected:
 	UPROPERTY()
 		TObjectPtr< class ACustom_AIController> brain = nullptr;
 protected:
+	
 	virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerCop, uint8* NodeMemery ) override;
 };

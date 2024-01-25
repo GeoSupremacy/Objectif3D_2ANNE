@@ -36,6 +36,7 @@ void ANodeGrid::DrawGizmos(FColor _nodeColor, FColor _lineColor)
 	for (int i = 0; IsSelected() && i < successors.Num(); i++)
 	{
 		//GRID.GET(i) 
-		DrawDebugLine(GetWorld(), GetActorLocation(), grid->GetNodes()[successors[i]]->GetActorLocation(), _lineColor);
+		
+		DrawDebugLine(GetWorld(), GetActorLocation(), grid->GetFVectorNodes()[successors[i]], _lineColor);
 	}
 }
