@@ -20,7 +20,7 @@ public class Navigator : MonoBehaviour
     }
     public virtual void NextMove()
     {
-        float _x = Random.Range(-min, max), _z = Random.Range(-min, max);
+        float _x = Random.Range(min, max), _z = Random.Range(min, max);
         Vector3 _nextMove = new(_x, 0, _z);
         Move= _nextMove;
     }

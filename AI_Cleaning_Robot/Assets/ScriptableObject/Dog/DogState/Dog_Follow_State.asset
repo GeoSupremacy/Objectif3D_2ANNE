@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e65c4d1a4d4f7de41b7f876b2876bbdb, type: 3}
   m_Name: Dog_Follow_State
   m_EditorClassIdentifier: 
-  transitions: []
+  transitions:
+  - {fileID: 11400000, guid: b18807d5b7fcdf047bb3152a6d52c28f, type: 2}
+  <FSM>k__BackingField: {fileID: 0}

@@ -6,5 +6,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Action_Transition", menuName = "FSM/Transition/Dog_Transition/Create Action_Transition")]
 public class Action_Transition : Transition
 {
-    
+    public override bool IsValisTransition()
+    {
+       
+        return true;
+    }
 }

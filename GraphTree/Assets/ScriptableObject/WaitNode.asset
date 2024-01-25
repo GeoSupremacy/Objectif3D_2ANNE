@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11b491673bfb71e458679f112c38336f, type: 3}
-  m_Name: Dog_DestinationTransition
+  m_Script: {fileID: 11500000, guid: 3f19dcadcb2583a4d821d07c748feb4d, type: 3}
+  m_Name: WaitNode
   m_EditorClassIdentifier: 
-  <NextState>k__BackingField: {fileID: 11400000, guid: 51e4c315fc110244bb10837caf639dc5,
-    type: 2}
+  currentReturnStatus: 2
+  startDone: 0
+  processDone: 0
+  stopDone: 0
+  duration: 1

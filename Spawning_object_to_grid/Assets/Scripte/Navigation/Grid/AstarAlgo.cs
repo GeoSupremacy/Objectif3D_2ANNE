@@ -27,11 +27,11 @@ public class AstarAlgo
             for (int i = 0; i < _current.Successors.Count; i++)
             {
                 Corr_Node _next = _current.Grid.Nodes[_current.Successors[i]];
-                if (_closeList.Contains(_next))
+                if (_closeList.Contains(_next) || !_next.IsOpen)
                     continue;
                 float _hCost = Vector3.Distance(_current.Position, _end.Position);
                 float _gCost = _current.G + _hCost;
-                if(_gCost< _next.G)//!_openList.Contains(_next)
+                if(_gCost< _next.G)
                 {
                     _next.G = _gCost;
                     _next.H = _hCost;
@@ -60,10 +60,8 @@ public class AstarAlgo
     {
         Gizmos.color = Color.magenta;
         for (int i = 0; i < correctPath.Count-1; i++)
-        {
-         
             Gizmos.DrawLine(correctPath[i].Position+ Vector3.up, correctPath[i + 1].Position+ Vector3.up);
-        }
+        
         
     }
 }

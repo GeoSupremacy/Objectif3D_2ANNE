@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 
 [Serializable]
 public class Corr_Node
 {
+    
     [field: SerializeField] public GridPointData Grid { get; set; }
     [field: SerializeField] public Vector3 Position { get; set; }
     [field: SerializeField] public List<int> Successors { get; private set; } = new();
@@ -16,17 +18,27 @@ public class Corr_Node
     public float F =>G +H; //totalCost
     [field: SerializeField] public Corr_Node Parent { get; set; }
     //
-    public void AddSuccessor(int _successor) => Successors.Add(_successor);
+    //Collision
+   
+    [field: SerializeField] public GameObject Target { get; set; }
+    [field: SerializeField] public LayerMask mask { get; set; }
+    public bool IsOpen { get;  set; } = true;
+
+
+
+    public void AddSuccessor(int _successor) {  Successors.Add(_successor); }
     public void DrawGizmos(Color _nodeColor, Color _lineColor)
     {
-        Gizmos.color = _nodeColor;
+        Gizmos.color = IsOpen ? _nodeColor: Color.clear;
         Gizmos.DrawSphere(Position, .2f);
-        //Gizmos.color = IsSelected ? Color.white :  _lineColor;
+
         for (int i = 0; IsSelected && i < Successors.Count; i++)
           Gizmos.DrawLine(Position, Grid.Nodes[Successors[i]].Position);
         
     }
-
+    public void CheckForObtacle()=> IsOpen=  Physics.OverlapSphere(Position, 1, mask).Length == 0;
+    
+    
     public void ResetNode()
     {
         H = float.MaxValue;

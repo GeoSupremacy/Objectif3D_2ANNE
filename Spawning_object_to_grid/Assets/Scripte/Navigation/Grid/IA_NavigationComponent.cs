@@ -20,21 +20,34 @@ public class IA_NavigationComponent : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         for (int i = 0; i < datas.Nodes.Count; i++)
-        {
             if (Vector3.Distance(transform.position, datas.Nodes[i].Position) < 1.5f)
                 currentNode = datas.Nodes[i];
 
-        }
+        
         astar.ComputePath(currentNode, endPath.currentNode);
         move = true;
     }
-    private void Update()
+    private void Update() => Move();
+
+    private void OnDrawGizmos()=> astar.DrawPath();
+    
+    void Move()
     {
         if (!move)
             return;
+        Distance();
+
+        transform.position = Vector3.MoveTowards(transform.position, astar.correctPath[index].Position, .1f);
+        if (Vector3.Distance(transform.position, astar.correctPath[index].Position) <= 1f)
+            destination = true;
+
+    }
+    void Distance()
+    {
+       
         if (destination)
         {
-            if (index == astar.correctPath.Count-1)
+            if (index == astar.correctPath.Count - 1)
                 reverse = true;
             else if (index <= 0)
                 reverse = false;
@@ -45,17 +58,5 @@ public class IA_NavigationComponent : MonoBehaviour
                 index++;
             destination = false;
         }
-        
-
-        transform.position = Vector3.MoveTowards(transform.position, astar.correctPath[index].Position,.1f);
-        if (Vector3.Distance(transform.position, astar.correctPath[index].Position) <= 1f)
-            destination = true;
-
-
-    }
-
-    private void OnDrawGizmos()
-    {
-        astar.DrawPath();
     }
 }

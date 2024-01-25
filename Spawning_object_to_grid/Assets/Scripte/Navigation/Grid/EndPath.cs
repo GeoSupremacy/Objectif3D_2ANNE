@@ -8,11 +8,9 @@ public class EndPath : MonoBehaviour
     [field:SerializeField]
     public Corr_Node currentNode { get; private set; } =null;
 
-    private void Start()
-    {
-        StartCoroutine(CurrentNode());
+    private void Start()=>StartCoroutine(CurrentNode());
         
-    }
+    
     IEnumerator CurrentNode()
     {
         yield return new WaitForSeconds(2);

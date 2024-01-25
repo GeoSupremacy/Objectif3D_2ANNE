@@ -9,7 +9,7 @@ public class DestinationTransition : Transition
     
     public override bool IsValisTransition()
     {
-        return CurrentFSM.Robot.Destination();
+        return CurrentFSM.Robot.Destination;
     }
     
 }

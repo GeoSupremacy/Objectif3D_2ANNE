@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripte\Project\Robot\DogRobot.cs" />
+    <Compile Include="Assets\Scripte\Project\FSM\baseTansition\DetectedTransition.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\baseState\Follow_State.cs" />
     <Compile Include="Assets\Scripte\Project\Garbage\GarbageManager.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\baseTansition\DeathTransition.cs" />
@@ -78,7 +79,6 @@
     <Compile Include="Assets\Scripte\Project\Garbage\Garbage.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\baseTansition\DestinationTransition.cs" />
-    <Compile Include="Assets\Scripte\Project\FSM\FSMRobotClean\Transition\DetectedTransition.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\FSMDog\Transition\Action_Transition.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\baseTansition\WaitTransition.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\FSMRobotClean\State_Robot_Clean.cs" />
@@ -95,6 +95,7 @@
     <Compile Include="Assets\Scripte\Project\Robot\Component\SightSensorComponent.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\FSMDog\Transition\Mood_Transition.cs" />
     <Compile Include="Assets\Scripte\Project\FSM\FSMDog\Transition\Statue_Transition.cs" />
+    <Compile Include="Assets\Scripte\Project\FSM\baseTansition\LostTarget_Transition.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

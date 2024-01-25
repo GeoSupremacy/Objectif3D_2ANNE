@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Dog_Action_State
   m_EditorClassIdentifier: 
   transitions:
-  - {fileID: 11400000, guid: b985fb7fcf8a00747ba0aa3026ef7262, type: 2}
+  - {fileID: 11400000, guid: 50ac8e0e29db3054b96505ba0b3b29ff, type: 2}
   - {fileID: 11400000, guid: 21a612057980445439864fbf62e42b16, type: 2}
   <FSM>k__BackingField: {fileID: 0}

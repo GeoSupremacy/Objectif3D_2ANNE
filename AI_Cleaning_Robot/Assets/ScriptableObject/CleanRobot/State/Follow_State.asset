@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e65c4d1a4d4f7de41b7f876b2876bbdb, type: 3}
   m_Name: Follow_State
   m_EditorClassIdentifier: 
-  transitions:
-  - {fileID: 11400000, guid: 0f7455bd3c43e3b45bff50de54140311, type: 2}
-  - {fileID: 11400000, guid: 21a612057980445439864fbf62e42b16, type: 2}
+  transitions: []
+  <FSM>k__BackingField: {fileID: 0}

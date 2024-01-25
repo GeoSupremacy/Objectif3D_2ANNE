@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 
 
-[RequireComponent(typeof(SightSensorComponent))]
+
 public class RobotClean : Robot
 {
     public Action onDeathAnimation;
@@ -11,7 +11,8 @@ public class RobotClean : Robot
 
     #region f/p
     [field: SerializeField] public Garbage Garbage { get; private set; }
-    RobotSightSensorComponent sightSensorComponent;
+    
+  
    
     #endregion
  
@@ -36,7 +37,7 @@ public class RobotClean : Robot
     }
     void Collect()
     {
-        if (!Garbage || !Destination())
+        if (!Garbage || !Destination)
             return;
 
        
@@ -49,19 +50,18 @@ public class RobotClean : Robot
    public  void EndCollected()=> onColllectAnimation?.Invoke(false);
     void GarbageDetected()
     {
-        if (IsGarbage)
-            return;
+        if (!IsGarbage)
+            if (Detection)
+                Patrol();
 
-        if (sightSensorComponent.Target)
-        {
-           
-            Move = true;
-            IsGarbage = true;
-            Garbage = sightSensorComponent.Target.GetComponent<Garbage>();
-            NextMove = Garbage.Position;
-            Look();
-
-        }
+        
+    }
+    protected override void Patrol() 
+    {
+        IsGarbage = true;
+        Garbage = sightSensorComponent.Target.GetComponent<Garbage>();
+        NextMove = Garbage.Position;
+        base.Patrol();
     }
     protected override void Init() 
     {
@@ -89,13 +89,7 @@ public class RobotClean : Robot
         base.Dead();
        
     }
-    public override void Stop()
-    {
-        base.Stop();
-        IsDead = true;
-        sightSensorComponent.Desactivate(); 
-        sightSensorComponent = null;
-    }
+   
     public void DeadAnimation()=> onDeathAnimation?.Invoke();
     protected override void Bind()
     {

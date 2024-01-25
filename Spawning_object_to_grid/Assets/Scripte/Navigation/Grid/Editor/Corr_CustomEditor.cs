@@ -46,14 +46,14 @@ public class Corr_CustomEditor : Editor
     void DrawNodesScene()
     {
         for (int i = 0; i < grid.Data?.Nodes.Count; i++)
-        {
-            bool _click = Handles.Button(grid.Data.Nodes[i].Position, Quaternion.identity, .2f, .1f, Handles.CubeHandleCap);
-            Handles.Label(grid.Data.Nodes[i].Position, grid.Data.Nodes[i].F.ToString());
-            if (_click)
+            if (grid.Data.Nodes[i].IsOpen)
             {
-                grid.Data.Nodes[i].IsSelected = !grid.Data.Nodes[i].IsSelected;
+                bool _click = Handles.Button(grid.Data.Nodes[i].Position, Quaternion.identity, .2f, .1f, Handles.CubeHandleCap);
+                Handles.Label(grid.Data.Nodes[i].Position, grid.Data.Nodes[i].F.ToString());
+                if (_click)
+                    grid.Data.Nodes[i].IsSelected = !grid.Data.Nodes[i].IsSelected;
             }
-        }
+        
     }
     void DrawGridUI()
     {

@@ -1,10 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.Burst.CompilerServices;
 using Unity.Mathematics;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class RobotSightSensorComponent : SightSensorComponent
 {
@@ -63,6 +60,7 @@ public class RobotSightSensorComponent : SightSensorComponent
             {
                 hit = true;
                 Target = _items[i].gameObject;
+                OnTarget?.Invoke(Target);
                 return;
             }
 

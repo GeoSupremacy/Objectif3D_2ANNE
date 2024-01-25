@@ -13,14 +13,14 @@ public abstract class State : ScriptableObject
     protected List<Transition> runningTransitions = new List<Transition>();
    public virtual void Enter(FSM _fms)
     {
-        Debug.Log("Start: " + name);
+        Debug.LogAssertion("Start: " + name);
         FSM = _fms;
         InitTransitions();
      
     }
    public virtual void StateUpdate()
     {
-        Debug.Log("Update: " + name);
+        Debug.LogWarning("Update: " + name);
         CheckTransitions();
         
     }
@@ -28,7 +28,7 @@ public abstract class State : ScriptableObject
     {
 
         FSM = null;
-        Debug.Log("Exit: " + name);
+        Debug.LogError("Exit: " + name);
     }
    protected virtual void InitTransitions()
     {

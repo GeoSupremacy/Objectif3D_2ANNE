@@ -1,8 +1,10 @@
 using System.Collections;
+using System;
 using UnityEngine;
 
 public class SightSensorComponent : MonoBehaviour
 {
+     public Action<GameObject> OnTarget = null;
     [SerializeField, Range(0, 100)]protected int sightAngle = 90;
     [SerializeField, Range(0, 100)]protected int range = 5;
     [SerializeField, Range(0, 100)] protected int definition = 5;
@@ -16,9 +18,13 @@ public class SightSensorComponent : MonoBehaviour
    public Vector3 PositionOffset => transform.position + Offset;
     public void Desactivate() => stop = true;
     public bool Impact { get; private set; }
-    private void Start()=> onDrawDebug = false;
+   
     private void Update()=> UpdateSight();
     private void OnDrawGizmos() => DrawDebug();
+    private void OnDestroy()
+    {
+        OnTarget = null;
+    }
     public virtual void UpdateSight()
     {
         if(Target || stop)
@@ -41,6 +47,7 @@ public class SightSensorComponent : MonoBehaviour
             {
                 
                 Target = _hit.collider.gameObject;
+                OnTarget?.Invoke(_hit.collider.gameObject);
                 return;
             }
            
@@ -66,7 +73,8 @@ public class SightSensorComponent : MonoBehaviour
 
         }
     }
-    public void ClearnSight() => Target = null;
+    public void ClearnSight() { Target = null; OnTarget?.Invoke(null); }
+
 }
 
 

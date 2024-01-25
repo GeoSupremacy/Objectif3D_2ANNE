@@ -1,12 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
+
 public class Corr_Grid : MonoBehaviour
 {
     [SerializeField, Range(2, 10)] int size = 4;
     [SerializeField, Range(1, 100)] int gap = 100;
     [SerializeField] Color gridNodeColor = Color.green, gridLinesColor = Color.red;
+    [field: SerializeField] protected LayerMask layerMask;
     [field: SerializeField] public GridPointData Data { get; set; }
-
     public void Generate()
     {
         if (!Data)
@@ -17,11 +19,14 @@ public class Corr_Grid : MonoBehaviour
             for (int y = 0; y < size; y++)
             {
                 Vector3 _pos = new Vector3(x * gap, 0, y * gap) + transform.position;
-                Data.Nodes.Add(new Corr_Node()
+                Corr_Node _ne= new()
                 {
                     Grid = Data,
-                    Position = _pos
-                }); ;
+                    Position = _pos,
+                    mask = layerMask
+                } ;
+                _ne.CheckForObtacle();
+                Data.Nodes.Add(_ne) ;
             }
         }
         SetSuccessors();
@@ -35,27 +40,39 @@ public class Corr_Grid : MonoBehaviour
                  _canDown = i < (size * size) - size,
                  _canLeft = i % size != 0;
             if (_canRight)
-                Data.Nodes[i].AddSuccessor(i + 1);
+            
+                    Data.Nodes[i].AddSuccessor(i + 1);
             if (_canLeft)
-                Data.Nodes[i].AddSuccessor(i - 1);
+             
+                    Data.Nodes[i].AddSuccessor(i - 1);
             if (_canTop)
             {
-                Data.Nodes[i].AddSuccessor(i - size);
+                
+                    Data.Nodes[i].AddSuccessor(i - size);
                 if (_canRight)
-                    Data.Nodes[i].AddSuccessor((i + 1 - size));
+                
+                        Data.Nodes[i].AddSuccessor((i + 1 - size));
                 if (_canLeft)
-                    Data.Nodes[i].AddSuccessor((i - 1 - size));
+                    
+                        Data.Nodes[i].AddSuccessor((i - 1 - size));
             }
             if (_canDown)
             {
-                Data.Nodes[i].AddSuccessor(i + size);
+              
+                    Data.Nodes[i].AddSuccessor(i + size);
                 if (_canRight)
-                    Data.Nodes[i].AddSuccessor(i + 1 + size);
+                 
+                        Data.Nodes[i].AddSuccessor(i + 1 + size);
                 if (_canLeft)
-                    Data.Nodes[i].AddSuccessor((i - 1 + size));
+                   
+                        Data.Nodes[i].AddSuccessor((i - 1 + size));
             }
         }
     }
+
+
+
+
     private void OnDrawGizmos()
     {
         for (int x = 0; x < size; x++)

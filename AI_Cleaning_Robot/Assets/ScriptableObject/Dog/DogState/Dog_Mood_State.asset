@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dog_Mood_State
   m_EditorClassIdentifier: 
   transitions:
-  - {fileID: 11400000, guid: 1cc1ad72feebf6c419f5796d0d11676e, type: 2}
   - {fileID: 11400000, guid: 77ccb354f867045488236e7c27a33963, type: 2}
   - {fileID: 11400000, guid: b723ae3f7287b2a4fa0ac4a9cff01ab5, type: 2}
+  - {fileID: 11400000, guid: 0961958ce53a06d48aef9b55c30d675c, type: 2}
   <FSM>k__BackingField: {fileID: 0}

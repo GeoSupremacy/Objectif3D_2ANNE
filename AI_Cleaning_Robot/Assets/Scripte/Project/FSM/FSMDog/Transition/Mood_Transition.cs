@@ -6,18 +6,10 @@ using UnityEngine;
 public class Mood_Transition : Transition
 {
 
-   
-
-    public override void InitTransition(FSM _fsm)
-    {
-        if (_fsm == null)
-        {
-            Debug.Log("Transition: " + name + " as not FSM");
-        }
-        CurrentFSM = _fsm;
-    }
+  
     public override bool IsValisTransition()
     {
-        return false;
+        DogRobot _dog = (DogRobot)CurrentFSM.Robot;
+        return true;
     }
 }
