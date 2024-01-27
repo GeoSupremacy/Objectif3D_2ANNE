@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b356cc3e5a8a484b817ace7a1557153, type: 3}
   m_Name: Dog_Idle_State
   m_EditorClassIdentifier: 
+  textArea: Idle defaut
   transitions:
   - {fileID: 11400000, guid: 21a612057980445439864fbf62e42b16, type: 2}
-  - {fileID: 11400000, guid: 93bbb910fb28a744da56424f7b14a8d5, type: 2}
-  <FSM>k__BackingField: {fileID: 0}
+  - {fileID: 11400000, guid: 89776c7b3222fa74c917d1bff99a9e9b, type: 2}
+  <IsInfoState>k__BackingField: 1

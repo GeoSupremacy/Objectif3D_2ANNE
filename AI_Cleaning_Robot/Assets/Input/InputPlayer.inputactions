@@ -1,0 +1,34 @@
+{
+    "name": "InputPlayer",
+    "maps": [
+        {
+            "name": "PlayerControllerMap",
+            "id": "3a5c90cc-794b-4184-bb24-21bddb7e05f2",
+            "actions": [
+                {
+                    "name": "Agrresif",
+                    "type": "Button",
+                    "id": "3bee58fa-fb54-4949-9d9d-994913132bb5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0e6472ee-c537-48d8-9ed4-eca3333a049c",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Agrresif",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

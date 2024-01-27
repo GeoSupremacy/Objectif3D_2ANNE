@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42fd4eb3d799a14dac98cd1b7d5353d, type: 3}
   m_Name: Dog_Mood_Transition
   m_EditorClassIdentifier: 
+  textArea: 
   <NextState>k__BackingField: {fileID: 11400000, guid: ce2d73617d1eb5244a66e8698bcbea2d,
     type: 2}

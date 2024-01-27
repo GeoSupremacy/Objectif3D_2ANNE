@@ -7,14 +7,15 @@ public class SightSensorComponent : MonoBehaviour
      public Action<GameObject> OnTarget = null;
     [SerializeField, Range(0, 100)]protected int sightAngle = 90;
     [SerializeField, Range(0, 100)]protected int range = 5;
+    [field:SerializeField, Range(0, 100)] public float LostRange { get; private set; } = 5;
     [SerializeField, Range(0, 100)] protected int definition = 5;
     [SerializeField, Range(0, 100)] float hightPosition = 0.75f;
     [field: SerializeField] public GameObject Target { get;  set; }
     [SerializeField] protected LayerMask mask;
     [SerializeField] protected bool onDrawDebug = false;
     bool stop = false;
-
-   public Vector3 Offset => new(0, hightPosition, 0);
+    [SerializeField] protected bool hit = false;
+    public Vector3 Offset => new(0, hightPosition, 0);
    public Vector3 PositionOffset => transform.position + Offset;
     public void Desactivate() => stop = true;
     public bool Impact { get; private set; }

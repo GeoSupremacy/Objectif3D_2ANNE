@@ -8,7 +8,7 @@ public class Action_Transition : Transition
 {
     public override bool IsValisTransition()
     {
-       
+        DogRobot _currentDog = (DogRobot)CurrentFSM.Robot;
         return true;
     }
 }

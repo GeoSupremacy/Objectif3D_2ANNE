@@ -5,22 +5,30 @@ using UnityEngine;
 
 public abstract class State : ScriptableObject
 {
-    
+    [SerializeField]
+    private string textArea;
     [SerializeField]
     protected Transition[] transitions = null;
     [field: SerializeField]
+
+    public bool IsInfoState { get; private set; } = true;
     public FSM FSM { get; set; }
     protected List<Transition> runningTransitions = new List<Transition>();
    public virtual void Enter(FSM _fms)
     {
-        Debug.LogAssertion("Start: " + name);
         FSM = _fms;
+        IsInfoState = FSM.IsInfo;
+        if (IsInfoState)
+        Debug.LogAssertion("Start: " + name);
+       
+
         InitTransitions();
      
     }
    public virtual void StateUpdate()
     {
-        Debug.LogWarning("Update: " + name);
+        if (IsInfoState)
+            Debug.LogWarning("Update: " + name);
         CheckTransitions();
         
     }
@@ -28,7 +36,8 @@ public abstract class State : ScriptableObject
     {
 
         FSM = null;
-        Debug.LogError("Exit: " + name);
+        if (IsInfoState)
+            Debug.LogError("Exit: " + name);
     }
    protected virtual void InitTransitions()
     {
@@ -50,7 +59,8 @@ public abstract class State : ScriptableObject
                 continue;
             if (transition.IsValisTransition())
             {
-                Debug.Log(transition.name + " " + name + " to " + transition.NextState);
+                if (IsInfoState)
+                    Debug.Log(transition.name + " " + name + " to " + transition.NextState);
               
                 FSM?.SetNextState(transition?.NextState);
                 Exit();

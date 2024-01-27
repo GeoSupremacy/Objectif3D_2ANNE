@@ -9,7 +9,7 @@ public class Mood_Transition : Transition
   
     public override bool IsValisTransition()
     {
-        DogRobot _dog = (DogRobot)CurrentFSM.Robot;
-        return true;
+      DogRobot _currentDog = (DogRobot) CurrentFSM.Robot;
+        return _currentDog.IsSavage;
     }
 }

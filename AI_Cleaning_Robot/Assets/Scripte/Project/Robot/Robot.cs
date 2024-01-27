@@ -4,7 +4,7 @@ using Unity.Mathematics;
 using UnityEngine;
 
 
-[RequireComponent(typeof(SightSensorComponent))]
+
 public class Robot : MonoBehaviour
 {
     //
@@ -17,7 +17,11 @@ public class Robot : MonoBehaviour
     [field: SerializeField]  public bool Move { get; set; }
     public bool IsDead { get; set; } = false;
     [field: SerializeField] public Navigator Zone { get;  set; }
-    [field: SerializeField] public GameObject Target { get; private set; } = null;
+    [field: SerializeField] public GameObject Target { get;  set; } = null;
+    public bool Destination => DestinationNextMove <= 1f;
+    public bool LostTarget => DestinationTarget >= sightSensorComponent.LostRange;
+    public float DestinationNextMove => math.abs(Vector3.Magnitude(NextMove - transform.position));
+    public float DestinationTarget => math.abs(Vector3.Magnitude(Target.transform.position - transform.position));
     #endregion
 
     #region Acesseur
@@ -46,9 +50,6 @@ public class Robot : MonoBehaviour
         if (Move)
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
-    public bool Destination=> Magnitude <= 1f;
-    public bool LostTarget  => Magnitude >= 5f; 
-    public float Magnitude => math.abs(Vector3.Magnitude(NextMove - transform.position));
     public void Look()
     {
         Vector3 _relativePosition = NextMove - transform.position;
@@ -56,6 +57,7 @@ public class Robot : MonoBehaviour
         rotation = new(0, rotation.y, 0, rotation.w);
         transform.rotation = rotation;
     }
+    public void ClearnSight()=> sightSensorComponent.ClearnSight();
     [SerializeField] public bool Detection => sightSensorComponent.Target;
     protected virtual void Patrol() 
     {
@@ -66,7 +68,7 @@ public class Robot : MonoBehaviour
     protected virtual void Init() { }
     public virtual void Follow() 
     {
-        
+        Look();
         if (LostTarget)
         {
             sightSensorComponent.ClearnSight();
@@ -74,8 +76,9 @@ public class Robot : MonoBehaviour
         }
 
         if (Target)
-            NextMove = Target.transform.position; 
-        Look();
+            NextMove = Target.transform.position;
+       
+       
         if (Move)
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public abstract class Transition : ScriptableObject
 {
-    
+    [field: SerializeField]
+    private string textArea;
+
     [field:SerializeField]
+    public State PreviousState { get;  set; }
     public State NextState { get; private set; }
     protected  FSM CurrentFSM{ get;  set; }
   

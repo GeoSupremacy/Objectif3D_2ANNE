@@ -9,7 +9,8 @@ public class FSMComponent : MonoBehaviour
     [SerializeField, HideInInspector]
     protected FSM currentFSM = null;
     public Robot Owner { get;  set; }
-
+    [field:SerializeField]
+    public bool IsInfo { get; private set; } = true;
     private void Start() => Init();
     private void Update()
     {

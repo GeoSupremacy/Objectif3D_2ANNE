@@ -1,4 +1,5 @@
 
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "FSM", menuName = "FSM/FSM/Create FSM")]
@@ -10,7 +11,8 @@ public  class FSM : ScriptableObject
     protected State currentState = null;
     public FSMComponent CurrentFSMComponent { get; private set; }
     public Robot Robot => CurrentFSMComponent.Owner;
- 
+   
+    public bool IsInfo { get; private set; } = true;
     public virtual void StartSFM(FSMComponent _fs)
     {
         if (EnterState == null)
@@ -19,7 +21,7 @@ public  class FSM : ScriptableObject
         if (_fs == null)
             new System.NullReferenceException(name + "FSM Not FSMComponent State");
         CurrentFSMComponent = _fs;
-
+        IsInfo =CurrentFSMComponent.IsInfo;
         SetNextState(EnterState);
        
     }

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f6ca37adc9fd34b99d2a51f3e02d5d, type: 3}
   m_Name: Dog_Mood_State
   m_EditorClassIdentifier: 
+  textArea: "V\xE9rifie l'humeur, s'il est agressif ou non"
   transitions:
-  - {fileID: 11400000, guid: 77ccb354f867045488236e7c27a33963, type: 2}
   - {fileID: 11400000, guid: b723ae3f7287b2a4fa0ac4a9cff01ab5, type: 2}
+  - {fileID: 11400000, guid: 93bbb910fb28a744da56424f7b14a8d5, type: 2}
   - {fileID: 11400000, guid: 0961958ce53a06d48aef9b55c30d675c, type: 2}
-  <FSM>k__BackingField: {fileID: 0}
+  - {fileID: 11400000, guid: 77ccb354f867045488236e7c27a33963, type: 2}
+  <IsInfoState>k__BackingField: 1

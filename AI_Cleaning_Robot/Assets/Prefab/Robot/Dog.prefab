@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 449319537937412166}
   - component: {fileID: 84643951041000110}
   - component: {fileID: 9086810441869487798}
-  - component: {fileID: 1441462967242125442}
   - component: {fileID: 6900929525177636551}
+  - component: {fileID: 3763363943199030527}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -64,28 +64,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FSM: {fileID: 11400000, guid: d36b3b4d8ece96b4c9d6425683bc4cba, type: 2}
   currentFSM: {fileID: 0}
---- !u!114 &1441462967242125442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3576203768212317615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dedaf6034135ba449f05dfb0d4893c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sightAngle: 90
-  range: 1
-  definition: 100
-  hightPosition: 0
-  <Target>k__BackingField: {fileID: 0}
-  mask:
-    serializedVersion: 2
-    m_Bits: 128
-  onDrawDebug: 0
-  hit: 0
 --- !u!114 &6900929525177636551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,9 +77,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  isDebug: 0
   <NextMove>k__BackingField: {x: 0, y: 0, z: 0}
   <Move>k__BackingField: 0
   <Zone>k__BackingField: {fileID: 84643951041000110}
+  <Target>k__BackingField: {fileID: 0}
+  <IsSavage>k__BackingField: 1
+  <IsPassif>k__BackingField: 1
+--- !u!114 &3763363943199030527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3576203768212317615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8751d1c27be861a4591c5cb7f3b0f538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sightAngle: 71
+  range: 10
+  definition: 7
+  hightPosition: 0
+  <Target>k__BackingField: {fileID: 0}
+  mask:
+    serializedVersion: 2
+    m_Bits: 128
+  onDrawDebug: 0
 --- !u!1 &3782301604272752040
 GameObject:
   m_ObjectHideFlags: 0

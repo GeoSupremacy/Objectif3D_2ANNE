@@ -1,7 +1,6 @@
 using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class RobotSightSensorComponent : SightSensorComponent
 {
@@ -12,10 +11,10 @@ public class RobotSightSensorComponent : SightSensorComponent
     Vector3 GroundCone => PositionOffset + Quaternion.Euler(-sightAngle / 2, 0, 0) * transform.forward * range;
     
 
-    [SerializeField] bool hit = false;
+   
     public override void UpdateSight()
     {
-        hit = false;
+       
         Collider[] _items = Physics.OverlapSphere(PositionOffset, range, mask);
 
        
@@ -63,6 +62,7 @@ public class RobotSightSensorComponent : SightSensorComponent
                 OnTarget?.Invoke(Target);
                 return;
             }
+            hit = false;
 
         }
     }

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e7f1ecb016baf74495864f6f51b8a00, type: 3}
   m_Name: Dog_MoveToPoint_State
   m_EditorClassIdentifier: 
+  textArea: Suit le prochain point
   transitions:
   - {fileID: 11400000, guid: 21a612057980445439864fbf62e42b16, type: 2}
-  - {fileID: 11400000, guid: 014b45a7e70f90b4e870671b80a984c8, type: 2}
   - {fileID: 11400000, guid: 53720ec41facb744b8086d461ab3934e, type: 2}
-  <FSM>k__BackingField: {fileID: 0}
+  - {fileID: 11400000, guid: 014b45a7e70f90b4e870671b80a984c8, type: 2}
+  <IsInfoState>k__BackingField: 1
   zone: {fileID: 0}

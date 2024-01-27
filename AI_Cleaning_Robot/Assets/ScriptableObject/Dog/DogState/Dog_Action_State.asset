@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09d28c4ca59ed204997e4f30cbce4caf, type: 3}
   m_Name: Dog_Action_State
   m_EditorClassIdentifier: 
+  textArea: Les action possible en fonction de son humeur et statue
   transitions:
-  - {fileID: 11400000, guid: 50ac8e0e29db3054b96505ba0b3b29ff, type: 2}
   - {fileID: 11400000, guid: 21a612057980445439864fbf62e42b16, type: 2}
-  <FSM>k__BackingField: {fileID: 0}
+  - {fileID: 11400000, guid: 53720ec41facb744b8086d461ab3934e, type: 2}
+  - {fileID: 11400000, guid: 50ac8e0e29db3054b96505ba0b3b29ff, type: 2}
+  <IsInfoState>k__BackingField: 1
