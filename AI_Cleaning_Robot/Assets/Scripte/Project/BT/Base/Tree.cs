@@ -4,17 +4,33 @@ using UnityEngine;
 
 public abstract class Tree : MonoBehaviour
 {
-     [SerializeField, HideInInspector] private Node root = null;
-    protected abstract Node SetupTree();
+ 
     void Start()
     {
-        root = SetupTree();
+        Enter();
     }
+  protected virtual void Enter()
+    { 
+    }
+    protected virtual void UpdateTree()
+    {
+        
+    }
+    public virtual  void NextNode(Node _node)
+    { 
+    }
+    public virtual void Exit()
+    { 
 
-    // Update is called once per frame
+    }
     void Update()
     {
-        if (root != null)
-            root.Execute();
+        UpdateTree();
+       
+    }
+
+    private void OnDestroy()
+    {
+        Exit();
     }
 }

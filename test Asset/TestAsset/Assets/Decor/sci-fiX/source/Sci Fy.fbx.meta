@@ -1,0 +1,289 @@
+fileFormatVersion: 2
+guid: 362f6713cc13ba44eaeaa9c1ce273af6
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 1 pileer .002
+    second: {fileID: 2100000, guid: 0e3549057d3169f428671e8b5e82fd94, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Advanced Hologram Screen (Glass).002
+    second: {fileID: 2100000, guid: af537db525d128742b2ec04755a0997f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black Plastic.003
+    second: {fileID: 2100000, guid: 1d95fff66045dff409f6f803b2345b6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black Plastic.004
+    second: {fileID: 2100000, guid: 4628c81e8a5a8b84c81039c6c669b79f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blue Edge Glow
+    second: {fileID: 2100000, guid: 0b9148900465f814483b4d27b9e3d623, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gray white plastic.002
+    second: {fileID: 2100000, guid: 0e2b43e50b7ff624c991ba9585d719fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LIGHT.002
+    second: {fileID: 2100000, guid: 3c9864409699ef841b6a53a0fac55a5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Marble 7.002
+    second: {fileID: 2100000, guid: 2902b3ad404f46941b06e478446d51bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: 90d0e53cd07d2be49931acc44c1b2c9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: 8dc3145583381fe458684922a9891f4b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic structured in gray.002
+    second: {fileID: 2100000, guid: b20ce422558e6284193ee76e389eb09c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stainless Steel Clean.002
+    second: {fileID: 2100000, guid: 72c030c6e304c00449164aa0224e9810, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stainless Steel.003
+    second: {fileID: 2100000, guid: 48e36baa93e7410468e194e3af4f0eac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steel Damaged, Scratched and Smudged.002
+    second: {fileID: 2100000, guid: 8ce75c78a8409374d82c731d5af47b58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steel.004
+    second: {fileID: 2100000, guid: 640b466761de7c641bcbc9ffb3bf59b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steel.005
+    second: {fileID: 2100000, guid: ca9e1c23741be054dae30d12552f227a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TUBE lIGHT .002
+    second: {fileID: 2100000, guid: 408eeda4d7ff6074bba7ac3cc4b6cd7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White Marble Texture.002
+    second: {fileID: 2100000, guid: 9d4a370f8d15dec41bf1cdfa6fed8d37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: initialShadingGroup.007
+    second: {fileID: 2100000, guid: fcbeb48e0adc96b4980706943f549aa1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: initialShadingGroup.009
+    second: {fileID: 2100000, guid: dcce2bc97c9cfef42b2632010d31455d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pipe.002
+    second: {fileID: 2100000, guid: 72a00668297905c4398801d19913dc46, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 12
+    second: {fileID: 2800000, guid: 73595596bccf04349b5fcce470e469a9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Diffuse
+    second: {fileID: 2800000, guid: 0abeb62a5ae314b4dbbe9dd2f29f6750, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GWC Basic Steel_BaseColor
+    second: {fileID: 2800000, guid: ac3edc2996c322b49b125486caee9a5b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GWC Basic Steel_Metalness
+    second: {fileID: 2800000, guid: 2f9d97121885daf4a980d5d456040ee4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GWC Basic Steel_Normal
+    second: {fileID: 2800000, guid: 443f9dd38503fd34ea2c3bc6f8069a23, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GWC Rough Cast Steel_BaseColor
+    second: {fileID: 2800000, guid: 1306ec9f986a4344198f074ce1c7861f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GWC Rough Cast Steel_Metallic
+    second: {fileID: 2800000, guid: b665a5e51004f5d4a966c62e7eda2c15, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GWC Rough Cast Steel_Normal
+    second: {fileID: 2800000, guid: 61790777765504c409d0f5f1981551be, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Normal
+    second: {fileID: 2800000, guid: 0889ea8bae750d948b978b828962c4c3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Roughness
+    second: {fileID: 2800000, guid: 0b9890dad16780e499f8f640c576da4a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Steel Damaged Scratched and Smudged_Alpha
+    second: {fileID: 2800000, guid: d9f592a5593b0ed46b5eff7408ac9272, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Steel Damaged Scratched and Smudged_BaseColor
+    second: {fileID: 2800000, guid: aef2465693d1a814398b97564e0c2014, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Steel Damaged Scratched and Smudged_Emissive
+    second: {fileID: 2800000, guid: 790c7ec0e0c6c204ba6df25e1fa5f9ff, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Steel Damaged Scratched and Smudged_Metallic
+    second: {fileID: 2800000, guid: 48bdbf94a293d9f48b39ba88f5ef8187, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Steel Damaged Scratched and Smudged_Roughness
+    second: {fileID: 2800000, guid: dcfd203f314214641bfce1113503adbf, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -6,17 +6,17 @@ public class Leaf : Node
 {
     protected override ENodeState ProcessNode()
     {
-        throw new System.NotImplementedException();
+        return ENodeState.RUNNING;
     }
 
     protected override void StartNode()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     protected override void StopNode()
     {
-        throw new System.NotImplementedException();
+       
     }
 
     

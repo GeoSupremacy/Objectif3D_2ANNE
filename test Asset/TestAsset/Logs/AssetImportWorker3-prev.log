@@ -1,0 +1,1667 @@
+Using pre-set license
+Built from '2022.3/release' branch; Version is '2022.3.12f1 (4fe6e059c7ef) revision 5236448'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22621) 64bit Professional' Language: 'fr' Physical Memory: 32688 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker3
+-projectPath
+D:/Unity/Objectif3D_2ANNE/test Asset/TestAsset
+-logFile
+Logs/AssetImportWorker3.log
+-srvPort
+52299
+Successfully changed project path to: D:/Unity/Objectif3D_2ANNE/test Asset/TestAsset
+D:/Unity/Objectif3D_2ANNE/test Asset/TestAsset
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [15288] Host "[IP] 192.168.10.203 [Port] 0 [Flags] 2 [Guid] 145678228 [EditorId] 145678228 [Version] 1048832 [Id] WindowsEditor(7,Poste-G203) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [15288] Host "[IP] 192.168.10.203 [Port] 0 [Flags] 2 [Guid] 145678228 [EditorId] 145678228 [Version] 1048832 [Id] WindowsEditor(7,Poste-G203) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 7 workers.
+Refreshing native plugins compatible for Editor in 12.02 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.12f1 (4fe6e059c7ef)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Unity/Objectif3D_2ANNE/test Asset/TestAsset/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1060 6GB (ID=0x1c03)
+    Vendor:   NVIDIA
+    VRAM:     6043 MB
+    Driver:   31.0.15.3623
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56628
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.010676 seconds.
+- Loaded All Assemblies, in  0.922 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.534 seconds
+Domain Reload Profiling: 1454ms
+	BeginReloadAssembly (353ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (3ms)
+	RebuildCommonClasses (103ms)
+	RebuildNativeTypeToScriptingClass (32ms)
+	initialDomainReloadingComplete (112ms)
+	LoadAllAssembliesAndSetupDomain (319ms)
+		LoadAssemblies (349ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (315ms)
+			TypeCache.Refresh (313ms)
+				TypeCache.ScanAssembly (288ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (535ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (421ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (15ms)
+			SetLoadedEditorAssemblies (15ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (5ms)
+			ProcessInitializeOnLoadAttributes (270ms)
+			ProcessInitializeOnLoadMethodAttributes (116ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.200 seconds
+Refreshing native plugins compatible for Editor in 4.71 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.268 seconds
+Domain Reload Profiling: 2466ms
+	BeginReloadAssembly (236ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (11ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (29ms)
+	RebuildCommonClasses (50ms)
+	RebuildNativeTypeToScriptingClass (18ms)
+	initialDomainReloadingComplete (67ms)
+	LoadAllAssembliesAndSetupDomain (826ms)
+		LoadAssemblies (523ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (429ms)
+			TypeCache.Refresh (370ms)
+				TypeCache.ScanAssembly (343ms)
+			ScanForSourceGeneratedMonoScriptInfo (35ms)
+			ResolveRequiredComponents (23ms)
+	FinalizeReload (1269ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (982ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			SetLoadedEditorAssemblies (7ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (204ms)
+			ProcessInitializeOnLoadAttributes (642ms)
+			ProcessInitializeOnLoadMethodAttributes (110ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 4.33 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4920 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 92 unused Assets / (1.9 MB). Loaded Objects now: 5367.
+Memory consumption went from 204.4 MB to 202.5 MB.
+Total: 6.858000 ms (FindLiveObjects: 0.652200 ms CreateObjectMapping: 0.529500 ms MarkObjects: 4.462600 ms  DeleteObjects: 1.212000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/WelcomeScreen.cs: 624a5bdd88284e4e83207c82ab152005 -> af7c0e1c3e24e59f2fba68765fc86aa1
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/ExtendedFlycam.cs: 071be4677c7e856b68a0f0a30b2acc10 -> 15643ed9575746ceed8374f6bf01240b
+  custom:scripting/monoscript/fileName/TransInd.cs: 62c5b542a60442b8a5f661c814e99337 -> 3bb3a152e248feabb2978c6439bc45d8
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/DoorCont.cs: 19a678b844c09baeac5a7aea5cd44865 -> ed981916c23737fe01d88a6bfef1c8af
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LPS_SFInt_Welcome.cs: d8cc154706c0741801722a910cf32a39 -> 8ccdc0574d65aee37ac4af3b9737a198
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 74757.311561 seconds.
+  path: Assets/Decor/DizzyMedia/_Assets/LP Sets_Sci-fi Interior/Models/Environment/Wall External Cornerfill.prefab
+  artifactKey: Guid(4886b5ea505e49c4eaaf2cd1edf72610) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b)
+Start importing Assets/Decor/DizzyMedia/_Assets/LP Sets_Sci-fi Interior/Models/Environment/Wall External Cornerfill.prefab using Guid(4886b5ea505e49c4eaaf2cd1edf72610) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b)  -> (artifact id: 'f5962b82201c269d7f9fe8adc37d5a85') in 0.344859 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Decor/DizzyMedia/_Assets/LP Sets_Sci-fi Interior/Prefabs/Props/Groups/BoxesGroup.prefab
+  artifactKey: Guid(8f3fe0e61df78294cadd4f914000ab82) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b)
+Start importing Assets/Decor/DizzyMedia/_Assets/LP Sets_Sci-fi Interior/Prefabs/Props/Groups/BoxesGroup.prefab using Guid(8f3fe0e61df78294cadd4f914000ab82) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b)  -> (artifact id: '7ec2efc042c76cdc367cd882a15b70fa') in 0.035794 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 40
+========================================================================
+Received Import Request.
+  Time since last request: 0.092949 seconds.
+  path: Assets/Decor/sci-fi-corridor X/source/model/model/Materials/EmandaCanoTeto.mat
+  artifactKey: Guid(3bbf81f02edbff84f9c8120ca2f1a306) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/source/model/model/Materials/EmandaCanoTeto.mat using Guid(3bbf81f02edbff84f9c8120ca2f1a306) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '95962c89181612d5060864f521a6cd9c') in 0.120402 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-corridor X/source/model/model/Materials/SuporteAl_aInferior.mat
+  artifactKey: Guid(38aea70498a96724fa7a0188532898c3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/source/model/model/Materials/SuporteAl_aInferior.mat using Guid(38aea70498a96724fa7a0188532898c3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '7f5c89d7f8f20a4cf3eb64b624633e94') in 0.026619 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Decor/sci-fi-corridor X/source/model/model/Materials/LigaLigaInferior.mat
+  artifactKey: Guid(849f637949cbb904c8d07e60b24f4291) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/source/model/model/Materials/LigaLigaInferior.mat using Guid(849f637949cbb904c8d07e60b24f4291) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '07728f77dbfe1f2673c8b27926a0309d') in 0.021681 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Decor/sci-fi-corridor X/source/model/model/Materials/CaixaPilarCima.mat
+  artifactKey: Guid(5f3bd7ee74b72274cbe8abde6eac105e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/source/model/model/Materials/CaixaPilarCima.mat using Guid(5f3bd7ee74b72274cbe8abde6eac105e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '9d2c242bce52c6401ae9238c3f52bb0b') in 0.027457 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Decor/sci-fi-corridor X/source/model/model/Materials/Valvula.mat
+  artifactKey: Guid(e81301bddf7f5d84cb9640d0e90f349d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/source/model/model/Materials/Valvula.mat using Guid(e81301bddf7f5d84cb9640d0e90f349d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '7c436303cacc62270d6a522100632bcf') in 0.029522 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-corridor X/source/model/model/Materials/PAREDEJANELACIMA.mat
+  artifactKey: Guid(b9bba0ac5e35694458822c9e8797046a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/source/model/model/Materials/PAREDEJANELACIMA.mat using Guid(b9bba0ac5e35694458822c9e8797046a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '1ccd8c4ac5a30a5c03596e9c88974ff1') in 0.030297 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Decor/sci-fi-corridor X/source/model/model/Materials/CanoTeto.mat
+  artifactKey: Guid(70e970258caac4f4382af13d0025b855) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/source/model/model/Materials/CanoTeto.mat using Guid(70e970258caac4f4382af13d0025b855) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '90da98c34d21c5555239dbc30052fc63') in 0.030777 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Decor/sci-fi-corridor X/source/model/model/Materials/AlcaChao.mat
+  artifactKey: Guid(499e8a10950ca29488a2500177292c3c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/source/model/model/Materials/AlcaChao.mat using Guid(499e8a10950ca29488a2500177292c3c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '420c62aeec9d1826845b492bc81727b1') in 0.032650 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 1.081591 seconds.
+  path: Assets/Decor/DizzyMedia/_Assets/LP Sets_Sci-fi Interior/Models/_Materials/DiamondPlate_2K/New Universal Render Pipeline Asset_Renderer.asset
+  artifactKey: Guid(c0be21a88d274bb4085e3732909f337f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/DizzyMedia/_Assets/LP Sets_Sci-fi Interior/Models/_Materials/DiamondPlate_2K/New Universal Render Pipeline Asset_Renderer.asset using Guid(c0be21a88d274bb4085e3732909f337f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'd2a4b1709c4b421869ce9f2e21471c93') in 0.081816 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fiX/source/Materials/Steel.005.mat
+  artifactKey: Guid(ca9e1c23741be054dae30d12552f227a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fiX/source/Materials/Steel.005.mat using Guid(ca9e1c23741be054dae30d12552f227a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'bbb781fcb10e4e280e6ea12f0b4ea04a') in 0.032783 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Decor/sci-fiX/source
+  artifactKey: Guid(359d78dddfb82a04ab9cb260a0660f4d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fiX/source using Guid(359d78dddfb82a04ab9cb260a0660f4d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'fb064eeb8d3557d4c0b03c544f4fdc40') in 0.024147 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000085 seconds.
+  path: Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/textures/side_Bake1_PBR_Roughness.png
+  artifactKey: Guid(0fa2e7b2d071fbb45bcd3d2c0c6cd56d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/textures/side_Bake1_PBR_Roughness.png using Guid(0fa2e7b2d071fbb45bcd3d2c0c6cd56d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '4044d862b00058fbefaf548c885bc672') in 0.096857 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Decor/interior-spaceship-planet X/textures/d7pxfv4-6a44b369-8c61-41c8-937b-432f356e5ec7.png
+  artifactKey: Guid(3e6af34928a83054ea1097ad357cbcbf) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/interior-spaceship-planet X/textures/d7pxfv4-6a44b369-8c61-41c8-937b-432f356e5ec7.png using Guid(3e6af34928a83054ea1097ad357cbcbf) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'a15f3beaab8a9f24298f9dd3f485e80c') in 0.050366 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fiX/source/Materials/LIGHT.002.mat
+  artifactKey: Guid(3c9864409699ef841b6a53a0fac55a5c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fiX/source/Materials/LIGHT.002.mat using Guid(3c9864409699ef841b6a53a0fac55a5c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '3a2f1d2fe4cf9f1ea9695336dd3c14df') in 0.025013 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/textures/lights_Bake1_PBR_Diffuse.png
+  artifactKey: Guid(89a21c9113e70dd4a9db47e7ce2e287b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/textures/lights_Bake1_PBR_Diffuse.png using Guid(89a21c9113e70dd4a9db47e7ce2e287b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '6296164922883f3a915f83fef08f3423') in 0.094278 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Decor/sci-fiX/textures/12.png
+  artifactKey: Guid(d8d0e98fe5dc1994dbe30a9f695d96fb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fiX/textures/12.png using Guid(d8d0e98fe5dc1994dbe30a9f695d96fb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '1c3d63d6448e978b8604b61746256251') in 0.073764 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/source/Sci-fi corridor.fbx
+  artifactKey: Guid(1a267a00d5d6c5842826323750799258) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/source/Sci-fi corridor.fbx using Guid(1a267a00d5d6c5842826323750799258) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '5e5283ba9f621ce2288b46f8eb691c56') in 0.399685 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 124
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Decor/sci-fiX/source/Textures/Diffuse.png
+  artifactKey: Guid(0abeb62a5ae314b4dbbe9dd2f29f6750) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fiX/source/Textures/Diffuse.png using Guid(0abeb62a5ae314b4dbbe9dd2f29f6750) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '20452840810c8ae57ef35e99f93ce3c2') in 0.074750 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.001036 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/ParedeArmazen_roughness.jpeg
+  artifactKey: Guid(3cd98b2fbe278644d9c69cca7709327d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/ParedeArmazen_roughness.jpeg using Guid(3cd98b2fbe278644d9c69cca7709327d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'dece37a0f8c7cba91018c719213957bc') in 0.057108 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000823 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/ParedeArmazen_metallic.jpeg
+  artifactKey: Guid(6c3a8f57c29eb3b4fa90eead7c4de56d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/ParedeArmazen_metallic.jpeg using Guid(6c3a8f57c29eb3b4fa90eead7c4de56d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '16dd4da9c81749a64ba06c1abea94ebf') in 0.106835 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/AlcaTeto_normal.png
+  artifactKey: Guid(e474deb41b303054bacdd9c55233e54f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/AlcaTeto_normal.png using Guid(e474deb41b303054bacdd9c55233e54f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'f2d7f96bc3e9153e9712150293859725') in 0.074112 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/PlacaEncostaParede_albedo.jpeg
+  artifactKey: Guid(f5010bbf6895ff94f81a394048a253f5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/PlacaEncostaParede_albedo.jpeg using Guid(f5010bbf6895ff94f81a394048a253f5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '8a5431f4de67236238659a874e097b24') in 0.067706 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/BateriasParede_albedo.jpeg
+  artifactKey: Guid(094d646df1809254ab48fd820ded0ad9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/BateriasParede_albedo.jpeg using Guid(094d646df1809254ab48fd820ded0ad9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'c5731fe9406cf281b2de0fcce5f50e63') in 0.069834 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/AlcaParedeArmazen_metallic.jpeg
+  artifactKey: Guid(6637ea50680451d40bf3fe1a0b1d2ccc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/AlcaParedeArmazen_metallic.jpeg using Guid(6637ea50680451d40bf3fe1a0b1d2ccc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '4b8059a4475357cf5fa0ef4bbcb8a7e2') in 0.081277 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Decor/sci-fiX/source/Materials/Material.006.mat
+  artifactKey: Guid(8dc3145583381fe458684922a9891f4b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fiX/source/Materials/Material.006.mat using Guid(8dc3145583381fe458684922a9891f4b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '8b65447ce95f755761c8ee7e39ae482f') in 0.085944 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/CaixaCano_albedo.jpeg
+  artifactKey: Guid(bdc925d75117c924e8070b5a6b8adc83) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/CaixaCano_albedo.jpeg using Guid(bdc925d75117c924e8070b5a6b8adc83) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '0f3d6cf030946c0d240c36e3927ad700') in 0.076178 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/TetoPadrao_roughness.jpeg
+  artifactKey: Guid(81c413656b3add244a3b792f91eca783) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/TetoPadrao_roughness.jpeg using Guid(81c413656b3add244a3b792f91eca783) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '9377121b9ddd4f337c43e331fb2a4bfb') in 0.063355 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/BaixoDivisaTeto_roughness.jpeg
+  artifactKey: Guid(54a5daa8e859c194a901dddecdd9dec2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/BaixoDivisaTeto_roughness.jpeg using Guid(54a5daa8e859c194a901dddecdd9dec2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '56d5df56d87899487c08642e8b77cf88') in 0.058910 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/BateriasParede_metallic.jpeg
+  artifactKey: Guid(78b161ca6a34daa4e9f839f14ebb0627) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/BateriasParede_metallic.jpeg using Guid(78b161ca6a34daa4e9f839f14ebb0627) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'cc9c791ec9116f8ff2df3eb5ad0334cd') in 0.092934 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/CanoAguaChao_albedo.jpeg
+  artifactKey: Guid(6c35019057c5da446bc41db3b5869686) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/CanoAguaChao_albedo.jpeg using Guid(6c35019057c5da446bc41db3b5869686) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '5230ec62f3d97bddc2baf965f88bcc65') in 0.084318 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/LampadaParede_albedo.jpeg
+  artifactKey: Guid(e8d3b6823e4a2a74890efbf0a5eb70a9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/LampadaParede_albedo.jpeg using Guid(e8d3b6823e4a2a74890efbf0a5eb70a9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '8eaede7768cf905939fb2dad1283a066') in 0.055580 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/textures/pipes_Bake1_PBR_Roughness.png
+  artifactKey: Guid(685b7b66b88b5674284f1bb6d79a6d25) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/textures/pipes_Bake1_PBR_Roughness.png using Guid(685b7b66b88b5674284f1bb6d79a6d25) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '075d13fb097e59b9fe9d770a7cb00683') in 0.114042 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-corridor X/source/model/model
+  artifactKey: Guid(1fb848afc5afec94f95a40c5e973da2b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/source/model/model using Guid(1fb848afc5afec94f95a40c5e973da2b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '8feeff112c48d3e17223ae7ee2ffbd18') in 0.018038 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000519 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/EmendaCanoChao_metallic.jpeg
+  artifactKey: Guid(c4b8ec09c7ac712418a9d2646387e2f6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/EmendaCanoChao_metallic.jpeg using Guid(c4b8ec09c7ac712418a9d2646387e2f6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'a78c2b135787be75eab75985c08716cf') in 0.050444 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000115 seconds.
+  path: Assets/Decor/sci-fi-corridor X/source/model/model/model.dae
+  artifactKey: Guid(923c3bd6428b6de4aa7e0caf6b3e5648) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/source/model/model/model.dae using Guid(923c3bd6428b6de4aa7e0caf6b3e5648) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '914c621522ee06462dda0d490265d4cd') in 0.838244 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6619
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/CaixaEnergiaParede_albedo.jpeg
+  artifactKey: Guid(d241c9b125f4b204e885be9722e2a6e2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/CaixaEnergiaParede_albedo.jpeg using Guid(d241c9b125f4b204e885be9722e2a6e2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'b65bbc36ee653b0da30fb688290e64e0') in 0.043354 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/AlcaInferiorColuna_roughness.jpeg
+  artifactKey: Guid(156c774b7e5ec0840bd103d325c61c4a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/AlcaInferiorColuna_roughness.jpeg using Guid(156c774b7e5ec0840bd103d325c61c4a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'a197b6c3080b32d721265efb415b72fb') in 0.041588 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/AlcaSuperiorParede_normal.png
+  artifactKey: Guid(c59224170011c044fad85218c211dbf4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/AlcaSuperiorParede_normal.png using Guid(c59224170011c044fad85218c211dbf4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '766447af278d13ba797b0f965e593f41') in 0.034533 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/CaixaEnergiaParede_metallic.jpeg
+  artifactKey: Guid(3fef353c1cbd5dd4686f15f8fdee65c5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/CaixaEnergiaParede_metallic.jpeg using Guid(3fef353c1cbd5dd4686f15f8fdee65c5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '644d9d5849df5d435fe405c296a783cd') in 0.046763 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/SuporteAl_aInferior_normal.png
+  artifactKey: Guid(5d33cb23a5e90264bbbfcebae34089c8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/SuporteAl_aInferior_normal.png using Guid(5d33cb23a5e90264bbbfcebae34089c8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'caf93edec96413e417be49d15f0db403') in 0.032088 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/JuntaParede_albedo.jpeg
+  artifactKey: Guid(fda410d8eb53b0d4a9f6f768af32b971) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/JuntaParede_albedo.jpeg using Guid(fda410d8eb53b0d4a9f6f768af32b971) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '0ef89fad9d0e766a0214663e1bcf2f4c') in 0.047045 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/MoedaCaixa_roughness.jpeg
+  artifactKey: Guid(b959fed84df57b14d92924d97398c97e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/MoedaCaixa_roughness.jpeg using Guid(b959fed84df57b14d92924d97398c97e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '4d6054b8af5f46d413c32fb644c03748') in 0.042827 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/Caixinhaporta_normal.png
+  artifactKey: Guid(29e86f0ebf16bfa4b8212943dde79139) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/Caixinhaporta_normal.png using Guid(29e86f0ebf16bfa4b8212943dde79139) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '4aac44ed142838a37f51dd7e6d44c623') in 0.039364 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/COISAACIMALIXEIRAPAREDE_albedo.jpeg
+  artifactKey: Guid(996fa697836efc744b4b2e80b2c02c41) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/COISAACIMALIXEIRAPAREDE_albedo.jpeg using Guid(996fa697836efc744b4b2e80b2c02c41) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'c35b58d013779563c0d531f358fdcf2c') in 0.049224 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/LixeiraPAREDE_roughness.jpeg
+  artifactKey: Guid(04913c2cce9affe418f14b756f74f964) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/LixeiraPAREDE_roughness.jpeg using Guid(04913c2cce9affe418f14b756f74f964) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '14cb66f8c5228e8e59630337b49bfe56') in 0.036245 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/ChaoPadrao_metallic.jpeg
+  artifactKey: Guid(4be5b3647d2f92a479bda7caa2355033) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/ChaoPadrao_metallic.jpeg using Guid(4be5b3647d2f92a479bda7caa2355033) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '454aa0097a71821dac8af065ae1e6ef3') in 0.038076 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/Ch_oDivisa_emissive.jpeg
+  artifactKey: Guid(b27ee7ceff02dc2439f7e468722bce95) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/Ch_oDivisa_emissive.jpeg using Guid(b27ee7ceff02dc2439f7e468722bce95) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '53cd72880fceef2686434e924cd0bee5') in 0.041479 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/MeioSuporteParede_normal.png
+  artifactKey: Guid(0545693300055a946b35d3396b330d4b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/MeioSuporteParede_normal.png using Guid(0545693300055a946b35d3396b330d4b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '8e6cf5dfcae5e00728f2c34eb56c4b11') in 0.042494 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/LuzAntena_normal.png
+  artifactKey: Guid(f90c5bc5139644049a499606ecf361f6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/LuzAntena_normal.png using Guid(f90c5bc5139644049a499606ecf361f6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '8c7a6c7a533dde6fd10c9d05cdb5a7f2') in 0.035173 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/SuportesCaixaLigaCano_albedo.jpeg
+  artifactKey: Guid(d9dd7319078cb3d40b166666f3527a6f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/SuportesCaixaLigaCano_albedo.jpeg using Guid(d9dd7319078cb3d40b166666f3527a6f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '4b69f8b9aa93cb69ea1b3794880fb829') in 0.047834 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/QuadradosTeto_roughness.jpeg
+  artifactKey: Guid(7a1805429545205418758e5508854798) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/QuadradosTeto_roughness.jpeg using Guid(7a1805429545205418758e5508854798) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'd03e211efeeec99b09f272d86041bcae') in 0.041183 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/lambert63_albedo.jpeg
+  artifactKey: Guid(fadb8d6c0fe1f5741866bcc2e20358f7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/lambert63_albedo.jpeg using Guid(fadb8d6c0fe1f5741866bcc2e20358f7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '8dfa07b6d2af600c96e44b7044d79fb2') in 0.037677 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/ParedeJanela_metallic.jpeg
+  artifactKey: Guid(1327f5bbea5c85f4fb387ddf6a0e74af) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/ParedeJanela_metallic.jpeg using Guid(1327f5bbea5c85f4fb387ddf6a0e74af) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'f7de0ce9ed64b33fd39f488aee99dc71') in 0.036452 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/CanoInArGrande_albedo.jpeg
+  artifactKey: Guid(0081c758ddb1d4f4ba574bae24543bba) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/CanoInArGrande_albedo.jpeg using Guid(0081c758ddb1d4f4ba574bae24543bba) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '284b42ceb186cf5871b0047e460ff99d') in 0.043300 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/LampadaParede_roughness.jpeg
+  artifactKey: Guid(3d7093205758be3419c51dc48847360c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/LampadaParede_roughness.jpeg using Guid(3d7093205758be3419c51dc48847360c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'c854bf640aa1e70ba9820ff13394214e') in 0.034516 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000071 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/CanoInArGrande_normal.png
+  artifactKey: Guid(1fad1e1c0c212a84eb9a5f4059a5d5c7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/CanoInArGrande_normal.png using Guid(1fad1e1c0c212a84eb9a5f4059a5d5c7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '68bd8f9f47595caac056909687bf08f9') in 0.041094 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/QuadradosCh_o_albedo.jpeg
+  artifactKey: Guid(1e3d6db3ce76b10408801518a754b057) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/QuadradosCh_o_albedo.jpeg using Guid(1e3d6db3ce76b10408801518a754b057) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '3b9d8481fa87802331e3292842bb16c3') in 0.046110 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/ColunaDivisa_roughness.jpeg
+  artifactKey: Guid(b63e60d1688696f4d97a7fece4a2536c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/ColunaDivisa_roughness.jpeg using Guid(b63e60d1688696f4d97a7fece4a2536c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '4a5ed947255d0fe3a3d81f256e51a9bc') in 0.034963 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/CantoDaPorta_emissive.jpeg
+  artifactKey: Guid(6341473ce81eb284ebdeef63e92a8ad0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/CantoDaPorta_emissive.jpeg using Guid(6341473ce81eb284ebdeef63e92a8ad0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'e4101274e380e9c21a50c95178bf09fa') in 0.035409 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/CanoAguaChao_normal.png
+  artifactKey: Guid(c8c07232f1c7bb847ab27b574d1f769a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/CanoAguaChao_normal.png using Guid(c8c07232f1c7bb847ab27b574d1f769a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '3bacb4180461aba30b8f9c5b52edf859') in 0.050857 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/CanosGrandeValvula_normal.png
+  artifactKey: Guid(487eab37332ba5841abb39fc807f2193) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/CanosGrandeValvula_normal.png using Guid(487eab37332ba5841abb39fc807f2193) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '95510e35a10f1ff93f1aefc523db1435') in 0.031641 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/PortaAutomatica_metallic.jpeg
+  artifactKey: Guid(5bf94ce5cccf00446a17ba3972398c15) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/PortaAutomatica_metallic.jpeg using Guid(5bf94ce5cccf00446a17ba3972398c15) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '639dce7cdf962caa9e271bc87b6384fb') in 0.038281 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000629 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/LixeiraPAREDE_albedo.jpeg
+  artifactKey: Guid(9e203b2d27c211543abd8803466d39c8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/LixeiraPAREDE_albedo.jpeg using Guid(9e203b2d27c211543abd8803466d39c8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '72cae88fa93eed6fc51f43970b7a016a') in 0.043144 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/LampadaTeto_roughness.jpeg
+  artifactKey: Guid(78c7c149d251598498a5883c7565d5e4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/LampadaTeto_roughness.jpeg using Guid(78c7c149d251598498a5883c7565d5e4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '6890a27cf1ac75114b2c2fd387da33fa') in 0.036887 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/AlcaParedeArmazen_normal.png
+  artifactKey: Guid(38271a244af3ba34882c1056b6bc4f7f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/AlcaParedeArmazen_normal.png using Guid(38271a244af3ba34882c1056b6bc4f7f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'b420b30a0991e1dc4be8e9045c0e0c2a') in 0.034434 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/SuporteDivisaTeto_albedo.jpeg
+  artifactKey: Guid(084e963a76ac2684d930caf043179444) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/SuporteDivisaTeto_albedo.jpeg using Guid(084e963a76ac2684d930caf043179444) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '623967e0096ed3d091389800d6e5dbba') in 0.041912 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/ParedeArmazen_emissive.jpeg
+  artifactKey: Guid(b062174a6ea46c64ea8ebb87fdfed8ce) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/ParedeArmazen_emissive.jpeg using Guid(b062174a6ea46c64ea8ebb87fdfed8ce) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '7a8bd2fab67c59a5fdb0e39f71f8b0a2') in 0.038766 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/CorpoCaixa_albedo.jpeg
+  artifactKey: Guid(5896b51a29ecfa0459ac90a51291db69) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/CorpoCaixa_albedo.jpeg using Guid(5896b51a29ecfa0459ac90a51291db69) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '4757c99cf5ead1afa4f7e3ba6b94dcc4') in 0.031573 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/CanoLigaValvula_roughness.jpeg
+  artifactKey: Guid(8f869e9099b42e2489e2f61dd2c7a6ff) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/CanoLigaValvula_roughness.jpeg using Guid(8f869e9099b42e2489e2f61dd2c7a6ff) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'dd056f99564cd588a97fae374c33fa27') in 0.033764 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/Televisao_albedo.jpeg
+  artifactKey: Guid(4bec24d790724fa43bf453ae491ae4e1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/Televisao_albedo.jpeg using Guid(4bec24d790724fa43bf453ae491ae4e1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'ba90131c98b0e3642dac3ccc4cac714a') in 0.046149 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000072 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/PortaAutomatica_roughness.jpeg
+  artifactKey: Guid(9ef055e5b6c4e7540a765d36b19903e5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/PortaAutomatica_roughness.jpeg using Guid(9ef055e5b6c4e7540a765d36b19903e5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '7c1781e17b53e50e8b352e46625e684c') in 0.036802 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/LigaLigaInferior_metallic.jpeg
+  artifactKey: Guid(84d308268be57344f97184ce43053c37) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/LigaLigaInferior_metallic.jpeg using Guid(84d308268be57344f97184ce43053c37) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '0c5ec5d3c5be9eac1dc6b30f4592e232') in 0.034331 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000106 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/CantoDaPorta_roughness.jpeg
+  artifactKey: Guid(7725322974cecbb488ea1877f67e4462) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/CantoDaPorta_roughness.jpeg using Guid(7725322974cecbb488ea1877f67e4462) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'bbb339f8287a4c9fbd14b138a35549d9') in 0.043444 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/CaixaEnergiaParede_normal.png
+  artifactKey: Guid(431a6fd56ed8170438d95af02d029963) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/CaixaEnergiaParede_normal.png using Guid(431a6fd56ed8170438d95af02d029963) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '7470ee7193598e5e3c769cce85bc1cc9') in 0.039106 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/AlcaInferiorColuna_normal.png
+  artifactKey: Guid(70e45ffe47187204593d602f6483603e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/AlcaInferiorColuna_normal.png using Guid(70e45ffe47187204593d602f6483603e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '41aaaab5a06999700b19a67a463476a9') in 0.041749 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/MeiucaEncostaParede_roughness.jpeg
+  artifactKey: Guid(0cb6b4d26d60e8e45a1a1f707de3e658) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/MeiucaEncostaParede_roughness.jpeg using Guid(0cb6b4d26d60e8e45a1a1f707de3e658) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '6a39d42a884e67668d69ad4ffeb55d8c') in 0.049112 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/Caixinhaporta_metallic.jpeg
+  artifactKey: Guid(39bcb0158baca8e499ce31dac70c373c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/Caixinhaporta_metallic.jpeg using Guid(39bcb0158baca8e499ce31dac70c373c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '66151b43c206ab3a26afa58cdd473af3') in 0.036838 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000062 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/PlacaEncostaParede_metallic.jpeg
+  artifactKey: Guid(d52ac4cda1907604c96a50d0d1bc78b3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/PlacaEncostaParede_metallic.jpeg using Guid(d52ac4cda1907604c96a50d0d1bc78b3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'd427f7b134d96582a2d753309d6ca7c1') in 0.035007 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/SuportesCaixaLigaCano_metallic.jpeg
+  artifactKey: Guid(bcd483f5738b31e4185750e8facf3c9c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/SuportesCaixaLigaCano_metallic.jpeg using Guid(bcd483f5738b31e4185750e8facf3c9c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '487722b1edc9b2cdd15aa2bd56c16353') in 0.049782 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/lambert63_metallic.jpeg
+  artifactKey: Guid(fe1c88ef70de2844e8e6143289ea7399) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/lambert63_metallic.jpeg using Guid(fe1c88ef70de2844e8e6143289ea7399) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '2a40c9b9eb54a227c0074971759f5406') in 0.038831 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/QuadradosCh_o_roughness.jpeg
+  artifactKey: Guid(53e37e94fcad6ce4f89e89b0000a8bb5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/QuadradosCh_o_roughness.jpeg using Guid(53e37e94fcad6ce4f89e89b0000a8bb5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '21f235aa0b9917854643fb8e700fc9ea') in 0.036589 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Decor/spaceship-interior
+  artifactKey: Guid(b7cd7b2f819087649b83b9dfb578c2b1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior using Guid(b7cd7b2f819087649b83b9dfb578c2b1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'aa03966f93dc33e3486093e70accec4a') in 0.011257 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn6SG_metallic.jpeg
+  artifactKey: Guid(fa392d72d7bcd94439b0efd2f05cb495) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn6SG_metallic.jpeg using Guid(fa392d72d7bcd94439b0efd2f05cb495) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'f45527b4c764fa1cf7339cdbd2e3e991') in 0.045107 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/Valvula_normal.png
+  artifactKey: Guid(557f8c8beef1951409e12f9dd58b5e23) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/Valvula_normal.png using Guid(557f8c8beef1951409e12f9dd58b5e23) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '6af70e4a304c84ce99c06ad740cd8a5a') in 0.038142 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn9SG_emissive.jpeg
+  artifactKey: Guid(938c97764de83c347ab98975bdbb7f35) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn9SG_emissive.jpeg using Guid(938c97764de83c347ab98975bdbb7f35) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '8a8bb2e903a71b69133282af7272a6e0') in 0.037310 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/CantoDaPorta_albedo.jpeg
+  artifactKey: Guid(b192adc51d54f7f4fb3cf1c9f4474ed3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/CantoDaPorta_albedo.jpeg using Guid(b192adc51d54f7f4fb3cf1c9f4474ed3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '5688fb170ce85a15b10090a9722f11c7') in 0.036838 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn14SG_metallic.jpeg
+  artifactKey: Guid(f6ad7db0c4fb19043a602dae009b12ae) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn14SG_metallic.jpeg using Guid(f6ad7db0c4fb19043a602dae009b12ae) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '023762f21efe82406872637838e4524f') in 0.046994 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/BarrigaDentroCaixaParedeJanela_normal.png
+  artifactKey: Guid(da34743374ec24c4ebef8ab7d0bc78e4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/BarrigaDentroCaixaParedeJanela_normal.png using Guid(da34743374ec24c4ebef8ab7d0bc78e4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'b2627efca7e3a3a0864acf68b3f323ee') in 0.036329 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Decor/sci-fi-corridor X/source/model/model/Materials
+  artifactKey: Guid(b716098e8ef091747901eeb3cf80c7cf) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/source/model/model/Materials using Guid(b716098e8ef091747901eeb3cf80c7cf) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '57b140d023f62598910b05e40d6bc41e') in 0.009855 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/LigaCanoInferior_metallic.jpeg
+  artifactKey: Guid(f7dd442508a4c844692c19389ff302ba) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/LigaCanoInferior_metallic.jpeg using Guid(f7dd442508a4c844692c19389ff302ba) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '3179a9ecca90779d82041e435009c317') in 0.040421 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/Caixinhaporta_roughness.jpeg
+  artifactKey: Guid(de6ebc7101645d24081567297613e6e7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/Caixinhaporta_roughness.jpeg using Guid(de6ebc7101645d24081567297613e6e7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '7a3d212f16ae6ed45a00940fe37a8ba5') in 0.042065 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn17SG_normal.png
+  artifactKey: Guid(eb119c3ebd636b04383a66ee41e370a0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn17SG_normal.png using Guid(eb119c3ebd636b04383a66ee41e370a0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '55b6c5f7afc9a212487f07d5b4dfa380') in 0.036638 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn13SG_albedo.jpeg
+  artifactKey: Guid(d3b339228cf4edf46a2ef3df91a20361) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn13SG_albedo.jpeg using Guid(d3b339228cf4edf46a2ef3df91a20361) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'baaef2e6b9a36825c64b6fe078658242') in 0.039456 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000081 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn4SG_albedo.jpeg
+  artifactKey: Guid(ca39fde14e2cfe446af3f15f791abab2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn4SG_albedo.jpeg using Guid(ca39fde14e2cfe446af3f15f791abab2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '51376471b63d7a447cba76c0f246ba98') in 0.045486 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/lambert1_roughness.jpeg
+  artifactKey: Guid(b51d32100a069cc47808f8380ab98ca1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/lambert1_roughness.jpeg using Guid(b51d32100a069cc47808f8380ab98ca1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '7877c7369626150fab4bcf613edeb58c') in 0.038284 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Decor/sci-fi-corridor X/source
+  artifactKey: Guid(004cdb693d7c7874dab620aa51d6c874) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/source using Guid(004cdb693d7c7874dab620aa51d6c874) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'bc455cfde9addcbf9e9af8b8afc995b0') in 0.008275 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/COISAACIMALIXEIRAPAREDE_normal.png
+  artifactKey: Guid(87d0fc9d27c6f524aa94aa00e84b2ed2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/COISAACIMALIXEIRAPAREDE_normal.png using Guid(87d0fc9d27c6f524aa94aa00e84b2ed2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '5722c937b9ab4068125d38150a81c2e4') in 0.037772 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/LampadaParede_metallic.jpeg
+  artifactKey: Guid(6fc1de8d2aee3004680453be480693af) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/LampadaParede_metallic.jpeg using Guid(6fc1de8d2aee3004680453be480693af) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '920d75eb5d69b30c88c581dfdd7efb12') in 0.044194 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/LixeiraPAREDE_normal.png
+  artifactKey: Guid(95d98627702dada48aec8d8c472c89aa) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/LixeiraPAREDE_normal.png using Guid(95d98627702dada48aec8d8c472c89aa) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '90ec4883d8c1bd164c9539a4bff0bc1e') in 0.035050 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/LuzAntena_metallic.jpeg
+  artifactKey: Guid(a4868532c69d11644a3f4c50a13230b4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/LuzAntena_metallic.jpeg using Guid(a4868532c69d11644a3f4c50a13230b4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '587060ef69818478c0daba63d02212cc') in 0.035315 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Decor/sci-fiX/source/Textures/GWC Basic Steel_Normal.jpg
+  artifactKey: Guid(443f9dd38503fd34ea2c3bc6f8069a23) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fiX/source/Textures/GWC Basic Steel_Normal.jpg using Guid(443f9dd38503fd34ea2c3bc6f8069a23) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '0115c76ad01f5c91d71a38781fc8018e') in 0.044154 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/EntornoPortaAutomatica_albedo.jpeg
+  artifactKey: Guid(624bac1bc755de24690a554520643a0b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/EntornoPortaAutomatica_albedo.jpeg using Guid(624bac1bc755de24690a554520643a0b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'dc3b97e32eb05c4d8976f41b2cad2361') in 0.034333 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Decor/sci-fiX/source/Materials/Advanced Hologram Screen (Glass).002.mat
+  artifactKey: Guid(af537db525d128742b2ec04755a0997f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fiX/source/Materials/Advanced Hologram Screen (Glass).002.mat using Guid(af537db525d128742b2ec04755a0997f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '050a5b23771e17c5fd65f3fc358d350c') in 0.012987 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/BarrigaDentroCaixaParedeJanela_albedo.jpeg
+  artifactKey: Guid(ab21dd26daafb0941a14f325af75b505) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/BarrigaDentroCaixaParedeJanela_albedo.jpeg using Guid(ab21dd26daafb0941a14f325af75b505) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'a63e0724404523bfa925642b10a6ef14') in 0.033204 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn15SG_opacity.jpeg
+  artifactKey: Guid(5e9380e0bf9b300458f8a54645fd58b3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn15SG_opacity.jpeg using Guid(5e9380e0bf9b300458f8a54645fd58b3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '3a49f9810d6950d19c9e75c534741a64') in 0.043581 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn3SG_roughness.jpeg
+  artifactKey: Guid(6ab121cb4fc84594b89767423a6615e9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn3SG_roughness.jpeg using Guid(6ab121cb4fc84594b89767423a6615e9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'da104a2c8e69bd22f0ebe6dfb2429ff5') in 0.038814 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn13SG_roughness.jpeg
+  artifactKey: Guid(8c75b7ebc76e4b94dbe8e005834c4ebb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn13SG_roughness.jpeg using Guid(8c75b7ebc76e4b94dbe8e005834c4ebb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '9695ffbde04444c9a8d17fe5c96ba4bb') in 0.036908 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn18SG_roughness.jpeg
+  artifactKey: Guid(cdd24db69fe043e4ea2ab9dab6955b5c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn18SG_roughness.jpeg using Guid(cdd24db69fe043e4ea2ab9dab6955b5c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '1e80aab2184c9801dd45c27825c143db') in 0.185993 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn7SG_albedo.jpeg
+  artifactKey: Guid(0bb17126d7bf50842b8fe38c94e07341) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn7SG_albedo.jpeg using Guid(0bb17126d7bf50842b8fe38c94e07341) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'b1f987c66061050c677a5e7d224a0a6f') in 0.036333 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn5SG_metallic.jpeg
+  artifactKey: Guid(541cdb1c4b641514998bcc3340281592) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn5SG_metallic.jpeg using Guid(541cdb1c4b641514998bcc3340281592) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '664393cea6085370f34b95a592e3c3c3') in 0.062833 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn9SG_albedo.jpeg
+  artifactKey: Guid(bb1dce2045cb29c4b94299db01d4b384) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn9SG_albedo.jpeg using Guid(bb1dce2045cb29c4b94299db01d4b384) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'd8f2f35b46594ce09c68a06cc04c8b33') in 0.037451 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn9SG_normal.png
+  artifactKey: Guid(62f026f81eb018f46909ce00a4809b9f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn9SG_normal.png using Guid(62f026f81eb018f46909ce00a4809b9f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '19ed61c2eee93769ffef39286192ce69') in 0.048576 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn14SG_normal.png
+  artifactKey: Guid(60b2406e2962cc94f969a07b64c2f7c0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn14SG_normal.png using Guid(60b2406e2962cc94f969a07b64c2f7c0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '57d9a5d95688d40ccc37f6b0210500c1') in 0.035665 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/CantoDaPorta_normal.png
+  artifactKey: Guid(62e590b8c657cd9468cf69a6b6239775) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/CantoDaPorta_normal.png using Guid(62e590b8c657cd9468cf69a6b6239775) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '09d9819952ad74d817eb181fb5c190d1') in 0.037555 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn18SG_opacity.jpeg
+  artifactKey: Guid(f78645bfdea8dc74b8056350da013ccf) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn18SG_opacity.jpeg using Guid(f78645bfdea8dc74b8056350da013ccf) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '4c9b3ed9a45f576502aeaa3d2fa515a1') in 0.044814 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/textures/plates_Bake1_PBR_Metalness.png
+  artifactKey: Guid(66d88faabfa5b404b8927d908a678d9b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/textures/plates_Bake1_PBR_Metalness.png using Guid(66d88faabfa5b404b8927d908a678d9b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '60d2aa66278e83457377caf3a31c6ba8') in 0.033538 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Decor/scifi-basement-wall X/textures
+  artifactKey: Guid(056e3ffe9c9ec7a4a82189e09e3f3e2c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/scifi-basement-wall X/textures using Guid(056e3ffe9c9ec7a4a82189e09e3f3e2c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'dc52dbd6e95144c5c802196f4270498a') in 0.011299 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/AlcaSuperiorParede_albedo.jpeg
+  artifactKey: Guid(0a128d4acf67eba4198d0395745e0fcb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/AlcaSuperiorParede_albedo.jpeg using Guid(0a128d4acf67eba4198d0395745e0fcb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '23116ab8420d23ff7f15e79d64b1e173') in 0.038264 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Decor/interior-spaceship-planet X/source
+  artifactKey: Guid(5a03ee5b9b924ef4b92481fe432b2d2e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/interior-spaceship-planet X/source using Guid(5a03ee5b9b924ef4b92481fe432b2d2e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '979ce22f8bc372ac8f36cb7a6ccf3e0e') in 0.009758 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/TetoDivisa_metallic.jpeg
+  artifactKey: Guid(4ad381e872c018947b7fd63e5373a70b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/TetoDivisa_metallic.jpeg using Guid(4ad381e872c018947b7fd63e5373a70b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'ad334c43bc15e72bb8a800ab061ad340') in 0.047301 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/LampadaTeto_metallic.jpeg
+  artifactKey: Guid(ee93f993ecb5dd441a535d3b46b4bb2c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/LampadaTeto_metallic.jpeg using Guid(ee93f993ecb5dd441a535d3b46b4bb2c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'c996a4c308fa5ddb96ab9d9667c95bf8') in 0.032512 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Decor/sci-fiX/textures/GWC Rough Cast Steel_BaseColor.jpeg
+  artifactKey: Guid(41b4a70c033daca40b58cba4b3f8031d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fiX/textures/GWC Rough Cast Steel_BaseColor.jpeg using Guid(41b4a70c033daca40b58cba4b3f8031d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'b19b5bdc0b15fbe652b9660fb7173ac2') in 0.042155 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/AlcaSuperiorParede_metallic.jpeg
+  artifactKey: Guid(638d005812233e343bc3a06a185605c2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/AlcaSuperiorParede_metallic.jpeg using Guid(638d005812233e343bc3a06a185605c2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '8204a55aca6b74eabda35b8057e76c38') in 0.047526 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Decor/spaceship-interior/source
+  artifactKey: Guid(7cdf20d1acee1024dbd5059df53dc536) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/source using Guid(7cdf20d1acee1024dbd5059df53dc536) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'f7eea62d985a90e66032a33f43202d0c') in 0.011259 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/spaceship-interior/textures/initialShadingGroup_normal.png
+  artifactKey: Guid(482e503b9b9a0654199527de81a30b2f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/initialShadingGroup_normal.png using Guid(482e503b9b9a0654199527de81a30b2f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '6637f55d322a18560d76b75235f55349') in 0.035775 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Decor/spaceship-interior/source/model/model
+  artifactKey: Guid(03c0363089d4dfc44862a2b0590b4102) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/source/model/model using Guid(03c0363089d4dfc44862a2b0590b4102) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '541512d7464c31a8fb2ef397e1084235') in 0.009000 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn13SG_metallic.jpeg
+  artifactKey: Guid(52d880786a878f047b6a202d86050470) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn13SG_metallic.jpeg using Guid(52d880786a878f047b6a202d86050470) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '2a827c95db3aaf96e4c53c2127bc0960') in 0.038922 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn17SG_emissive.jpeg
+  artifactKey: Guid(2af29b1c0fe19c94b8423e75fee9f2fe) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn17SG_emissive.jpeg using Guid(2af29b1c0fe19c94b8423e75fee9f2fe) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'f82a4ba933443fce70b36443c3ed2bbb') in 0.046262 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/ParedePorta_normal.png
+  artifactKey: Guid(327921a3a2b9cfa4bbf8e0a129d0b1e1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/ParedePorta_normal.png using Guid(327921a3a2b9cfa4bbf8e0a129d0b1e1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '0c6fb6a9856c43447ba33b55e01ac0f5') in 0.030643 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/LampadaParede_normal.png
+  artifactKey: Guid(5879c725f7938bb43b9bfb0b0d0b86c0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/LampadaParede_normal.png using Guid(5879c725f7938bb43b9bfb0b0d0b86c0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '3e6893b15d5e694c6182bfd20a4eaef7') in 0.033189 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Decor/scifi-basement-wall X/textures/02___Default_normal.png
+  artifactKey: Guid(955ef9c25aec94c46b2e2b124e3a1b09) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/scifi-basement-wall X/textures/02___Default_normal.png using Guid(955ef9c25aec94c46b2e2b124e3a1b09) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'f14ed57488aba8f62f3c3aea7f5542ac') in 0.032533 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/MeiucaEncostaParede_metallic.jpeg
+  artifactKey: Guid(4ff17f67a3c63cb40bbf4cfde0eb77d8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/MeiucaEncostaParede_metallic.jpeg using Guid(4ff17f67a3c63cb40bbf4cfde0eb77d8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '552c8c85bdee26015a7b9492c62ea2da') in 0.043753 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Decor/spaceship-interior/source/model/model/Material/blinn15SG.mat
+  artifactKey: Guid(cc1b4e6d4f6f05942b6610c4cc123ead) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/source/model/model/Material/blinn15SG.mat using Guid(cc1b4e6d4f6f05942b6610c4cc123ead) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'c2d623a22e94a0c4049383f5461c70d5') in 0.016510 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn17SG_roughness.jpeg
+  artifactKey: Guid(a2adc12c925bdd5419d1ecff55c9e3e4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn17SG_roughness.jpeg using Guid(a2adc12c925bdd5419d1ecff55c9e3e4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '6e3880caa8ee478bf3a248b8f8550bb8') in 0.035537 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn13SG_normal.png
+  artifactKey: Guid(35a787c732b244d4cb70b696523771b0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn13SG_normal.png using Guid(35a787c732b244d4cb70b696523771b0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '9f84924d6dd353ce6242fd208635ddc4') in 0.031973 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn8SG_normal.png
+  artifactKey: Guid(646437600453c794aa7e144b1cb01872) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn8SG_normal.png using Guid(646437600453c794aa7e144b1cb01872) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'cc7877edbc8d8bd7efed4b7218d102c3') in 0.047592 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Decor/spaceship-interior/source/model/model/Material/blinn14SG.mat
+  artifactKey: Guid(d666402079e6a4848825378cd5c4bc70) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/source/model/model/Material/blinn14SG.mat using Guid(d666402079e6a4848825378cd5c4bc70) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '86994110d9baecf7848ba9acf6ff5749') in 0.016463 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000081 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn14SG_roughness.jpeg
+  artifactKey: Guid(33062e364e0ffd248bfa5b5a328f1604) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn14SG_roughness.jpeg using Guid(33062e364e0ffd248bfa5b5a328f1604) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'b990f289bbd9f597e6a4208baf4dc266') in 0.034591 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn17SG_albedo.jpeg
+  artifactKey: Guid(ef381bfd0c3b8c74796089d757052f9e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn17SG_albedo.jpeg using Guid(ef381bfd0c3b8c74796089d757052f9e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '8a453dc116effa5639ec8fcf5e3c8585') in 0.041096 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Decor/spaceship-interior/source/model/model/Material/blinn10SG.mat
+  artifactKey: Guid(db5a4a978da2a3c449c08241bf1e6cfc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/source/model/model/Material/blinn10SG.mat using Guid(db5a4a978da2a3c449c08241bf1e6cfc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '27df808bcb34958556896359a87cdd7d') in 0.014436 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn19SG_albedo.jpeg
+  artifactKey: Guid(277e8402b3417da4dbcf2fcb3d782e7a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn19SG_albedo.jpeg using Guid(277e8402b3417da4dbcf2fcb3d782e7a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '81df476a412b166c8ff5a9d0f4855a89') in 0.045178 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Decor/spaceship-interior/source/model/model/Material/blinn13SG.mat
+  artifactKey: Guid(c1a3da54b3bec734bb7a9ffd6c3fb962) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/source/model/model/Material/blinn13SG.mat using Guid(c1a3da54b3bec734bb7a9ffd6c3fb962) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'fd3e8a2ef4bdce775214fcd16029bdde') in 0.015800 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn6SG_roughness.jpeg
+  artifactKey: Guid(d77cfca9c490ecb469e4ad139505a5aa) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn6SG_roughness.jpeg using Guid(d77cfca9c490ecb469e4ad139505a5aa) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'e9d92cb1748dbc7d1f4332ccaa2c13bf') in 0.042988 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn3SG_AO.jpeg
+  artifactKey: Guid(425b05ce5196a8646a73892bd2253832) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn3SG_AO.jpeg using Guid(425b05ce5196a8646a73892bd2253832) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '07e02a156fc8f00ef5f7baca27845e8d') in 0.035499 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn17SG_metallic.jpeg
+  artifactKey: Guid(79c3266816ea86846b7986e95cb53c69) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn17SG_metallic.jpeg using Guid(79c3266816ea86846b7986e95cb53c69) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'a7d65e3c3a790bf82cbe6eb082f78663') in 0.046180 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn3SG_opacity.jpeg
+  artifactKey: Guid(6dd72a0cd4ceccd4ea88f52b1dbf82dc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn3SG_opacity.jpeg using Guid(6dd72a0cd4ceccd4ea88f52b1dbf82dc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'be003459c64e9cd0bc3a2b0b5cbe49b2') in 0.034899 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Decor/spaceship-interior/textures/lambert13SG_metallic.jpeg
+  artifactKey: Guid(cd50cdc54fda43048a1149a9d472eccc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/lambert13SG_metallic.jpeg using Guid(cd50cdc54fda43048a1149a9d472eccc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'b610c4a29a2837fe47cee40a01a401b9') in 0.032511 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn3SG_metallic.jpeg
+  artifactKey: Guid(22a1e074438418545b8e8818b313a44e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn3SG_metallic.jpeg using Guid(22a1e074438418545b8e8818b313a44e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'c70b181dc0d7d1a70fbe044b4946d899') in 0.046421 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/FundoCaixaPilarCima_metallic.jpeg
+  artifactKey: Guid(df20bc57d81fee14c84485ccf6ba5cea) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/FundoCaixaPilarCima_metallic.jpeg using Guid(df20bc57d81fee14c84485ccf6ba5cea) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '2ce406dd51c3f4f64f7cc725b3a0efde') in 0.033088 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/QuadradosCh_o_metallic.jpeg
+  artifactKey: Guid(f1bab8169d601fc4b82e739332fdf01f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/QuadradosCh_o_metallic.jpeg using Guid(f1bab8169d601fc4b82e739332fdf01f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'f7dca53a89dd7ecd31d98278eb6c9b71') in 0.037797 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/ParedePorta_albedo.jpeg
+  artifactKey: Guid(fcdda71c446f90e40ae89a676fe44875) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/ParedePorta_albedo.jpeg using Guid(fcdda71c446f90e40ae89a676fe44875) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '91ef02da1d9187ab9855c62f8164d70b') in 0.048021 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn15SG_normal.png
+  artifactKey: Guid(b971cbbe05cd932459d1bfc22bba8f4b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn15SG_normal.png using Guid(b971cbbe05cd932459d1bfc22bba8f4b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '20e179ab974896d32f5165e425f039ac') in 0.042040 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn10SG_normal.png
+  artifactKey: Guid(cfc76869e6e2324479f961ec1b4c3e28) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn10SG_normal.png using Guid(cfc76869e6e2324479f961ec1b4c3e28) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '85117bd66aaf90ff94ab1de0a97a2219') in 0.039309 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Decor/spaceship-interior/textures
+  artifactKey: Guid(7733f5492e0388d4aab2eabc453c22f4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures using Guid(7733f5492e0388d4aab2eabc453c22f4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '3e594f5fcd8e7b893f29ffb29241ad44') in 0.010010 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/LixeiraPAREDE_metallic.jpeg
+  artifactKey: Guid(b55e31daa091c4d4f8d271dcf47a2cc0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/LixeiraPAREDE_metallic.jpeg using Guid(b55e31daa091c4d4f8d271dcf47a2cc0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'cb984343743c54e34de3014489dd23fe') in 0.034853 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/spaceship-interior/source/model.zip
+  artifactKey: Guid(81d564402db470543be7726240bbb6e1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/source/model.zip using Guid(81d564402db470543be7726240bbb6e1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '8d9a999c04da6eecb140ae27a5d95b04') in 0.010211 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/LigaCanoInferior_albedo.jpeg
+  artifactKey: Guid(ea8ccae8f7ac87345a00338707666660) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/LigaCanoInferior_albedo.jpeg using Guid(ea8ccae8f7ac87345a00338707666660) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '8aa2b88ccec6fe8adcd122ea13449ad8') in 0.049369 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Decor/spaceship-interior/textures/lambert13SG_albedo.jpeg
+  artifactKey: Guid(e0da93703fdfa7c4e8de26e83498d0a0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/lambert13SG_albedo.jpeg using Guid(e0da93703fdfa7c4e8de26e83498d0a0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '80b6c52cab4485c7f19ec581bfcbb89d') in 0.038710 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/SuportesCaixaLigaCano_roughness.jpeg
+  artifactKey: Guid(d18721c19dc63e842a36ee7c5ccfa66f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/SuportesCaixaLigaCano_roughness.jpeg using Guid(d18721c19dc63e842a36ee7c5ccfa66f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '22e37807c0ddc5a459e3df2e8b3ff1f7') in 0.033914 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Decor/sci-fiX/source/Textures/GWC Rough Cast Steel_BaseColor.jpg
+  artifactKey: Guid(1306ec9f986a4344198f074ce1c7861f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fiX/source/Textures/GWC Rough Cast Steel_BaseColor.jpg using Guid(1306ec9f986a4344198f074ce1c7861f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '1fb0ab710a94808548eb2375a23cb067') in 0.045118 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Decor/spaceship-interior/source/model/model/Material/blinn17SG.mat
+  artifactKey: Guid(c8f5d01397fe03f42bbcd9fe060013b4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/source/model/model/Material/blinn17SG.mat using Guid(c8f5d01397fe03f42bbcd9fe060013b4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '4e0a43956480eb18e38b26574e7f678e') in 0.017673 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/AlcaTeto_albedo.jpeg
+  artifactKey: Guid(8cd67ea559603d64d939bab3b5e621d3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/AlcaTeto_albedo.jpeg using Guid(8cd67ea559603d64d939bab3b5e621d3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '494c29634c1c6fe3d0dad5f0e7306a54') in 0.035019 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Decor/sci-fi-corridor X
+  artifactKey: Guid(c38e8888e707df945a051f04a7d0e629) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X using Guid(c38e8888e707df945a051f04a7d0e629) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '2f19f3988a4059c993be80469b729d76') in 0.011624 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/star-trek-corridorroom X/source/Cooridoor2/Cooridoor2.obj
+  artifactKey: Guid(e5a84bce3b0bcdb468c1308b1cb2cf33) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/star-trek-corridorroom X/source/Cooridoor2/Cooridoor2.obj using Guid(e5a84bce3b0bcdb468c1308b1cb2cf33) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'aa2e52de92998399d39805cfcb242a37') in 0.217064 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 46
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Decor/spaceship-interior/textures/blinn8SG_albedo.jpeg
+  artifactKey: Guid(b9393ba198e68f74f8da268c55b11048) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/textures/blinn8SG_albedo.jpeg using Guid(b9393ba198e68f74f8da268c55b11048) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'd22dafe82b17238747d483a602752d87') in 0.036914 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Decor/spaceship-interior/source/model/model/Material/blinn6SG.mat
+  artifactKey: Guid(ac86111ecbe68be489746a101b55bc7d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/source/model/model/Material/blinn6SG.mat using Guid(ac86111ecbe68be489746a101b55bc7d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '6eb97c7ebcb053926d0ada1b525789de') in 0.012724 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/CanoLigaValvula_albedo.jpeg
+  artifactKey: Guid(bd8ba1c2fae8225478a3cfbb3a47983b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/CanoLigaValvula_albedo.jpeg using Guid(bd8ba1c2fae8225478a3cfbb3a47983b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '92c9ffdd1f22942c129802ce5883ef65') in 0.035769 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000115 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/SuporteDivisaTeto_emissive.jpeg
+  artifactKey: Guid(166c29d07270b0e4b9a82935a1d0cf3b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/SuporteDivisaTeto_emissive.jpeg using Guid(166c29d07270b0e4b9a82935a1d0cf3b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '4f1df117bf658f6a8591e8dc4ad83126') in 0.046421 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Decor/sci-fiX/source/Textures/GWC Rough Cast Steel_Normal.jpg
+  artifactKey: Guid(61790777765504c409d0f5f1981551be) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fiX/source/Textures/GWC Rough Cast Steel_Normal.jpg using Guid(61790777765504c409d0f5f1981551be) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '6461ad33e3fd23c5a85fc53219025521') in 0.035318 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/textures/Pipes_detail_Bake1_PBR_Diffuse.png
+  artifactKey: Guid(fd312b559244c1545b2218ed504e0633) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/textures/Pipes_detail_Bake1_PBR_Diffuse.png using Guid(fd312b559244c1545b2218ed504e0633) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'f27f1585fa03330ab8b70c7dc5372562') in 0.041414 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/AlcaInferiorColuna_albedo.jpeg
+  artifactKey: Guid(8a9926d5b968cbb4d8b1d962fc03a7a0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/AlcaInferiorColuna_albedo.jpeg using Guid(8a9926d5b968cbb4d8b1d962fc03a7a0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '587ddec54c50095953e88347641c0ff9') in 0.048058 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/source/Materials/Cube_Baked.mat
+  artifactKey: Guid(7c83f62c88ebf624d981a8a5817c2e4a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/source/Materials/Cube_Baked.mat using Guid(7c83f62c88ebf624d981a8a5817c2e4a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'c4534d309653930009578f9e8520e6ff') in 0.014892 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/LuzTeto_metallic.jpeg
+  artifactKey: Guid(a4435d8408a63b2488e0ad37aee1906d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/LuzTeto_metallic.jpeg using Guid(a4435d8408a63b2488e0ad37aee1906d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'b1af70fe176f09d97688b277eb58f569') in 0.039802 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Decor/sci-fiX/source/Textures/GWC Basic Steel_BaseColor.jpg
+  artifactKey: Guid(ac3edc2996c322b49b125486caee9a5b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fiX/source/Textures/GWC Basic Steel_BaseColor.jpg using Guid(ac3edc2996c322b49b125486caee9a5b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '4bb2d7a8513b6bac87faea7e96fb3926') in 0.036085 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/textures/side_Bake1_PBR_Diffuse.png
+  artifactKey: Guid(3640927d1b61a824abce64f493a49210) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/textures/side_Bake1_PBR_Diffuse.png using Guid(3640927d1b61a824abce64f493a49210) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '4abd6423f73fd0332bd27cabc372f97a') in 0.047928 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Decor/scifi-basement-wall X/textures/Wall_Height.tga.png
+  artifactKey: Guid(4461987dc6a92cc4195567fcd54ae679) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/scifi-basement-wall X/textures/Wall_Height.tga.png using Guid(4461987dc6a92cc4195567fcd54ae679) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'e95df970073cb3061ea67dc6790567d9') in 0.034456 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Decor/spaceship-interior/source/model
+  artifactKey: Guid(6cb8753879f82804a9e7a5406f1ae129) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/spaceship-interior/source/model using Guid(6cb8753879f82804a9e7a5406f1ae129) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'd2cfc9b30b8bc5e579170c1764647463') in 0.011687 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 139.121304 seconds.
+  path: Assets/Decor/DizzyMedia/_Assets/LP Sets_Sci-fi Interior/Prefabs/Props/Single/BoxSmall_Holder.prefab
+  artifactKey: Guid(535f3a5e04e9c8345b8a3e6a5b1eea39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Decor/DizzyMedia/_Assets/LP Sets_Sci-fi Interior/Prefabs/Props/Single/BoxSmall_Holder.prefab using Guid(535f3a5e04e9c8345b8a3e6a5b1eea39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc2fa87552b9d5cafea2c92a3cbf0cec') in 0.342968 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Decor/DizzyMedia/_Assets/LP Sets_Sci-fi Interior/Prefabs/Props/Single/Container_Holder (Green).prefab
+  artifactKey: Guid(1aec6b33fb9565f47b8e62e703f02736) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Decor/DizzyMedia/_Assets/LP Sets_Sci-fi Interior/Prefabs/Props/Single/Container_Holder (Green).prefab using Guid(1aec6b33fb9565f47b8e62e703f02736) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd788e431f3b30cee9bf4dd4f7b066047') in 0.018923 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 409.654009 seconds.
+  path: Assets/Prefab/Ground.prefab
+  artifactKey: Guid(2457dfd5205249a4db18932bfa57784a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Prefab/Ground.prefab using Guid(2457dfd5205249a4db18932bfa57784a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '5d78087c7cfe754471cddad660568b62') in 0.023522 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 9.146991 seconds.
+  path: Assets/Settings/URP-Balanced.asset
+  artifactKey: Guid(e1260c1148f6143b28bae5ace5e9c5d1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Settings/URP-Balanced.asset using Guid(e1260c1148f6143b28bae5ace5e9c5d1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '5efec34d62886d5ff8acbc62f2ae527d') in 0.078173 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Decor/DizzyMedia/_Assets/LP Sets_Sci-fi Interior/Models/_Materials/DiamondPlate_2K/DIAMONDPLATE.mat
+  artifactKey: Guid(11ab37fc9fd75144181c9486b81c11df) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/DizzyMedia/_Assets/LP Sets_Sci-fi Interior/Models/_Materials/DiamondPlate_2K/DIAMONDPLATE.mat using Guid(11ab37fc9fd75144181c9486b81c11df) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: 'a401b727caba997cbf652760383dd700') in 0.026799 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Settings/URP-Performant.asset
+  artifactKey: Guid(d0e2fc18fe036412f8223b3b3d9ad574) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Settings/URP-Performant.asset using Guid(d0e2fc18fe036412f8223b3b3d9ad574) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)  -> (artifact id: '861124df92bc19ba028764d2d1c78126') in 0.043014 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+TcpMessagingSession - receive error
+AssetImportWorkerClient::OnTransportError - code=10054 error=Une connexion existante a dû être fermée par l’hôte distant.

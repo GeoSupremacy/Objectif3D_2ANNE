@@ -1,0 +1,595 @@
+Using pre-set license
+Built from '2022.3/release' branch; Version is '2022.3.12f1 (4fe6e059c7ef) revision 5236448'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22621) 64bit Professional' Language: 'fr' Physical Memory: 32688 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker5
+-projectPath
+D:/Unity/Objectif3D_2ANNE/test Asset/TestAsset
+-logFile
+Logs/AssetImportWorker5.log
+-srvPort
+52299
+Successfully changed project path to: D:/Unity/Objectif3D_2ANNE/test Asset/TestAsset
+D:/Unity/Objectif3D_2ANNE/test Asset/TestAsset
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [10108] Host "[IP] 192.168.10.203 [Port] 0 [Flags] 2 [Guid] 2793383310 [EditorId] 2793383310 [Version] 1048832 [Id] WindowsEditor(7,Poste-G203) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [10108] Host "[IP] 192.168.10.203 [Port] 0 [Flags] 2 [Guid] 2793383310 [EditorId] 2793383310 [Version] 1048832 [Id] WindowsEditor(7,Poste-G203) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 7 workers.
+Refreshing native plugins compatible for Editor in 14.54 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.12f1 (4fe6e059c7ef)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Unity/Objectif3D_2ANNE/test Asset/TestAsset/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1060 6GB (ID=0x1c03)
+    Vendor:   NVIDIA
+    VRAM:     6043 MB
+    Driver:   31.0.15.3623
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56624
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.012119 seconds.
+- Loaded All Assemblies, in  0.913 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.665 seconds
+Domain Reload Profiling: 1577ms
+	BeginReloadAssembly (305ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (2ms)
+	RebuildCommonClasses (104ms)
+	RebuildNativeTypeToScriptingClass (24ms)
+	initialDomainReloadingComplete (129ms)
+	LoadAllAssembliesAndSetupDomain (349ms)
+		LoadAssemblies (301ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (346ms)
+			TypeCache.Refresh (344ms)
+				TypeCache.ScanAssembly (319ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (667ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (514ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (18ms)
+			SetLoadedEditorAssemblies (12ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (4ms)
+			ProcessInitializeOnLoadAttributes (317ms)
+			ProcessInitializeOnLoadMethodAttributes (161ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.187 seconds
+Refreshing native plugins compatible for Editor in 3.23 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.256 seconds
+Domain Reload Profiling: 2441ms
+	BeginReloadAssembly (214ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (10ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (29ms)
+	RebuildCommonClasses (64ms)
+	RebuildNativeTypeToScriptingClass (22ms)
+	initialDomainReloadingComplete (74ms)
+	LoadAllAssembliesAndSetupDomain (810ms)
+		LoadAssemblies (541ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (393ms)
+			TypeCache.Refresh (336ms)
+				TypeCache.ScanAssembly (311ms)
+			ScanForSourceGeneratedMonoScriptInfo (34ms)
+			ResolveRequiredComponents (22ms)
+	FinalizeReload (1257ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (964ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (9ms)
+			SetLoadedEditorAssemblies (8ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (198ms)
+			ProcessInitializeOnLoadAttributes (628ms)
+			ProcessInitializeOnLoadMethodAttributes (109ms)
+			AfterProcessingInitializeOnLoad (10ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (10ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 3.52 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4920 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 92 unused Assets / (1.9 MB). Loaded Objects now: 5367.
+Memory consumption went from 204.4 MB to 202.5 MB.
+Total: 7.481600 ms (FindLiveObjects: 0.632000 ms CreateObjectMapping: 0.511100 ms MarkObjects: 4.709600 ms  DeleteObjects: 1.627300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/WelcomeScreen.cs: 624a5bdd88284e4e83207c82ab152005 -> af7c0e1c3e24e59f2fba68765fc86aa1
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/ExtendedFlycam.cs: 071be4677c7e856b68a0f0a30b2acc10 -> 15643ed9575746ceed8374f6bf01240b
+  custom:scripting/monoscript/fileName/TransInd.cs: 62c5b542a60442b8a5f661c814e99337 -> 3bb3a152e248feabb2978c6439bc45d8
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:scripting/monoscript/fileName/DoorCont.cs: 19a678b844c09baeac5a7aea5cd44865 -> ed981916c23737fe01d88a6bfef1c8af
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/LPS_SFInt_Welcome.cs: d8cc154706c0741801722a910cf32a39 -> 8ccdc0574d65aee37ac4af3b9737a198
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 74757.311714 seconds.
+  path: Assets/Decor/DizzyMedia/_Assets/LP Sets_Sci-fi Interior/Resources/Post Processing/LPS_SF_Interior.asset
+  artifactKey: Guid(e8313cb5337c07142ac55fe0e517eefd) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b)
+Start importing Assets/Decor/DizzyMedia/_Assets/LP Sets_Sci-fi Interior/Resources/Post Processing/LPS_SF_Interior.asset using Guid(e8313cb5337c07142ac55fe0e517eefd) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '5115403e3f6dca7df0f9703274f14cb0') in 0.140565 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Decor/DizzyMedia/_Assets/LP Sets_Sci-fi Interior/Prefabs/Props/Single/BoxLarge_Holder.prefab
+  artifactKey: Guid(8017cba48c7353e4b810880de3286ba9) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b)
+Start importing Assets/Decor/DizzyMedia/_Assets/LP Sets_Sci-fi Interior/Prefabs/Props/Single/BoxLarge_Holder.prefab using Guid(8017cba48c7353e4b810880de3286ba9) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ea3d1ffea5f82ee9a90a281a51f92602') in 0.218384 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Decor/DizzyMedia/_Assets/LP Sets_Sci-fi Interior/Prefabs/Environment/Pieces/Walls/Wall_Type1_Holder (red).prefab
+  artifactKey: Guid(1d22940d7db4d584680a3c2bb2e57217) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b)
+Start importing Assets/Decor/DizzyMedia/_Assets/LP Sets_Sci-fi Interior/Prefabs/Environment/Pieces/Walls/Wall_Type1_Holder (red).prefab using Guid(1d22940d7db4d584680a3c2bb2e57217) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b8cc7ad042324936e699bc18ea8d0a55') in 0.033493 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 44
+========================================================================
+Received Import Request.
+  Time since last request: 0.056888 seconds.
+  path: Assets/Decor/sci-fi-corridor X/source/model/model/Materials/SuportesCaixaLigaCano.mat
+  artifactKey: Guid(dcf467bbd4ccfc14fbe181644340e998) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/source/model/model/Materials/SuportesCaixaLigaCano.mat using Guid(dcf467bbd4ccfc14fbe181644340e998) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '354de1a2ec2424646db33ae44e2cd13b') in 0.092851 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Decor/sci-fi-corridor X/source/model/model/Materials/CaixaCano.mat
+  artifactKey: Guid(4b6a1e15950e6664a97ffbcc53f69ff8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/source/model/model/Materials/CaixaCano.mat using Guid(4b6a1e15950e6664a97ffbcc53f69ff8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '0e4793deb2f20a98b32246ed7b19c7cf') in 0.022600 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Decor/sci-fi-corridor X/source/model/model/Materials/AlcaParedeArmazen.mat
+  artifactKey: Guid(3e56963674af7d34ba6ea452bfba60ba) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/source/model/model/Materials/AlcaParedeArmazen.mat using Guid(3e56963674af7d34ba6ea452bfba60ba) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '3e93666a8a74c7cbfc904925c8935d22') in 0.021228 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Decor/sci-fi-corridor X/source/model/model/Materials/AlcaInferiorColuna.mat
+  artifactKey: Guid(60b0bdac447127444964ddbf04cba6ee) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/source/model/model/Materials/AlcaInferiorColuna.mat using Guid(60b0bdac447127444964ddbf04cba6ee) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '732208eeb9fab78915fc46ee2dbebab6') in 0.022424 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Decor/sci-fi-corridor X/source/model/model/Materials/fechaduraCaixa.mat
+  artifactKey: Guid(56debd5c98032d440afd5160fe412bef) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/source/model/model/Materials/fechaduraCaixa.mat using Guid(56debd5c98032d440afd5160fe412bef) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ae45133d0a90fe4b785d5131b2961134') in 0.021964 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Decor/sci-fi-corridor X/source/model/model/Materials/lambert63.mat
+  artifactKey: Guid(b01125240be09eb498a5acf1328702d2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/source/model/model/Materials/lambert63.mat using Guid(b01125240be09eb498a5acf1328702d2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '0bb2c2150cfc995ab35d76e8f684b72d') in 0.023494 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-corridor X/source/model/model/Materials/LigaCanoTeto.mat
+  artifactKey: Guid(f7f284570796e86478c78a294000de63) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/source/model/model/Materials/LigaCanoTeto.mat using Guid(f7f284570796e86478c78a294000de63) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b6f6ae25deb15d01a114ce6662caf37c') in 0.030699 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Decor/sci-fi-corridor X/source/model/model/Materials/LuzTeto.mat
+  artifactKey: Guid(75105f41ebe88844a82b094e45a31d63) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/source/model/model/Materials/LuzTeto.mat using Guid(75105f41ebe88844a82b094e45a31d63) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '47768987d01589f8c7601f14299b327a') in 0.031398 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Decor/sci-fi-corridor X/source/model/model/Materials/MeioPilar.mat
+  artifactKey: Guid(02ccdd9e0d139de469ae5b758a709212) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/source/model/model/Materials/MeioPilar.mat using Guid(02ccdd9e0d139de469ae5b758a709212) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '78dbf7180a2d0e871fd942171dcd6298') in 0.022805 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Decor/sci-fi-corridor X/source/model/model/Materials/TetoDivisa.mat
+  artifactKey: Guid(7d6161d1c78bc6b4ca50b5a252b6fcfd) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/source/model/model/Materials/TetoDivisa.mat using Guid(7d6161d1c78bc6b4ca50b5a252b6fcfd) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ad2f297361ef8a553e55add35746ca3a') in 0.018102 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 1.067339 seconds.
+  path: Assets/Decor/DizzyMedia/_Assets/LP Sets_Sci-fi Interior/Models/_Materials/DiamondPlate_2K/New Universal Render Pipeline Asset.asset
+  artifactKey: Guid(23fb5fd2dcee6cb4ba75cb9257c7b2ef) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/DizzyMedia/_Assets/LP Sets_Sci-fi Interior/Models/_Materials/DiamondPlate_2K/New Universal Render Pipeline Asset.asset using Guid(23fb5fd2dcee6cb4ba75cb9257c7b2ef) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'ba1315f35563764de9d528bf3f7082c9') in 0.127361 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.003290 seconds.
+  path: Assets/Decor/sci-fiX/source/Textures/Steel Damaged Scratched and Smudged_Alpha.tif
+  artifactKey: Guid(d9f592a5593b0ed46b5eff7408ac9272) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fiX/source/Textures/Steel Damaged Scratched and Smudged_Alpha.tif using Guid(d9f592a5593b0ed46b5eff7408ac9272) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2458e1f12ace693f24959d24ae3cd15e') in 0.121326 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Decor/sci-fiX/source/Textures/Steel Damaged Scratched and Smudged_Metallic.tif
+  artifactKey: Guid(48bdbf94a293d9f48b39ba88f5ef8187) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fiX/source/Textures/Steel Damaged Scratched and Smudged_Metallic.tif using Guid(48bdbf94a293d9f48b39ba88f5ef8187) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '721b8aa8503d3d3c426d9a6781f05833') in 0.067138 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/textures/plates_Bake1_PBR_Diffuse.png
+  artifactKey: Guid(8f2a369af3725c145877b1ca4e73144c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/textures/plates_Bake1_PBR_Diffuse.png using Guid(8f2a369af3725c145877b1ca4e73144c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f1fd0fc9507e7597283d88d5aed1456b') in 0.076274 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.004535 seconds.
+  path: Assets/Decor/scifi-basement-wall X/textures/02___Default_roughness.jpg
+  artifactKey: Guid(c95c690c9e1e54f4d87074ce548962f2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/scifi-basement-wall X/textures/02___Default_roughness.jpg using Guid(c95c690c9e1e54f4d87074ce548962f2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '0c67b7617ec6ab3c2dbcc387de837a2a') in 0.070279 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/textures/Pipes_detail_Bake1_PBR_Roughness.png
+  artifactKey: Guid(d93b656347103b44fb02fafc90621f92) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/textures/Pipes_detail_Bake1_PBR_Roughness.png using Guid(d93b656347103b44fb02fafc90621f92) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '4a4bf703efa6087e3efa8e5c2f3536ac') in 0.068622 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/source/Materials/base_Baked.mat
+  artifactKey: Guid(7a2d594d5ee5308418e189c0ff0b3f4a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/source/Materials/base_Baked.mat using Guid(7a2d594d5ee5308418e189c0ff0b3f4a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a553cbe30ca91f71b55bb03916f23651') in 0.028665 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Decor/sci-fiX/source/Materials/White Marble Texture.002.mat
+  artifactKey: Guid(9d4a370f8d15dec41bf1cdfa6fed8d37) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fiX/source/Materials/White Marble Texture.002.mat using Guid(9d4a370f8d15dec41bf1cdfa6fed8d37) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'd8d732bc4b2d6cd76643b34cc0c5899c') in 0.037026 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/textures/plates_Bake1_PBR_Roughness.png
+  artifactKey: Guid(962dc78110c0b9449ae801ac3b6e27d1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/textures/plates_Bake1_PBR_Roughness.png using Guid(962dc78110c0b9449ae801ac3b6e27d1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '2a1883086a50013bc4b0ade169ab6421') in 0.052480 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/BaixoDivisaTeto_metallic.jpeg
+  artifactKey: Guid(9d2d8423c34cc1d4abf3c5c159e41841) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/BaixoDivisaTeto_metallic.jpeg using Guid(9d2d8423c34cc1d4abf3c5c159e41841) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '42b658c5def46439ee4dc32d84ca416a') in 0.055178 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Decor/sci-fiX/source/Materials/Gray white plastic.002.mat
+  artifactKey: Guid(0e2b43e50b7ff624c991ba9585d719fe) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fiX/source/Materials/Gray white plastic.002.mat using Guid(0e2b43e50b7ff624c991ba9585d719fe) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '89309a81cddb6c20eda18ffa06e54f7d') in 0.046821 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Decor/sci-fiX
+  artifactKey: Guid(94268e2a29c427f4a82bf400353ec7de) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fiX using Guid(94268e2a29c427f4a82bf400353ec7de) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'b50f8ad1bc3c71557d746e3d9b3a119b') in 0.039832 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Decor/sci-fiX/source/Materials/Material.004.mat
+  artifactKey: Guid(90d0e53cd07d2be49931acc44c1b2c9a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fiX/source/Materials/Material.004.mat using Guid(90d0e53cd07d2be49931acc44c1b2c9a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '9ddd6a2d32e5adfe7584653d6c7fd089') in 0.023695 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Decor/sci-fiX/source/Materials/pipe.002.mat
+  artifactKey: Guid(72a00668297905c4398801d19913dc46) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fiX/source/Materials/pipe.002.mat using Guid(72a00668297905c4398801d19913dc46) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'a710ff31e4c4e279050fcec7aa1f4b9c') in 0.021801 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000328 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/AbaSobrandoCaixaParedeJJanela_roughness.jpeg
+  artifactKey: Guid(dcd26f1644a735e4bb260c3ebaa88d69) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/AbaSobrandoCaixaParedeJJanela_roughness.jpeg using Guid(dcd26f1644a735e4bb260c3ebaa88d69) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '3425cf5d2f8d096a312b7bc15b70b225') in 0.083129 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/Televisao_normal.png
+  artifactKey: Guid(0123155450dfa0b458a5aba13d02f05e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/Televisao_normal.png using Guid(0123155450dfa0b458a5aba13d02f05e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '96becdb4996863d2d73347b4dd6e8475') in 0.092960 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/AlcaChao_albedo.jpeg
+  artifactKey: Guid(a1990092b5aafd045bf2b4bd17429637) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/AlcaChao_albedo.jpeg using Guid(a1990092b5aafd045bf2b4bd17429637) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'cbd2635b82e2a39c172c1526219ac216') in 0.115723 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/TelaComputador_metallic.jpeg
+  artifactKey: Guid(118141c657fef2b4885a2734c89bcdb6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/TelaComputador_metallic.jpeg using Guid(118141c657fef2b4885a2734c89bcdb6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'afb3c4bece8f51aad29ac7b8786044f6') in 0.079379 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/AlcaColuna_normal.png
+  artifactKey: Guid(2e0cf9d17ab3a3b44b202b2eeff3f6fb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/AlcaColuna_normal.png using Guid(2e0cf9d17ab3a3b44b202b2eeff3f6fb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '64ab60b32979d35cb1492a8d8023169c') in 0.066874 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/TetoDivisa_roughness.jpeg
+  artifactKey: Guid(f91d08f5b4153634ea37f973459549c4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/TetoDivisa_roughness.jpeg using Guid(f91d08f5b4153634ea37f973459549c4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'cceedab509f42e0053b36325498e09a1') in 0.074938 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/CorpoCaixa_roughness.jpeg
+  artifactKey: Guid(b728de1d19975da4bb6bebdf26301aa9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/CorpoCaixa_roughness.jpeg using Guid(b728de1d19975da4bb6bebdf26301aa9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c3bf2d93c799e65d59c242656f7cca46') in 0.087154 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/CaixaCano_metallic.jpeg
+  artifactKey: Guid(8a90a436901308d4f8edcbd49e4fed13) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/CaixaCano_metallic.jpeg using Guid(8a90a436901308d4f8edcbd49e4fed13) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'afc240baa7535e91fd5876c8d12aacb1') in 0.151729 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.006745 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/LinhaPorta_roughness.jpeg
+  artifactKey: Guid(3df41c841fb469b4392c099cce769ce7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/LinhaPorta_roughness.jpeg using Guid(3df41c841fb469b4392c099cce769ce7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '87b2f089e18b67b6649abd30f395930c') in 0.084804 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/AlcaColuna_roughness.jpeg
+  artifactKey: Guid(612719ebd7c474846b7010eb8a686c28) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/AlcaColuna_roughness.jpeg using Guid(612719ebd7c474846b7010eb8a686c28) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f6b2fafd15b843954982fa9b5f1e2ed4') in 0.104099 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.001341 seconds.
+  path: Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/textures/lights_Bake1_PBR_Roughness.png
+  artifactKey: Guid(8a5596c46dd0320428d85d20356b7455) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-futuristic-corridor-spaceshipX/textures/lights_Bake1_PBR_Roughness.png using Guid(8a5596c46dd0320428d85d20356b7455) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'cd0ccd559faf8b1a20486c5338bc58b8') in 0.100117 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/AbaSobrandoCaixaParedeJJanela_metallic.jpeg
+  artifactKey: Guid(1371af47c0c4e464997276413fc0b998) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/AbaSobrandoCaixaParedeJJanela_metallic.jpeg using Guid(1371af47c0c4e464997276413fc0b998) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f99af21dc3e49df3b8fba84d8d882a68') in 0.058413 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/EntornoPortaAutomatica_normal.png
+  artifactKey: Guid(780b59a9a4b6e364fb2d2033b9067f29) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/EntornoPortaAutomatica_normal.png using Guid(780b59a9a4b6e364fb2d2033b9067f29) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '64b8ae540b9599391ea2bad645dce994') in 0.044858 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/LinhaPorta_metallic.jpeg
+  artifactKey: Guid(fa79cda150efec44ca1af0331a0c0e74) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/LinhaPorta_metallic.jpeg using Guid(fa79cda150efec44ca1af0331a0c0e74) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c6b91ec5e3ad8d743715691cb0abc66a') in 0.029429 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/PrendeDivisaTeto_albedo.jpeg
+  artifactKey: Guid(035d4ed5086811e4a979ac84498d35cb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/PrendeDivisaTeto_albedo.jpeg using Guid(035d4ed5086811e4a979ac84498d35cb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'cd5f2b6b9b577f240d5172995803c839') in 0.047835 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/CanosGrandeValvula_metallic.jpeg
+  artifactKey: Guid(452d9252d20773247aae9ac04720a980) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/CanosGrandeValvula_metallic.jpeg using Guid(452d9252d20773247aae9ac04720a980) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'f755541d932abccdee75a801fdb4fd73') in 0.051643 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/ParedePorta_roughness.jpeg
+  artifactKey: Guid(f78a18280f850ab4ca63a78353ce1eb2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/ParedePorta_roughness.jpeg using Guid(f78a18280f850ab4ca63a78353ce1eb2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: 'c25baaf864b3e998d36ca34d17d8d237') in 0.034248 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Decor/sci-fi-corridor X/textures/ChaoPadrao_roughness.jpeg
+  artifactKey: Guid(6921a60e89263d34da34e506b38a1cb5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Decor/sci-fi-corridor X/textures/ChaoPadrao_roughness.jpeg using Guid(6921a60e89263d34da34e506b38a1cb5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) Generated GUIDs only implemented for interfaces!
+ -> (artifact id: '196f603d637f4420e1af223103e2cdae') in 0.051969 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+Editor requested this worker to shutdown with reason: balancing worker count downwards
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: L’opération d’entrée/sortie a été abandonnée en raison de l’arrêt d’un thread ou à la demande d’une application.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
