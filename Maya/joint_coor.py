@@ -1,3 +1,5 @@
+
+
 import maya.cmds as cmds
 from PySide2 import QtWidgets as qtw
 from PySide2.QtCore import Qt
@@ -47,8 +49,8 @@ class util(qtw.QWidget):
         def add(self, widget):
             self.owner.layout.addWidget(widget)
 #endregion
-
-class curve_tool:
+class keyframe_tool_corr:
+     
     def get_all(self):
         return cmds.ls(type='nurbsCurve', sn =True)
     
@@ -57,24 +59,34 @@ class curve_tool:
         if curve_name=="":
             return
         t=0
-        group_name =curve_name + '_items'
-        if  cmds.objExists(group_name):
-            cmds.delete(group_name)
-        cmds.group (em =True, name =group_name)
+      
+        joints = []
+        loc =[]
+        ik =[]
+        
         while(t<1):
             
             pos =cmds.pointOnCurve(curve_name, pr =t, top= True, p =True)
-            object_name =cmds.polySphere()
-            cmds.move(pos[0],pos[1],pos[2])
-            cmds.parent(object_name, group_name)
+            j1=cmds.joint(p =pos)
             t+=(1/itemNumber)
+            joints.append(j1)
+        
+        for i in range(len(joints)):
+            if i<len(joints)-1:
+                ik.append(cmds.ikHandle(sj= joints[i], ee= joints[i+1]))
+                offset =cmds.getAttr(ik[i][0] + ".translate")[0]
+                loc.append(cmds.spaceLocator(p=(offset[0], offset[1] +5, offset[2])))
+                cmds.parent(ik[i][0], 'joint1')
+                cmds.parent(loc[i], 'joint1')
 
+        for i in range(len(loc)):
+            cmds.parentConstraint(loc[i], ik [i][0], mo = True)
+        
+class keyframe_tool_ui(qtw.QWidget):
 
-class curve_tool_ui(qtw.QWidget):
-
-    def __init__(self, tools):
+    def __init__(self,):
         super().__init__()
-        self.curve =tools
+        self.curve =keyframe_tool_corr()
         self.utils =util(self)
         self.draw_ui()
         self.bind_ui()
@@ -111,5 +123,5 @@ class curve_tool_ui(qtw.QWidget):
     def send_curve_name(self,name):
         self.current_curve_name = name.text()
 
-app=curve_tool_ui(curve_tool())
+app=keyframe_tool_ui()
 app.show()

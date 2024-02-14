@@ -47,8 +47,8 @@ class util(qtw.QWidget):
         def add(self, widget):
             self.owner.layout.addWidget(widget)
 #endregion
-
-class curve_tool:
+    
+class keyframe_tool:
     def get_all(self):
         return cmds.ls(type='nurbsCurve', sn =True)
     
@@ -60,21 +60,27 @@ class curve_tool:
         group_name =curve_name + '_items'
         if  cmds.objExists(group_name):
             cmds.delete(group_name)
-        cmds.group (em =True, name =group_name)
+        tab = []
+        index =0
         while(t<1):
             
             pos =cmds.pointOnCurve(curve_name, pr =t, top= True, p =True)
-            object_name =cmds.polySphere()
+            j1=cmds.joint()
             cmds.move(pos[0],pos[1],pos[2])
-            cmds.parent(object_name, group_name)
+            tab.append(j1)
+            if( index%3 ==0 and index >0):
+                print(index) 
+                cmds.ikHandle(sj=tab[index-2], ee= tab[index])
+            index+=1
             t+=(1/itemNumber)
+        #cmds.ikHandle(n ="ik_leg", sj=tab[0], ee= tab[index])
+            
 
+class keyframe_tool_ui(qtw.QWidget):
 
-class curve_tool_ui(qtw.QWidget):
-
-    def __init__(self, tools):
+    def __init__(self,):
         super().__init__()
-        self.curve =tools
+        self.curve =keyframe_tool()
         self.utils =util(self)
         self.draw_ui()
         self.bind_ui()
@@ -111,5 +117,5 @@ class curve_tool_ui(qtw.QWidget):
     def send_curve_name(self,name):
         self.current_curve_name = name.text()
 
-app=curve_tool_ui(curve_tool())
+app=keyframe_tool_ui()
 app.show()
