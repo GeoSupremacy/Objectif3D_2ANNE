@@ -1,6 +1,9 @@
 #include <iostream>
 #include <vector>
 #include <STRING>
+
+using namespace std;
+
 class Component {
   
 protected:
@@ -153,16 +156,11 @@ void ClientCode2(Component* component1, Component* component2) {
 
 void Init()
 {
-
-}
-
-int main()
-{
     Component* simple = new Leaf;
-    std::cout << "Client: I've got a simple component:"<<std::endl;
+    std::cout << "Client: I've got a simple component:" << std::endl;
     simple->SetValue(100);
     ClientCode(simple);
-    std::cout <<std::endl;
+    std::cout << std::endl;
     /**
      * ...as well as the complex composites.
      */
@@ -184,11 +182,11 @@ int main()
     tree->Add(branch2);
     std::cout << "Client: Now I've got a composite tree:" << std::endl;
     ClientCode(tree);
-    
+
 
     std::cout << "Client: I don't need to check the components classes even when managing the tree:" << std::endl;
     ClientCode2(tree, simple);
-   
+
 
     delete simple;
     delete tree;
@@ -197,7 +195,14 @@ int main()
     delete leaf_1;
     delete leaf_2;
     delete leaf_3;
-
+}
+int a = 5;
+int b = a;
+int main()
+{
+  
+    cout << &a<<endl;
+    cout << &b;
     return 0;
 }
 
