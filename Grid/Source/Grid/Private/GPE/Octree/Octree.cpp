@@ -15,52 +15,56 @@ AOctree::AOctree()
 }
 
 
-
-
 void AOctree::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	if (!root)return;
+	root->SetCanRun(true);
 }
+
+// Called every frame
 void AOctree::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
 }
+
 bool AOctree::ShouldTickIfViewportsOnly() const
 {
-	return shouldTickIfViewportsOnly;
+	return true;
 }
 
 void AOctree::InitRootCell()
 {
-	if (!root) return;
+	if (!root)return;
 	UNavigationSystemV1* _nav = UNavigationSystemV1::GetCurrent(GetWorld());
-	if (!_nav) return;
+	if (!_nav)return;
 	FVector _navigableBounds = _nav->GetNavigableWorldBounds().GetExtent();
 	FTimerHandle _timer;
 	FTimerDelegate _delegate;
 	_delegate.BindUObject(root, &AOctreeCell::SetCellDimensions, _navigableBounds.X, _navigableBounds.Y, _navigableBounds.Z);
-	GetWorld()->GetTimerManager().SetTimer(_timer, _delegate, 2.1f, false, .1f);
-	root->AttachToActor(this, FAttachmentTransformRules::SnapToTargetIncludingScale);
+	GetWorld()->GetTimerManager().SetTimer(_timer, _delegate, 2.f, false, .1f);
+	root->AttachToActor(this, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
 	root->SetOctree(this);
 }
+
 void AOctree::GenerateOctree()
 {
-	if (root) return;
-	root = GetWorld()->SpawnActor<AOctreeCell>(cellToSPawn, GetActorLocation(), FRotator::ZeroRotator);
-
+	if (root)return;
+	root = GetWorld()->SpawnActor<AOctreeCell>(cellToSpawn, GetActorLocation(), FRotator::ZeroRotator);
 	if (!root)
 	{
-		SCREEN_DEBUG_MESSAGE_ERROR(10, "Not instanciate root");
+		UE_LOG(LogTemp, Warning, TEXT("ERROR : Failed to create root cell"));
 		return;
 	}
 	InitRootCell();
+
 }
+
 void AOctree::DestroyOctree()
 {
 	if (!root)return;
+
 	root->CustomDestroy();
 	Destroy();
 }
-

@@ -12,9 +12,10 @@ USTRUCT()
 struct FOctreeCellParameter
 {
 	GENERATED_BODY()
-	UPROPERTY(EditAnywhere) int brancheID = 0;
-	UPROPERTY(EditAnywhere) int childrenNumberCapacity =8;
-	UPROPERTY(EditAnywhere) int capacity =0;
+		UPROPERTY(EditAnywhere)
+		int childrenNumberToSpawn = 8;
+	UPROPERTY(EditAnywhere)
+		int capacity = 0;
 };
 
 
@@ -24,51 +25,76 @@ UCLASS()
 class GRID_API AOctreeCell : public AActor
 {
 	GENERATED_BODY()
-private:
-	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnNumberOfActorInsideUpdate, int, _numberOfActorInside);
-	UPROPERTY(BlueprintCallable, BlueprintAssignable) FOnNumberOfActorInsideUpdate onNumberOfActorInsideUpdate;
-private:
-	UPROPERTY(EditAnywhere, Category= "AOctreeCell|Internals") TObjectPtr<AOctree> octree = nullptr;
-	UPROPERTY(EditAnywhere, Category = "AOctreeCell|Internals") TObjectPtr<AOctreeCell> parent = nullptr;
-	UPROPERTY(EditAnywhere, Category = "AOctreeCell|Internals") TArray<AOctreeCell*> cellChildren;
-	UPROPERTY(EditAnywhere, Category = "AOctreeCell|Internals") TObjectPtr<UBoxComponent> box = nullptr;
-	int brancheID;
+		DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnNumberOfActorsInsideUpdate, int, _numberOfActorsInside);
 
-	UPROPERTY(EditAnywhere, Category = "AOctreeCell|Internals")  FOctreeCellParameter cellParameters = FOctreeCellParameter();
-	UPROPERTY(EditAnywhere, Category = "AOctreeCell|Internals") bool isActive= true;
+	UPROPERTY(BlueprintCallable, BlueprintAssignable)
+		FOnNumberOfActorsInsideUpdate onNumberOfActorsInsideUpdate;
+
+	UPROPERTY(EditAnywhere)
+		int branchingID = 1;
+	UPROPERTY(EditAnywhere, Category = "OctreeCell|Internals")
+		TObjectPtr<AOctree> octree = nullptr;
+	UPROPERTY(EditAnywhere, Category = "OctreeCell|Internals")
+		TObjectPtr<AOctreeCell> parent = nullptr;
+	UPROPERTY(EditAnywhere, Category = "OctreeCell|Internals")
+		TObjectPtr<UBoxComponent> box = nullptr;
+	UPROPERTY(EditAnywhere, Category = "OctreeCell|Parameters")
+		FOctreeCellParameter cellParameters = FOctreeCellParameter();
+
+	UPROPERTY(EditAnywhere, Category = "OctreeCell|Internals")
+		TArray<AOctreeCell*> cellChildren;
+	UPROPERTY(EditAnywhere, Category = "OctreeCell|Internals")
+		bool isActive = true;
 
 
-	UPROPERTY(EditAnywhere, Category = "AOctreeCell|Parameter") TArray<TSubclassOf<AActor>> classToDetect;
-	UPROPERTY(EditAnywhere, Category = "AOctreeCell|Parameter") TArray<AActor*> actorInside;
-	UPROPERTY(EditAnywhere, Category = "AOctreeCell|Parameter")  int currentActorInside =0;
-	UPROPERTY(EditAnywhere, Category = "AOctreeCell|Parameter")  int currentNumberOfChildren = 0;
-	UPROPERTY(EditAnywhere, Category = "AOctreeCell|Parameter")  bool shouldTickIfViewportsOnly = false;
+	UPROPERTY(EditAnywhere, Category = "OctreeCell|Parameters")
+		TArray<TSubclassOf<AActor>> classToDetect;
+	UPROPERTY(EditAnywhere)
+		TArray<AActor*> actorsInside;
+	UPROPERTY(EditAnywhere, Category = "OctreeCell|Internals")
+		int currentActorsInside = 0;
+	UPROPERTY(EditAnywhere, Category = "OctreeCell|Internals")
+		int currentNumberOfChildren = 0;
 
-	UPROPERTY(EditAnywhere, Category = "AOctreeCell|Debug") bool useDebug = false;
-	UPROPERTY(EditAnywhere, Category = "AOctreeCell|Debug") bool debugArea = false;
-	UPROPERTY(EditAnywhere, Category = "AOctreeCell|Debug", meta =(EditorCondition ="useDebug", EditConditionHides)) 
-		int debugTickNess = 0;
-	UPROPERTY(EditAnywhere, Category = "AOctreeCell|Debug", meta = (EditorCondition = "useDebug", EditConditionHides)) 
-		FColor debugcolor = FColor::Yellow;
-public:	
-	AOctreeCell();
+	UPROPERTY(EditAnywhere, Category = "OctreeCell|Debug")
+		bool useDebug = false;
+	UPROPERTY(EditAnywhere, Category = "OctreeCell|Debug")
+		bool debugArea = false;
+	UPROPERTY(EditAnywhere, Category = "OctreeCell|Debug", meta = (EditCondition = "useDebug", EditConditionHides))
+		int debugThickness = 0;
+	UPROPERTY(EditAnywhere, Category = "OctreeCell|Debug", meta = (EditCondition = "useDebug", EditConditionHides))
+		FColor debugColor = FColor::Blue;
+
+	UPROPERTY(EditAnywhere)
+		bool canRun = false;
+	UPROPERTY(EditAnywhere)
+		TSubclassOf<AActor> toSpawn;
+
 public:
-	FORCEINLINE FOnNumberOfActorInsideUpdate& OnNumberOfActorInsideUpdate() { return onNumberOfActorInsideUpdate; }
+	FOnNumberOfActorsInsideUpdate& OnNumberOfActorsInsideUpdate() { return onNumberOfActorsInsideUpdate; }
+public:
+	AOctreeCell();
+
 protected:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
+	void EnableSubidivsion();
 	virtual bool ShouldTickIfViewportsOnly() const override;
+	bool CheckContains();
 	virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
 	virtual void NotifyActorEndOverlap(AActor* OtherActor) override;
-	void InitSubCell(const int _branchID, AOctree* _octree, AOctreeCell* _parent);
-	void SubDivideCells(const FVector _subLoction);
-	void RemoveCells();
-	UFUNCTION() void ManageCellBehaviour(const int _numberOfActorInside);
+	void InitSubCell(const int _branchingID, AOctree* _octree, AOctreeCell* _parent);
+	void SubDivideCells(const FVector _subLocation);
+	void RemoveSubCells();
+	UFUNCTION() void ManageCellBehaviour(const int _numberOfActorsInside);
 	FVector GetSubLocation(const int _index);
 	void DrawDebug();
+
 public:
-	void SetCellDimensions(const double _lenght, const double _with, const double _height);
-	void SetCellDimensions(const FVector _FVector);
+	void SetOctree(AOctree* _octree);
+	void SetCellDimensions(const double _length, const double _width, const double _height);
+	void SetCellDimensions(const FVector& _dimensions);
 	void CustomDestroy();
-	void SetOctree(AOctree* _this);
+	void SetCanSubdivide(bool _value);
+	void SetCanRun(bool _value);
 };
