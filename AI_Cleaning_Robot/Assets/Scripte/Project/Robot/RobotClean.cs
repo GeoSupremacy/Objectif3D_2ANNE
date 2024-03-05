@@ -37,7 +37,7 @@ public class RobotClean : Robot
     }
     void Collect()
     {
-        if (!Garbage || !FinalDestination)
+        if (!Garbage || !Destination)
             return;
 
        
