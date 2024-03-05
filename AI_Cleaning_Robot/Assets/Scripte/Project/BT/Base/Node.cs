@@ -10,31 +10,21 @@ public enum ENodeState
    
 }
 
-public abstract class Node : ScriptableObject
+public abstract class Node : MonoBehaviour
 {
     [SerializeField] protected ENodeState currentState = ENodeState.RUNNING;
     [SerializeField] protected bool startDone = false, processDone = false, stopDone = false;
     [SerializeField] public Node parent;
-    [SerializeField] protected List<Node> children = new List<Node>();
-    [SerializeField] protected Robot robot;
-    public int Count => children.Count;
-    public Robot Robot => robot;
-    protected virtual void AddOwner(Robot _robot)
-    {
-        robot = _robot;
-    }
-    public virtual void AddParent(Node _parent)
-    {
-        parent = _parent;
-        parent.AddOwner(_parent.Robot);
-    }
-    
+    protected List<Node> children = new List<Node>();
+
+    private Dictionary<string, object> dataContext = new Dictionary<string, object>();
+
     public ENodeState CurrentState => currentState;
-    public virtual ENodeState Execute()
+    public ENodeState Execute()
     {
         if (!startDone) { StartNode(); startDone = true; }
         currentState = ProcessNode();
-        Debug.Log("Execute " + name);
+        Debug.Log("Execute");
         if (currentState != ENodeState.RUNNING)
         {
             StopNode();
@@ -56,52 +46,36 @@ public abstract class Node : ScriptableObject
         foreach (Node child in children)
             Attach(child);
     }
-   
+
+    public void SetData(string key, object value)=> dataContext[key] = value;
+    public object GetData(string key)
+    {
+        object val = null;
+        if (dataContext.TryGetValue(key, out val))
+            return val;
+
+        Node node = parent;
+        if (node != null)
+            val = node.GetData(key);
+        return val;
+    }
+    public bool ClearData(string key)
+    {
+        bool cleared = false;
+        if (dataContext.ContainsKey(key))
+        {
+            dataContext.Remove(key);
+            return true;
+        }
+
+        Node node = parent;
+        if (node != null)
+            cleared = node.ClearData(key);
+        return cleared;
+    }
+
     public virtual Node Clone() => Instantiate(this);
     protected abstract void StartNode();
     protected abstract ENodeState ProcessNode();
     protected abstract void StopNode();
-
-   
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-   public void SetData(string key, object value)=> dataContext[key] = value;
-   public object GetData(string key)
-   {
-       object val = null;
-       if (dataContext.TryGetValue(key, out val))
-           return val;
-
-       Node node = parent;
-       if (node != null)
-           val = node.GetData(key);
-       return val;
-   }
-   public bool ClearData(string key)
-   {
-       bool cleared = false;
-       if (dataContext.ContainsKey(key))
-       {
-           dataContext.Remove(key);
-           return true;
-       }
-
-       Node node = parent;
-       if (node != null)
-           cleared = node.ClearData(key);
-       return cleared;
-   }
-   */

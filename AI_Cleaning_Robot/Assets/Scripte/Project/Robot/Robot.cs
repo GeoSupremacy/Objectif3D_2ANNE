@@ -18,7 +18,7 @@ public class Robot : MonoBehaviour
     public bool IsDead { get; set; } = false;
     [field: SerializeField] public Navigator Zone { get;  set; }
     [field: SerializeField] public GameObject Target { get;  set; } = null;
-    public bool FinalDestination => DestinationNextMove <= 1f;
+    public bool Destination => DestinationNextMove <= 1f;
     public bool LostTarget => DestinationTarget >= sightSensorComponent.LostRange;
     public float DestinationNextMove => math.abs(Vector3.Magnitude(NextMove - transform.position));
     public float DestinationTarget => math.abs(Vector3.Magnitude(Target.transform.position - transform.position));
@@ -39,7 +39,7 @@ public class Robot : MonoBehaviour
     void MoveTo()
     {
         
-        if (FinalDestination)
+        if (Destination)
         {
             Move = false;
             return;

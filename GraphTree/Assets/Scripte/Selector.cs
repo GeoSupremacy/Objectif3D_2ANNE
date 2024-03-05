@@ -26,13 +26,23 @@ public class Selector : Composite
 
     protected override void StartNode()
     {
-        Debug.LogError("StartNode"+ name);
+       
     }
 
     protected override void StopNode()
     {
-        Debug.LogError("StopNode" + name);
+       
     }
 
-    
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }

@@ -1,29 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
-using TreeEditor;
 using UnityEngine;
 
-
-
-public abstract class DogNode : Node
+public class DogNode : Node
 {
     [SerializeField] new public DogNode parent;
+    [SerializeField] private DogRobot root;
 
-    [SerializeField]  public RootDog currentRoot;
-    protected override void AddOwner(Robot _robot)
+    public DogRobot Root =>root;
+    protected override ENodeState ProcessNode()
     {
-        robot = (DogRobot) _robot;
+        return ENodeState.RUNNING;
     }
-    public override void AddParent(Node _parent)
+
+    protected override void StartNode()
     {
-        if (!_parent) Debug.LogError(name +" Not Parent");
-        DogNode _parentDogNode = (DogNode)_parent;
-        CurrentRoot(_parentDogNode.currentRoot);
-        parent.AddOwner(_parentDogNode.Robot);
+       
     }
-    protected void CurrentRoot(RootDog rootDog)
+
+    protected override void StopNode()
     {
-        if (!rootDog) Debug.LogError(name + " Not Root");
-        currentRoot = rootDog;
+       
     }
+
+    
 }
