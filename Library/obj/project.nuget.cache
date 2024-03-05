@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "XhXm/9hvfPZSJ3oWfCmxczW+KSyjEnzzkC7fWDiSmGp+LxEJ5cNwleTxUO5/cS0qdezH+jznk2Lm7diwJ4nMgQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\benbe\\OneDrive\\Documents\\GitHub\\Objectif3D_2ANNE\\Library\\Assembly-CSharp-Editor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\benbe\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

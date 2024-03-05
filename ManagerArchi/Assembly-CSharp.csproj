@@ -58,12 +58,19 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream:ManagerArchi/Assembly-CSharp.csproj
     <Compile Include="Assets\Scripte\Managers\ManagerExample.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripte\Managers\ItemManaged.cs" />
     <Compile Include="Assets\Scripte\Managers\SingletonPattern\SingletonPattern.cs" />
     <Compile Include="Assets\Scripte\Managers\Interface\IManagedItem.cs" />
     <Compile Include="Assets\Scripte\Managers\Interface\IManager.cs" />
+=======
+    <Compile Include="Assets\Scriptes\Deal.cs" />
+    <Compile Include="Assets\Scriptes\NetworkFetcher.cs" />
+    <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scriptes\API.cs" />
+>>>>>>> Stashed changes:Library/Assembly-CSharp.csproj
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

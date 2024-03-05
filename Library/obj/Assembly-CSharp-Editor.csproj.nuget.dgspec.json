@@ -1,0 +1,122 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\benbe\\OneDrive\\Documents\\GitHub\\Objectif3D_2ANNE\\Library\\Assembly-CSharp-Editor.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\benbe\\OneDrive\\Documents\\GitHub\\Objectif3D_2ANNE\\Library\\Assembly-CSharp-Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\benbe\\OneDrive\\Documents\\GitHub\\Objectif3D_2ANNE\\Library\\Assembly-CSharp-Editor.csproj",
+        "projectName": "Assembly-CSharp-Editor",
+        "projectPath": "C:\\Users\\benbe\\OneDrive\\Documents\\GitHub\\Objectif3D_2ANNE\\Library\\Assembly-CSharp-Editor.csproj",
+        "packagesPath": "C:\\Users\\benbe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\benbe\\OneDrive\\Documents\\GitHub\\Objectif3D_2ANNE\\Library\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\benbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net471"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://packagesource": {},
+          "https://www.nuget.org/packages/newtonsoft.json/": {}
+        },
+        "frameworks": {
+          "net471": {
+            "projectReferences": {
+              "C:\\Users\\benbe\\OneDrive\\Documents\\GitHub\\Objectif3D_2ANNE\\Library\\Assembly-CSharp.csproj": {
+                "projectPath": "C:\\Users\\benbe\\OneDrive\\Documents\\GitHub\\Objectif3D_2ANNE\\Library\\Assembly-CSharp.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net471": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\benbe\\OneDrive\\Documents\\GitHub\\Objectif3D_2ANNE\\Library\\Assembly-CSharp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\benbe\\OneDrive\\Documents\\GitHub\\Objectif3D_2ANNE\\Library\\Assembly-CSharp.csproj",
+        "projectName": "Assembly-CSharp",
+        "projectPath": "C:\\Users\\benbe\\OneDrive\\Documents\\GitHub\\Objectif3D_2ANNE\\Library\\Assembly-CSharp.csproj",
+        "packagesPath": "C:\\Users\\benbe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\benbe\\OneDrive\\Documents\\GitHub\\Objectif3D_2ANNE\\Library\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\benbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net471"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://packagesource": {},
+          "https://www.nuget.org/packages/newtonsoft.json/": {}
+        },
+        "frameworks": {
+          "net471": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net471": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

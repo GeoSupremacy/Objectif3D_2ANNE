@@ -4,42 +4,23 @@ using UnityEngine.UI;
 using UnityEngine;
 using static UnityEditor.Progress;
 using UnityEditor.SceneManagement;
-using Unity.VisualScripting;
 
 public class InventorySystem : MonoBehaviour
 {
     public static InventorySystem Instance;
-  
-    [SerializeField]
-   private GameObject objectInventory;
-    
+
+   // [SerializeField]
+   // private GameObject itemObject;
     public List<Item> Items = new List<Item>();
 
+    
     
     private void Awake()
     {   
         Instance = this;
-        
-     
-    }
-    private void Start()
-    {
-        if(!objectInventory.activeSelf) 
-        {
-            Debug.Log("Not Inventory");
-            return; 
-        }
        
-       
-        objectInventory.AddComponent<SetInventory>();
-        objectInventory.AddComponent<InventorySystem>();
-        if (!SetInventory.InstanceSetInventory)
-        {
-            Debug.Log("Not SetIventoryItem");
-            return;
-        }
-        Items = SetInventory.Items;
     }
+    private void Start()=> Init();
     public void AddItem(Item _itemToAdd)
     {
         bool itemAlreadyExists = false;
@@ -70,26 +51,32 @@ public class InventorySystem : MonoBehaviour
         
         Debug.Log(_itemToRemove.itemQuantity + " " + _itemToRemove.itemName + "removed from inventory.");
     }
-
-    private void SetInventoryItem()
+    public void Init()
     {
-       /*
         Debug.Log("Init Item in inventory");
-        GameObject _item = Item.itemContainer;
-        _item.GetComponent<Item>().itemQuantity = 1;
+        Item _item = new Item();
+        _item.itemName = "Sword";
+        _item.itemQuantity = 1;
+         /*itemObject = Instantiate();
+            Text _itemName = _object.transform.Find("Textures/Potion").GetComponent<Text>();
+            Image _itemIcon = _object.transform.Find("Textures/Potion").GetComponent<Image>();
+                
+            _itemName.text = item.itemName;
+            _itemIcon.sprite = item.itemIcon;
+            Text _itemName = transform.Find("Textures/Potion").GetComponent<Text>();
+             Image _itemIcon = transform.Find("Textures/Potion").GetComponent<Image>();
 
-      
-        Text _itemName = _item.transform.Find("Textures/Sword").GetComponent<Text>();
-        Image _itemIcon = _item.transform.Find("Textures/Sword").GetComponent<Image>();
-
-
-        _item.GetComponent<Item>().itemName =_itemName.text;
-         _item.GetComponent<Item>().itemIcon =_itemIcon.sprite;
-
-       
-        AddItem(_item);
-        
+              _itemName.text = _item.itemName;
+              _itemIcon.sprite = _item.itemIcon;
+        */
+        Items.Add(_item);
+       /*
+        * InventoryItrms = >ItemContent.Het
+        for (int i = 0; i < Items.Count; i++)
+        {
+            Items.Add(InventoryItemsController[i]);
+        }
+        InventoryItemsController = ItemsContent
        */
     }
-       
-    }//
+}
