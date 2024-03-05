@@ -1,13 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
+
 public class InventoryUI : MonoBehaviour
 {
-    InventorySystem inventorySystem;
+    
+     InventorySystem inventorySystem;
 
 
-  //  [SerializeField] InventoryUI inventoryItem = null;
-   // [SerializeField] RectTransform inventoryContent = null;
-
+    //  [SerializeField] InventoryUI inventoryItem = null;
+    // [SerializeField] RectTransform inventoryContent = null;
+     // private GameObject inventory = null;
       [SerializeField] GameObject inventoryItem = null;
       [SerializeField] Transform inventoryContent = null;
 
@@ -16,17 +19,31 @@ public class InventoryUI : MonoBehaviour
 
     private void Start()
     {
+        inventorySystem = gameObject.AddComponent<InventorySystem>();
+      
+        if (!inventorySystem)
+        {
+            
+            Debug.Log("Not System Inventory");
+            return;
+        }
+
         ListItems();
     }
     void ClearTransform(Transform _tr)
     {
-     foreach(Transform items in _tr)
+        foreach(Transform items in _tr)
             Destroy(_tr.gameObject);
         
     }
    public void ListItems()
-    {   
+    {
+        if (!IsValid)
+        {
 
+            Debug.Log("Not inventoryContent or inventorySystem");
+            return;
+        }
         ClearTransform(inventoryContent);
         Debug.Log("ListItems");
         foreach (Item item in inventorySystem.Items)
@@ -40,18 +57,40 @@ public class InventoryUI : MonoBehaviour
         }
         
     }
-    /*
+   
+}//
+
+
+/*
      *  Text _itemName = _object.transform.Find("Textures/Potion").GetComponent<Text>();
             Image _itemIcon = _object.transform.Find("Textures/Potion").GetComponent<Image>();
 
             _itemName.text = item.itemName;
             _itemIcon.sprite = item.itemIcon;
-     */
-    public void SetInventoryItems()
-    {
-       // inventoryItem = inventoryContent.GetComponentInChildren<ItemController>();
-    }
-    /*
+
+    ==============================
+
+    itemObject = Instantiate();
+           Text _itemName = _object.transform.Find("Textures/Potion").GetComponent<Text>();
+           Image _itemIcon = _object.transform.Find("Textures/Potion").GetComponent<Image>();
+
+           _itemName.text = item.itemName;
+           _itemIcon.sprite = item.itemIcon;
+           Text _itemName = transform.Find("Textures/Potion").GetComponent<Text>();
+            Image _itemIcon = transform.Find("Textures/Potion").GetComponent<Image>();
+
+             _itemName.text = _item.itemName;
+             _itemIcon.sprite = _item.itemIcon;
+
+       =========
+         * InventoryItrms = >ItemContent.Het
+         for (int i = 0; i < Items.Count; i++)
+         {
+             Items.Add(InventoryItemsController[i]);
+         }
+         InventoryItemsController = ItemsContent
+
+    =============
      Start is called before the first frame update
 
 
@@ -68,4 +107,3 @@ public class InventoryUI : MonoBehaviour
            // Instantiate(inventoryItem, inventoryContent);
         }
    */
-}//

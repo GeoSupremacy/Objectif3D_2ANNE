@@ -1,3 +1,4 @@
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class Item : MonoBehaviour
@@ -12,7 +13,13 @@ public class Item : MonoBehaviour
 
 
     [SerializeField]
-    public GameObject itemContainer;
+    public  GameObject itemContainer;
+
+    private void Start()
+    {
+        Debug.Log("New Item");
+        itemContainer.gameObject.AddComponent<Item>();
+    }
     public enum ItemType
     {
         None,

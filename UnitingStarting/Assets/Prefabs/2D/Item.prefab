@@ -221,7 +221,8 @@ GameObject:
   - component: {fileID: 5471390205256649135}
   - component: {fileID: 3162607542398845937}
   - component: {fileID: 9216124792980525674}
-  - component: {fileID: 4128677421718260629}
+  - component: {fileID: 859894389513680609}
+  - component: {fileID: 4020074426375913085}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -332,7 +333,27 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4128677421718260629
+--- !u!114 &859894389513680609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6644173532511951890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d4e21d8a14ee04a83dc546f572886f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 0
+  itemQuantity: 0
+  itemName: Sword
+  itemDescription: 
+  itemCategory: 0
+  itemType: 0
+  itemIcon: {fileID: 0}
+  itemContainer: {fileID: 0}
+--- !u!114 &4020074426375913085
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -350,5 +371,5 @@ MonoBehaviour:
   itemDescription: 
   itemCategory: 0
   itemType: 0
-  itemIcon: {fileID: 21300000, guid: 1f97ff61dbc04e64d9c4c0b87bbb812b, type: 3}
-  itemContainer: {fileID: 6644173532511951890}
+  itemIcon: {fileID: 0}
+  itemContainer: {fileID: 0}
