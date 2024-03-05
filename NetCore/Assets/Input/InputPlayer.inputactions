@@ -1,0 +1,56 @@
+{
+    "name": "InputPlayer",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "6210b7fc-61df-4dad-91d6-9fa8700b7acc",
+            "actions": [
+                {
+                    "name": "Move forward",
+                    "type": "Value",
+                    "id": "0250cf27-a71e-4df4-87e4-ca6b0c88ad71",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "1D Axis",
+                    "id": "8159aa9a-e26e-4b0b-896a-b987a550ceac",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move forward",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Negative",
+                    "id": "44ffdcd9-42cc-4065-b351-ef2f8a0f5d13",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move forward",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Positive",
+                    "id": "49aaf6ea-6844-465c-aed4-97d84012c23d",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move forward",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
