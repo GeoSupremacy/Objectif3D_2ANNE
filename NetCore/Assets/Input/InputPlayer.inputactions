@@ -13,6 +13,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "TestServerRpc",
+                    "type": "Button",
+                    "id": "3d15fa86-a2f5-4ca5-9f04-f6ff8d155c19",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TestClientRpc",
+                    "type": "Button",
+                    "id": "479bb043-8387-42c3-a35a-b662c2e281d4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -48,6 +66,28 @@
                     "action": "Move forward",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "4ad01a16-5e33-47ba-b044-5cfb3a41cc88",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TestServerRpc",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "19647f65-e496-420b-8a7f-44a314f5932a",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TestClientRpc",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

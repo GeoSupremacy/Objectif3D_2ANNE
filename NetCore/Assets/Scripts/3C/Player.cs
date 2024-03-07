@@ -1,22 +1,54 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Burst.Intrinsics;
+using System;
+using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class Player : NetworkBehaviour
 {
+     string id;
+    public Action<string, string> OnCreateLobby { get; set; } = null;
+    public static Action<Player> Instance;
+    public Action<string> OnSendMessage{ get; set; } = null;
+    public Action<string> OnReceiveMessage { get; set; } = null;
+
     [SerializeField] InputComponent inputs = null;
     public InputComponent Inptus => inputs;
     float speedForward = 3.0f;
+
+    public string ID => id;
+
     void Start()=>  Init();
 
     private void Update() => Move();
+
+    public void CreateLobby(string _name, string _number)
+    {
+        OnCreateLobby?.Invoke(_name, _number);
+    }
+    public void ReceiveMessage(string _stringMessage)
+    {
+        if (!IsOwner)
+            return;
+     
+        OnReceiveMessage?.Invoke(_stringMessage);
+    }
+    public new void SendMessage(string _stringMessage)
+    {
+        if (!IsOwner)
+            return;
+        OnSendMessage?.Invoke(OwnerClientId+ " : "+_stringMessage); 
+    }
     void Init()
     {
+        Instance?.Invoke(this);
+        id= OwnerClientId.ToString();
+        
         inputs = GetComponent<InputComponent>();
+        ChatSystem.OnReceiveMessage += ReceiveMessage;
     }
     void Move()
     {
+        
         MoveForward();
     }
 

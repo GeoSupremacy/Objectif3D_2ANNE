@@ -1,22 +1,29 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class InputComponent : MonoBehaviour
 {
     [SerializeField] InputPlayer inputs = null;
     [SerializeField] InputAction moveForward = null;
-
+    [SerializeField] InputAction testServe = null;
+    [SerializeField] InputAction testClient = null;
     List<InputAction> actions = new List<InputAction>();
+
+
     public InputAction MoveForward => moveForward;
+    public InputAction TestServe => testServe;
+    public InputAction TestClient => testClient;
+
+
     private void Awake() => inputs = new InputPlayer();
 
     private void OnEnable()
     {
         moveForward = inputs.Player.Moveforward;
-        actions.AddRange(new List<InputAction> { moveForward });
+        testServe = inputs.Player.TestServerRpc;
+        testClient = inputs.Player.TestClientRpc;
+        actions.AddRange(new List<InputAction> { moveForward , testServe, testClient });
         ManageInputActivate(true);
     }
     private void OnDisable()
