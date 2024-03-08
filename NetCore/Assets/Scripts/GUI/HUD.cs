@@ -7,18 +7,19 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //   NetworkManager.Singleton.Shutdown();
-public class HUD : MonoBehaviour
+public class HUD : NetworkBehaviour
 {
-    public Action<string, string> OnCreateLobby { get; set; } = null;
+    public static Action<string, string> OnCreateLobby { get; set; } = null;
+    public static Action OnOpenListLobby { get; set; } = null;
     [SerializeField] private MainMenuUI mainMenu;
     [SerializeField] private LobbySytemUI lobby;
     [SerializeField] private ChatSystemUI chat;
     [SerializeField] private HostSystemUI host;
 
-    
-    private void Awake() => Bind();
 
-  
+    private void Awake() => Bind();
+   
+
     void Bind()
     {
         if (!mainMenu || !lobby || !host)
@@ -33,24 +34,28 @@ public class HUD : MonoBehaviour
         host.ReturnButton.onClick.AddListener(() => OpenMainMenu());
 
         host.OnCreateLobby += CreateLobby;
-        host.OnCreateLobby += lobby.UpdateList;
     }
     void CreateLobby(string _name, string _number)
     {
         OnCreateLobby?.Invoke(_name, _number);
+        EnterInGame();
     }
     void OpenLobby()
     {
-
+        
         host.HostUI.SetActive(true);
+
     }
     void OpenListLobby()
     {
-
+        OnOpenListLobby?.Invoke();
         lobby.LobbyUI.SetActive(true);
     }
-    
+    void EnterInGame()
+    {
+        chat.ChatSystemUi.SetActive(true);
+    }
     void OpenMainMenu(){ mainMenu.MainMenu.SetActive(true);}
 
-  
+
 }

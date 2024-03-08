@@ -8,6 +8,9 @@ using UnityEngine.UI;
 public class HostSystemUI : MonoBehaviour
 {
     public Action<string, string> OnCreateLobby { get; set; } = null;
+
+    [SerializeField] Player owner = null;
+
     [SerializeField] private Button createButton;
     [SerializeField] private Button returnButton;
     [SerializeField] private GameObject hostUI;
@@ -18,9 +21,15 @@ public class HostSystemUI : MonoBehaviour
     public Button CreateButton => createButton;
     public Button ReturnButton => returnButton;
 
- 
+    void SetOwner(Player _this)
+    {
+        owner = _this;
+    }
+
+   
     private void Awake()
     {
+        Player.Instance += SetOwner;
         createButton.onClick.AddListener(() => CreateLobby());
         returnButton.onClick.AddListener(() => Return());
     }
@@ -41,9 +50,10 @@ public class HostSystemUI : MonoBehaviour
         playerNumber = _stringInput;
     }
 
-    void CreateLobby()
+     void CreateLobby()
     {
         OnCreateLobby?.Invoke(lobbyName, playerNumber);
+        hostUI.SetActive(false);
     }
 
     void Return()

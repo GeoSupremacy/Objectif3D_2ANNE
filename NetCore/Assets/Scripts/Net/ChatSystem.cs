@@ -26,7 +26,7 @@ public class ChatSystem : NetworkBehaviour
         SendMessageClientRpc(_stringMessage);
     }
 
-    [ClientRpc(RequireOwnership =true)]
+    [ClientRpc]
     private void SendMessageClientRpc(string _stringMessage)
     {
        

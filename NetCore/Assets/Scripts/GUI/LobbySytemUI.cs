@@ -16,17 +16,30 @@ public class LobbySytemUI : MonoBehaviour
     public GameObject LobbyUI => lobbyUI;
     private void Awake() => Bind();
 
-    public void UpdateList(string _name, string _number)
+    public void UpdateList(List<KeyValuePair<string, string>> _listLobby)
     {
-        CustomLobby _newLobby = Instantiate(customLobby, lobbyContent);
-        _newLobby.Init(_name, _number);
+        ClearList();
+
+        for (int i = 0; i < _listLobby.Count; i++)
+        {
+            KeyValuePair<string, string> lobby = _listLobby[i];
+            string _name = lobby.Key;
+            string _number = lobby.Value;
+            CustomLobby _newLobby = Instantiate(customLobby, lobbyContent);
+            _newLobby.Init(_name, _number);
+        }
+           
+    }
+
+    public void ClearList()
+    {
+        for (int i = 0; lobbyContent && i < lobbyContent.childCount; i++)
+            Destroy(lobbyContent.GetChild(i).gameObject);
     }
     void Bind()=> returnButton.onClick.AddListener(() =>{ lobbyUI.SetActive(false);});
     
-    private void Start()
-    {
-        lobbyUI.SetActive(false);
-    }
+    private void Start()=>lobbyUI.SetActive(false);
+    
 
  
 }

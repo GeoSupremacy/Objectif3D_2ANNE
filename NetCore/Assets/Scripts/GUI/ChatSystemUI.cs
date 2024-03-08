@@ -14,7 +14,7 @@ public class ChatSystemUI : MonoBehaviour
 
     [SerializeField] private GameObject chatSystemUI;
 
-    public GameObject ChatSystem=> chatSystemUI;
+    public GameObject ChatSystemUi=> chatSystemUI;
     void SetOwner(Player _this)
     {
         owner = _this;
@@ -37,14 +37,13 @@ public class ChatSystemUI : MonoBehaviour
     public void ReadStringInput(string _stringInput)
     {
         
-        Debug.Log(owner.ID+ " ReadStringInput: " + _stringInput);
+       
         OnSendMessage?.Invoke(_stringInput);
      
     }
 
     public void UpdateMessage(string _stringInput)
     {
-        Debug.Log(owner.ID + " Update: " + _stringInput);
         TextInChat _textInChat = Instantiate(textInChat, chatContent);
         _textInChat.Init(_stringInput);
     }

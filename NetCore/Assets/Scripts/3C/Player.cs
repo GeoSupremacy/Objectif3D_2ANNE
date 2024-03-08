@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 
 public class Player : NetworkBehaviour
 {
-     string id;
-    public Action<string, string> OnCreateLobby { get; set; } = null;
+    
+    public static Action<string, string> OnCreateLobby { get; set; } = null;
     public static Action<Player> Instance;
     public Action<string> OnSendMessage{ get; set; } = null;
     public Action<string> OnReceiveMessage { get; set; } = null;
@@ -15,16 +15,12 @@ public class Player : NetworkBehaviour
     public InputComponent Inptus => inputs;
     float speedForward = 3.0f;
 
-    public string ID => id;
-
+   
     void Start()=>  Init();
 
     private void Update() => Move();
 
-    public void CreateLobby(string _name, string _number)
-    {
-        OnCreateLobby?.Invoke(_name, _number);
-    }
+  
     public void ReceiveMessage(string _stringMessage)
     {
         if (!IsOwner)
@@ -40,18 +36,12 @@ public class Player : NetworkBehaviour
     }
     void Init()
     {
-        Instance?.Invoke(this);
-        id= OwnerClientId.ToString();
+
         
         inputs = GetComponent<InputComponent>();
         ChatSystem.OnReceiveMessage += ReceiveMessage;
     }
-    void Move()
-    {
-        
-        MoveForward();
-    }
-
+    void Move()=>MoveForward();
     void MoveForward()
     {
         if (!inputs)

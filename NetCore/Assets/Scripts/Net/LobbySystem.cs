@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
@@ -5,22 +6,39 @@ using UnityEngine;
 
 public class LobbySystem : NetworkBehaviour
 {
-    [SerializeField] Player owner = null;
-    [SerializeField] private CustomLobby customLobby = null;
-    List<CustomLobby> lobbyList;
+    Action<List<KeyValuePair<string, string>>> OnList = null;
+   [field:SerializeField] List<KeyValuePair<string, string>> lobbyList = new List<KeyValuePair<string, string>>();
 
-    public List<CustomLobby> LobbyList =>LobbyList;
-    void Awake()
-    {
-        owner = GetComponent<Player>();
-        owner.OnCreateLobby += Register;
-    }
-     void Register(string _name, string _playerNumber)
-    {
-        CustomLobby _newLobby = Instantiate(customLobby);
-        _newLobby.Init(_name, _playerNumber);
-        LobbyList.Add(_newLobby);
-       
-    }
+    public List<KeyValuePair<string, string>> LobbyList => lobbyList;
+    void Awake() => Bind();
+
    
+     
+    void Bind()
+    {
+        HUD.OnOpenListLobby += ListServerRpc;
+        HUD.OnCreateLobby += Register;
+
+    }
+    [ServerRpc(RequireOwnership = false)]
+    private void ListServerRpc()
+    {
+        Debug.Log("ListServerRpc");
+        ListClientRpc();
+    }  
+
+    [ClientRpc]
+    void ListClientRpc()
+    {
+        OnList?.Invoke(lobbyList);
+    }
+    void Register(string _name, string _playerNumber)
+     {
+
+        KeyValuePair<string, string> _lobbyList = new KeyValuePair<string, string> ( _name, _playerNumber );
+        lobbyList.Add( _lobbyList );
+
+        NetworkManager.Singleton.StartHost();
+     }
+    
 }
