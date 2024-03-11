@@ -19,9 +19,13 @@ public class NetworkLogger : MonoBehaviour
         GUILayout.BeginArea(new Rect(Screen.width - 300, 0, 300, 300));
         scroll = GUILayout.BeginScrollView(scroll);
         for (int i = 0; i < log.Count; i++)
-        {
             GUILayout.Box(log[i]);
-        }
+            
+        
+        if (GUILayout.Button("Clear"))
+            ClearLog();
+
+
         GUILayout.EndScrollView();
         GUILayout.EndArea();
     }

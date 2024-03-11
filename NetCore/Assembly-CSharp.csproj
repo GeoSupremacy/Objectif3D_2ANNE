@@ -59,21 +59,27 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\GUI\HostSystemUI.cs" />
+    <Compile Include="Assets\Scripts\GUI\UserWidget\InGameSystemUI.cs" />
     <Compile Include="Assets\Input\InputPlayer.cs" />
-    <Compile Include="Assets\Scripts\GUI\CustomLobby.cs" />
+    <Compile Include="Assets\Scripts\GUI\DynamicUI\TextInChat.cs" />
+    <Compile Include="Assets\Scripts\GUI\HUD\HUD.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\Scripts\GUI\LobbySytemUI.cs" />
-    <Compile Include="Assets\Scripts\GUI\TextInChat.cs" />
+    <Compile Include="Assets\Scripts\GUI\UserWidget\MenuUI.cs" />
     <Compile Include="Assets\Scripts\Net\NetworkLogger.cs" />
-    <Compile Include="Assets\Scripts\GUI\HUD.cs" />
+    <Compile Include="Assets\Scripts\Net\SteamManager.cs" />
+    <Compile Include="Assets\Scripts\GUI\UserWidget\MainMenuUI.cs" />
+    <Compile Include="Assets\Scripts\GUI\DynamicUI\CustomLobby.cs" />
+    <Compile Include="Assets\Scripts\GUI\HUD\HUDInGame.cs" />
     <Compile Include="Assets\Scripts\Net\ChatSystem.cs" />
     <Compile Include="Assets\Input\InputComponent.cs" />
     <Compile Include="Assets\Scripts\3C\Player.cs" />
-    <Compile Include="Assets\Scripts\GUI\MainMenuUI.cs" />
+    <Compile Include="Assets\Scripts\GUI\UserWidget\HostSystemUI.cs" />
+    <Compile Include="Assets\Scripts\GUI\HUD\HUDTitle.cs" />
+    <Compile Include="Assets\Scripts\SceneManager\DataScene.cs" />
     <Compile Include="Assets\Scripts\Net\LobbySystem.cs" />
     <Compile Include="Assets\Scripts\Net\NetworkSystem.cs" />
-    <Compile Include="Assets\Scripts\GUI\ChatSystemUI.cs" />
+    <Compile Include="Assets\Scripts\GUI\UserWidget\LobbySytemUI.cs" />
+    <Compile Include="Assets\Scripts\GUI\UserWidget\ChatSystemUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -347,6 +353,9 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>Library\PackageCache\com.unity.services.wire@1.2.2\Plugins\websocket-sharp.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
       <HintPath>Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
@@ -741,6 +750,9 @@
     <Reference Include="Unity.Burst.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Services.Core">
+      <HintPath>Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Multiplayer.Tools.NetworkSolutionInterface">
       <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Tools.NetworkSolutionInterface.dll</HintPath>
     </Reference>
@@ -768,6 +780,9 @@
     <Reference Include="Unity.Netcode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Netcode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Services.Core.Environments">
+      <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Multiplayer.Tools.NetStats">
       <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Tools.NetStats.dll</HintPath>
     </Reference>
@@ -791,6 +806,9 @@
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Analytics">
+      <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Multiplayer.Tools.NetworkProfiler.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Tools.NetworkProfiler.Editor.dll</HintPath>
@@ -881,6 +899,12 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Authentication">
+      <HintPath>Library\ScriptAssemblies\Unity.Services.Authentication.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Lobbies">
+      <HintPath>Library\ScriptAssemblies\Unity.Services.Lobbies.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>

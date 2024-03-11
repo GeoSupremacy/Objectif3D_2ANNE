@@ -10,6 +10,7 @@ public class ChatSystemUI : MonoBehaviour
 
     [SerializeField] Player owner = null;
     [SerializeField] TextInChat textInChat = null;
+    [SerializeField] TMP_InputField textEnter = null;
     [SerializeField] Transform chatContent = null;
 
     [SerializeField] private GameObject chatSystemUI;
@@ -25,6 +26,7 @@ public class ChatSystemUI : MonoBehaviour
     private void Awake()
     {
         Player.Instance += SetOwner;
+        textEnter.onEndEdit.AddListener((c)=> ReadStringInput(c));
     }
     private void Start()
     {
@@ -34,7 +36,7 @@ public class ChatSystemUI : MonoBehaviour
     {
         OnSendMessage = null;
     }
-    public void ReadStringInput(string _stringInput)
+    private void ReadStringInput(string _stringInput)
     {
         
        

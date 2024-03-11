@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
+using Unity.Services.Authentication;
+using Unity.Services.Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class NetworkSystem : MonoBehaviour
 {
     private bool failClientChecking = false;
-    void Start() => Bind();
-    void Bind()
+    void Awake() => Bind();
+    async void Bind()
     {
+        await UnityServices.InitializeAsync();
+       
         NetworkManager.Singleton.OnTransportFailure += () =>
         {
             NetworkLogger.Add("Fail !", Color.red);
@@ -25,7 +29,6 @@ public class NetworkSystem : MonoBehaviour
         NetworkManager.Singleton.OnServerStarted += () =>
         {
             NetworkLogger.Add($"Server started !", Color.green);
-            //NetworkManager.Singleton.SceneManager.LoadScene("Game", LoadSceneMode.Single);
         };
         NetworkManager.Singleton.OnServerStopped += (b) =>
         {
@@ -40,8 +43,30 @@ public class NetworkSystem : MonoBehaviour
         {
             NetworkLogger.Add($"Client stopped : {b}", Color.red);
         };
+    
+    
     }
-
+    private void Start()
+    {
+        
+        switch (DataScene.stateOwner)
+        {
+            case StateOwner.IsServer:
+                NetworkManager.Singleton.StartServer();
+                break;
+            case StateOwner.IsHost:
+                NetworkManager.Singleton.StartHost();
+                break;
+            case StateOwner.IsCLient:
+                NetworkManager.Singleton.StartClient();
+                break;
+            case StateOwner.IsDown:
+                NetworkManager.Singleton.Shutdown();
+                break;
+            default:
+                break;
+        }
+    }
     void RefreshPlayerDatas()
     {
         if (NetworkManager.Singleton.IsServer)
