@@ -1,7 +1,6 @@
 using System;
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Player : NetworkBehaviour
 {
@@ -36,8 +35,6 @@ public class Player : NetworkBehaviour
     }
     void Init()
     {
-
-        
         inputs = GetComponent<InputComponent>();
         ChatSystem.OnReceiveMessage += ReceiveMessage;
     }

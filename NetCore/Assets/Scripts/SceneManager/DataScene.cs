@@ -7,9 +7,10 @@ using UnityEngine;
     IsHost,
     IsCLient,
     IsDown,
-
+    IsState,
 }
 public class DataScene
 {
-    public static StateOwner stateOwner = StateOwner.IsDown;
+    public static StateOwner stateOwner = StateOwner.IsState;
+    public static bool isCreateLobby = false;
 }

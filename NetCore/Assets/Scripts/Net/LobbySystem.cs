@@ -10,14 +10,13 @@ using UnityEngine;
 
 public class LobbySystem : NetworkBehaviour
 {
-    Action<List<KeyValuePair<string, string>>> OnList = null;
-   [field:SerializeField] List<KeyValuePair<string, string>> lobbyList = new List<KeyValuePair<string, string>>();
+    static public Action<List<SessionLobby>> OnList = null;
+    [field:SerializeField] List<SessionLobby> lobbyList = new List<SessionLobby>();
 
-    public List<KeyValuePair<string, string>> LobbyList => lobbyList;
+     
+    public List<SessionLobby> LobbyList => lobbyList;
     void Awake() => Bind();
 
-    private static string id;
-    public static string ID => id;    
     private void Bind()
     {
       
@@ -37,6 +36,10 @@ public class LobbySystem : NetworkBehaviour
     {
         OnList?.Invoke(lobbyList);
     }
+    public async static void JoinLobby(string _id)
+    {
+        await LobbyService.Instance.JoinLobbyByIdAsync(_id);
+    }
     async void Register(string _name, string _playerNumber)
      {
        
@@ -49,13 +52,15 @@ public class LobbySystem : NetworkBehaviour
        
        
         Lobby lobby =await LobbyService.Instance.CreateLobbyAsync(lobbyName, maxPlayers, options);
-       
-        KeyValuePair<string, string> _lobbyList = new KeyValuePair<string, string> ( _name, _playerNumber );
+
+        SessionLobby _lobbyList = new();
+        _lobbyList.IdLobby = lobby.Id;
+        _lobbyList.NameLobby = lobbyName;
+        _lobbyList.MaxPlayer = maxPlayers;
         lobbyList.Add( _lobbyList );
-        id = lobby.Id;
+       
         NetworkLogger.Add("New Lobby", Color.yellow);
-        NetworkManager.Singleton.Shutdown();
-        NetworkManager.Singleton.StartHost();
+        NetworkSystem.Shutdown();
      }
     
 }

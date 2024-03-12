@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ChatSystemUI : MonoBehaviour
+public class ChatSystemUI : UserWidget
 {
     Action<string> OnSendMessage = null;
 
@@ -23,15 +23,18 @@ public class ChatSystemUI : MonoBehaviour
         owner.OnReceiveMessage += UpdateMessage;
     }
 
-    private void Awake()
+ 
+    protected override void Bind()
     {
         Player.Instance += SetOwner;
-        textEnter.onEndEdit.AddListener((c)=> ReadStringInput(c));
+        textEnter.onEndEdit.AddListener((c) => ReadStringInput(c));
     }
-    private void Start()
+
+    protected override void Init()
     {
         chatSystemUI.SetActive(false);
     }
+   
     private void OnDestroy()
     {
         OnSendMessage = null;

@@ -1,25 +1,34 @@
 using UnityEngine.UI;
 
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Netcode;
 
-public class InGameSystemUI : MonoBehaviour
+public class InGameSystemUI : UserWidget
 {
     [SerializeField] private Button disconnectButton;
     [SerializeField] private TMP_Text ownerState;
+    [SerializeField] private GameObject inGame;
+    List<string> stateOwner = new List<string> { "Server", "Host", "Client", "isDown" };
+
+
     public Button DisconnectButton => disconnectButton;
-    List<string> stateOwner = new List<string>{"Server","Host","Client" };
-    private void Awake() => Bind();
-    private void Bind()
+    public GameObject InGame => inGame;
+    protected override void Bind()
     {
         disconnectButton.onClick.AddListener(() => { DisConnect(); });
+        NetworkSystem.OnStartServer += ChangeStateUI;
+        NetworkSystem.OnStartClient += ChangeStateUI;
+        NetworkSystem.OnStopClient += ChangeStateUI;
+        NetworkSystem.OnStopServer += ChangeStateUI;
     }
 
-    private void Start()
+    protected override void Init() => ChangeStateUI();
+   private void ChangeStateUI()
     {
-      switch (DataScene.stateOwner)
+        
+        switch (DataScene.stateOwner)
         {
             case StateOwner.IsServer:
                 ownerState.text = stateOwner[0];
@@ -30,14 +39,18 @@ public class InGameSystemUI : MonoBehaviour
             case StateOwner.IsCLient:
                 ownerState.text = stateOwner[2];
                 break;
+            case StateOwner.IsDown:
+                ownerState.text = stateOwner[3];
+                break;
             default: break;
         }
-            
+
     }
     void DisConnect()
     {
-       
-        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        DataScene.stateOwner = StateOwner.IsDown;
+        NetworkSystem.Shutdown();
+        inGame.SetActive(false);
 
     }
 }

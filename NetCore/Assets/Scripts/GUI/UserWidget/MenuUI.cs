@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MenuUI : MonoBehaviour
+public class MenuUI : UserWidget
 {
-    // Start is called before the first frame update
-    void Start()
+    protected override void Bind()
     {
-        
+        base.Bind();
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void Init()
     {
-        
+        base.Init();
     }
 }

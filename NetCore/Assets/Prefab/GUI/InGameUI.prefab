@@ -169,6 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   disconnectButton: {fileID: 3148576818198843236}
   ownerState: {fileID: 5888166142261957617}
+  inGame: {fileID: 4404478322867304413}
 --- !u!1 &5369894596063625677
 GameObject:
   m_ObjectHideFlags: 0

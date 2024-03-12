@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
@@ -7,7 +8,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class NetworkSystem : MonoBehaviour
 {
+    public static Action OnStartServer = null;
+    public static Action OnStartClient = null;
+    public static Action OnStopServer = null;
+    public static Action OnStopClient = null;
     private bool failClientChecking = false;
+    private bool isHost = false;
     void Awake() => Bind();
     async void Bind()
     {
@@ -25,22 +31,39 @@ public class NetworkSystem : MonoBehaviour
         NetworkManager.Singleton.OnClientDisconnectCallback += (c) =>
         {
             NetworkLogger.Add($"{c} -> disconnected !", Color.red);
+            OnStopClient?.Invoke();
         };
         NetworkManager.Singleton.OnServerStarted += () =>
         {
             NetworkLogger.Add($"Server started !", Color.green);
+            DataScene.stateOwner = StateOwner.IsServer;
+            OnStartServer?.Invoke();
+            isHost = true;
         };
         NetworkManager.Singleton.OnServerStopped += (b) =>
         {
             NetworkLogger.Add($"Server stopped : {b}", Color.red);
+            DataScene.stateOwner = StateOwner.IsDown;
+            OnStopServer?.Invoke();
         };
         NetworkManager.Singleton.OnClientStarted += () =>
         {
             NetworkLogger.Add($"Client started !", Color.green);
+            if(isHost)
+            { 
+                isHost = false;
+                DataScene.stateOwner = StateOwner.IsHost;
+            }
+            else
+                DataScene.stateOwner = StateOwner.IsCLient;
+            
+
+            OnStartClient?.Invoke();
             StartCoroutine(CheckForFail());
         };
         NetworkManager.Singleton.OnClientStopped += (b) =>
         {
+            DataScene.stateOwner = StateOwner.IsDown;
             NetworkLogger.Add($"Client stopped : {b}", Color.red);
         };
     
@@ -48,7 +71,15 @@ public class NetworkSystem : MonoBehaviour
     }
     private void Start()
     {
-        
+        //When Game start or change level
+        StateManager();
+    }
+  public  static void StateManager()
+    {
+        Debug.Log("StateManager");
+        if(DataScene.isCreateLobby)
+            DataScene.stateOwner= StateOwner.IsHost;
+          
         switch (DataScene.stateOwner)
         {
             case StateOwner.IsServer:
@@ -67,6 +98,14 @@ public class NetworkSystem : MonoBehaviour
                 break;
         }
     }
+    private void OnDestroy()
+    {
+        OnStartServer = null;
+    }
+    public static void StartServer() => NetworkManager.Singleton.StartServer();
+    public static void StartHost() => NetworkManager.Singleton.StartHost();
+    public static void StartClient() => NetworkManager.Singleton.StartClient();
+    public static void Shutdown() => NetworkManager.Singleton.Shutdown();
     void RefreshPlayerDatas()
     {
         if (NetworkManager.Singleton.IsServer)

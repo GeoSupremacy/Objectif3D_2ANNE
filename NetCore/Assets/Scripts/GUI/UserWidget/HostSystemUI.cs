@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HostSystemUI : MonoBehaviour
+public class HostSystemUI : UserWidget
 {
     public Action<string, string> OnCreateLobby { get; set; } = null;
 
@@ -27,8 +27,7 @@ public class HostSystemUI : MonoBehaviour
         owner = _this;
     }
 
-   
-    private void Awake()
+    protected override void Bind()
     {
         Player.Instance += SetOwner;
         createButton.onClick.AddListener(() => CreateLobby());
@@ -36,23 +35,21 @@ public class HostSystemUI : MonoBehaviour
         readName.onEndEdit.AddListener((c) => ReadNameLobbyInput(c));
         readMaxPlayer.onEndEdit.AddListener((c) => ReadPlayerNumberInput(c));
     }
-
-    private void Start()
+    protected override void Init()
     {
         hostUI.SetActive(false);
     }
+    
     private void ReadNameLobbyInput(string _stringInput)
     {
       
         lobbyName = _stringInput;
-        NetworkLogger.Add("Name Lobby " + lobbyName, Color.green);
     }
 
     private void ReadPlayerNumberInput(string _stringInput)
     {
        
         playerNumber = _stringInput;
-        NetworkLogger.Add("NumerP " + playerNumber, Color.green);
     }
 
     private void CreateLobby()

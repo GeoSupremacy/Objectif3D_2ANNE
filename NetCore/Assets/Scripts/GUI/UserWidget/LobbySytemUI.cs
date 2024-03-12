@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Services.Authentication;
@@ -6,51 +7,43 @@ using Unity.Services.Lobbies;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LobbySytemUI : MonoBehaviour
+public class LobbySytemUI : UserWidget
 {
-
+    public static Action<string> OnJoin = null;
     [SerializeField] private Button returnButton;
-    [SerializeField] private Button joinButton;
     [SerializeField] private GameObject lobbyUI= null;
     [SerializeField] private Transform lobbyContent = null;
     [SerializeField] private CustomLobby customLobby = null;
 
-    [SerializeField] private TMP_InputField findlobby = null;
-    string id = "id";
     public Button ReturnButton => returnButton;
-    public Button JoinButton => joinButton;
     public GameObject LobbyUI => lobbyUI;
-    private void Awake() => Bind();
-    private void Start() => lobbyUI.SetActive(false);
- 
-    private void FindLobbyInput(string _id)
+
+    protected override void Bind()
     {
-        id = _id;
-        NetworkLogger.Add("FindLobby "+ _id, Color.green);
-        Debug.Log(id);
+        LobbySystem.OnList += UpdateList;
+        OnJoin += LobbySystem.JoinLobby;
+        returnButton.onClick.AddListener(() => { Return(); });
     }
-    async private void JoinLobby()
+    protected override void Init()
     {
-        NetworkLogger.Add("JoinLobby", Color.green);
-        
-        
-        await LobbyService.Instance.JoinLobbyByIdAsync(id);
-        Return();
+        lobbyUI.SetActive(false);
     }
-    public void UpdateList(List<KeyValuePair<string, string>> _listLobby)
+
+    public void UpdateList(List<SessionLobby> _listLobby)
     {
         ClearList();
       //  QueryLobbiesOptions options = new QueryLobbiesOptions();
-      //  QueryResponse lobbies = await Lobbies.Instance.QueryLobbiesAsync(options);
+      //  QueryRes ponse lobbies = await Lobbies.Instance.QueryLobbiesAsync(options);
 
 
           for (int i = 0; i < _listLobby.Count; i++)
           {
-              KeyValuePair<string, string> lobby = _listLobby[i];
-              string _name = lobby.Key;
-              string _number = lobby.Value;
+              SessionLobby lobby = _listLobby[i];
+              string _name = lobby.NameLobby;
+              string _number = lobby.MaxPlayer.ToString();
+              string _id = lobby.IdLobby;
               CustomLobby _newLobby = Instantiate(customLobby, lobbyContent);
-              _newLobby.Init(_name, _number);
+              _newLobby.Init(_name, _number, _id, OnJoin);
           }
             
     }
@@ -61,12 +54,7 @@ public class LobbySytemUI : MonoBehaviour
         for (int i = 0; lobbyContent && i < lobbyContent.childCount; i++)
             Destroy(lobbyContent.GetChild(i).gameObject);
     }
-    private void Bind()
-    {
-      
-        findlobby.onEndEdit.AddListener((c) => FindLobbyInput(c));
-        returnButton.onClick.AddListener(() => { Return(); }); 
-    }
+    
     
     
     

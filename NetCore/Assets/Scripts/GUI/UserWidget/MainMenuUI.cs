@@ -6,17 +6,13 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MainMenuUI : MonoBehaviour
+public class MainMenuUI : UserWidget
 {
 
     [SerializeField] private Button serverButton;
     [SerializeField] private Button hostButton;
     [SerializeField] private Button clientButton;
-
-    [SerializeField] private Button createLobbyButton;
-    [SerializeField] private Button joinLobbyButton;
     [SerializeField] private Button quitButton;
-
 
     [SerializeField] private GameObject mainMenu;
 
@@ -27,49 +23,29 @@ public class MainMenuUI : MonoBehaviour
    public Button ServerButton => serverButton;
    public Button HostButton=>hostButton;
    public Button ClientButton => clientButton;
-    public Button CreateLobbyButton => createLobbyButton;
-   public Button JoinLobbyButton => joinLobbyButton;
    public Button QuitButton => quitButton;
 
-    private void Awake() => Bind();
-
-    void Bind()
+    protected override void Bind() 
     {
-        buttons = new List<Button>() { serverButton, createLobbyButton, hostButton, joinLobbyButton,quitButton, clientButton };
+        buttons = new List<Button>() { serverButton, hostButton, clientButton, quitButton };
 
 
         serverButton.onClick.AddListener(() =>
         {
             mainMenu.gameObject.SetActive(false);
-            NetworkManager.Singleton.StartServer();
-            DataScene.stateOwner = StateOwner.IsServer;
+            NetworkSystem.StartServer();
         });
         hostButton.onClick.AddListener(() =>
         {
             mainMenu.gameObject.SetActive(false);
-            NetworkManager.Singleton.StartHost();
-            DataScene.stateOwner = StateOwner.IsHost;
+            NetworkSystem.StartHost();
         });
         clientButton.onClick.AddListener(() =>
         {
             mainMenu.gameObject.SetActive(false);
-
-            NetworkManager.Singleton.StartClient();
-            DataScene.stateOwner = StateOwner.IsCLient;
+            NetworkSystem.StartClient();
         });
-
-        createLobbyButton.onClick.AddListener(() =>
-        {
-            mainMenu.gameObject.SetActive(false);
-
-        });
-        joinLobbyButton.onClick.AddListener(() =>
-        {
-            mainMenu.gameObject.SetActive(false);
-         
-       
-
-        });
+  
 
         quitButton.onClick.AddListener(() =>
         {
@@ -82,16 +58,12 @@ public class MainMenuUI : MonoBehaviour
             #endif
         });
     }
-    private void Start()
+  
+    protected override void Init()
     {
         if (!checkButton())
             new System.NullReferenceException("Missing button");
 
-     
-    }
-    private void OnDestroy()
-    {
-        
     }
     bool checkButton()
     {
