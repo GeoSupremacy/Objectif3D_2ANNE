@@ -11,14 +11,13 @@ public class HostSystemUI : UserWidget
 
     [SerializeField] private Button createButton;
     [SerializeField] private Button returnButton;
-    [SerializeField] private GameObject hostUI;
 
 
     [SerializeField] private TMP_InputField readName;
     [SerializeField] private TMP_InputField readMaxPlayer;
     string playerNumber;
     string lobbyName;
-    public GameObject HostUI => hostUI;
+    public GameObject HostUI => gameUI;
     public Button CreateButton => createButton;
     public Button ReturnButton => returnButton;
 
@@ -32,21 +31,21 @@ public class HostSystemUI : UserWidget
         Player.Instance += SetOwner;
         createButton.onClick.AddListener(() => CreateLobby());
         returnButton.onClick.AddListener(() => Return());
-        readName.onEndEdit.AddListener((c) => ReadNameLobbyInput(c));
-        readMaxPlayer.onEndEdit.AddListener((c) => ReadPlayerNumberInput(c));
+        readName.onEndEdit.AddListener((c) => WriteNameLobbyInput(c));
+        readMaxPlayer.onEndEdit.AddListener((c) => WritePlayerNumberInput(c));
     }
     protected override void Init()
     {
-        hostUI.SetActive(false);
+        gameUI.SetActive(false);
     }
     
-    private void ReadNameLobbyInput(string _stringInput)
+    private void WriteNameLobbyInput(string _stringInput)
     {
       
         lobbyName = _stringInput;
     }
 
-    private void ReadPlayerNumberInput(string _stringInput)
+    private void WritePlayerNumberInput(string _stringInput)
     {
        
         playerNumber = _stringInput;
@@ -54,15 +53,15 @@ public class HostSystemUI : UserWidget
 
     private void CreateLobby()
     {
-       
-       
+
+        Debug.Log("CreateLobby");
         OnCreateLobby?.Invoke(lobbyName, playerNumber);
-        hostUI.SetActive(false);
+        gameUI.SetActive(false);
     }
 
     private void Return()
     {
-       
-        hostUI.SetActive(false);
+
+        gameUI.SetActive(false);
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : NetworkBehaviour
 {
     
+   
     public static Action<string, string> OnCreateLobby { get; set; } = null;
     public static Action<Player> Instance;
     public Action<string> OnSendMessage{ get; set; } = null;
@@ -14,12 +15,20 @@ public class Player : NetworkBehaviour
     public InputComponent Inptus => inputs;
     float speedForward = 3.0f;
 
-   
     void Start()=>  Init();
 
     private void Update() => Move();
 
-  
+    public override void OnDestroy()
+    {
+        base.OnDestroy();
+        OnCreateLobby = null;
+        Instance = null;
+        OnSendMessage  = null;
+        OnReceiveMessage = null;
+
+}
+
     public void ReceiveMessage(string _stringMessage)
     {
         if (!IsOwner)
@@ -50,4 +59,6 @@ public class Player : NetworkBehaviour
         transform.position += transform.forward * _speed;
 
     }
+
+    
 }

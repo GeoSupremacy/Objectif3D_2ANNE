@@ -14,9 +14,8 @@ public class MainMenuUI : UserWidget
     [SerializeField] private Button clientButton;
     [SerializeField] private Button quitButton;
 
-    [SerializeField] private GameObject mainMenu;
 
-    public GameObject MainMenu => mainMenu;
+    public GameObject MainMenu => gameUI;
     private List<Button> buttons;
 
 
@@ -32,17 +31,17 @@ public class MainMenuUI : UserWidget
 
         serverButton.onClick.AddListener(() =>
         {
-            mainMenu.gameObject.SetActive(false);
+            gameUI.gameObject.SetActive(false);
             NetworkSystem.StartServer();
         });
         hostButton.onClick.AddListener(() =>
         {
-            mainMenu.gameObject.SetActive(false);
+            gameUI.gameObject.SetActive(false);
             NetworkSystem.StartHost();
         });
         clientButton.onClick.AddListener(() =>
         {
-            mainMenu.gameObject.SetActive(false);
+            gameUI.gameObject.SetActive(false);
             NetworkSystem.StartClient();
         });
   

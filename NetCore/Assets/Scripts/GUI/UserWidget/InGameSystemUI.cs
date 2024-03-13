@@ -9,12 +9,11 @@ public class InGameSystemUI : UserWidget
 {
     [SerializeField] private Button disconnectButton;
     [SerializeField] private TMP_Text ownerState;
-    [SerializeField] private GameObject inGame;
     List<string> stateOwner = new List<string> { "Server", "Host", "Client", "isDown" };
 
 
     public Button DisconnectButton => disconnectButton;
-    public GameObject InGame => inGame;
+    public GameObject InGame => gameUI;
     protected override void Bind()
     {
         disconnectButton.onClick.AddListener(() => { DisConnect(); });
@@ -24,8 +23,7 @@ public class InGameSystemUI : UserWidget
         NetworkSystem.OnStopServer += ChangeStateUI;
     }
 
-    protected override void Init() => ChangeStateUI();
-   private void ChangeStateUI()
+    private void ChangeStateUI()
     {
         
         switch (DataScene.stateOwner)
@@ -50,7 +48,7 @@ public class InGameSystemUI : UserWidget
     {
         DataScene.stateOwner = StateOwner.IsDown;
         NetworkSystem.Shutdown();
-        inGame.SetActive(false);
+        gameUI.SetActive(false);
 
     }
 }

@@ -167,9 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb450e5681654ae4a96e067a23175032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameUI: {fileID: 4404478322867304413}
   disconnectButton: {fileID: 3148576818198843236}
   ownerState: {fileID: 5888166142261957617}
-  inGame: {fileID: 4404478322867304413}
 --- !u!1 &5369894596063625677
 GameObject:
   m_ObjectHideFlags: 0

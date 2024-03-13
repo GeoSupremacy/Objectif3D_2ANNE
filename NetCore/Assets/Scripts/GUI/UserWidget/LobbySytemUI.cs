@@ -11,12 +11,11 @@ public class LobbySytemUI : UserWidget
 {
     public static Action<string> OnJoin = null;
     [SerializeField] private Button returnButton;
-    [SerializeField] private GameObject lobbyUI= null;
     [SerializeField] private Transform lobbyContent = null;
     [SerializeField] private CustomLobby customLobby = null;
 
     public Button ReturnButton => returnButton;
-    public GameObject LobbyUI => lobbyUI;
+    public GameObject LobbyUI => gameUI;
 
     protected override void Bind()
     {
@@ -26,11 +25,12 @@ public class LobbySytemUI : UserWidget
     }
     protected override void Init()
     {
-        lobbyUI.SetActive(false);
+        gameUI.SetActive(false);
     }
 
     public void UpdateList(List<SessionLobby> _listLobby)
     {
+        Debug.Log("UpdateList");
         ClearList();
       //  QueryLobbiesOptions options = new QueryLobbiesOptions();
       //  QueryRes ponse lobbies = await Lobbies.Instance.QueryLobbiesAsync(options);
@@ -47,7 +47,7 @@ public class LobbySytemUI : UserWidget
           }
             
     }
-    private void Return()=> lobbyUI.SetActive(false);
+    private void Return()=> gameUI.SetActive(false);
     
     public void ClearList()
     {

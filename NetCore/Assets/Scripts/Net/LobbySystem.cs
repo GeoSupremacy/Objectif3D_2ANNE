@@ -34,15 +34,27 @@ public class LobbySystem : NetworkBehaviour
     [ClientRpc]
     void ListClientRpc()
     {
+        Debug.Log("ListClientRpc");
         OnList?.Invoke(lobbyList);
     }
     public async static void JoinLobby(string _id)
     {
         await LobbyService.Instance.JoinLobbyByIdAsync(_id);
     }
+     void CreateLobby(string _name, int _playerNumber, string _id)
+    {
+        SessionLobby _lobbyList = new();
+        _lobbyList.IdLobby = _id;
+        _lobbyList.NameLobby = _name;
+        _lobbyList.MaxPlayer = _playerNumber;
+        lobbyList.Add(_lobbyList);
+
+        NetworkLogger.Add("New Lobby", Color.yellow);
+        NetworkSystem.Shutdown();
+    }
     async void Register(string _name, string _playerNumber)
      {
-       
+        Debug.Log("Register");
         string lobbyName = _name;
         int maxPlayers = int.Parse(_playerNumber);
        
@@ -52,15 +64,9 @@ public class LobbySystem : NetworkBehaviour
        
        
         Lobby lobby =await LobbyService.Instance.CreateLobbyAsync(lobbyName, maxPlayers, options);
+        CreateLobby(lobbyName, maxPlayers, lobby.Id);
 
-        SessionLobby _lobbyList = new();
-        _lobbyList.IdLobby = lobby.Id;
-        _lobbyList.NameLobby = lobbyName;
-        _lobbyList.MaxPlayer = maxPlayers;
-        lobbyList.Add( _lobbyList );
-       
-        NetworkLogger.Add("New Lobby", Color.yellow);
-        NetworkSystem.Shutdown();
+
      }
     
 }

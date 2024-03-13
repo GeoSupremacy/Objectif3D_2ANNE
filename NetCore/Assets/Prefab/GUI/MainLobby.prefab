@@ -245,9 +245,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d88932fcd0de24583456f9d9f49f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameUI: {fileID: 1837764860779333239}
   createLobbyButton: {fileID: 2012925084151697572}
   joinLobbyButton: {fileID: 780390951539072197}
-  mainLobby: {fileID: 1837764860779333239}
 --- !u!1 &5072912313297117121
 GameObject:
   m_ObjectHideFlags: 0

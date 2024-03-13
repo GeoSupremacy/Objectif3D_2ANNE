@@ -13,9 +13,9 @@ public class ChatSystemUI : UserWidget
     [SerializeField] TMP_InputField textEnter = null;
     [SerializeField] Transform chatContent = null;
 
-    [SerializeField] private GameObject chatSystemUI;
+  
 
-    public GameObject ChatSystemUi=> chatSystemUI;
+    public GameObject ChatSystemUi=> gameUI;
     void SetOwner(Player _this)
     {
         owner = _this;
@@ -32,7 +32,7 @@ public class ChatSystemUI : UserWidget
 
     protected override void Init()
     {
-        chatSystemUI.SetActive(false);
+        gameUI.SetActive(false);
     }
    
     private void OnDestroy()

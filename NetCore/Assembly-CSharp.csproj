@@ -67,7 +67,6 @@
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\GUI\UserWidget\MenuUI.cs" />
     <Compile Include="Assets\Scripts\Net\NetworkLogger.cs" />
-    <Compile Include="Assets\Scripts\Net\SteamManager.cs" />
     <Compile Include="Assets\Scripts\GUI\UserWidget\LobbyMenu.cs" />
     <Compile Include="Assets\Scripts\GUI\UserWidget\MainMenuUI.cs" />
     <Compile Include="Assets\Scripts\GUI\DynamicUI\CustomLobby.cs" />

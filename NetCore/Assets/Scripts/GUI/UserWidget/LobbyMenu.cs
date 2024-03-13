@@ -6,24 +6,23 @@ public class LobbyMenu : UserWidget
     [SerializeField] private Button createLobbyButton;
     [SerializeField] private Button joinLobbyButton;
 
-    [SerializeField] private GameObject mainLobby;
 
     public bool IsValid => createLobbyButton && joinLobbyButton;
     public Button CreateLobbyButton => createLobbyButton;
     public Button JoinLobbyButton => joinLobbyButton;
   
 
-    public GameObject MainLobby => mainLobby;
+    public GameObject MainLobby => gameUI;
     protected override void Bind()
     {
         createLobbyButton.onClick.AddListener(() =>
         {
-            mainLobby.gameObject.SetActive(false);
+            gameUI.gameObject.SetActive(false);
 
         });
         joinLobbyButton.onClick.AddListener(() =>
         {
-            mainLobby.gameObject.SetActive(false);
+            gameUI.gameObject.SetActive(false);
 
 
 
@@ -36,7 +35,7 @@ public class LobbyMenu : UserWidget
         if (!IsValid)
             return;
 
-        if (DataScene.stateOwner == StateOwner.IsServer || DataScene.stateOwner == StateOwner.IsHost)
+        if (DataScene.stateOwner == StateOwner.IsServer)
         {
             createLobbyButton.gameObject.SetActive(false);
             joinLobbyButton.gameObject.SetActive(false);
@@ -47,7 +46,7 @@ public class LobbyMenu : UserWidget
     }
     protected override void Init()
     {
-        mainLobby.SetActive(false);
+        gameUI.SetActive(false);
     }
 
 }

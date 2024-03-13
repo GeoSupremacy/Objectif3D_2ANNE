@@ -43,6 +43,7 @@ public class HUDTitle : HUD
     }
     void CreateLobby(string _name, string _number)
     {
+        Debug.Log("HUDTitle CreateLobby");
         OnCreateLobby?.Invoke(_name, _number);
         DataScene.isCreateLobby = true;
         EnterInGame();
@@ -51,7 +52,7 @@ public class HUDTitle : HUD
     }
     void OpenLobby()
     {
-
+       
         host.HostUI.SetActive(true);
 
     }
@@ -62,16 +63,18 @@ public class HUDTitle : HUD
     }
     void EnterInSession()
     {
-      
-
-        inGame.InGame.SetActive(true);
         lobbyMenu.MainLobby.SetActive(true);
+        inGame.InGame.SetActive(true);
+        
+        NetworkSystem.Shutdown();
+        NetworkSystem.StartHost();
+       
     
     }
     void EnterInGame()
     {
-      
-       SceneManager.LoadScene("Game", LoadSceneMode.Single);
+       // NetworkSystem.LoadScene(DataScene.gameLevel);
+       
     }
     void OpenMainMenu()
     {

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class UserWidget : MonoBehaviour
 {
+    [SerializeField] protected GameObject gameUI;
     private void Awake() => Bind();
 
     private void Start() => Init();

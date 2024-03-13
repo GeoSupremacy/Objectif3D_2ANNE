@@ -11,6 +11,8 @@ using UnityEngine;
 }
 public class DataScene
 {
+    public const string gameLevel = "Game";
+    public const string mainLevel = "MainMenuScene";
     public static StateOwner stateOwner = StateOwner.IsState;
     public static bool isCreateLobby = false;
 }

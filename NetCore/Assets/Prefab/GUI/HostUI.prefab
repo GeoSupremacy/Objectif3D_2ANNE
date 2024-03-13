@@ -48,10 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 637246bc07233214eb601a3f7900be1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameUI: {fileID: 842126558080230684}
   owner: {fileID: 0}
   createButton: {fileID: 4303160458733792663}
   returnButton: {fileID: 3073992666723268322}
-  hostUI: {fileID: 842126558080230684}
   readName: {fileID: 5983301149173078512}
   readMaxPlayer: {fileID: 3726959556736467214}
 --- !u!1 &1128194500078158948

@@ -1144,10 +1144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34c9cbe2dc4dc704cbe4a33c80436211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameUI: {fileID: 8850048859893365637}
   serverButton: {fileID: 636346550201883246}
   hostButton: {fileID: 7383530584311277334}
   clientButton: {fileID: 607279252184176356}
-  createLobbyButton: {fileID: 0}
-  joinLobbyButton: {fileID: 0}
   quitButton: {fileID: 3417101449365212076}
-  mainMenu: {fileID: 8850048859893365637}

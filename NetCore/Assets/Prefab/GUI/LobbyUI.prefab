@@ -1608,10 +1608,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb2b8ccd57abae41a4f5e0c4ce54a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameUI: {fileID: 8375421823700237477}
   returnButton: {fileID: 6825157037052532388}
-  joinButton: {fileID: 2409535294800621280}
-  lobbyUI: {fileID: 8375421823700237477}
   lobbyContent: {fileID: 2075372965818541393}
   customLobby: {fileID: 2397845028456541132, guid: a317326d5254db44b85cd54d8f351027,
     type: 3}
-  findlobby: {fileID: 1448430456038679382}

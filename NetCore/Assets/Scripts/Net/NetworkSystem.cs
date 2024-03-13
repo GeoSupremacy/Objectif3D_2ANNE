@@ -1,12 +1,11 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using Unity.Netcode;
-using Unity.Services.Authentication;
 using Unity.Services.Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class NetworkSystem : MonoBehaviour
+//using UnityEngine.SceneManagement;
+public class NetworkSystem : NetworkBehaviour
 {
     public static Action OnStartServer = null;
     public static Action OnStartClient = null;
@@ -63,20 +62,21 @@ public class NetworkSystem : MonoBehaviour
         };
         NetworkManager.Singleton.OnClientStopped += (b) =>
         {
+            
             DataScene.stateOwner = StateOwner.IsDown;
             NetworkLogger.Add($"Client stopped : {b}", Color.red);
         };
-    
-    
+
+      
     }
     private void Start()
     {
         //When Game start or change level
         StateManager();
     }
-  public  static void StateManager()
+    public  static void StateManager()
     {
-        Debug.Log("StateManager");
+        
         if(DataScene.isCreateLobby)
             DataScene.stateOwner= StateOwner.IsHost;
           
@@ -98,14 +98,22 @@ public class NetworkSystem : MonoBehaviour
                 break;
         }
     }
-    private void OnDestroy()
+    public  override void OnDestroy()
     {
         OnStartServer = null;
+        OnStartClient = null;
+        OnStopServer = null;
+        OnStopClient = null;
     }
     public static void StartServer() => NetworkManager.Singleton.StartServer();
     public static void StartHost() => NetworkManager.Singleton.StartHost();
     public static void StartClient() => NetworkManager.Singleton.StartClient();
-    public static void Shutdown() => NetworkManager.Singleton.Shutdown();
+    public static void Shutdown()
+    {
+        
+        NetworkManager.Singleton.Shutdown();
+    }
+    
     void RefreshPlayerDatas()
     {
         if (NetworkManager.Singleton.IsServer)
@@ -123,5 +131,15 @@ public class NetworkSystem : MonoBehaviour
         if (!NetworkManager.Singleton.IsConnectedClient)
             NetworkManager.Singleton.Shutdown();
         failClientChecking = false;
+    }
+
+    static public void LoadScene(string _name)
+    {
+        SceneEventProgressStatus status = NetworkManager.Singleton.SceneManager.LoadScene(_name, LoadSceneMode.Single);
+        if (status != SceneEventProgressStatus.Started)
+        {
+            NetworkLogger.Add($"Failed to load {_name} " +
+                  $"with a {nameof(SceneEventProgressStatus)}: {status}", Color.red);
+        }
     }
 }
