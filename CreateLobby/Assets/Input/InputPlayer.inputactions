@@ -1,0 +1,54 @@
+{
+    "name": "InputPlayer",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "6b6ba05b-c78c-4eca-8fe9-863338583b39",
+            "actions": [
+                {
+                    "name": "Open Chat",
+                    "type": "Button",
+                    "id": "d192e388-a3b5-4134-930e-afc68b12d855",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Send Message",
+                    "type": "Button",
+                    "id": "f22c0d00-763f-48d5-a651-87ee1b8537df",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a8aa639e-2925-4144-aad2-3b952a7abe8b",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Open Chat",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d5451ca0-70fe-4734-b16f-21ab94420da3",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Send Message",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
