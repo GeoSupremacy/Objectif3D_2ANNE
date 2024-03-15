@@ -7,7 +7,7 @@ using System;
 
 public class ChatSystem : MonoBehaviour
 {
-    public static Action<string> OnSendMessage = null;
+    public static Action<string> OnSendMessageInChat = null;
     public static Action<string> OnClearMessage = null;
     private void OnEnable()
     {
@@ -19,25 +19,31 @@ public class ChatSystem : MonoBehaviour
 
     private void Awake()
     {
-        OnSendMessage += UpdateChat;
+      
+        ChatLobby.OnSendMessage += ReadMessage;
     }
 
     private void OnDestroy()
     {
-        OnSendMessage = null;
+        OnSendMessageInChat = null;
     }
     public void ChatSent(Lobby _lobby, Friend _friend, string _message)
     {
         string msg = _friend.Name + ": " + _message;
-     
+       
+        OnSendMessageInChat?.Invoke(msg);
+
     }
-    private void LobbyEntered(Lobby lobby)=> OnSendMessage?.Invoke("You entered the lobby ");
-    private void LobbyMemberLeave(Lobby lobby, Friend friend) => OnSendMessage?.Invoke(friend.Name+" Left the lobby");
-    private void LobbyMemberJoined(Lobby lobby, Friend friend) => OnSendMessage?.Invoke(friend.Name + " Joined the lobby");
-   
-    private void UpdateChat(string _message)
+    public  void ReadMessage(string _msg) 
     {
-        if (!string.IsNullOrEmpty(_message))
-            LobbySaver.Instance.currentLobby?.SendChatString(_message);
+        if (!string.IsNullOrEmpty(_msg))
+            LobbySaver.Instance.currentLobby?.SendChatString(_msg);
+        
+       
     }
+    private void LobbyEntered(Lobby lobby) => OnSendMessageInChat?.Invoke("You entered the lobby ");
+    private void LobbyMemberLeave(Lobby lobby, Friend friend) => OnSendMessageInChat?.Invoke(friend.Name+" Left the lobby");
+    private void LobbyMemberJoined(Lobby lobby, Friend friend) => OnSendMessageInChat?.Invoke(friend.Name + " Joined the lobby");
+   
+
 }

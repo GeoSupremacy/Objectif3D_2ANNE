@@ -21,7 +21,7 @@ public class MainMenuGUI : ScripteGUI
     }
     protected override void Bind()
     {
-        inputFieldLobbyID.onEndEdit.AddListener( EditID);
+        inputFieldLobbyID.onEndEdit.AddListener(EditID);
         startHostButton.onClick.AddListener(StartHost);
         joinLobbyButton.onClick.AddListener(JoinLobby);
     }
@@ -41,6 +41,7 @@ public class MainMenuGUI : ScripteGUI
     }
     void EditID(string _id)
     {
+        
         OnEditId?.Invoke( _id );
     }
 

@@ -22,7 +22,7 @@ public class InLobbyMenuGUI : ScripteGUI
 }
     protected override void Bind()
     {
-        enterGameButton.onClick.AddListener(EnterGame);
+        
         copyIDButton.onClick.AddListener(CopyID);
         leaveLobbyButton.onClick.AddListener(LeaveLobby);
     }
@@ -34,17 +34,14 @@ public class InLobbyMenuGUI : ScripteGUI
         
         gameUI.SetActive(false);
     }
-    void EnterGame()
-    {
-       
-    }
+  
     void CopyID()
     {
         OnCopyID?.Invoke(textID.text);
     }
     void LeaveLobby()
     {
-       if(LobbySaver.Instance.currentLobby != null)
+       if(LobbySaver.Instance.currentLobby == null)
             gameUI.SetActive(false);
        else gameUI.SetActive(true);
     }

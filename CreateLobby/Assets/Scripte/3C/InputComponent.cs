@@ -7,12 +7,17 @@ using UnityEngine.Windows;
 public class InputComponent : MonoBehaviour
 {
     [SerializeField] InputPlayer inputPlayer = null;
+
     [SerializeField] InputAction openChat = null;
-    [SerializeField] InputAction sendMessage = null;
+    [SerializeField] InputAction readMessage = null;
+    [SerializeField] InputAction moveForward = null;
+    [SerializeField] InputAction moveRight = null;
 
     [SerializeField] List<InputAction> actions = null;
     public InputAction OpenChat => openChat;
-    public new InputAction SendMessage => sendMessage;
+    public  InputAction ReadMessage => readMessage;
+    public InputAction MoveForward => moveForward;
+    public InputAction MoveRight => moveRight;
     private void Awake()
     {
         Init();
@@ -22,8 +27,10 @@ public class InputComponent : MonoBehaviour
     private void OnEnable()
     {
         openChat = inputPlayer.Player.OpenChat;
-        sendMessage = inputPlayer.Player.SendMessage;
-        actions.AddRange(new List<InputAction> { openChat, sendMessage });
+        readMessage = inputPlayer.Player.SendMessage;
+        moveForward = inputPlayer.Player.MoveForward;
+        moveRight = inputPlayer.Player.MoveRight;
+        actions.AddRange(new List<InputAction> { openChat, readMessage, moveForward, moveRight });
         
         Active(true);
     }

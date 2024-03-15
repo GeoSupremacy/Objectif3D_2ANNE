@@ -8,16 +8,18 @@ public class MainMenuHUDManager : HUD
 {
     public static Action<string> OnEditId = null;
     public static Action OnLeave = null;
+    public static Action OnEnterGame = null;
 
     [SerializeField] MainMenuGUI mainMenu = null;
     [SerializeField] InLobbyMenuGUI lobbyMenu = null;
     [SerializeField] ChatLobby chat = null;
-    [SerializeField] SteamManager steamManager = null;
 
+    [SerializeField] SteamManager steamManager = null;
     private void OnDestroy()
     {
         OnEditId = null;
         OnLeave = null;
+        OnEnterGame = null;
     }
     protected override void Bind()
     {
@@ -26,16 +28,18 @@ public class MainMenuHUDManager : HUD
         Player.OnEdit += chat.Send;
         MainMenuGUI.OnEditId += EditID;
         SteamManager.OnLobbyId += lobbyMenu.SetID;
-        ChatSystem.OnSendMessage += chat.UpdateList;
+        ChatSystem.OnSendMessageInChat += chat.UpdateList;
         InLobbyMenuGUI.OnCopyID += steamManager.CopyId;
-
+       
         OnEditId += steamManager.JoinLobbyWithID;
         OnLeave += steamManager.LeaveLobby;
         OnLeave += chat.ClearContent;
+        OnEnterGame += steamManager.StartGameServer;
 
         mainMenu.StartHostButton.onClick.AddListener(CreateHost);
         mainMenu.JoinLobbyButton.onClick.AddListener(JoinLobby);
 
+        lobbyMenu.EnterGameButton.onClick.AddListener(Enter);
         lobbyMenu.LeaveLobbyButton.onClick.AddListener(Leave);
     }
 
@@ -49,6 +53,7 @@ public class MainMenuHUDManager : HUD
 
     void EditID(string _id)
     {
+       
         OnEditId?.Invoke(_id);
     }
     void CreateHost()
@@ -57,6 +62,10 @@ public class MainMenuHUDManager : HUD
         mainMenu.MainMenuUI.SetActive(false);
         chat.GameUI.SetActive(true);
         lobbyMenu.InLobbyMenuUI.SetActive(true);
+    }
+    private void Enter()
+    {
+        OnEnterGame?.Invoke();
     }
     private void JoinLobby()
     {
@@ -71,5 +80,6 @@ public class MainMenuHUDManager : HUD
             mainMenu.MainMenuUI.SetActive(false);
         else mainMenu.MainMenuUI.SetActive(true);
         OnLeave?.Invoke();
+        chat.GameUI?.SetActive(false);
     }
 }

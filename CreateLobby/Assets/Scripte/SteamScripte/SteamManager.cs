@@ -3,8 +3,9 @@ using UnityEngine;
 using Steamworks;
 using Steamworks.Data;
 using System;
-
-
+using Unity.Netcode;
+using Netcode.Transports.Facepunch;
+using UnityEngine.SceneManagement;
 
 public class SteamManager : MonoBehaviour
 {
@@ -40,7 +41,7 @@ public class SteamManager : MonoBehaviour
         ulong ID;
         if(!ulong.TryParse(_id,out  ID))
             return;
-
+       
         Lobby[] lobbies = await SteamMatchmaking.LobbyList.WithSlotsAvailable(1).RequestAsync(); //TODO min sloat
         foreach(Lobby _lobby in lobbies)
         {
@@ -63,14 +64,18 @@ public class SteamManager : MonoBehaviour
     {
         LobbySaver.Instance.currentLobby = _lobby;
         OnLobbyId?.Invoke(_lobby.Id.ToString()) ;
-        NetworkLogger.Add("Entered", UnityEngine.Color.green);
+
+        NetworkManager.Singleton.gameObject.GetComponent<FacepunchTransport>().targetSteamId = _lobby.Owner.Id;
+      
+        NetworkManager.Singleton.StartClient();
     }
    
     public void LeaveLobby()
     {
-        NetworkLogger.Add("LeaveLobby", UnityEngine.Color.green);
-        LobbySaver.Instance.currentLobby?.Leave();
        
+        LobbySaver.Instance.currentLobby?.Leave();
+        LobbySaver.Instance.currentLobby = null;
+        NetworkManager.Singleton.Shutdown();
     }
     
     private  async void GameLobbyJoinRequest(Lobby _lobby, SteamId _id)
@@ -84,7 +89,12 @@ public class SteamManager : MonoBehaviour
         {
             _lobby.SetPublic();
             _lobby.SetJoinable(true);
+            NetworkManager.Singleton.StartHost();
         }
     }
-
+    public void StartGameServer()
+    {
+        if(NetworkManager.Singleton.IsHost)
+            NetworkManager.Singleton.SceneManager.LoadScene(SceneNameManager.gameLevel,LoadSceneMode.Single);
+    }
 }

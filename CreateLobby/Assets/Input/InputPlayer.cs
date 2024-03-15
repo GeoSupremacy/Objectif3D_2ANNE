@@ -44,13 +44,31 @@ public partial class @InputPlayer: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveForward"",
+                    ""type"": ""Value"",
+                    ""id"": ""d785a8c5-b3d3-44d4-a164-d3eb2d907ad6"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""MoveRight"",
+                    ""type"": ""Value"",
+                    ""id"": ""6e2a1e80-7013-46c8-80fb-23c07dd05e42"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""a8aa639e-2925-4144-aad2-3b952a7abe8b"",
-                    ""path"": ""<Keyboard>/c"",
+                    ""path"": ""<Keyboard>/n"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -61,13 +79,79 @@ public partial class @InputPlayer: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d5451ca0-70fe-4734-b16f-21ab94420da3"",
-                    ""path"": ""<Keyboard>/enter"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Send Message"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""MoveForward"",
+                    ""id"": ""57ae5e6e-0060-4532-b54d-1fa869c1ffc3"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveForward"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""cbc0981f-52d4-4869-a3b7-e93bd9ea15ff"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveForward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""77da03c1-cc2b-49fb-8eac-4d97850d92f6"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveForward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""8d6a4b7a-f2f5-452e-9d34-f426859642a7"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveRight"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""43156dff-ab17-4688-8a17-415d5265c3d4"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""fc84f37b-9f7d-412f-afbb-76471b608c5b"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -78,6 +162,8 @@ public partial class @InputPlayer: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_OpenChat = m_Player.FindAction("Open Chat", throwIfNotFound: true);
         m_Player_SendMessage = m_Player.FindAction("Send Message", throwIfNotFound: true);
+        m_Player_MoveForward = m_Player.FindAction("MoveForward", throwIfNotFound: true);
+        m_Player_MoveRight = m_Player.FindAction("MoveRight", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -141,12 +227,16 @@ public partial class @InputPlayer: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_OpenChat;
     private readonly InputAction m_Player_SendMessage;
+    private readonly InputAction m_Player_MoveForward;
+    private readonly InputAction m_Player_MoveRight;
     public struct PlayerActions
     {
         private @InputPlayer m_Wrapper;
         public PlayerActions(@InputPlayer wrapper) { m_Wrapper = wrapper; }
         public InputAction @OpenChat => m_Wrapper.m_Player_OpenChat;
         public InputAction @SendMessage => m_Wrapper.m_Player_SendMessage;
+        public InputAction @MoveForward => m_Wrapper.m_Player_MoveForward;
+        public InputAction @MoveRight => m_Wrapper.m_Player_MoveRight;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -162,6 +252,12 @@ public partial class @InputPlayer: IInputActionCollection2, IDisposable
             @SendMessage.started += instance.OnSendMessage;
             @SendMessage.performed += instance.OnSendMessage;
             @SendMessage.canceled += instance.OnSendMessage;
+            @MoveForward.started += instance.OnMoveForward;
+            @MoveForward.performed += instance.OnMoveForward;
+            @MoveForward.canceled += instance.OnMoveForward;
+            @MoveRight.started += instance.OnMoveRight;
+            @MoveRight.performed += instance.OnMoveRight;
+            @MoveRight.canceled += instance.OnMoveRight;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -172,6 +268,12 @@ public partial class @InputPlayer: IInputActionCollection2, IDisposable
             @SendMessage.started -= instance.OnSendMessage;
             @SendMessage.performed -= instance.OnSendMessage;
             @SendMessage.canceled -= instance.OnSendMessage;
+            @MoveForward.started -= instance.OnMoveForward;
+            @MoveForward.performed -= instance.OnMoveForward;
+            @MoveForward.canceled -= instance.OnMoveForward;
+            @MoveRight.started -= instance.OnMoveRight;
+            @MoveRight.performed -= instance.OnMoveRight;
+            @MoveRight.canceled -= instance.OnMoveRight;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -193,5 +295,7 @@ public partial class @InputPlayer: IInputActionCollection2, IDisposable
     {
         void OnOpenChat(InputAction.CallbackContext context);
         void OnSendMessage(InputAction.CallbackContext context);
+        void OnMoveForward(InputAction.CallbackContext context);
+        void OnMoveRight(InputAction.CallbackContext context);
     }
 }

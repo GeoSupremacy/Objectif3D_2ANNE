@@ -14,11 +14,10 @@ public class ChatLobby : ScripteGUI
     [SerializeField] TMP_InputField chatEnter = null;
 
     bool isOpen = false;
-    string message =string.Empty;
     protected override void Bind()
     {
         base.Bind();
-        chatEnter.onEndEdit.AddListener((c) => ReadStringInput(c));
+     
     }
     protected override void Init()
     {
@@ -27,6 +26,11 @@ public class ChatLobby : ScripteGUI
         gameUI.SetActive(false);
         chatEnter.gameObject.SetActive(false);
 
+    }
+
+    private void OnDestroy()
+    {
+        OnSendMessage = null;
     }
     public void OpenEdit()
     {
@@ -41,11 +45,15 @@ public class ChatLobby : ScripteGUI
         chatEnter.gameObject.SetActive(true);
     }
     public void Send()
-    { OnSendMessage.Invoke(message); } 
-    public void ReadStringInput(string _msg)
     {
-        message=_msg;
-    }
+        
+
+        if (!isOpen || chatEnter.text == string.Empty)
+            return;
+      
+        OnSendMessage?.Invoke(chatEnter.text); 
+    } 
+  
     public void UpdateList(string _msg)
     {
         GameObject message = Instantiate(textInChat.gameObject, content.transform);
